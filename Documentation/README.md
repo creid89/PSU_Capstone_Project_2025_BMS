@@ -1,0 +1,1 @@
+This folder contains all project-related documentation, including guides, reports, reference materials, and other supporting files. The purpose of this folder is to provide detailed information about the project, its design, implementation, and usage.
