@@ -7,6 +7,7 @@ Cuauhtemoc Gomez Angeles <cuauh@pdx.edu>
 Cody Reid <codreid@pdx.edu>
 Fernando Custodio Calderon <fernan27@pdx.edu>
 Tyler Tran <tytran@pdx.edu>
+Daniel Anishchenko <danish2@pdx.edu>
 
 Inudstry Sponsor: 
 Edward Ivory <edivory@pdx.edu>
