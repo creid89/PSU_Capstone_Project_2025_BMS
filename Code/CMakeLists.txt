@@ -28,33 +28,33 @@ set(PICO_BOARD seeed_xiao_rp2350 CACHE STRING "Board type")
 # Pull in Raspberry Pi Pico SDK (must be before project)
 include(pico_sdk_import.cmake)
 
-project(blink C CXX ASM)
+project(i2c_slave_init C CXX ASM)
 
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(blink
-    blink.c
+add_executable(i2c_slave_init
+    i2c_slave_init.c
     )
 
 # pull in common dependencies
-target_link_libraries(blink 
+target_link_libraries(i2c_slave_init
                     pico_stdlib 
                     hardware_adc 
                     hardware_i2c 
                     )
 
 if (PICO_CYW43_SUPPORTED)
-    target_link_libraries(blink pico_cyw43_arch_none)
+    target_link_libraries(i2c_slave_init pico_cyw43_arch_none)
 endif()
 
 # create map/bin/hex file etc.
-pico_add_extra_outputs(blink)
+pico_add_extra_outputs(i2c_slave_init)
 
 # add url via pico_set_program_url
 
-pico_enable_stdio_uart(blink 0)
-pico_enable_stdio_usb(blink 1)
+pico_enable_stdio_uart(i2c_slave_init 0)
+pico_enable_stdio_usb(i2c_slave_init 1)
 
