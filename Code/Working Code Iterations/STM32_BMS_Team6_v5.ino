@@ -1,3 +1,6 @@
+//Team 6 - Universal BMS
+//Revision 5.1
+
 #include <Wire.h>
 #include <Adafruit_INA260.h>
 #include <HardwareSerial.h>
