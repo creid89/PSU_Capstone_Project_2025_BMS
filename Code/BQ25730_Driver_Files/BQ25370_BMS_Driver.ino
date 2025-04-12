@@ -15,7 +15,7 @@
 #define ProchotStatus   0x22
 #define IIN_DPM         0x24 // 7-bit input current limit in use - R/W
 #define AADCVBUS_PSYS   0x26 // 8-bit digital output of input voltage - 8-bit digital output of system power - Read Only
-#define ADCIBAT         0x28
+#define ADCIBAT         0x28 // 7-bit digital output of battery charge current & 7-bit digital output of battery discharge current
 #define ADCIINCMPIN     0x2A // 7-bit digital output of battery charge current - 7-bit digital output of battery discharge current - Read Only
 #define ADCVSYSVBAT     0x2C // 7-bit digital output of battery discharge current - 8-bit digital output of CMPIN voltage - Read Only
 #define MANUFACTURER_ID 0x2E
@@ -38,21 +38,34 @@
   Serial.println("BQ25730 Control");
   
  
-
+  /*
+  Setting ChargerVoltage and ChargerCurrent in the loop so they are set 
+  after external power is disconnected and reconnected
+  */
   // Initialize charger settings
   setChargeVoltage(0x4000); // 4 cells * 4V = 16 (in mV), 0x3F = 16.328V
   setInputVoltage(0x0800); // set minium input voltage as 5.2, there is a 3.2V offset
   setChargeCurrent(0x0200);  // 1000mA = 1A
   setInputCurrentLimit(0x2000); // 3200mA
-  setSystemVoltage(0x9E00); // setting VSYS as 15.8V
+  setSystemVoltage(0xFF00); // Set to 5V / 0.1 = 50 = 1101 1100 = 0x32 -> 20.
+  enableADC();
   enableCharging();
  }
  
 
  void loop() {
+  Serial.println("\n--- Register Dump ---");
+  //enableADC();
+  //enableCharging();
+  delay(3000);
+  setChargeVoltage(0x4000);
+  setChargeCurrent(0x0200);  // 1000mA = 1A
+  enableCharging();
+  dumpAllRegisters();
+
   // Monitor battery voltage and current (example)
-  uint16_t batteryVoltage = readBQ25730(ADCVSYSVBAT); // read pack voltage
-  uint16_t iBatCurrent = readBQ25730(ADCIBAT);  // Replace with actual IBAT register
+  /*uint16_t batteryVoltage = readBQ25730(ADCVSYSVBAT); 
+  uint16_t iBatCurrent = readBQ25730(ADCIBAT);  //reading ADCIBAT register
   uint16_t chargeCurrent = readBQ25730(ChargeCurrent);
   uint16_t status = readBQ25730(ChargerStatus);
   uint16_t inputCurrentLimt = readBQ25730(IIN_HOST);
@@ -61,11 +74,11 @@
 
  
 
-  Serial.print("VBAT: ");
-  Serial.print(batteryVoltage);
-  Serial.print(" mV, IBAT: ");
-  Serial.print(iBatCurrent);
-  Serial.print(" mA, chargeStatus Reg Value: 0x");
+  Serial.print("ADCVSYSVBAT Reigster Value: ");
+  Serial.print(batteryVoltage, HEX);
+  Serial.print(" , ADCIBAT Register Value: ");
+  Serial.print(iBatCurrent, HEX);
+  Serial.print(" , chargeStatus Reg Value: 0x");
   Serial.println(status, HEX);
   Serial.print("chargeCurrent Reg Value: 0x");
   Serial.println(chargeCurrent, HEX);
@@ -75,9 +88,23 @@
   Serial.println(inputVoltageLimt, HEX);
   Serial.print("ChargeVoltage Reg Value: 0x");
   Serial.println(batChargeVoltage, HEX);
-  delay(1000);
+  delay(1000);*/
  }
  
+ // Dump all BQ25730 registers
+void dumpAllRegisters() {
+  for (uint8_t addr = 0x00; addr <= 0x3E; addr += 2) {
+    uint16_t value = readBQ25730(addr);
+    Serial.print("Reg 0x");
+    if (addr < 0x10) Serial.print("0");
+    Serial.print(addr, HEX);
+    Serial.print(" = 0x");
+    if (value < 0x1000) Serial.print("0");
+    if (value < 0x0100) Serial.print("0");
+    if (value < 0x0010) Serial.print("0");
+    Serial.println(value, HEX);
+  }
+}
 
  // I2C write function
  void writeBQ25730(uint8_t regAddr, uint16_t data) {
@@ -103,6 +130,12 @@
   return data;
  }
  
+ void enableADC() {
+  // Enable continuous ADC with averaging
+  writeBQ25730(ADCOption, 0x40FF);
+  delay(100); // Give time for readings to stabilize
+}
+
 
  // Charger control functions (modify based on datasheet)
  void setChargeVoltage(uint16_t voltage_mV) {
@@ -142,7 +175,7 @@
  void enableCharging() {
   uint16_t option0 = readBQ25730(ChargeOption0);
   //option0 |= (1 << 0);  // Example: Set the Charge Enable bit
-  option0 = 0xE70E; 
+  option0 = 0xE70E; //turned off watchdog, charging now stays on longer then 175 seconds 
   writeBQ25730(ChargeOption0, option0);
  }
  
