@@ -40,7 +40,7 @@
  
 
   // Initialize charger settings
-  setChargeVoltage(0x39D0); // 4 cells * 3.7V = 14.8 (in mV)
+  setChargeVoltage(0x4000); // 4 cells * 4V = 16 (in mV), 0x3F = 16.328V
   setInputVoltage(0x0800); // set minium input voltage as 5.2, there is a 3.2V offset
   setChargeCurrent(0x0200);  // 1000mA = 1A
   setInputCurrentLimit(0x2000); // 3200mA
