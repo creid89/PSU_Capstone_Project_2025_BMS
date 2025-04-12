@@ -612,6 +612,14 @@
     [
       "1ea1a1f5-2618-4570-85b6-e164c8f0e76f",
       "Root"
+    ],
+    [
+      "4fd37c8f-78ac-473a-82b9-1f998663ba3c",
+      "Fuel Guage"
+    ],
+    [
+      "70546578-20d6-4cac-ac3f-606caa4a96bc",
+      "Charge Control"
     ]
   ],
   "text_variables": {}
