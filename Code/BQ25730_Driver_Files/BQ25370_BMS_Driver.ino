@@ -28,8 +28,9 @@
 #define ADCOption       0x3A
 #define ChargeOption4   0x3C
 #define Vmin_Active_Protection 0x3E
-
-
+float ChargeVoltageValue = 17.000; //getting the pack to 16V, needs the charge voltage at 17.00V
+float VsysMinValue = 12.3;
+float inputVoltageValue = 5.2;
 
  void setup() {
   Serial.begin(115200);
@@ -42,12 +43,22 @@
   Setting ChargerVoltage and ChargerCurrent in the loop so they are set 
   after external power is disconnected and reconnected
   */
+
+  /*
+  Things to Do:
+  -Finish function to enter floating points - the convert to uint16_t - writre to registers
+  -read from current and voltage registers and convert to human readable from
+  -read from ChargeStatus Registers and convert to human readable form
+  -write to ChargeOption register to turn charging on and off --> this will be controlled by the end user???
+  -
+  */
+
   // Initialize charger settings
-  setChargeVoltage(0x4000); // 4 cells * 4V = 16 (in mV), 0x3F = 16.328V
-  setInputVoltage(0x0800); // set minium input voltage as 5.2, there is a 3.2V offset
+  setChargeVoltage(ChargeVoltageValue); // Set charge v
+  setInputVoltage(inputVoltageValue); // set minium input voltage as 5.2, there is a 3.2V offset
   setChargeCurrent(0x0200);  // 1000mA = 1A
   setInputCurrentLimit(0x2000); // 3200mA
-  setSystemVoltage(0xFF00); // Set to 5V / 0.1 = 50 = 1101 1100 = 0x32 -> 20.
+  set_VSYS_MIN(VsysMinValue); // Set minimum system voltage in incrments of 100mA between 1.0-23.0V
   enableADC();
   enableCharging();
  }
@@ -58,7 +69,7 @@
   //enableADC();
   //enableCharging();
   delay(3000);
-  setChargeVoltage(0x4000);
+  setChargeVoltage(ChargeVoltageValue);
   setChargeCurrent(0x0200);  // 1000mA = 1A
   enableCharging();
   dumpAllRegisters();
@@ -138,11 +149,32 @@ void dumpAllRegisters() {
 
 
  // Charger control functions (modify based on datasheet)
- void setChargeVoltage(uint16_t voltage_mV) {
+ /*void setChargeVoltage(uint16_t voltage_mV) {
   delay(2500);
   Serial.print("Writing: ");Serial.print(voltage_mV, HEX);Serial.println(" to ChargeVoltage Register");
   writeBQ25730(ChargeVoltage, voltage_mV);
- }
+ }*/
+
+ void setChargeVoltage(float voltage_V) {
+  // Voltage range check
+  if (voltage_V < 1.024 || voltage_V > 23.000) {
+    Serial.println("Charge voltage out of range (1.024V – 23.000V). Write skipped.");
+    return;
+  }
+
+  // Convert to number of 8mV steps
+  uint16_t stepCount = static_cast<uint16_t>(voltage_V / 0.008 + 0.5);  // Round to nearest step
+
+  // Only keep bits [12:0] and shift into position [14:3]
+  stepCount &= 0x1FFF;          // mask to 13 bits
+  uint16_t encoded = stepCount << 3;  // shift into bits [14:3], reserved bits cleared
+
+  delay(2500);
+  Serial.print("Writing 0x"); Serial.print(encoded, HEX);
+  Serial.print(" to ChargeVoltage ("); Serial.print(voltage_V); Serial.println(" V)");
+  writeBQ25730(ChargeVoltage, encoded);
+}
+
  
 
  void setChargeCurrent(uint16_t current_mA) {
@@ -158,19 +190,58 @@ void dumpAllRegisters() {
   writeBQ25730(IIN_HOST, current_mA);
  }
  
- void setInputVoltage(uint16_t voltage_mV) {
+ /*void setInputVoltage(uint16_t voltage_mV) {
   delay(2500);
   Serial.print("Writing: ");Serial.print(voltage_mV, HEX);Serial.println(" to InputVoltage Register");
   writeBQ25730(InputVoltage, voltage_mV);
- }
+ }*/
+
+ void setInputVoltage(float voltage_V) {
+  // Ensure voltage is above minimum offset
+  if (voltage_V < 3.2 || voltage_V > 23.0) {
+    Serial.println("Input voltage limit out of range (3.2V – 23.0V). Write skipped.");
+    return;
+  }
+
+  // Remove 3.2V offset and convert to step count (64 mV per step)
+  uint16_t stepCount = static_cast<uint16_t>((voltage_V - 3.2) / 0.064 + 0.5);  // Rounded
+
+  // Place stepCount in bits [6:13] (shifted by 6), and mask reserved bits
+  uint16_t encoded = (stepCount << 6) & 0x3FC0;  // Keep bits [6:13], clear [0:5] and [14:15]
+
+  delay(2500);
+  Serial.print("Writing 0x"); Serial.print(encoded, HEX);
+  Serial.print(" to InputVoltage Register ("); Serial.print(voltage_V); Serial.println(" V)");
+  writeBQ25730(InputVoltage, encoded);
+}
 
 
- void setSystemVoltage(uint16_t voltage_mV) {
+
+ /*void set_VSYS_MIN(uint16_t voltage_mV) {
   delay(2500);
   Serial.print("Writing: ");Serial.print(voltage_mV, HEX);Serial.println(" to VSYS_MIN (Minimum System Voltage) Register");
   writeBQ25730(VSYS_MIN, voltage_mV);
  }
  
+uint16_t encodeVSYS_MIN(float voltage_V) {
+  if (voltage_V < 1.0 || voltage_V > 23.0) return 0;  // Ignore invalid range
+  return static_cast<uint16_t>(voltage_V * 10) << 8;  // Convert to 100mV steps, shift to bits [15:8]
+}*/
+
+void set_VSYS_MIN(float voltage_V) {
+  if (voltage_V < 1.0 || voltage_V > 23.0) {
+    Serial.println("VSYS_MIN voltage out of range (1.0V–23.0V). Write skipped.");
+    return;
+  }
+
+  uint16_t encoded = static_cast<uint16_t>(voltage_V * 10) << 8;  // Convert to 100 mV steps, shift into bits [15:8]
+  delay(2500);
+  Serial.print("Writing: 0x"); Serial.print(encoded, HEX);
+  Serial.print(" to VSYS_MIN ("); Serial.print(voltage_V); Serial.println(" V)");
+  writeBQ25730(VSYS_MIN, encoded);
+}
+
+
 
  void enableCharging() {
   uint16_t option0 = readBQ25730(ChargeOption0);
