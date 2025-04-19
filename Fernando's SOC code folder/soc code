@@ -1,0 +1,135 @@
+#include <Wire.h>                        // For I2C communication
+#include <Adafruit_INA260.h>            // Library for INA260 current/voltage sensor
+#include <EEPROM.h>                     // EEPROM emulation library for STM32 (must be installed)
+#include <Adafruit_TCA9548A.h>          // Library for TCA9548A I2C multiplexer
+
+// Constants
+#define NUM_SENSORS 4                   // Number of battery cells/sensors
+#define BATTERY_CAPACITY_AH 2.6         // Total battery capacity in Amp-hours
+#define SOC_SAVE_INTERVAL 20            // Save SoC every 20 updates (every 10 seconds)
+#define VOLTAGE_CHECK_INTERVAL 600      // Check voltage every 600 updates (5 minutes)
+
+// SoC variables
+float SoC = 100.0;                      // Initial State of Charge (fully charged)
+int cycleCount = 0;                     // Counter for when to save SoC
+int voltageCheckCounter = 0;           // Counter for when to run voltage check
+bool batteryDead = false;              // Flag to disable load/charge if SoC is too low
+int eepromAddr = 0;                    // EEPROM address to store SoC
+
+// I2C multiplexer and INA260 sensors
+Adafruit_TCA9548A tca = Adafruit_TCA9548A();   // TCA9548A multiplexer instance
+Adafruit_INA260 ina260;                        // Only one instance needed, reused per channel
+
+// Timing control
+unsigned long lastUpdateTime = 0;      // For tracking 500ms intervals
+const unsigned long UPDATE_INTERVAL = 500;  // Update SoC every 500ms
+
+// Pins for controlling charging and load circuits (customize as needed)
+const int loadPin = PA0;               // Pin to control battery load
+const int chargePin = PA1;             // Pin to control battery charging
+
+// Setup function runs once
+void setup() {
+  Serial.begin(115200);                // Initialize serial for debugging
+  Wire.begin();                        // Start I2C communication
+
+  // Setup multiplexer
+  if (!tca.begin(0x70)) {              // TCA9548A default address is 0x70
+    Serial.println("TCA9548A not found. Check wiring.");
+    while (1);
+  }
+
+  // Check each sensor on its multiplexer channel
+  for (int i = 0; i < NUM_SENSORS; i++) {
+    tca.selectChannel(i);             // Switch to channel i
+    if (!ina260.begin()) {            // Initialize INA260 (fixed address on each channel)
+      Serial.print("INA260 not found on channel ");
+      Serial.println(i);
+    }
+  }
+
+  // Set up output pins
+  pinMode(loadPin, OUTPUT);
+  pinMode(chargePin, OUTPUT);
+  digitalWrite(loadPin, HIGH);        // Enable load by default
+  digitalWrite(chargePin, HIGH);      // Enable charging by default
+
+  // Load saved SoC from EEPROM
+  EEPROM.get(eepromAddr, SoC);
+  if (isnan(SoC) || SoC < 0.0 || SoC > 100.0) {
+    SoC = 100.0;                       // Default to full charge if invalid
+  }
+}
+
+// Main loop
+void loop() {
+  // Only update every 500ms
+  if (millis() - lastUpdateTime >= UPDATE_INTERVAL) {
+    updateSoC();                       // Perform SoC calculation
+    lastUpdateTime = millis();        // Reset timer
+  }
+
+  // If battery is dead, shut down load and charging
+  if (batteryDead) {
+    digitalWrite(loadPin, LOW);
+    digitalWrite(chargePin, LOW);
+    Serial.println("Battery dead — disconnecting load and charging.");
+  } else {
+    digitalWrite(loadPin, HIGH);
+    digitalWrite(chargePin, HIGH);
+  }
+}
+
+// Function to update SoC via coulomb counting
+void updateSoC() {
+  float totalCurrent_mA = 0;
+
+  // Loop through each INA260 via the TCA multiplexer
+  for (int i = 0; i < NUM_SENSORS; i++) {
+    tca.selectChannel(i);             // Select sensor i via multiplexer
+    float current = ina260.getCurrent_mA();  // Get current in milliamps
+    if (!isnan(current)) {
+      totalCurrent_mA += current;     // Add up current from all sensors
+    }
+  }
+
+  // Convert current to Amp-hours over time window (0.5s)
+  float AhDelta = (totalCurrent_mA / 1000.0) * (UPDATE_INTERVAL / 1000.0 / 3600.0);
+
+  // Coulomb counting — subtract Ah consumed from total capacity
+  SoC -= (AhDelta / BATTERY_CAPACITY_AH) * 100.0;
+  SoC = constrain(SoC, 0.0, 100.0);    // Clamp SoC between 0–100%
+
+  cycleCount++;
+  voltageCheckCounter++;
+
+  Serial.print("Total Current: ");
+  Serial.print(totalCurrent_mA);
+  Serial.print(" mA, SoC: ");
+  Serial.print(SoC);
+  Serial.println(" %");
+
+  // Periodically save SoC to EEPROM
+  if (cycleCount >= SOC_SAVE_INTERVAL) {
+    EEPROM.put(eepromAddr, SoC);
+    Serial.println("SoC saved to EEPROM.");
+    cycleCount = 0;
+  }
+
+  // Periodically perform voltage sanity check
+  if (voltageCheckCounter >= VOLTAGE_CHECK_INTERVAL) {
+    checkVoltage();                   // Placeholder function
+    voltageCheckCounter = 0;
+  }
+
+  // If SoC drops below threshold, mark battery as dead
+  if (SoC < 5.0) {
+    batteryDead = true;
+  }
+}
+
+// Placeholder for future voltage sanity checks using ADC
+void checkVoltage() {
+  Serial.println("Voltage check (add ADC later)");
+  // In future: use analogRead() on voltage divider to measure pack voltage
+}
