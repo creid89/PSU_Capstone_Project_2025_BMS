@@ -497,20 +497,24 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "CR"
-				(at 5.08 4.445 0)
+			(property "Reference" "CR6"
+				(at 5.08 -2.54 90)
 				(effects
 					(font
-						(size 1.524 1.524)
+						(size 1.016 1.016)
 					)
+					(justify right)
+					(hide yes)
 				)
 			)
 			(property "Value" "AZ23C5V6-7-F"
-				(at 5.08 -3.81 0)
+				(at 2.54 -1.27 90)
 				(effects
 					(font
-						(size 1.524 1.524)
+						(size 1.016 1.016)
 					)
+					(justify right)
+					(hide yes)
 				)
 			)
 			(property "Footprint" "DIODE3_AZ23C5V6-7-F_DIO"
@@ -571,11 +575,11 @@
 			(symbol "AZ23C5V6-7-F_1_1_1"
 				(polyline
 					(pts
-						(xy 2.54 0) (xy 3.4798 0)
+						(xy 2.667 1.27) (xy 2.667 -3.81)
 					)
 					(stroke
-						(width 0.2032)
-						(type default)
+						(width 0.127)
+						(type solid)
 					)
 					(fill
 						(type none)
@@ -583,11 +587,11 @@
 				)
 				(polyline
 					(pts
-						(xy 3.175 0) (xy 3.81 0)
+						(xy 2.667 -1.27) (xy 2.413 -1.27)
 					)
 					(stroke
-						(width 0.2032)
-						(type default)
+						(width 0.127)
+						(type solid)
 					)
 					(fill
 						(type none)
@@ -595,11 +599,11 @@
 				)
 				(polyline
 					(pts
-						(xy 3.81 1.905) (xy 3.81 -1.905)
+						(xy 2.794 1.27) (xy 4.064 1.27)
 					)
 					(stroke
-						(width 0.2032)
-						(type default)
+						(width 0.127)
+						(type solid)
 					)
 					(fill
 						(type none)
@@ -607,11 +611,11 @@
 				)
 				(polyline
 					(pts
-						(xy 3.81 -1.905) (xy 6.35 0)
+						(xy 2.794 -3.81) (xy 4.064 -3.81)
 					)
 					(stroke
-						(width 0.2032)
-						(type default)
+						(width 0.127)
+						(type solid)
 					)
 					(fill
 						(type none)
@@ -619,11 +623,11 @@
 				)
 				(polyline
 					(pts
-						(xy 6.35 0) (xy 3.81 1.905)
+						(xy 2.921 1.27) (xy 2.667 1.27) (xy 2.667 0.762)
 					)
 					(stroke
-						(width 0.2032)
-						(type default)
+						(width 0.127)
+						(type solid)
 					)
 					(fill
 						(type none)
@@ -631,11 +635,11 @@
 				)
 				(polyline
 					(pts
-						(xy 6.35 0) (xy 7.62 0)
+						(xy 2.921 -3.81) (xy 2.667 -3.81) (xy 2.667 -3.556)
 					)
 					(stroke
-						(width 0.2032)
-						(type default)
+						(width 0.127)
+						(type solid)
 					)
 					(fill
 						(type none)
@@ -643,18 +647,168 @@
 				)
 				(polyline
 					(pts
-						(xy 6.35 -1.905) (xy 6.35 1.905)
+						(xy 4.191 2.667) (xy 4.191 0.254)
 					)
 					(stroke
-						(width 0.2032)
-						(type default)
+						(width 0.127)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.191 0.254) (xy 5.715 1.27)
+					)
+					(stroke
+						(width 0.127)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.191 -2.413) (xy 4.191 -4.826)
+					)
+					(stroke
+						(width 0.127)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.191 -4.826) (xy 5.715 -3.81)
+					)
+					(stroke
+						(width 0.127)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.715 2.54) (xy 4.953 3.302)
+					)
+					(stroke
+						(width 0.127)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.715 1.27) (xy 4.191 2.667)
+					)
+					(stroke
+						(width 0.127)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.715 0) (xy 5.715 2.54)
+					)
+					(stroke
+						(width 0.127)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.715 0) (xy 6.477 -0.762)
+					)
+					(stroke
+						(width 0.127)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.715 -2.54) (xy 4.953 -1.778)
+					)
+					(stroke
+						(width 0.127)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.715 -3.81) (xy 4.191 -2.413)
+					)
+					(stroke
+						(width 0.127)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.715 -5.08) (xy 5.715 -2.54)
+					)
+					(stroke
+						(width 0.127)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.715 -5.08) (xy 6.477 -5.842)
+					)
+					(stroke
+						(width 0.127)
+						(type solid)
 					)
 					(fill
 						(type none)
 					)
 				)
 				(pin unspecified line
-					(at 0 0 0)
+					(at 0 -1.27 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 8.255 1.27 180)
 					(length 2.54)
 					(name ""
 						(effects
@@ -672,7 +826,7 @@
 					)
 				)
 				(pin unspecified line
-					(at 10.16 0 180)
+					(at 8.255 -3.81 180)
 					(length 2.54)
 					(name ""
 						(effects
@@ -2703,12 +2857,6 @@
 		(uuid "26b67bd8-09a2-4a8a-b2d5-a36e927cbbaa")
 	)
 	(junction
-		(at 149.86 53.34)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "39e903ec-f29b-4eca-b5ac-0478d641913d")
-	)
-	(junction
 		(at 50.8 33.02)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2787,6 +2935,12 @@
 		(uuid "d136a62b-5add-42cd-8bee-a5c7df49f15b")
 	)
 	(junction
+		(at 152.4 53.34)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d75be566-8ea5-46c2-8ded-1ae1a06ba5f8")
+	)
+	(junction
 		(at 101.6 93.98)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2809,6 +2963,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e767e663-4ce1-4f79-8c3d-286b71e0bb9f")
+	)
+	(junction
+		(at 152.4 56.515)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e9743cf4-0f4b-42f9-8021-e453b6ec3779")
 	)
 	(junction
 		(at 90.17 88.9)
@@ -2998,6 +3158,16 @@
 	)
 	(wire
 		(pts
+			(xy 152.4 56.515) (xy 152.4 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "31092287-0664-4142-bc34-d51de9159556")
+	)
+	(wire
+		(pts
 			(xy 130.81 48.26) (xy 135.89 48.26)
 		)
 		(stroke
@@ -3058,7 +3228,7 @@
 	)
 	(wire
 		(pts
-			(xy 144.78 53.34) (xy 149.86 53.34)
+			(xy 144.78 53.34) (xy 152.4 53.34)
 		)
 		(stroke
 			(width 0)
@@ -3418,6 +3588,16 @@
 	)
 	(wire
 		(pts
+			(xy 152.4 53.34) (xy 152.4 56.515)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aa1815d0-877e-4a4b-9cd2-09590a5edeab")
+	)
+	(wire
+		(pts
 			(xy 110.49 93.98) (xy 114.3 93.98)
 		)
 		(stroke
@@ -3648,16 +3828,6 @@
 	)
 	(wire
 		(pts
-			(xy 149.86 53.34) (xy 154.94 53.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d920e2c2-ce6c-4b90-a1fd-1051f4652e89")
-	)
-	(wire
-		(pts
 			(xy 39.37 33.02) (xy 39.37 44.45)
 		)
 		(stroke
@@ -3775,6 +3945,16 @@
 			(type default)
 		)
 		(uuid "f434ef7e-1268-4bac-a06a-417c752ea90c")
+	)
+	(wire
+		(pts
+			(xy 152.4 53.34) (xy 154.94 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f65f5066-3609-49dc-91e8-78c58917b385")
 	)
 	(wire
 		(pts
@@ -5149,7 +5329,7 @@
 	(symbol
 		(lib_name "AZ23C5V6-7-F_1")
 		(lib_id "AZ23C5V6-7-F:AZ23C5V6-7-F")
-		(at 149.86 63.5 90)
+		(at 148.59 64.77 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5157,25 +5337,27 @@
 		(dnp no)
 		(uuid "8d89b876-1e19-46b2-a11d-d2ea584e3114")
 		(property "Reference" "CR6"
-			(at 152.4 58.42 90)
+			(at 151.13 59.69 90)
 			(effects
 				(font
 					(size 1.016 1.016)
 				)
 				(justify right)
+				(hide yes)
 			)
 		)
 		(property "Value" "AZ23C5V6-7-F"
-			(at 151.13 60.96 90)
+			(at 149.86 62.23 90)
 			(effects
 				(font
 					(size 1.016 1.016)
 				)
 				(justify right)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "DIODE3_AZ23C5V6-7-F_DIO"
-			(at 149.86 63.5 0)
+			(at 148.59 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5185,7 +5367,7 @@
 			)
 		)
 		(property "Datasheet" "AZ23C5V6-7-F"
-			(at 149.86 63.5 0)
+			(at 148.59 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5195,7 +5377,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 149.86 63.5 0)
+			(at 148.59 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5208,6 +5390,9 @@
 		)
 		(pin "1"
 			(uuid "0632f91e-56f6-4f10-95f9-d9d38a901acd")
+		)
+		(pin "3"
+			(uuid "451b7011-e936-4eaf-84d8-12e301fc2b02")
 		)
 		(instances
 			(project "Battery Management System"
@@ -6440,7 +6625,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 149.86 63.5 0)
+		(at 149.86 64.77 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6449,7 +6634,7 @@
 		(dnp no)
 		(uuid "f2592bc4-d755-4a34-aace-e5e096334506")
 		(property "Reference" "#PWR041"
-			(at 149.86 69.85 0)
+			(at 149.86 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6458,7 +6643,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 147.32 63.5 0)
+			(at 147.32 64.77 0)
 			(effects
 				(font
 					(size 0.762 0.762)
@@ -6466,7 +6651,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 149.86 63.5 0)
+			(at 149.86 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6475,7 +6660,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 149.86 63.5 0)
+			(at 149.86 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6484,7 +6669,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 149.86 63.5 0)
+			(at 149.86 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
