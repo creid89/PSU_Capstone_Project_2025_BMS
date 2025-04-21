@@ -728,6 +728,16 @@
 		)
 		(uuid "542dbc99-78fd-4b2a-a9b2-9f4d43d8f6ad")
 	)
+	(text "SYSTEM OVERVIEW HERE PLZ"
+		(exclude_from_sim no)
+		(at 176.53 67.31 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "54e5d1d7-bcec-4498-85e2-ef0df3fd90ea")
+	)
 	(text "Power out, right?"
 		(exclude_from_sim no)
 		(at 293.37 101.6 0)
@@ -2027,7 +2037,7 @@
 			(color 255 232 188 1.0000)
 		)
 		(uuid "3133b2c6-34e4-40b3-b23f-0442236a32da")
-		(property "Sheetname" "Measurements"
+		(property "Sheetname" "Cell Interface"
 			(at 224.79 146.6084 0)
 			(effects
 				(font
@@ -2036,7 +2046,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "untitled.kicad_sch"
+		(property "Sheetfile" "Cell_Interface.kicad_sch"
 			(at 224.79 183.4646 0)
 			(effects
 				(font

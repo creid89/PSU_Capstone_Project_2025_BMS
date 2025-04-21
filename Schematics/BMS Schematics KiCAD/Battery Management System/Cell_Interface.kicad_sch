@@ -5574,7 +5574,7 @@
 			(uuid "433a104d-1a8b-4261-afb5-6d812af78d7f")
 		)
 		(instances
-			(project ""
+			(project "Battery Management System"
 				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/3133b2c6-34e4-40b3-b23f-0442236a32da"
 					(reference "U4")
 					(unit 1)
