@@ -2166,7 +2166,7 @@
 			)
 		)
 		(instances
-			(project "Battery Management System"
+			(project "Battery_Management_System"
 				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f"
 					(page "4")
 				)
@@ -2269,7 +2269,7 @@
 			)
 		)
 		(instances
-			(project "Battery Management System"
+			(project "Battery_Management_System"
 				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f"
 					(page "3")
 				)
@@ -2421,7 +2421,7 @@
 			)
 		)
 		(instances
-			(project "Battery Management System"
+			(project "Battery_Management_System"
 				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f"
 					(page "5")
 				)
