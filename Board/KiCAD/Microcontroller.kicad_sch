@@ -2878,16 +2878,6 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "Can this just be a push button?\nLike Reset?"
-		(exclude_from_sim no)
-		(at 176.53 59.69 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "2c69f5ab-9c1f-46b4-ba88-7becd3d2c8c6")
-	)
 	(text "LEDS! GIVE ME LEDS! So many status LEDs!"
 		(exclude_from_sim no)
 		(at 171.45 109.22 0)
@@ -2917,16 +2907,6 @@
 			)
 		)
 		(uuid "9497235c-6653-4971-8e37-a589d868675d")
-	)
-	(text "CONNECT ME"
-		(exclude_from_sim no)
-		(at 151.13 50.8 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "dec5f04b-f717-42e7-93ff-95581bce95e0")
 	)
 	(text "Internal Pullup"
 		(exclude_from_sim no)
@@ -5276,7 +5256,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Inductor_SMD:L_10.4x10.4_H4.8"
+		(property "Footprint" "Inductor_SMD:L_1008_2520Metric_Pad1.43x2.20mm_HandSolder"
 			(at 76.2 45.72 0)
 			(effects
 				(font
