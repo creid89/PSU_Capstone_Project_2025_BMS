@@ -14,431 +14,6 @@
 		(comment 3 "Capstone - Team #6")
 	)
 	(lib_symbols
-		(symbol "AON6500_1"
-			(pin_names
-				(offset 1.016)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "Q"
-				(at -8.89 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "Value" "AON6500"
-				(at -8.89 -7.62 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "Footprint" "AON6500:TRANS_AON6500"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "PARTREV" "F"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "MANUFACTURER" "Alpha and Omega"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "MAXIMUM_PACKAGE_HEIGHT" "1 mm"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "STANDARD" "Manufacturer Recommendations"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(symbol "AON6500_1_0_0"
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 0 -2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 3.175) (xy 0.762 2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 2.54) (xy 0.762 1.905)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 2.54) (xy 3.81 2.54)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 0.762) (xy 0.762 0)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 0) (xy 0.762 -0.762)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 0) (xy 2.54 0)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 -1.905) (xy 0.762 -3.175)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.016 0) (xy 2.032 0.762) (xy 2.032 -0.762) (xy 1.016 0)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(circle
-					(center 2.54 2.54)
-					(radius 0.3592)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 0) (xy 2.54 -2.54)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.54 -2.54)
-					(radius 0.3592)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.302 0.508) (xy 3.048 0.254)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.81 2.54) (xy 3.81 0.508)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.81 0.508) (xy 3.302 0.508)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.81 0.508) (xy 3.81 -2.54)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.81 0.508) (xy 3.302 -0.254) (xy 4.318 -0.254) (xy 3.81 0.508)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.81 -2.54) (xy 0.762 -2.54)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 4.318 0.508) (xy 3.81 0.508)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 4.572 0.762) (xy 4.318 0.508)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -2.54 -2.54 0)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "5_8"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 -5.08 90)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 -5.08 90)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 -5.08 90)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "AON7407:AON7407"
 			(pin_names
 				(offset 1.016)
@@ -3149,16 +2724,6 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "Does this need VDDA?"
-		(exclude_from_sim no)
-		(at 170.18 86.36 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "6c5b6d6d-4e2f-44e7-8595-b33bd7b25258")
-	)
 	(text "To\nMicrocontroller"
 		(exclude_from_sim no)
 		(at 80.01 147.32 0)
@@ -3169,17 +2734,7 @@
 		)
 		(uuid "732624f4-326f-497e-848c-0cec65794afb")
 	)
-	(text "Doesn't go off sheet, so changed to supply pin\n"
-		(exclude_from_sim no)
-		(at 41.91 82.55 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "80ecb80e-d7cf-4ba9-9214-f9660d46357f")
-	)
-	(text "Power in from host\nVoltage range?\nCurrent range?"
+	(text "Power in from host\n24V/4A"
 		(exclude_from_sim no)
 		(at 22.86 35.56 0)
 		(effects
@@ -3189,7 +2744,7 @@
 		)
 		(uuid "bab6ba48-c462-4691-a1d1-62eb3063809d")
 	)
-	(text "To the cells\nVoltage range?\nCurrent range?"
+	(text "To the cells"
 		(exclude_from_sim no)
 		(at 231.14 73.66 0)
 		(effects
@@ -3199,21 +2754,17 @@
 		)
 		(uuid "d86cf382-329f-45ed-80c4-61df25be82e9")
 	)
-	(text "Vsys:\nThe voltage being delivered to an external \nVoltage/Amperage:\nUser Dependent"
-		(exclude_from_sim no)
-		(at 236.22 20.32 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "e6bfe401-9010-41c2-8e60-c92bce6cfda9")
-	)
 	(junction
 		(at 45.72 35.56)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "02c0ce5f-2252-485d-a3ee-f0610f201348")
+	)
+	(junction
+		(at 82.55 35.56)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "04559fe3-bc2b-49b7-a3f3-96fbf35ccd05")
 	)
 	(junction
 		(at 119.38 132.08)
@@ -3264,12 +2815,6 @@
 		(uuid "39de0875-e92d-408c-9a2d-137e29897d10")
 	)
 	(junction
-		(at 80.01 35.56)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4c6a8053-1265-4fad-92d7-5b2e00e65874")
-	)
-	(junction
 		(at 199.39 19.05)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3292,12 +2837,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "662afbdb-9c49-4c63-ae47-23fe11901814")
-	)
-	(junction
-		(at 85.09 35.56)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "680816e8-78d0-4618-a2e2-2e5c403a37b2")
 	)
 	(junction
 		(at 58.42 35.56)
@@ -3424,12 +2963,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ba2ab915-1bd3-461e-9f39-b49c92631d2e")
-	)
-	(junction
-		(at 78.74 81.28)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d24a81de-979f-4762-9b53-ab8c5e9204e8")
 	)
 	(junction
 		(at 111.76 35.56)
@@ -3676,16 +3209,6 @@
 			(type default)
 		)
 		(uuid "23a5488c-4010-4022-8d6e-f06f9ae1c1b7")
-	)
-	(wire
-		(pts
-			(xy 80.01 35.56) (xy 85.09 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "260bd008-9d8e-43c7-9796-3ea97c4688a9")
 	)
 	(wire
 		(pts
@@ -3989,7 +3512,7 @@
 	)
 	(wire
 		(pts
-			(xy 80.01 35.56) (xy 80.01 38.1)
+			(xy 82.55 35.56) (xy 82.55 38.1)
 		)
 		(stroke
 			(width 0)
@@ -4059,16 +3582,6 @@
 	)
 	(wire
 		(pts
-			(xy 72.39 81.28) (xy 71.12 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "62d30934-e09a-4667-883d-15f50a9d5d91")
-	)
-	(wire
-		(pts
 			(xy 138.43 35.56) (xy 148.59 35.56)
 		)
 		(stroke
@@ -4096,16 +3609,6 @@
 			(type default)
 		)
 		(uuid "651cf66a-dd7c-4679-8b42-de3ec5193e1e")
-	)
-	(wire
-		(pts
-			(xy 77.47 81.28) (xy 78.74 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "65e2ab19-42ed-4061-8106-fafe85460104")
 	)
 	(wire
 		(pts
@@ -4229,6 +3732,16 @@
 	)
 	(wire
 		(pts
+			(xy 82.55 35.56) (xy 87.63 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "71405eb5-d8cf-430c-a256-0026b3667cb2")
+	)
+	(wire
+		(pts
 			(xy 142.24 125.73) (xy 142.24 127)
 		)
 		(stroke
@@ -4286,16 +3799,6 @@
 			(type default)
 		)
 		(uuid "75fac932-5cfb-48c5-bb28-1c06f2d1d983")
-	)
-	(wire
-		(pts
-			(xy 85.09 35.56) (xy 85.09 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7c9bd1c7-731f-444f-8e33-8b0352b21d68")
 	)
 	(wire
 		(pts
@@ -4519,7 +4022,7 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 35.56) (xy 80.01 35.56)
+			(xy 74.93 35.56) (xy 82.55 35.56)
 		)
 		(stroke
 			(width 0)
@@ -4799,16 +4302,6 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 35.56) (xy 87.63 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ca544aec-08cd-4d54-8658-76ddf839249e")
-	)
-	(wire
-		(pts
 			(xy 134.62 35.56) (xy 134.62 54.61)
 		)
 		(stroke
@@ -5079,7 +4572,7 @@
 	)
 	(wire
 		(pts
-			(xy 80.01 43.18) (xy 80.01 44.45)
+			(xy 82.55 43.18) (xy 82.55 44.45)
 		)
 		(stroke
 			(width 0)
@@ -5156,16 +4649,6 @@
 			(type default)
 		)
 		(uuid "f86bff1e-bf93-49cc-a0db-3e7a0af8e668")
-	)
-	(wire
-		(pts
-			(xy 85.09 43.18) (xy 85.09 44.45)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f9e1a778-4de6-4e41-b91d-d5827fa00e9f")
 	)
 	(wire
 		(pts
@@ -5341,16 +4824,6 @@
 				(hide yes)
 			)
 		)
-		(property "MF" "Texas Instruments"
-			(at 123.19 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" "0.8 mm"
 			(at 123.19 88.9 0)
 			(effects
@@ -5421,16 +4894,6 @@
 				(hide yes)
 			)
 		)
-		(property "MP" "BQ25730RSNR"
-			(at 123.19 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
 		(property "Description_1" "I²C 1-5 cell NVDC buck-boost battery charge controller with power path and USB-C® PD OTG"
 			(at 123.19 88.9 0)
 			(effects
@@ -5468,6 +4931,24 @@
 					(size 1.27 1.27)
 				)
 				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MFR" "Texas Instruments"
+			(at 123.19 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "BQ25730RSNR"
+			(at 123.19 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 				(hide yes)
 			)
 		)
@@ -5603,7 +5084,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 200.66 40.64 0)
 			(effects
 				(font
@@ -5622,6 +5103,24 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 200.66 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR" "SAMSUNG"
+			(at 200.66 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CL31A106KBHNNNE"
 			(at 200.66 40.64 0)
 			(effects
 				(font
@@ -5672,7 +5171,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 82.55 110.49 0)
 			(effects
 				(font
@@ -5741,7 +5240,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 165.1 116.84 0)
 			(effects
 				(font
@@ -5914,127 +5413,6 @@
 		)
 	)
 	(symbol
-		(lib_name "AON6500_1")
-		(lib_id "AON6500:AON6500")
-		(at 153.67 38.1 270)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "10bb653f-c1ec-44de-a4a5-4287a512e103")
-		(property "Reference" "Q4"
-			(at 157.48 39.37 0)
-			(effects
-				(font
-					(size 0.889 0.889)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "AON6500"
-			(at 151.13 33.02 90)
-			(effects
-				(font
-					(size 0.889 0.889)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "AON6500:TRANS_AON6500"
-			(at 153.67 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 153.67 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 153.67 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "PARTREV" "F"
-			(at 153.67 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" "Alpha and Omega"
-			(at 153.67 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" "1 mm"
-			(at 153.67 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "STANDARD" "Manufacturer Recommendations"
-			(at 153.67 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(pin "4"
-			(uuid "8a77ae83-5ff1-4ad2-ac0a-66822711c844")
-		)
-		(pin "5_8"
-			(uuid "30435404-c367-49e5-a501-d22add7cc80a")
-		)
-		(pin "1"
-			(uuid "d9f8dc50-038a-47bb-aaa2-2a0abdb53c3c")
-		)
-		(pin "2"
-			(uuid "b4825767-ffb2-4ae2-bc75-dd99016a509e")
-		)
-		(pin "3"
-			(uuid "f93cf85f-5e32-4844-8031-d614e1651881")
-		)
-		(instances
-			(project "Battery Management System"
-				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/70546578-20d6-4cac-ac3f-606caa4a96bc"
-					(reference "Q4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 199.39 25.4 0)
 		(unit 1)
@@ -6166,7 +5544,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 80.01 44.45 0)
+		(at 82.55 44.45 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6174,7 +5552,7 @@
 		(dnp no)
 		(uuid "185f72df-e7bd-465b-8822-af4402feffaf")
 		(property "Reference" "#PWR034"
-			(at 80.01 50.8 0)
+			(at 82.55 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6183,7 +5561,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 80.01 48.26 0)
+			(at 82.55 48.26 0)
 			(effects
 				(font
 					(size 0.889 0.889)
@@ -6191,7 +5569,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 80.01 44.45 0)
+			(at 82.55 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6200,7 +5578,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 80.01 44.45 0)
+			(at 82.55 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6209,7 +5587,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 80.01 44.45 0)
+			(at 82.55 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6256,7 +5634,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 190.5 102.87 0)
 			(effects
 				(font
@@ -6326,7 +5704,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 74.93 53.34 0)
 			(effects
 				(font
@@ -6369,71 +5747,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 85.09 44.45 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "1f8edf2b-5263-4658-8129-9f736aea5e80")
-		(property "Reference" "#PWR035"
-			(at 85.09 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 85.09 48.26 0)
-			(effects
-				(font
-					(size 0.889 0.889)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 85.09 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 85.09 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 85.09 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "dca4488c-e5a4-43fb-a8cc-c1625104775c")
-		)
-		(instances
-			(project "Battery Management System"
-				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/70546578-20d6-4cac-ac3f-606caa4a96bc"
-					(reference "#PWR035")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R_Small")
 		(at 195.58 57.15 180)
 		(unit 1)
@@ -6460,7 +5773,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 195.58 57.15 0)
 			(effects
 				(font
@@ -6529,7 +5842,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 67.31 53.34 0)
 			(effects
 				(font
@@ -6598,7 +5911,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 78.74 101.6 0)
 			(effects
 				(font
@@ -6667,7 +5980,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 78.74 85.09 0)
 			(effects
 				(font
@@ -6786,7 +6099,7 @@
 		(dnp no)
 		(uuid "2884fe53-a2dc-4ae4-a5a1-d6152bbc6462")
 		(property "Reference" "Q3"
-			(at 132.08 44.45 90)
+			(at 142.24 44.45 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7050,7 +6363,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 128.27 45.72 0)
 			(effects
 				(font
@@ -7119,7 +6432,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 82.55 90.17 0)
 			(effects
 				(font
@@ -7179,7 +6492,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.2m"
+		(property "Value" "2.2"
 			(at 46.99 39.37 0)
 			(effects
 				(font
@@ -7188,7 +6501,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 45.72 39.37 0)
 			(effects
 				(font
@@ -7257,7 +6570,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 184.15 49.53 0)
 			(effects
 				(font
@@ -7456,7 +6769,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 190.5 95.25 0)
 			(effects
 				(font
@@ -7525,7 +6838,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 63.5 66.04 0)
 			(effects
 				(font
@@ -7627,6 +6940,125 @@
 			(project "Battery Management System"
 				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/70546578-20d6-4cac-ac3f-606caa4a96bc"
 					(reference "#PWR064")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "AON7408_1")
+		(lib_id "AON7408:AON7408")
+		(at 153.67 38.1 270)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4d4babf4-edee-4f6b-90bc-8e9438922d02")
+		(property "Reference" "Q4"
+			(at 153.67 29.21 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "AON7408"
+			(at 153.67 33.02 90)
+			(effects
+				(font
+					(size 0.889 0.889)
+				)
+			)
+		)
+		(property "Footprint" "AON7408:TRANS_AON7408"
+			(at 153.67 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 153.67 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 153.67 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" "G"
+			(at 153.67 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 153.67 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" "0.90 mm"
+			(at 153.67 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "Alpha & Omega Semiconductor"
+			(at 153.67 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "843bf7c2-db5a-4336-8805-d3cd48660e27")
+		)
+		(pin "9"
+			(uuid "1904fd10-f5b7-4b42-a22e-3b6a28cfab73")
+		)
+		(pin "2"
+			(uuid "27665b8b-55a1-4dc8-9321-a725241fea10")
+		)
+		(pin "1"
+			(uuid "aaf7793d-9a47-45da-ac74-c652fb26750b")
+		)
+		(pin "4"
+			(uuid "bd1dbf3a-0491-495e-b37b-e7feb8b68758")
+		)
+		(instances
+			(project "Battery_Management_System"
+				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/70546578-20d6-4cac-ac3f-606caa4a96bc"
+					(reference "Q4")
 					(unit 1)
 				)
 			)
@@ -7764,7 +7196,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 80.01 40.64 0)
+		(at 82.55 40.64 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7772,7 +7204,7 @@
 		(dnp no)
 		(uuid "4ebea0a3-8193-4281-9ae8-270e22369fbb")
 		(property "Reference" "C9"
-			(at 80.01 39.37 0)
+			(at 82.55 39.37 0)
 			(effects
 				(font
 					(size 0.889 0.889)
@@ -7781,7 +7213,7 @@
 			)
 		)
 		(property "Value" "10nF"
-			(at 80.01 41.91 0)
+			(at 82.55 41.91 0)
 			(effects
 				(font
 					(size 0.889 0.889)
@@ -7789,8 +7221,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
-			(at 80.01 40.64 0)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 82.55 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7799,7 +7231,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 80.01 40.64 0)
+			(at 82.55 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7808,7 +7240,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 80.01 40.64 0)
+			(at 82.55 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8028,75 +7460,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R_Small")
-		(at 74.93 81.28 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "5a08eb3b-c617-4c23-8e03-3112b93b9975")
-		(property "Reference" "R40"
-			(at 76.2 80.01 90)
-			(effects
-				(font
-					(size 0.762 0.762)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10"
-			(at 76.2 81.28 90)
-			(effects
-				(font
-					(size 0.889 0.889)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
-			(at 74.93 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 74.93 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, small symbol"
-			(at 74.93 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "eeb9ee35-d7dc-4ed4-a821-55774b0e7860")
-		)
-		(pin "2"
-			(uuid "fe5b9a5f-d695-468e-bf3e-8c6b534969af")
-		)
-		(instances
-			(project "Battery Management System"
-				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/70546578-20d6-4cac-ac3f-606caa4a96bc"
-					(reference "R40")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C_Small")
 		(at 71.12 62.23 90)
 		(unit 1)
@@ -8123,7 +7486,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 71.12 62.23 0)
 			(effects
 				(font
@@ -8192,7 +7555,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 71.12 35.56 0)
 			(effects
 				(font
@@ -8261,7 +7624,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 165.1 40.64 0)
 			(effects
 				(font
@@ -8280,6 +7643,24 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 165.1 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR" "SAMSUNG"
+			(at 165.1 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CL31A106KBHNNNE"
 			(at 165.1 40.64 0)
 			(effects
 				(font
@@ -8398,7 +7779,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 73.66 110.49 0)
 			(effects
 				(font
@@ -8467,7 +7848,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 80.01 62.23 0)
 			(effects
 				(font
@@ -8604,7 +7985,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 118.11 45.72 0)
 			(effects
 				(font
@@ -8673,7 +8054,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 182.88 116.84 0)
 			(effects
 				(font
@@ -8742,7 +8123,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 83.82 118.11 0)
 			(effects
 				(font
@@ -8811,7 +8192,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 54.61 43.18 0)
 			(effects
 				(font
@@ -8830,6 +8211,24 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 54.61 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR" "SAMSUNG"
+			(at 54.61 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CL31A106KBHNNNE"
 			(at 54.61 43.18 0)
 			(effects
 				(font
@@ -8945,7 +8344,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 162.56 90.17 0)
 			(effects
 				(font
@@ -9107,16 +8506,6 @@
 				(hide yes)
 			)
 		)
-		(property "MF" "Alpha & Omega Semiconductor"
-			(at 176.53 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" "0.9mm"
 			(at 176.53 38.1 0)
 			(effects
@@ -9187,16 +8576,6 @@
 				(hide yes)
 			)
 		)
-		(property "MP" "AON7407"
-			(at 176.53 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
 		(property "Description_1" "P-Channel 20 V 14.5A (Ta), 40A (Tc) 3.1W (Ta), 29W (Tc) Surface Mount 8-DFN-EP (3x3)"
 			(at 176.53 38.1 0)
 			(effects
@@ -9224,6 +8603,24 @@
 					(size 1.27 1.27)
 				)
 				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MFR" "Alpha & Omega Semiconductor"
+			(at 176.53 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "AON7407"
+			(at 176.53 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 				(hide yes)
 			)
 		)
@@ -9278,7 +8675,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 82.55 99.06 0)
 			(effects
 				(font
@@ -9465,7 +8862,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 191.77 35.56 0)
 			(effects
 				(font
@@ -9534,7 +8931,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 101.6 132.08 0)
 			(effects
 				(font
@@ -9669,7 +9066,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 199.39 22.86 0)
 			(effects
 				(font
@@ -9738,7 +9135,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 194.31 22.86 0)
 			(effects
 				(font
@@ -9807,7 +9204,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 85.09 83.82 0)
 			(effects
 				(font
@@ -10006,7 +9403,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 205.74 40.64 0)
 			(effects
 				(font
@@ -10025,6 +9422,24 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 205.74 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR" "SAMSUNG"
+			(at 205.74 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CL31A106KBHNNNE"
 			(at 205.74 40.64 0)
 			(effects
 				(font
@@ -10103,16 +9518,6 @@
 				(hide yes)
 			)
 		)
-		(property "MF" "Analog Devices"
-			(at 228.6 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" "0.80"
 			(at 228.6 44.45 0)
 			(effects
@@ -10183,16 +9588,6 @@
 				(hide yes)
 			)
 		)
-		(property "MP" "LTC2943CDD#PBF"
-			(at 228.6 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
 		(property "Description_1" "Multicell Battery Gas Gauge with Temperature, Voltage and Current Measurement"
 			(at 228.6 44.45 0)
 			(effects
@@ -10220,6 +9615,24 @@
 					(size 1.27 1.27)
 				)
 				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MFR" "Analog Devices"
+			(at 228.6 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "LTC2943CDD#PBF"
+			(at 228.6 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 				(hide yes)
 			)
 		)
@@ -10260,34 +9673,43 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C_Small")
-		(at 85.09 40.64 0)
+		(lib_name "AON7408_1")
+		(lib_id "AON7408:AON7408")
+		(at 105.41 44.45 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "bd822ef0-3c19-478c-9566-267d5644da88")
-		(property "Reference" "C7"
-			(at 85.09 39.37 0)
+		(uuid "bba4e1d3-9da9-41e8-ba29-e0e2cd59a1e4")
+		(property "Reference" "Q2"
+			(at 104.14 43.18 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "AON7408"
+			(at 110.49 44.45 90)
 			(effects
 				(font
 					(size 0.889 0.889)
 				)
-				(justify left)
 			)
 		)
-		(property "Value" "1nF"
-			(at 85.09 41.91 0)
+		(property "Footprint" "AON7408:TRANS_AON7408"
+			(at 105.41 44.45 0)
 			(effects
 				(font
-					(size 0.889 0.889)
+					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify bottom)
+				(hide yes)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
-			(at 85.09 40.64 0)
+		(property "Datasheet" ""
+			(at 105.41 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10295,8 +9717,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 85.09 40.64 0)
+		(property "Description" ""
+			(at 105.41 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10304,25 +9726,65 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 85.09 40.64 0)
+		(property "PARTREV" "G"
+			(at 105.41 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify bottom)
 				(hide yes)
 			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 105.41 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" "0.90 mm"
+			(at 105.41 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "Alpha & Omega Semiconductor"
+			(at 105.41 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "535154c3-e894-4f82-9474-6a011b35c160")
+		)
+		(pin "9"
+			(uuid "455a1282-80e9-4e37-92af-a9e8a32ee7ac")
 		)
 		(pin "2"
-			(uuid "0e85b0ae-f748-4a8f-896f-53565b54af4a")
+			(uuid "2bd2b5aa-81c1-42c5-b89b-d76fc38c40cb")
 		)
 		(pin "1"
-			(uuid "664af59c-0b73-4067-a83d-0fb5c12fdbfd")
+			(uuid "9372f2d4-c25a-4f42-b33b-8ebf97092565")
+		)
+		(pin "4"
+			(uuid "8e3bb0ca-9d91-47b8-9841-83780ca2b977")
 		)
 		(instances
-			(project "Battery Management System"
+			(project "Battery_Management_System"
 				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/70546578-20d6-4cac-ac3f-606caa4a96bc"
-					(reference "C7")
+					(reference "Q2")
 					(unit 1)
 				)
 			)
@@ -10355,7 +9817,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 171.45 116.84 0)
 			(effects
 				(font
@@ -10424,7 +9886,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 73.66 99.06 0)
 			(effects
 				(font
@@ -10688,7 +10150,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 191.77 41.91 0)
 			(effects
 				(font
@@ -10757,7 +10219,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 62.23 43.18 0)
 			(effects
 				(font
@@ -10776,6 +10238,24 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 62.23 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR" "SAMSUNG"
+			(at 62.23 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CL31A106KBHNNNE"
 			(at 62.23 43.18 0)
 			(effects
 				(font
@@ -10891,7 +10371,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 45.72 45.72 0)
 			(effects
 				(font
@@ -10999,126 +10479,6 @@
 		)
 	)
 	(symbol
-		(lib_name "AON6500_1")
-		(lib_id "AON6500:AON6500")
-		(at 105.41 44.45 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "ead1d97d-3373-47ef-8562-ae5f95b2970f")
-		(property "Reference" "Q2"
-			(at 104.14 40.64 0)
-			(effects
-				(font
-					(size 0.889 0.889)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "AON6500"
-			(at 110.49 46.99 90)
-			(effects
-				(font
-					(size 0.889 0.889)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "AON6500:TRANS_AON6500"
-			(at 105.41 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 105.41 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 105.41 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "PARTREV" "F"
-			(at 105.41 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" "Alpha and Omega"
-			(at 105.41 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" "1 mm"
-			(at 105.41 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "STANDARD" "Manufacturer Recommendations"
-			(at 105.41 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(pin "4"
-			(uuid "c98cf03c-6f64-4932-a1b8-426fdc33d391")
-		)
-		(pin "5_8"
-			(uuid "1f4f30bb-fd77-427a-be94-16af0fd169e1")
-		)
-		(pin "1"
-			(uuid "c9a09397-92b9-4d40-aad3-4571242f448d")
-		)
-		(pin "2"
-			(uuid "6c451c66-2e97-43bd-9eda-608c073c6e14")
-		)
-		(pin "3"
-			(uuid "bd6535c8-01e6-4db9-9323-aee69ed25ac2")
-		)
-		(instances
-			(project ""
-				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/70546578-20d6-4cac-ac3f-606caa4a96bc"
-					(reference "Q2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C_Small")
 		(at 78.74 107.95 90)
 		(unit 1)
@@ -11145,7 +10505,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 78.74 107.95 0)
 			(effects
 				(font
@@ -11279,7 +10639,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 187.96 57.15 0)
 			(effects
 				(font
@@ -11478,7 +10838,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 177.8 116.84 0)
 			(effects
 				(font
@@ -11547,7 +10907,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 170.18 40.64 0)
 			(effects
 				(font
@@ -11566,6 +10926,24 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 170.18 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR" "SAMSUNG"
+			(at 170.18 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CL31A106KBHNNNE"
 			(at 170.18 40.64 0)
 			(effects
 				(font

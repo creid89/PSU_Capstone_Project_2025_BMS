@@ -1166,16 +1166,6 @@
 		)
 		(uuid "500d1c11-c248-4737-b123-bb5acde967f4")
 	)
-	(text "User MUST place batteries starting at Cell 1.\nUnused cells MUST be bypassed on carrier PCB.\n"
-		(exclude_from_sim no)
-		(at 232.41 123.19 0)
-		(effects
-			(font
-				(size 1.778 1.778)
-			)
-		)
-		(uuid "542dbc99-78fd-4b2a-a9b2-9f4d43d8f6ad")
-	)
 	(text "SYSTEM OVERVIEW HERE PLZ"
 		(exclude_from_sim no)
 		(at 106.68 25.4 0)
@@ -1225,16 +1215,6 @@
 			)
 		)
 		(uuid "b461102d-0e53-4541-8c71-91ac2f3ce261")
-	)
-	(text "So you're going to use castellated vias, right? \nHow do you do those? A footprint with multiple connector icons?"
-		(exclude_from_sim no)
-		(at 121.92 156.21 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "db7a5c27-aec2-4544-83f7-c459e3181f16")
 	)
 	(junction
 		(at 138.43 81.28)
@@ -1925,7 +1905,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x03_P1.00mm_Vertical"
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
 			(at 62.23 87.63 0)
 			(effects
 				(font
@@ -1997,7 +1977,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x06_P1.00mm_Vertical"
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical"
 			(at 60.96 105.41 0)
 			(effects
 				(font
@@ -2274,7 +2254,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x02_P1.00mm_Vertical"
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
 			(at 190.5 55.88 0)
 			(effects
 				(font
@@ -2343,7 +2323,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x05_P1.00mm_Vertical"
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical"
 			(at 189.23 120.65 0)
 			(effects
 				(font
@@ -2422,7 +2402,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x02_P1.00mm_Vertical"
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
 			(at 63.5 59.69 0)
 			(effects
 				(font
