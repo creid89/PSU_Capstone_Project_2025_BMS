@@ -2839,6 +2839,12 @@
 		(uuid "662afbdb-9c49-4c63-ae47-23fe11901814")
 	)
 	(junction
+		(at 78.74 81.28)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "685ccf17-1344-43c0-b5a5-a013c8287582")
+	)
+	(junction
 		(at 58.42 35.56)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3802,6 +3808,16 @@
 	)
 	(wire
 		(pts
+			(xy 73.66 81.28) (xy 78.74 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7b35020d-e081-4309-91a6-20ea73b8a757")
+	)
+	(wire
+		(pts
 			(xy 85.09 86.36) (xy 85.09 87.63)
 		)
 		(stroke
@@ -4669,6 +4685,28 @@
 			(type default)
 		)
 		(uuid "fe0e411f-4bd4-4b4a-93be-18a095f58187")
+	)
+	(global_label "VDDA"
+		(shape output)
+		(at 73.66 81.28 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "eb4fe2f5-8b80-4b33-9018-9c1437f5810a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 65.9576 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
 	)
 	(hierarchical_label "BATT"
 		(shape output)
@@ -5704,7 +5742,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 74.93 53.34 0)
 			(effects
 				(font
@@ -5842,7 +5880,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 67.31 53.34 0)
 			(effects
 				(font
@@ -6501,7 +6539,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 45.72 39.37 0)
 			(effects
 				(font
@@ -9066,7 +9104,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 199.39 22.86 0)
 			(effects
 				(font
@@ -9135,7 +9173,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 194.31 22.86 0)
 			(effects
 				(font
