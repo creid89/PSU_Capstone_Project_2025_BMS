@@ -347,6 +347,113 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Connector:TestPoint_Small"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.762)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "TP"
+				(at 0 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint_Small"
+				(at 0 2.032 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "TestPoint_Small_0_1"
+				(circle
+					(center 0 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_Small_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 0)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Connector_Generic:Conn_01x02"
 			(pin_names
 				(offset 1.016)
@@ -1156,6 +1263,12 @@
 		(uuid "4e341fe1-0ee9-4cae-94c3-735a95073ccb")
 	)
 	(junction
+		(at 82.55 59.69)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "65d9f577-c9d6-472d-bc86-9c08538e28ee")
+	)
+	(junction
 		(at 146.05 87.63)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1241,7 +1354,7 @@
 	)
 	(wire
 		(pts
-			(xy 68.58 59.69) (xy 101.6 59.69)
+			(xy 68.58 59.69) (xy 82.55 59.69)
 		)
 		(stroke
 			(width 0)
@@ -1748,6 +1861,16 @@
 			(type default)
 		)
 		(uuid "e13b82f7-aeca-413e-8b8b-7610e67e8299")
+	)
+	(wire
+		(pts
+			(xy 82.55 59.69) (xy 101.6 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ed9dfc4b-87bd-4d9c-853a-ad000e19fefb")
 	)
 	(wire
 		(pts
@@ -2777,6 +2900,74 @@
 			(project "Battery_Management_System"
 				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f"
 					(reference "J9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Small")
+		(at 82.55 59.69 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ebf36c11-2341-4785-9982-4bce62b45f2e")
+		(property "Reference" "TP1"
+			(at 83.82 58.4199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint_Small"
+			(at 83.82 60.9599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm"
+			(at 87.63 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 87.63 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 82.55 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e369197e-94dd-49e6-8331-f715532b14db")
+		)
+		(instances
+			(project ""
+				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f"
+					(reference "TP1")
 					(unit 1)
 				)
 			)
