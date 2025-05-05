@@ -1172,12 +1172,12 @@
 		(uuid "03d481e1-4cd8-4c7f-8350-76d7d89d1920")
 	)
 	(no_connect
-		(at 66.04 100.33)
-		(uuid "23922ecd-0bc5-42f2-a2b1-b5451f31c684")
-	)
-	(no_connect
 		(at 66.04 110.49)
 		(uuid "3d235de4-5cc4-4daa-8cc0-f85d422d80f9")
+	)
+	(no_connect
+		(at 66.04 100.33)
+		(uuid "fdfb51f0-8fd5-495a-8c04-52c97f80a9e6")
 	)
 	(wire
 		(pts
