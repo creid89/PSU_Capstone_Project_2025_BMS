@@ -279,12 +279,12 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "INA260_2"
+		(symbol "Sensor_Energy:INA219BxD"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "U8"
-				(at 2.032 2.794 0)
+			(property "Reference" "U2"
+				(at -1.27 3.048 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -292,8 +292,8 @@
 					(justify left)
 				)
 			)
-			(property "Value" "INA260"
-				(at 2.032 0.254 0)
+			(property "Value" "INA219BxD"
+				(at -5.334 0.508 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -301,8 +301,8 @@
 					(justify left)
 				)
 			)
-			(property "Footprint" "Package_SO:TSSOP-16_4.4x5mm_P0.65mm"
-				(at 0 -15.24 0)
+			(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+				(at 20.32 -8.89 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -310,8 +310,8 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/ina260.pdf"
-				(at 0 -2.54 0)
+			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/ina219.pdf"
+				(at 8.89 -2.54 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -319,7 +319,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Current/power/voltage monitor with Integrated 2mΩ Shunt Resistor, 2.7V - 5.5V, I2C, TSSOP-16"
+			(property "Description" "Zero-Drift, HighAccuracy, Bidirectional Current/Power Monitor (0-26V) With I2C Interface, SOIC-8"
 				(at 0 0 0)
 				(effects
 					(font
@@ -328,7 +328,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "Current/power/voltage monitor"
+			(property "ki_keywords" "ADC I2C 16-Bit Oversampling Current Shunt"
 				(at 0 0 0)
 				(effects
 					(font
@@ -337,7 +337,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "TSSOP*4.4x5mm*P0.65mm*"
+			(property "ki_fp_filters" "SOIC*3.9x4.9mm*P1.27mm*"
 				(at 0 0 0)
 				(effects
 					(font
@@ -346,10 +346,10 @@
 					(hide yes)
 				)
 			)
-			(symbol "INA260_2_0_1"
+			(symbol "INA219BxD_0_1"
 				(rectangle
-					(start -8.89 10.16)
-					(end 16.51 -7.62)
+					(start -10.16 8.89)
+					(end 10.16 -8.89)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -359,173 +359,11 @@
 					)
 				)
 			)
-			(symbol "INA260_2_1_1"
-				(pin passive line
-					(at -11.43 7.62 0)
-					(length 2.54)
-					(name "IN+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -11.43 5.08 0)
-					(length 2.54)
-					(name "VBUS"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "12"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -11.43 -5.08 0)
-					(length 2.54)
-					(name "IN-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "14"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 3.81 12.7 270)
-					(length 2.54)
-					(name "VS"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 3.81 -10.16 90)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin open_collector line
-					(at 19.05 7.62 180)
-					(length 2.54)
-					(name "ALERT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
+			(symbol "INA219BxD_1_1"
 				(pin input line
-					(at 19.05 3.81 180)
+					(at -12.7 6.35 0)
 					(length 2.54)
 					(name "SCL"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 19.05 1.27 180)
-					(length 2.54)
-					(name "SDA"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 19.05 -2.54 180)
-					(length 2.54)
-					(name "A0"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 19.05 -5.08 180)
-					(length 2.54)
-					(name "A1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -540,218 +378,8 @@
 						)
 					)
 				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "INA260_3"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "U7"
-				(at -3.048 0.762 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "INA260"
-				(at -3.048 -1.778 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "Package_SO:TSSOP-16_4.4x5mm_P0.65mm"
-				(at 0 -15.24 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/ina260.pdf"
-				(at 0 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Current/power/voltage monitor with Integrated 2mΩ Shunt Resistor, 2.7V - 5.5V, I2C, TSSOP-16"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "Current/power/voltage monitor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "TSSOP*4.4x5mm*P0.65mm*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "INA260_3_0_1"
-				(rectangle
-					(start -12.7 7.62)
-					(end 12.7 -10.16)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-			)
-			(symbol "INA260_3_1_1"
-				(pin passive line
-					(at -15.24 5.08 0)
-					(length 2.54)
-					(name "IN+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -15.24 2.54 0)
-					(length 2.54)
-					(name "VBUS"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "12"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -15.24 -7.62 0)
-					(length 2.54)
-					(name "IN-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "14"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 0 10.16 270)
-					(length 2.54)
-					(name "VS"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 0 -12.7 90)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin open_collector line
-					(at 15.24 5.08 180)
-					(length 2.54)
-					(name "ALERT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 15.24 1.27 180)
-					(length 2.54)
-					(name "SCL"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 				(pin bidirectional line
-					(at 15.24 -1.27 180)
+					(at -12.7 3.81 0)
 					(length 2.54)
 					(name "SDA"
 						(effects
@@ -760,7 +388,7 @@
 							)
 						)
 					)
-					(number "8"
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -769,7 +397,7 @@
 					)
 				)
 				(pin input line
-					(at 15.24 -5.08 180)
+					(at -12.7 -3.81 0)
 					(length 2.54)
 					(name "A0"
 						(effects
@@ -778,7 +406,7 @@
 							)
 						)
 					)
-					(number "5"
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -787,7 +415,7 @@
 					)
 				)
 				(pin input line
-					(at 15.24 -7.62 180)
+					(at -12.7 -6.35 0)
 					(length 2.54)
 					(name "A1"
 						(effects
@@ -796,145 +424,7 @@
 							)
 						)
 					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Sensor:INA260"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "U6"
-				(at -2.54 2.286 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "INA260"
-				(at -2.54 -0.254 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "Package_SO:TSSOP-16_4.4x5mm_P0.65mm"
-				(at 0 -15.24 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/ina260.pdf"
-				(at 0 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Current/power/voltage monitor with Integrated 2mΩ Shunt Resistor, 2.7V - 5.5V, I2C, TSSOP-16"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "Current/power/voltage monitor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "TSSOP*4.4x5mm*P0.65mm*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "INA260_0_1"
-				(rectangle
-					(start -12.7 8.89)
-					(end 12.7 -8.89)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-			)
-			(symbol "INA260_1_1"
-				(pin passive line
-					(at -15.24 6.35 0)
-					(length 2.54)
-					(name "IN+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
 					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -15.24 3.81 0)
-					(length 2.54)
-					(name "VBUS"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "12"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -15.24 -6.35 0)
-					(length 2.54)
-					(name "IN-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "14"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -952,7 +442,7 @@
 							)
 						)
 					)
-					(number "10"
+					(number "5"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -978,46 +468,10 @@
 						)
 					)
 				)
-				(pin open_collector line
-					(at 15.24 6.35 180)
-					(length 2.54)
-					(name "ALERT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 				(pin input line
-					(at 15.24 2.54 180)
+					(at 12.7 6.35 180)
 					(length 2.54)
-					(name "SCL"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 15.24 0 180)
-					(length 2.54)
-					(name "SDA"
+					(name "IN+"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1033,34 +487,16 @@
 					)
 				)
 				(pin input line
-					(at 15.24 -3.81 180)
+					(at 12.7 -6.35 180)
 					(length 2.54)
-					(name "A0"
+					(name "IN-"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 15.24 -6.35 180)
-					(length 2.54)
-					(name "A1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
+					(number "7"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1924,16 +1360,6 @@
 		)
 		(uuid "3a013618-2992-43de-be09-c7223787b5c4")
 	)
-	(text "Use Alert?"
-		(exclude_from_sim no)
-		(at 29.21 147.32 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "66d1f192-26f5-4cc4-b8f7-ee8fa88e22b4")
-	)
 	(text "LTC chip does voltage, current"
 		(exclude_from_sim no)
 		(at 58.42 38.1 0)
@@ -1967,13 +1393,7 @@
 		(uuid "04e34c7a-659b-42ce-8f34-90dfc0fa900f")
 	)
 	(junction
-		(at 67.31 73.66)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0ee8b7a9-b4c5-412b-89b1-8a4cf5e1eba1")
-	)
-	(junction
-		(at 67.31 113.03)
+		(at 64.77 113.03)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "2a526b5b-be20-416b-907a-d9534fbd6765")
@@ -2025,12 +1445,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "85a8be45-6bdb-4684-b258-2001dd9a110f")
-	)
-	(junction
-		(at 67.31 149.86)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "868e26ca-5438-41fa-9c73-8d2e47fd2755")
 	)
 	(junction
 		(at 82.55 113.03)
@@ -2099,19 +1513,19 @@
 		(uuid "ba7df31b-2007-4752-9e15-f8c5bded39d9")
 	)
 	(junction
-		(at 67.31 82.55)
+		(at 64.77 82.55)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c19372c9-5d38-4674-ab90-b1184cd19b76")
 	)
 	(junction
-		(at 34.29 160.02)
+		(at 36.83 160.02)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d1420ec9-6e04-4f80-9573-bbc14a5bae36")
 	)
 	(junction
-		(at 67.31 147.32)
+		(at 64.77 147.32)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d8ca39f7-104f-4bb8-85c1-20f7c47d31b1")
@@ -2122,27 +1536,9 @@
 		(color 0 0 0 0)
 		(uuid "d8f9de07-eef6-4f57-ab98-c92b83d0bd80")
 	)
-	(junction
-		(at 67.31 111.76)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "dfa830ef-cb50-4aa7-a500-a5a2d5a082b3")
-	)
-	(no_connect
-		(at 35.56 109.22)
-		(uuid "111ecc34-1e88-428b-8b59-4ddcc7d74395")
-	)
-	(no_connect
-		(at 35.56 71.12)
-		(uuid "21b3d265-6166-4a99-8937-42421b16f0d9")
-	)
-	(no_connect
-		(at 35.56 147.32)
-		(uuid "fe40a0d3-9789-4b63-912f-aa2837081e12")
-	)
 	(wire
 		(pts
-			(xy 34.29 160.02) (xy 34.29 165.1)
+			(xy 36.83 160.02) (xy 36.83 165.1)
 		)
 		(stroke
 			(width 0)
@@ -2232,7 +1628,7 @@
 	)
 	(wire
 		(pts
-			(xy 34.29 119.38) (xy 35.56 119.38)
+			(xy 36.83 119.38) (xy 38.1 119.38)
 		)
 		(stroke
 			(width 0)
@@ -2252,7 +1648,7 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 109.22) (xy 66.04 109.22)
+			(xy 64.77 109.22) (xy 63.5 109.22)
 		)
 		(stroke
 			(width 0)
@@ -2272,7 +1668,7 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 113.03) (xy 82.55 113.03)
+			(xy 64.77 113.03) (xy 82.55 113.03)
 		)
 		(stroke
 			(width 0)
@@ -2292,7 +1688,7 @@
 	)
 	(wire
 		(pts
-			(xy 33.02 121.92) (xy 35.56 121.92)
+			(xy 35.56 121.92) (xy 38.1 121.92)
 		)
 		(stroke
 			(width 0)
@@ -2312,7 +1708,7 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 83.82) (xy 67.31 82.55)
+			(xy 64.77 83.82) (xy 64.77 82.55)
 		)
 		(stroke
 			(width 0)
@@ -2332,7 +1728,7 @@
 	)
 	(wire
 		(pts
-			(xy 66.04 121.92) (xy 67.31 121.92)
+			(xy 63.5 121.92) (xy 64.77 121.92)
 		)
 		(stroke
 			(width 0)
@@ -2342,7 +1738,7 @@
 	)
 	(wire
 		(pts
-			(xy 66.04 160.02) (xy 67.31 160.02)
+			(xy 63.5 160.02) (xy 64.77 160.02)
 		)
 		(stroke
 			(width 0)
@@ -2392,16 +1788,6 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 149.86) (xy 67.31 147.32)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2be3443d-b1c2-45e0-8d00-6a37184e30ae")
-	)
-	(wire
-		(pts
 			(xy 100.33 45.72) (xy 107.95 45.72)
 		)
 		(stroke
@@ -2412,7 +1798,7 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 111.76) (xy 67.31 109.22)
+			(xy 64.77 109.22) (xy 64.77 113.03)
 		)
 		(stroke
 			(width 0)
@@ -2422,7 +1808,7 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 147.32) (xy 82.55 147.32)
+			(xy 64.77 147.32) (xy 82.55 147.32)
 		)
 		(stroke
 			(width 0)
@@ -2452,7 +1838,7 @@
 	)
 	(wire
 		(pts
-			(xy 25.4 74.93) (xy 35.56 74.93)
+			(xy 27.94 71.12) (xy 38.1 71.12)
 		)
 		(stroke
 			(width 0)
@@ -2552,7 +1938,7 @@
 	)
 	(wire
 		(pts
-			(xy 25.4 153.67) (xy 35.56 153.67)
+			(xy 27.94 149.86) (xy 38.1 149.86)
 		)
 		(stroke
 			(width 0)
@@ -2562,7 +1948,7 @@
 	)
 	(wire
 		(pts
-			(xy 34.29 106.68) (xy 34.29 119.38)
+			(xy 36.83 106.68) (xy 36.83 119.38)
 		)
 		(stroke
 			(width 0)
@@ -2592,7 +1978,7 @@
 	)
 	(wire
 		(pts
-			(xy 66.04 147.32) (xy 67.31 147.32)
+			(xy 63.5 147.32) (xy 64.77 147.32)
 		)
 		(stroke
 			(width 0)
@@ -2632,7 +2018,7 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 157.48) (xy 34.29 157.48)
+			(xy 38.1 157.48) (xy 36.83 157.48)
 		)
 		(stroke
 			(width 0)
@@ -2672,7 +2058,7 @@
 	)
 	(wire
 		(pts
-			(xy 33.02 88.9) (xy 33.02 81.28)
+			(xy 35.56 88.9) (xy 35.56 81.28)
 		)
 		(stroke
 			(width 0)
@@ -2702,7 +2088,7 @@
 	)
 	(wire
 		(pts
-			(xy 33.02 127) (xy 33.02 121.92)
+			(xy 35.56 127) (xy 35.56 121.92)
 		)
 		(stroke
 			(width 0)
@@ -2712,23 +2098,13 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 83.82) (xy 34.29 83.82)
+			(xy 38.1 83.82) (xy 36.83 83.82)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "7e124bf7-a39e-472b-824a-a51a6172a75f")
-	)
-	(wire
-		(pts
-			(xy 66.04 149.86) (xy 67.31 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "805f2e44-0176-409c-80a3-eeb2826891d0")
 	)
 	(wire
 		(pts
@@ -2742,7 +2118,7 @@
 	)
 	(wire
 		(pts
-			(xy 25.4 115.57) (xy 35.56 115.57)
+			(xy 27.94 111.76) (xy 38.1 111.76)
 		)
 		(stroke
 			(width 0)
@@ -2782,7 +2158,7 @@
 	)
 	(wire
 		(pts
-			(xy 66.04 83.82) (xy 67.31 83.82)
+			(xy 63.5 83.82) (xy 64.77 83.82)
 		)
 		(stroke
 			(width 0)
@@ -2822,7 +2198,7 @@
 	)
 	(wire
 		(pts
-			(xy 34.29 157.48) (xy 34.29 160.02)
+			(xy 36.83 157.48) (xy 36.83 160.02)
 		)
 		(stroke
 			(width 0)
@@ -2852,7 +2228,7 @@
 	)
 	(wire
 		(pts
-			(xy 33.02 81.28) (xy 35.56 81.28)
+			(xy 35.56 81.28) (xy 38.1 81.28)
 		)
 		(stroke
 			(width 0)
@@ -2892,7 +2268,7 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 82.55) (xy 67.31 73.66)
+			(xy 64.77 71.12) (xy 64.77 82.55)
 		)
 		(stroke
 			(width 0)
@@ -2902,7 +2278,7 @@
 	)
 	(wire
 		(pts
-			(xy 34.29 160.02) (xy 35.56 160.02)
+			(xy 36.83 160.02) (xy 38.1 160.02)
 		)
 		(stroke
 			(width 0)
@@ -2912,7 +2288,7 @@
 	)
 	(wire
 		(pts
-			(xy 34.29 83.82) (xy 34.29 67.31)
+			(xy 36.83 83.82) (xy 36.83 67.31)
 		)
 		(stroke
 			(width 0)
@@ -2922,7 +2298,7 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 71.12) (xy 66.04 71.12)
+			(xy 64.77 71.12) (xy 63.5 71.12)
 		)
 		(stroke
 			(width 0)
@@ -2932,7 +2308,7 @@
 	)
 	(wire
 		(pts
-			(xy 25.4 151.13) (xy 35.56 151.13)
+			(xy 27.94 147.32) (xy 38.1 147.32)
 		)
 		(stroke
 			(width 0)
@@ -3002,16 +2378,6 @@
 	)
 	(wire
 		(pts
-			(xy 66.04 111.76) (xy 67.31 111.76)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bdd0d717-24c4-4a94-ae9a-0b52be05bc20")
-	)
-	(wire
-		(pts
 			(xy 114.3 118.11) (xy 114.3 119.38)
 		)
 		(stroke
@@ -3042,16 +2408,6 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 113.03) (xy 67.31 111.76)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cdf60b54-3338-4abb-ace6-836866b55115")
-	)
-	(wire
-		(pts
 			(xy 86.36 121.92) (xy 82.55 121.92)
 		)
 		(stroke
@@ -3072,7 +2428,7 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 121.92) (xy 67.31 113.03)
+			(xy 64.77 121.92) (xy 64.77 113.03)
 		)
 		(stroke
 			(width 0)
@@ -3112,7 +2468,7 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 160.02) (xy 67.31 149.86)
+			(xy 64.77 147.32) (xy 64.77 160.02)
 		)
 		(stroke
 			(width 0)
@@ -3182,7 +2538,7 @@
 	)
 	(wire
 		(pts
-			(xy 25.4 77.47) (xy 35.56 77.47)
+			(xy 27.94 73.66) (xy 38.1 73.66)
 		)
 		(stroke
 			(width 0)
@@ -3232,7 +2588,7 @@
 	)
 	(wire
 		(pts
-			(xy 25.4 113.03) (xy 35.56 113.03)
+			(xy 27.94 109.22) (xy 38.1 109.22)
 		)
 		(stroke
 			(width 0)
@@ -3262,33 +2618,13 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 82.55) (xy 80.01 82.55)
+			(xy 64.77 82.55) (xy 80.01 82.55)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "f8631e57-aea8-4abf-83e8-80c34f0457ea")
-	)
-	(wire
-		(pts
-			(xy 66.04 73.66) (xy 67.31 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f9f818bb-2d20-423c-812d-c7179bdcaa89")
-	)
-	(wire
-		(pts
-			(xy 67.31 73.66) (xy 67.31 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fb258156-82e4-4131-81cf-5814e7c99027")
 	)
 	(wire
 		(pts
@@ -3324,7 +2660,7 @@
 	)
 	(hierarchical_label "SCL"
 		(shape input)
-		(at 25.4 113.03 180)
+		(at 27.94 109.22 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3335,7 +2671,7 @@
 	)
 	(hierarchical_label "SCL"
 		(shape input)
-		(at 25.4 151.13 180)
+		(at 27.94 147.32 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3346,7 +2682,7 @@
 	)
 	(hierarchical_label "SDA"
 		(shape input)
-		(at 25.4 153.67 180)
+		(at 27.94 149.86 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3357,7 +2693,7 @@
 	)
 	(hierarchical_label "SDA"
 		(shape input)
-		(at 25.4 115.57 180)
+		(at 27.94 111.76 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3401,7 +2737,7 @@
 	)
 	(hierarchical_label "SDA"
 		(shape input)
-		(at 25.4 77.47 180)
+		(at 27.94 73.66 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3456,7 +2792,7 @@
 	)
 	(hierarchical_label "SCL"
 		(shape input)
-		(at 25.4 74.93 180)
+		(at 27.94 71.12 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3464,101 +2800,6 @@
 			(justify right)
 		)
 		(uuid "c6704c53-491b-4197-96ef-412df0b21e71")
-	)
-	(symbol
-		(lib_name "INA260_3")
-		(lib_id "Sensor:INA260")
-		(at 50.8 114.3 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "01faf056-56f4-4336-b256-b8ca37f4aab2")
-		(property "Reference" "U7"
-			(at 52.07 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "INA260"
-			(at 54.61 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_SO:TSSOP-16_4.4x5mm_P0.65mm"
-			(at 50.8 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/ina260.pdf"
-			(at 50.8 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Current/power/voltage monitor with Integrated 2mΩ Shunt Resistor, 2.7V - 5.5V, I2C, TSSOP-16"
-			(at 50.8 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "7"
-			(uuid "7a3df72b-6f87-4c3b-97e8-8e911c4edea4")
-		)
-		(pin "1"
-			(uuid "b69ddc1f-c419-413f-80d6-6267069272b0")
-		)
-		(pin "5"
-			(uuid "dbc1b60e-85e1-4fd9-860b-405748c7d420")
-		)
-		(pin "8"
-			(uuid "3f991cde-a384-40df-8414-8d8723505081")
-		)
-		(pin "14"
-			(uuid "074ca4e6-0021-4296-9905-a476648c095a")
-		)
-		(pin "4"
-			(uuid "1677292c-1dd8-4195-a759-2a54f5a3d55e")
-		)
-		(pin "10"
-			(uuid "ddf72d85-4f7f-4108-8e79-736e1972a1d2")
-		)
-		(pin "6"
-			(uuid "b8901d8c-ed85-49d2-960c-aa9ec526aca4")
-		)
-		(pin "12"
-			(uuid "20704870-430f-4216-b1bc-a8ec18f8eb4b")
-		)
-		(pin "9"
-			(uuid "5a908e11-276d-4595-833f-228e76cb6b8f")
-		)
-		(instances
-			(project "Battery Management System"
-				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/3133b2c6-34e4-40b3-b23f-0442236a32da"
-					(reference "U7")
-					(unit 1)
-				)
-			)
-		)
 	)
 	(symbol
 		(lib_id "Device:R_Small")
@@ -4254,7 +3495,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 33.02 127 0)
+		(at 35.56 127 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4263,7 +3504,7 @@
 		(dnp no)
 		(uuid "500d7c56-39ab-4a70-927b-c21fafcdccba")
 		(property "Reference" "#PWR044"
-			(at 33.02 133.35 0)
+			(at 35.56 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4272,7 +3513,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 33.02 130.81 0)
+			(at 35.56 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4280,7 +3521,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 33.02 127 0)
+			(at 35.56 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4289,7 +3530,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 33.02 127 0)
+			(at 35.56 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4298,7 +3539,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 33.02 127 0)
+			(at 35.56 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4513,6 +3754,94 @@
 			(project "Battery Management System"
 				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/3133b2c6-34e4-40b3-b23f-0442236a32da"
 					(reference "#PWR016")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Sensor_Energy:INA219BxD")
+		(at 50.8 153.67 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5f381eb8-f1f5-41f0-a87f-46143aa9e76e")
+		(property "Reference" "U10"
+			(at 49.53 150.622 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "INA219BxD"
+			(at 45.466 153.162 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+			(at 71.12 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/ina219.pdf"
+			(at 59.69 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Zero-Drift, HighAccuracy, Bidirectional Current/Power Monitor (0-26V) With I2C Interface, SOIC-8"
+			(at 50.8 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "5"
+			(uuid "32be933c-f665-48ff-a6bc-c1e029011f93")
+		)
+		(pin "8"
+			(uuid "56f4996e-b74f-426f-97c4-a300a77bc7e5")
+		)
+		(pin "1"
+			(uuid "dd8f6776-c086-4d25-b635-d29eddcdf941")
+		)
+		(pin "7"
+			(uuid "d732af02-d010-475c-86e7-df7f8f85fd45")
+		)
+		(pin "3"
+			(uuid "e5113921-3f65-4600-8328-678f1154f80a")
+		)
+		(pin "6"
+			(uuid "f0267abd-dcb4-4cfb-a6dc-e646450c6371")
+		)
+		(pin "2"
+			(uuid "b0887878-61f0-4cd3-8298-c560feaf59cd")
+		)
+		(pin "4"
+			(uuid "f62f6ff0-f592-4819-bdaf-772209fe4730")
+		)
+		(instances
+			(project "Battery_Management_System"
+				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/3133b2c6-34e4-40b3-b23f-0442236a32da"
+					(reference "U10")
 					(unit 1)
 				)
 			)
@@ -4994,8 +4323,96 @@
 		)
 	)
 	(symbol
+		(lib_id "Sensor_Energy:INA219BxD")
+		(at 50.8 115.57 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7002f973-f8d4-4a9d-ad21-b04c8c833e16")
+		(property "Reference" "U4"
+			(at 49.53 112.522 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "INA219BxD"
+			(at 45.466 115.062 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+			(at 71.12 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/ina219.pdf"
+			(at 59.69 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Zero-Drift, HighAccuracy, Bidirectional Current/Power Monitor (0-26V) With I2C Interface, SOIC-8"
+			(at 50.8 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "5"
+			(uuid "0119cd2d-a5e7-4263-8aec-b89b755fadc2")
+		)
+		(pin "8"
+			(uuid "ec76d15b-403b-4f78-a83d-62632de57daf")
+		)
+		(pin "1"
+			(uuid "bdbb3cde-177b-40d5-bcff-3be5b460cae0")
+		)
+		(pin "7"
+			(uuid "6bcb5188-8a0d-4816-b56b-2ee5940bb94b")
+		)
+		(pin "3"
+			(uuid "2092a044-9890-4f85-86f1-8473d256c4d2")
+		)
+		(pin "6"
+			(uuid "5b265fc9-0330-4f6f-ac06-5a7b4c3d6af0")
+		)
+		(pin "2"
+			(uuid "56f73722-dafd-4d2f-bff7-28f9ff4bb17e")
+		)
+		(pin "4"
+			(uuid "5d4bf281-dae0-47a7-a3ba-9ed5556ae7a5")
+		)
+		(instances
+			(project "Battery_Management_System"
+				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/3133b2c6-34e4-40b3-b23f-0442236a32da"
+					(reference "U4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
-		(at 33.02 88.9 0)
+		(at 35.56 88.9 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5004,7 +4421,7 @@
 		(dnp no)
 		(uuid "7577fd4f-1fbf-42b4-91a0-cf56f9165a62")
 		(property "Reference" "#PWR020"
-			(at 33.02 95.25 0)
+			(at 35.56 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5013,7 +4430,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 33.02 92.71 0)
+			(at 35.56 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5021,7 +4438,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 33.02 88.9 0)
+			(at 35.56 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5030,7 +4447,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 33.02 88.9 0)
+			(at 35.56 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5039,7 +4456,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 33.02 88.9 0)
+			(at 35.56 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6241,7 +5658,7 @@
 	)
 	(symbol
 		(lib_id "power:VCC")
-		(at 34.29 67.31 0)
+		(at 36.83 67.31 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6250,7 +5667,7 @@
 		(fields_autoplaced yes)
 		(uuid "c330fe69-66eb-4743-b350-d32b797e1760")
 		(property "Reference" "#PWR032"
-			(at 34.29 71.12 0)
+			(at 36.83 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6259,7 +5676,7 @@
 			)
 		)
 		(property "Value" "3.3V"
-			(at 34.29 62.23 0)
+			(at 36.83 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6267,7 +5684,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 34.29 67.31 0)
+			(at 36.83 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6276,7 +5693,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 34.29 67.31 0)
+			(at 36.83 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6285,7 +5702,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 34.29 67.31 0)
+			(at 36.83 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6375,101 +5792,6 @@
 		)
 	)
 	(symbol
-		(lib_name "INA260_2")
-		(lib_id "Sensor:INA260")
-		(at 54.61 154.94 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "d1c52cbf-87a7-4c89-94ca-fd70b721b072")
-		(property "Reference" "U8"
-			(at 52.578 152.146 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "INA260"
-			(at 52.578 154.686 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_SO:TSSOP-16_4.4x5mm_P0.65mm"
-			(at 54.61 170.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/ina260.pdf"
-			(at 54.61 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Current/power/voltage monitor with Integrated 2mΩ Shunt Resistor, 2.7V - 5.5V, I2C, TSSOP-16"
-			(at 54.61 154.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "7"
-			(uuid "fd0a2a2f-5a97-49c5-81d5-2c4b1bcee1eb")
-		)
-		(pin "1"
-			(uuid "79c9db44-a245-4515-a8cc-913620780934")
-		)
-		(pin "5"
-			(uuid "afdd3c78-2b70-4f2e-8412-84e2ea0ba776")
-		)
-		(pin "8"
-			(uuid "2bb85293-72dd-495a-889f-b523b9efe6e3")
-		)
-		(pin "14"
-			(uuid "167ab699-c5ac-4bf0-acc3-94095f2a8a25")
-		)
-		(pin "4"
-			(uuid "a5a57cb5-c5b8-4594-a1c1-0b70892d234f")
-		)
-		(pin "10"
-			(uuid "5dbfcfef-4220-4fb3-a101-be00ebabb30f")
-		)
-		(pin "6"
-			(uuid "7c7ec340-58f1-44c1-9195-f008553419bb")
-		)
-		(pin "12"
-			(uuid "2d3f263b-8798-4c5b-adb7-718fa19ae66c")
-		)
-		(pin "9"
-			(uuid "d162ba29-37b1-42e5-8237-d4d0a02f299a")
-		)
-		(instances
-			(project "Battery Management System"
-				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/3133b2c6-34e4-40b3-b23f-0442236a32da"
-					(reference "U8")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 72.39 172.72 0)
 		(mirror y)
@@ -6537,7 +5859,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 34.29 165.1 0)
+		(at 36.83 165.1 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6545,7 +5867,7 @@
 		(dnp no)
 		(uuid "dd6bdbdf-e072-49d9-a498-b112bee5cc05")
 		(property "Reference" "#PWR075"
-			(at 34.29 171.45 0)
+			(at 36.83 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6554,7 +5876,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 34.29 168.91 0)
+			(at 36.83 168.91 0)
 			(effects
 				(font
 					(size 0.889 0.889)
@@ -6562,7 +5884,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 34.29 165.1 0)
+			(at 36.83 165.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6571,7 +5893,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 34.29 165.1 0)
+			(at 36.83 165.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6580,7 +5902,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 34.29 165.1 0)
+			(at 36.83 165.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6602,7 +5924,7 @@
 	)
 	(symbol
 		(lib_id "power:VCC")
-		(at 34.29 106.68 0)
+		(at 36.83 106.68 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6611,7 +5933,7 @@
 		(fields_autoplaced yes)
 		(uuid "e767a7b5-555b-42b7-a793-ed7f0534af0e")
 		(property "Reference" "#PWR033"
-			(at 34.29 110.49 0)
+			(at 36.83 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6620,7 +5942,7 @@
 			)
 		)
 		(property "Value" "3.3V"
-			(at 34.29 101.6 0)
+			(at 36.83 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6628,7 +5950,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 34.29 106.68 0)
+			(at 36.83 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6637,7 +5959,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 34.29 106.68 0)
+			(at 36.83 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6646,7 +5968,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 34.29 106.68 0)
+			(at 36.83 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6667,17 +5989,17 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor:INA260")
+		(lib_id "Sensor_Energy:INA219BxD")
 		(at 50.8 77.47 0)
-		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "eeffe2d7-02dc-4ad3-801e-5ca6ea6296a6")
-		(property "Reference" "U6"
-			(at 52.07 74.93 0)
+		(fields_autoplaced yes)
+		(uuid "f391aef7-daf2-4dd4-9022-831c78a68280")
+		(property "Reference" "U2"
+			(at 49.53 74.422 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6685,8 +6007,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "INA260"
-			(at 54.61 77.47 0)
+		(property "Value" "INA219BxD"
+			(at 45.466 76.962 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6694,8 +6016,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:TSSOP-16_4.4x5mm_P0.65mm"
-			(at 50.8 92.71 0)
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+			(at 71.12 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6703,8 +6025,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/ina260.pdf"
-			(at 50.8 80.01 0)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/ina219.pdf"
+			(at 59.69 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6712,7 +6034,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Current/power/voltage monitor with Integrated 2mΩ Shunt Resistor, 2.7V - 5.5V, I2C, TSSOP-16"
+		(property "Description" "Zero-Drift, HighAccuracy, Bidirectional Current/Power Monitor (0-26V) With I2C Interface, SOIC-8"
 			(at 50.8 77.47 0)
 			(effects
 				(font
@@ -6721,40 +6043,34 @@
 				(hide yes)
 			)
 		)
-		(pin "7"
-			(uuid "cdcd9719-4208-4aa6-bb4b-422328352afd")
-		)
-		(pin "1"
-			(uuid "0cef049c-f4bf-4892-8a6d-d322296ec1f7")
-		)
 		(pin "5"
-			(uuid "353f51fa-66df-4d27-b897-02777d44b764")
+			(uuid "857097b9-5cb4-472f-8d83-a64b657e9d05")
 		)
 		(pin "8"
-			(uuid "8c168716-c96c-478e-a02f-365736e5f60e")
+			(uuid "b487f58a-568e-4f29-a875-9f056c8430eb")
 		)
-		(pin "14"
-			(uuid "835444f9-fce4-483c-add7-7d4994a2d5c9")
+		(pin "1"
+			(uuid "c5213ccc-c5a3-4c0c-8828-677c3cde525f")
 		)
-		(pin "4"
-			(uuid "59402f60-8110-4965-850a-db7329d57bf0")
+		(pin "7"
+			(uuid "2e6b7ac0-f578-4121-a0dc-12f62535331e")
 		)
-		(pin "10"
-			(uuid "68e7b708-c4d6-47fc-91c2-9f7173937d8d")
+		(pin "3"
+			(uuid "c341cda1-b4ca-4a06-8af3-0e35d53c954c")
 		)
 		(pin "6"
-			(uuid "3cb00d51-ca7f-4107-af90-b21bffe9d55d")
+			(uuid "adc7d666-8df2-421e-9459-0387bba797ef")
 		)
-		(pin "12"
-			(uuid "02162531-5052-418e-a3e1-a1e52676d8fa")
+		(pin "2"
+			(uuid "950487c8-7a3c-4fa5-b36a-b102e50799f7")
 		)
-		(pin "9"
-			(uuid "066eb603-ac48-4d9a-9a9e-00942ab5c4f0")
+		(pin "4"
+			(uuid "653e7021-5894-4bcf-801c-3c78d4755a13")
 		)
 		(instances
-			(project "Battery Management System"
+			(project ""
 				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/3133b2c6-34e4-40b3-b23f-0442236a32da"
-					(reference "U6")
+					(reference "U2")
 					(unit 1)
 				)
 			)
