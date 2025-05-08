@@ -279,12 +279,12 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Sensor_Energy:INA219BxD"
+		(symbol "Sensor_Energy:INA219AxDCN"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "U2"
-				(at -1.27 3.048 0)
+			(property "Reference" "U6"
+				(at -1.27 2.54 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -292,8 +292,8 @@
 					(justify left)
 				)
 			)
-			(property "Value" "INA219BxD"
-				(at -5.334 0.508 0)
+			(property "Value" "INA219AxDCN"
+				(at -6.35 0.254 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -301,8 +301,8 @@
 					(justify left)
 				)
 			)
-			(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
-				(at 20.32 -8.89 0)
+			(property "Footprint" "Package_TO_SOT_SMD:SOT-23-8"
+				(at 16.51 -8.89 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -319,7 +319,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Zero-Drift, HighAccuracy, Bidirectional Current/Power Monitor (0-26V) With I2C Interface, SOIC-8"
+			(property "Description" "Zero-Drift, Bidirectional Current/Power Monitor (0-26V) With I2C Interface, SOT-23-8"
 				(at 0 0 0)
 				(effects
 					(font
@@ -337,7 +337,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "SOIC*3.9x4.9mm*P1.27mm*"
+			(property "ki_fp_filters" "SOT?23*"
 				(at 0 0 0)
 				(effects
 					(font
@@ -346,7 +346,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "INA219BxD_0_1"
+			(symbol "INA219AxDCN_0_1"
 				(rectangle
 					(start -10.16 8.89)
 					(end 10.16 -8.89)
@@ -359,7 +359,7 @@
 					)
 				)
 			)
-			(symbol "INA219BxD_1_1"
+			(symbol "INA219AxDCN_1_1"
 				(pin input line
 					(at -12.7 6.35 0)
 					(length 2.54)
@@ -2938,6 +2938,94 @@
 		)
 	)
 	(symbol
+		(lib_id "Sensor_Energy:INA219AxDCN")
+		(at 50.8 153.67 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1a20c443-d191-430b-8e0f-a07c53b63fb7")
+		(property "Reference" "U8"
+			(at 49.53 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "INA219AxDCN"
+			(at 44.45 153.416 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-8"
+			(at 67.31 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/ina219.pdf"
+			(at 59.69 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Zero-Drift, Bidirectional Current/Power Monitor (0-26V) With I2C Interface, SOT-23-8"
+			(at 50.8 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "6a0c68b2-0947-4070-a7a2-befd285b55c6")
+		)
+		(pin "4"
+			(uuid "ebe465ff-afa0-4b06-9518-ca117ec9a290")
+		)
+		(pin "6"
+			(uuid "0382a84b-b7f8-4cc6-acaf-863cf01e4cc5")
+		)
+		(pin "7"
+			(uuid "0d178fc9-45bd-4ccf-8851-4d29d5e3e2d3")
+		)
+		(pin "2"
+			(uuid "a05f5f69-3eb6-45e4-882c-9470e9a8c0eb")
+		)
+		(pin "5"
+			(uuid "8340bef7-34ba-4b49-b565-cde4c10660da")
+		)
+		(pin "1"
+			(uuid "dab2e447-420e-49fe-ba58-c4f8b1f0c144")
+		)
+		(pin "8"
+			(uuid "ea9eb7d9-968c-445a-a164-d4ab22952150")
+		)
+		(instances
+			(project "Battery_Management_System"
+				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/3133b2c6-34e4-40b3-b23f-0442236a32da"
+					(reference "U8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Transistor_FET:BSS83P")
 		(at 91.44 157.48 0)
 		(unit 1)
@@ -3560,6 +3648,94 @@
 		)
 	)
 	(symbol
+		(lib_id "Sensor_Energy:INA219AxDCN")
+		(at 50.8 115.57 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5118bdea-c9bd-4110-b1de-81ee329925d2")
+		(property "Reference" "U7"
+			(at 49.53 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "INA219AxDCN"
+			(at 44.45 115.316 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-8"
+			(at 67.31 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/ina219.pdf"
+			(at 59.69 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Zero-Drift, Bidirectional Current/Power Monitor (0-26V) With I2C Interface, SOT-23-8"
+			(at 50.8 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "6db992fe-3e9a-492e-931b-1409e0b5646f")
+		)
+		(pin "4"
+			(uuid "950d0953-6c50-4a7f-894f-cfee03f42347")
+		)
+		(pin "6"
+			(uuid "7f6388a5-7d13-4224-9b2c-a3655dbc6b7d")
+		)
+		(pin "7"
+			(uuid "f3891a47-a4be-47a5-8502-a3030057081f")
+		)
+		(pin "2"
+			(uuid "dbc8d762-ee8b-41d5-a9a6-8d8315bfadb0")
+		)
+		(pin "5"
+			(uuid "95beae79-8114-4989-bdff-17969d0693b6")
+		)
+		(pin "1"
+			(uuid "7093ee3b-e67b-4923-b446-037e862383a1")
+		)
+		(pin "8"
+			(uuid "ed86310e-f6cb-400c-81dd-d75483cbd40c")
+		)
+		(instances
+			(project "Battery_Management_System"
+				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/3133b2c6-34e4-40b3-b23f-0442236a32da"
+					(reference "U7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_Small")
 		(at 81.28 35.56 0)
 		(mirror y)
@@ -3754,94 +3930,6 @@
 			(project "Battery Management System"
 				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/3133b2c6-34e4-40b3-b23f-0442236a32da"
 					(reference "#PWR016")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Sensor_Energy:INA219BxD")
-		(at 50.8 153.67 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "5f381eb8-f1f5-41f0-a87f-46143aa9e76e")
-		(property "Reference" "U10"
-			(at 49.53 150.622 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "INA219BxD"
-			(at 45.466 153.162 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
-			(at 71.12 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/ina219.pdf"
-			(at 59.69 156.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Zero-Drift, HighAccuracy, Bidirectional Current/Power Monitor (0-26V) With I2C Interface, SOIC-8"
-			(at 50.8 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "5"
-			(uuid "32be933c-f665-48ff-a6bc-c1e029011f93")
-		)
-		(pin "8"
-			(uuid "56f4996e-b74f-426f-97c4-a300a77bc7e5")
-		)
-		(pin "1"
-			(uuid "dd8f6776-c086-4d25-b635-d29eddcdf941")
-		)
-		(pin "7"
-			(uuid "d732af02-d010-475c-86e7-df7f8f85fd45")
-		)
-		(pin "3"
-			(uuid "e5113921-3f65-4600-8328-678f1154f80a")
-		)
-		(pin "6"
-			(uuid "f0267abd-dcb4-4cfb-a6dc-e646450c6371")
-		)
-		(pin "2"
-			(uuid "b0887878-61f0-4cd3-8298-c560feaf59cd")
-		)
-		(pin "4"
-			(uuid "f62f6ff0-f592-4819-bdaf-772209fe4730")
-		)
-		(instances
-			(project "Battery_Management_System"
-				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/3133b2c6-34e4-40b3-b23f-0442236a32da"
-					(reference "U10")
 					(unit 1)
 				)
 			)
@@ -4317,94 +4405,6 @@
 			(project "Battery Management System"
 				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/3133b2c6-34e4-40b3-b23f-0442236a32da"
 					(reference "C47")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Sensor_Energy:INA219BxD")
-		(at 50.8 115.57 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "7002f973-f8d4-4a9d-ad21-b04c8c833e16")
-		(property "Reference" "U4"
-			(at 49.53 112.522 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "INA219BxD"
-			(at 45.466 115.062 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
-			(at 71.12 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/ina219.pdf"
-			(at 59.69 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Zero-Drift, HighAccuracy, Bidirectional Current/Power Monitor (0-26V) With I2C Interface, SOIC-8"
-			(at 50.8 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "5"
-			(uuid "0119cd2d-a5e7-4263-8aec-b89b755fadc2")
-		)
-		(pin "8"
-			(uuid "ec76d15b-403b-4f78-a83d-62632de57daf")
-		)
-		(pin "1"
-			(uuid "bdbb3cde-177b-40d5-bcff-3be5b460cae0")
-		)
-		(pin "7"
-			(uuid "6bcb5188-8a0d-4816-b56b-2ee5940bb94b")
-		)
-		(pin "3"
-			(uuid "2092a044-9890-4f85-86f1-8473d256c4d2")
-		)
-		(pin "6"
-			(uuid "5b265fc9-0330-4f6f-ac06-5a7b4c3d6af0")
-		)
-		(pin "2"
-			(uuid "56f73722-dafd-4d2f-bff7-28f9ff4bb17e")
-		)
-		(pin "4"
-			(uuid "5d4bf281-dae0-47a7-a3ba-9ed5556ae7a5")
-		)
-		(instances
-			(project "Battery_Management_System"
-				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/3133b2c6-34e4-40b3-b23f-0442236a32da"
-					(reference "U4")
 					(unit 1)
 				)
 			)
@@ -5923,6 +5923,94 @@
 		)
 	)
 	(symbol
+		(lib_id "Sensor_Energy:INA219AxDCN")
+		(at 50.8 77.47 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e6a00175-3cff-436a-a25b-d8001ad65f0f")
+		(property "Reference" "U6"
+			(at 49.53 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "INA219AxDCN"
+			(at 44.45 77.216 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-8"
+			(at 67.31 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/ina219.pdf"
+			(at 59.69 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Zero-Drift, Bidirectional Current/Power Monitor (0-26V) With I2C Interface, SOT-23-8"
+			(at 50.8 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "bfd66d29-5060-42d7-be11-98830f639b54")
+		)
+		(pin "4"
+			(uuid "d1d74925-495d-4201-a387-49ec2c01eb89")
+		)
+		(pin "6"
+			(uuid "6a10e569-221e-49cf-80a1-67b970d7b5f8")
+		)
+		(pin "7"
+			(uuid "2fb56a0f-ff56-48df-8513-651967d888fc")
+		)
+		(pin "2"
+			(uuid "9b4b1a6c-a7a9-424a-a86f-dedd272a4f1c")
+		)
+		(pin "5"
+			(uuid "f99c9d71-5ca1-4f90-8dd0-bfcd24e78d17")
+		)
+		(pin "1"
+			(uuid "d6f3e8df-6a17-4ae6-947f-0820dbba4c02")
+		)
+		(pin "8"
+			(uuid "49cec333-36f9-431a-9984-0328f9daae65")
+		)
+		(instances
+			(project ""
+				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/3133b2c6-34e4-40b3-b23f-0442236a32da"
+					(reference "U6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:VCC")
 		(at 36.83 106.68 0)
 		(unit 1)
@@ -5983,94 +6071,6 @@
 			(project "Battery_Management_System"
 				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/3133b2c6-34e4-40b3-b23f-0442236a32da"
 					(reference "#PWR033")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Sensor_Energy:INA219BxD")
-		(at 50.8 77.47 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f391aef7-daf2-4dd4-9022-831c78a68280")
-		(property "Reference" "U2"
-			(at 49.53 74.422 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "INA219BxD"
-			(at 45.466 76.962 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
-			(at 71.12 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/ina219.pdf"
-			(at 59.69 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Zero-Drift, HighAccuracy, Bidirectional Current/Power Monitor (0-26V) With I2C Interface, SOIC-8"
-			(at 50.8 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "5"
-			(uuid "857097b9-5cb4-472f-8d83-a64b657e9d05")
-		)
-		(pin "8"
-			(uuid "b487f58a-568e-4f29-a875-9f056c8430eb")
-		)
-		(pin "1"
-			(uuid "c5213ccc-c5a3-4c0c-8828-677c3cde525f")
-		)
-		(pin "7"
-			(uuid "2e6b7ac0-f578-4121-a0dc-12f62535331e")
-		)
-		(pin "3"
-			(uuid "c341cda1-b4ca-4a06-8af3-0e35d53c954c")
-		)
-		(pin "6"
-			(uuid "adc7d666-8df2-421e-9459-0387bba797ef")
-		)
-		(pin "2"
-			(uuid "950487c8-7a3c-4fa5-b36a-b102e50799f7")
-		)
-		(pin "4"
-			(uuid "653e7021-5894-4bcf-801c-3c78d4755a13")
-		)
-		(instances
-			(project ""
-				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/3133b2c6-34e4-40b3-b23f-0442236a32da"
-					(reference "U2")
 					(unit 1)
 				)
 			)
