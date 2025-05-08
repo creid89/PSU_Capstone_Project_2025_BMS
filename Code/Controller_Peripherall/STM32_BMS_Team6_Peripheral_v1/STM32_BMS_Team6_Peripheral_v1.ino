@@ -40,11 +40,11 @@ float TOTAL_PACK_VOLTAGE = 0.0;
 float CHARGE_CURRENT = 0.0;
 
 // BQ Charge IC Configuration parameters
-float ChargeVoltageValue = 0.0;         // Charging target voltage
-float VsysMinValue = 0.0;                 // Minimum system voltage
-float inputVoltageValue = 0.0;            // Input voltage limit (used for VINDPM)
-float chargeCurrentValue = 0.0;           // Battery charging current (in amps)
-float inputCurrentLimitValue = 0.0;    // Input current limit (in milliamps) - based on supply/adapter limit
+float ChargeVoltageValue;         // Charging target voltage
+float VsysMinValue;                 // Minimum system voltage
+float inputVoltageValue;            // Input voltage limit (used for VINDPM)
+float chargeCurrentValue;           // Battery charging current (in amps)
+float inputCurrentLimitValue;    // Input current limit (in milliamps) - based on supply/adapter limit
 
 // Response to master
 float responseData = 0.0;
