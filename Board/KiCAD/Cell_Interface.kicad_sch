@@ -3028,15 +3028,15 @@
 	(symbol
 		(lib_id "Transistor_FET:BSS83P")
 		(at 91.44 157.48 0)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "24301bb7-b7c8-4289-8c03-185150c7fd1a")
 		(property "Reference" "Q8"
-			(at 97.79 156.2099 0)
+			(at 97.79 158.7501 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3045,7 +3045,7 @@
 			)
 		)
 		(property "Value" "BSS83P"
-			(at 97.79 158.7499 0)
+			(at 97.79 156.2101 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3054,7 +3054,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 96.52 159.385 0)
+			(at 96.52 155.575 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3065,7 +3065,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.farnell.com/datasheets/1835997.pdf"
-			(at 96.52 161.29 0)
+			(at 96.52 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3245,15 +3245,15 @@
 	(symbol
 		(lib_id "Transistor_FET:BSS83P")
 		(at 91.44 119.38 0)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "3dba47a5-0de9-4ce2-862c-f27d78890f32")
 		(property "Reference" "Q7"
-			(at 97.79 118.1099 0)
+			(at 97.79 120.6501 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3262,7 +3262,7 @@
 			)
 		)
 		(property "Value" "BSS83P"
-			(at 97.79 120.6499 0)
+			(at 97.79 118.1101 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3271,7 +3271,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 96.52 121.285 0)
+			(at 96.52 117.475 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3282,7 +3282,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.farnell.com/datasheets/1835997.pdf"
-			(at 96.52 123.19 0)
+			(at 96.52 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4614,15 +4614,15 @@
 	(symbol
 		(lib_id "Transistor_FET:BSS83P")
 		(at 91.44 87.63 0)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "8f527305-3e33-46de-9c11-d28ceb2a8c93")
 		(property "Reference" "Q6"
-			(at 97.79 86.3599 0)
+			(at 97.79 88.9001 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4631,7 +4631,7 @@
 			)
 		)
 		(property "Value" "BSS83P"
-			(at 97.79 88.8999 0)
+			(at 97.79 86.3601 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4640,7 +4640,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 96.52 89.535 0)
+			(at 96.52 85.725 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4651,7 +4651,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.farnell.com/datasheets/1835997.pdf"
-			(at 96.52 91.44 0)
+			(at 96.52 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
