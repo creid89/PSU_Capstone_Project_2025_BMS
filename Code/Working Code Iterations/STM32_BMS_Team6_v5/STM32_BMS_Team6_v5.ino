@@ -78,8 +78,8 @@ void setup() {
   Serial2.begin(9600);
 
   //////////////////////////////comment me out on nondefective boards//////////////////////////////////////
-  Wire.setSDA(PB11);
-  Wire.setSCL(PB10);
+  //Wire.setSDA(PB11);
+  //Wire.setSCL(PB10);
   Wire.begin();
   //////////////////////////////comment me out on nondefective boards//////////////////////////////////////
 
