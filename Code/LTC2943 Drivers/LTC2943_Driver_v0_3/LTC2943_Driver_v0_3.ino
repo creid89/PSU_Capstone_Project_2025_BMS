@@ -1,4 +1,4 @@
-//LTC2943 Driver V0.2
+//LTC2943 Driver V0.3
 //Sodium ION BMS
 
 //Include wire for I2C
@@ -18,7 +18,7 @@
 
 //////////////////////////////////////////////////////////////////////
 // Sense resistor value in ohms (as measured)
-const float RSENSE = 0.38;  // Ohms
+const float RSENSE = 0.1;  // Ohms
 const float QLSB = 0.340 * 0.050 / RSENSE;  // mAh
 //////////////////////////////////////////////////////////////////////
 
@@ -90,8 +90,8 @@ void setup() {
 }
 
 void loop() {
-  // Keep analog section active
-  //write_LTC2943_Register(REG_CONTROL, 0b11111000);
+  // Keep analog section active if Pack is disconnected temporarily
+  write_LTC2943_Register(REG_CONTROL, 0b11111000);
 
   //Print out 
   Serial.println("LTC2943 Measurements:");

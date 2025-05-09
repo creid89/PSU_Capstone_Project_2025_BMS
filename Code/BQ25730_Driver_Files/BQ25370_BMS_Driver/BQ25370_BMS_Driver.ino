@@ -43,7 +43,7 @@ unsigned long lastCheck2 = 0;
 const unsigned long registerUpdateInterval = 2500;
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(9600);
   delay(5000);
   Wire.begin();
 
