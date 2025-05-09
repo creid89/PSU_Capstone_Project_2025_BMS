@@ -1,5 +1,5 @@
 
-(footprint TRANS_AON6500 (layer F.Cu) (tedit 6803EE39)
+(footprint TRANS_AON6500 (layer F.Cu) (tedit 6803F4C3)
   (descr "")
   (attr smd)
   (fp_text reference REF** (at 0.175 -3.635 0) (layer F.SilkS)

@@ -1287,7 +1287,7 @@
 		(uuid "8518edd1-cf06-430e-900f-f15662eaed16")
 	)
 	(junction
-		(at 138.4568 127)
+		(at 138.43 127)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9429e65e-cc3f-4813-bd18-a53cad5d87a0")
@@ -1305,7 +1305,7 @@
 		(uuid "ac002cd6-9986-4a5f-ab75-5e162a057f62")
 	)
 	(junction
-		(at 138.3993 124.46)
+		(at 138.43 124.46)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d7815f9d-fe09-478c-9731-a853888e7ab7")
@@ -1550,7 +1550,7 @@
 	)
 	(wire
 		(pts
-			(xy 138.3993 124.46) (xy 133.35 124.46)
+			(xy 138.43 124.46) (xy 133.35 124.46)
 		)
 		(stroke
 			(width 0)
@@ -1660,7 +1660,7 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 127) (xy 138.4568 127)
+			(xy 130.81 127) (xy 138.43 127)
 		)
 		(stroke
 			(width 0)
@@ -1720,7 +1720,7 @@
 	)
 	(wire
 		(pts
-			(xy 138.4568 127) (xy 148.59 127)
+			(xy 138.43 127) (xy 148.59 127)
 		)
 		(stroke
 			(width 0)
@@ -2010,7 +2010,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 124.46) (xy 138.3993 124.46)
+			(xy 148.59 124.46) (xy 138.43 124.46)
 		)
 		(stroke
 			(width 0)
@@ -3338,7 +3338,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint_Small")
-		(at 138.4568 127 0)
+		(at 138.43 127 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -3347,7 +3347,7 @@
 		(fields_autoplaced yes)
 		(uuid "b38652a1-a0bf-412c-9848-fcbc11fdcbdf")
 		(property "Reference" "TP16"
-			(at 139.7268 125.7299 0)
+			(at 139.7 125.7299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3356,7 +3356,7 @@
 			)
 		)
 		(property "Value" "TestPoint_Small"
-			(at 139.7268 128.2699 0)
+			(at 139.7 128.2699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3366,7 +3366,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm"
-			(at 143.5368 127 0)
+			(at 143.51 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3375,7 +3375,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 143.5368 127 0)
+			(at 143.51 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3384,7 +3384,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 138.4568 127 0)
+			(at 138.43 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3393,7 +3393,7 @@
 			)
 		)
 		(property "SNAPEDA_PN" ""
-			(at 138.4568 127 0)
+			(at 138.43 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3566,7 +3566,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint_Small")
-		(at 138.3993 124.46 0)
+		(at 138.43 124.46 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -3575,7 +3575,7 @@
 		(fields_autoplaced yes)
 		(uuid "cd94770f-10bb-4db4-b150-5ac8a4d29303")
 		(property "Reference" "TP15"
-			(at 139.6693 123.1899 0)
+			(at 139.7 123.1899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3584,7 +3584,7 @@
 			)
 		)
 		(property "Value" "TestPoint_Small"
-			(at 139.6693 125.7299 0)
+			(at 139.7 125.7299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3594,7 +3594,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm"
-			(at 143.4793 124.46 0)
+			(at 143.51 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3603,7 +3603,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 143.4793 124.46 0)
+			(at 143.51 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3612,7 +3612,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 138.3993 124.46 0)
+			(at 138.43 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3621,7 +3621,7 @@
 			)
 		)
 		(property "SNAPEDA_PN" ""
-			(at 138.3993 124.46 0)
+			(at 138.43 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
