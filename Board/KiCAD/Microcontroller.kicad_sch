@@ -6,8 +6,8 @@
 	(paper "A")
 	(title_block
 		(title "Battery Management System")
-		(date "2025-04-21")
-		(rev "0.0.4")
+		(date "2025-05-09")
+		(rev "0.0.5")
 		(company "Portland State University")
 		(comment 1 "Fernando Custodio, Tyler Tran")
 		(comment 2 "Daniel Anishchenko, Cuauhtemoc Gomez, Cody Reid")
@@ -487,6 +487,113 @@
 					)
 					(fill
 						(type background)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Connector:TestPoint_Small"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.762)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "TP"
+				(at 0 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint_Small"
+				(at 0 2.032 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "TestPoint_Small_0_1"
+				(circle
+					(center 0 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_Small_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 0)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
 					)
 				)
 			)
@@ -1529,7 +1636,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" ""
+			(property "Datasheet" "https://www.st.com/content/ccc/resource/technical/document/datasheet/0d/93/e0/d7/77/bf/4c/54/CD00210843.pdf/files/CD00210843.pdf/jcr:content/translations/en.CD00210843.pdf"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1538,102 +1645,12 @@
 					(hide yes)
 				)
 			)
-			(property "Description" ""
+			(property "Description" "ARM® Cortex®-M3 STM32F1 Microcontroller IC 32-Bit Single-Core 72MHz 32KB (32K x 8) FLASH"
 				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
-				)
-			)
-			(property "Description_1" "ARM® Cortex®-M3 STM32F1 Microcontroller IC 32-Bit 72MHz 64KB (64K x 8) FLASH 48-LQFP (7x7)"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Package" "LQFP-48 STMicroelectronics"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Price" "None"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Check_prices" "https://www.snapeda.com/parts/STM32F103C8T6/STMicroelectronics/view-part/?ref=eda"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "STANDARD" "IPC7351B"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "PARTREV" "10"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "SnapEDA_Link" "https://www.snapeda.com/parts/STM32F103C8T6/STMicroelectronics/view-part/?ref=snap"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Availability" "In Stock"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "MANUFACTURER" "ST Microelectronics"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
 					(hide yes)
 				)
 			)
@@ -2263,7 +2280,7 @@
 				)
 			)
 			(symbol "STM32F103C8T6_1_0"
-				(pin no_connect line
+				(pin bidirectional line
 					(at -34.29 -13.97 0)
 					(length 5.08)
 					(name "PA1"
@@ -2281,7 +2298,7 @@
 						)
 					)
 				)
-				(pin no_connect line
+				(pin bidirectional line
 					(at -34.29 -16.51 0)
 					(length 5.08)
 					(name "PA8"
@@ -2299,7 +2316,7 @@
 						)
 					)
 				)
-				(pin no_connect line
+				(pin bidirectional line
 					(at -34.29 -19.05 0)
 					(length 5.08)
 					(name "PA11"
@@ -2317,7 +2334,7 @@
 						)
 					)
 				)
-				(pin no_connect line
+				(pin bidirectional line
 					(at -34.29 -21.59 0)
 					(length 5.08)
 					(name "PA12"
@@ -2335,7 +2352,7 @@
 						)
 					)
 				)
-				(pin no_connect line
+				(pin bidirectional line
 					(at -34.29 -24.13 0)
 					(length 5.08)
 					(name "PA15"
@@ -2353,7 +2370,7 @@
 						)
 					)
 				)
-				(pin no_connect line
+				(pin bidirectional line
 					(at 34.29 -1.27 180)
 					(length 5.08)
 					(name "PB2"
@@ -2371,7 +2388,7 @@
 						)
 					)
 				)
-				(pin no_connect line
+				(pin bidirectional line
 					(at 34.29 -3.81 180)
 					(length 5.08)
 					(name "PB3"
@@ -2389,7 +2406,7 @@
 						)
 					)
 				)
-				(pin no_connect line
+				(pin bidirectional line
 					(at 34.29 -6.35 180)
 					(length 5.08)
 					(name "PB4"
@@ -2407,7 +2424,7 @@
 						)
 					)
 				)
-				(pin no_connect line
+				(pin bidirectional line
 					(at 34.29 -8.89 180)
 					(length 5.08)
 					(name "PB5"
@@ -2425,7 +2442,7 @@
 						)
 					)
 				)
-				(pin no_connect line
+				(pin bidirectional line
 					(at 34.29 -11.43 180)
 					(length 5.08)
 					(name "PB8"
@@ -2443,7 +2460,7 @@
 						)
 					)
 				)
-				(pin no_connect line
+				(pin bidirectional line
 					(at 34.29 -13.97 180)
 					(length 5.08)
 					(name "PB9"
@@ -2461,7 +2478,7 @@
 						)
 					)
 				)
-				(pin no_connect line
+				(pin bidirectional line
 					(at 34.29 -16.51 180)
 					(length 5.08)
 					(name "PB12"
@@ -2479,7 +2496,7 @@
 						)
 					)
 				)
-				(pin no_connect line
+				(pin bidirectional line
 					(at 34.29 -19.05 180)
 					(length 5.08)
 					(name "PB13"
@@ -2497,7 +2514,7 @@
 						)
 					)
 				)
-				(pin no_connect line
+				(pin bidirectional line
 					(at 34.29 -21.59 180)
 					(length 5.08)
 					(name "PB14"
@@ -2515,7 +2532,7 @@
 						)
 					)
 				)
-				(pin no_connect line
+				(pin bidirectional line
 					(at 34.29 -24.13 180)
 					(length 5.08)
 					(name "PB15"
@@ -3026,6 +3043,12 @@
 		(uuid "674d26fe-4aa8-4dca-886e-dd17ea8e5e0e")
 	)
 	(junction
+		(at 118.11 50.8)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6ceaaa40-1052-4680-b8d1-db8563e10da5")
+	)
+	(junction
 		(at 189.23 99.06)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3180,10 +3203,6 @@
 	(no_connect
 		(at 91.44 132.08)
 		(uuid "ca91ae1a-2ff9-4bed-ad48-38ee2e8f6087")
-	)
-	(no_connect
-		(at 91.44 127)
-		(uuid "cbc4f4e0-ae95-429f-a9a7-09dbfec8b0d4")
 	)
 	(no_connect
 		(at 160.02 124.46)
@@ -3350,6 +3369,16 @@
 			(type default)
 		)
 		(uuid "1d62c9f8-85de-46a9-bcbd-ba22ebdc4dc8")
+	)
+	(wire
+		(pts
+			(xy 109.22 147.32) (xy 109.22 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "23bdbfdd-fab8-45a6-bcb0-390e5a4c7658")
 	)
 	(wire
 		(pts
@@ -3553,16 +3582,6 @@
 	)
 	(wire
 		(pts
-			(xy 139.7 39.37) (xy 157.48 39.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3694b1f1-0163-4876-9640-26879e0809b9")
-	)
-	(wire
-		(pts
 			(xy 189.23 99.06) (xy 210.82 99.06)
 		)
 		(stroke
@@ -3603,7 +3622,7 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 68.58) (xy 142.24 68.58)
+			(xy 142.24 68.58) (xy 153.67 68.58)
 		)
 		(stroke
 			(width 0)
@@ -3823,6 +3842,16 @@
 	)
 	(wire
 		(pts
+			(xy 111.76 147.32) (xy 111.76 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6e7761e3-35c3-44c2-8205-f57e9ae4779d")
+	)
+	(wire
+		(pts
 			(xy 160.02 101.6) (xy 193.04 101.6)
 		)
 		(stroke
@@ -3840,16 +3869,6 @@
 			(type default)
 		)
 		(uuid "78dacd1c-1f87-4596-8751-c101c835f982")
-	)
-	(wire
-		(pts
-			(xy 109.22 147.32) (xy 109.22 156.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "790deedf-ec13-4828-87be-2553cddb3787")
 	)
 	(wire
 		(pts
@@ -3943,16 +3962,6 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 147.32) (xy 111.76 166.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "80fa84cd-31a8-490b-b8e8-5e79f11a9d0d")
-	)
-	(wire
-		(pts
 			(xy 102.87 156.21) (xy 109.22 156.21)
 		)
 		(stroke
@@ -4040,6 +4049,26 @@
 			(type default)
 		)
 		(uuid "9d0b207c-7b9d-4a95-80d8-89afbe113740")
+	)
+	(wire
+		(pts
+			(xy 114.3 147.32) (xy 114.3 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9f0864a2-1d43-43cd-8c4e-d36a9e2d834a")
+	)
+	(wire
+		(pts
+			(xy 130.81 58.42) (xy 139.7 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9f4ff232-73a4-4751-b1a8-724e02c7bb91")
 	)
 	(wire
 		(pts
@@ -4303,16 +4332,6 @@
 	)
 	(wire
 		(pts
-			(xy 139.7 58.42) (xy 130.81 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c9836473-8ff0-40f7-a21c-01fbf77532a6")
-	)
-	(wire
-		(pts
 			(xy 97.79 45.72) (xy 99.06 45.72)
 		)
 		(stroke
@@ -4423,13 +4442,13 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 147.32) (xy 114.3 171.45)
+			(xy 83.82 127) (xy 91.44 127)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e7c96e28-7ace-4572-a19b-efd232d7f024")
+		(uuid "e70bebf8-e583-497d-ac3f-311ca66cd86f")
 	)
 	(wire
 		(pts
@@ -4450,6 +4469,16 @@
 			(type default)
 		)
 		(uuid "ecb5fc61-262b-460f-a714-b6c36c9a1a5e")
+	)
+	(wire
+		(pts
+			(xy 139.7 39.37) (xy 157.48 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f4146771-8d80-4c67-9214-3ee7d8a2366a")
 	)
 	(wire
 		(pts
@@ -4601,6 +4630,17 @@
 			(justify right)
 		)
 		(uuid "340b4231-cf30-4da5-a54a-33ce9bec64ee")
+	)
+	(hierarchical_label "CHRG_OK"
+		(shape input)
+		(at 83.82 127 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3a35ef03-bdd7-4546-af1e-da4589a8c733")
 	)
 	(hierarchical_label "USART1_RX"
 		(shape input)
@@ -4853,6 +4893,14 @@
 				(hide yes)
 			)
 		)
+		(property "SNAPEDA_PN" ""
+			(at 73.66 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "c9281c5d-70ac-4293-8fbe-ac225467efa5")
 		)
@@ -4921,6 +4969,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" ""
+			(at 163.83 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -4995,6 +5051,14 @@
 				(hide yes)
 			)
 		)
+		(property "SNAPEDA_PN" ""
+			(at 67.31 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "422c8e32-c6fe-494c-bb41-8424796dda53")
 		)
@@ -5063,6 +5127,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" ""
+			(at 193.04 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "2"
@@ -5152,6 +5224,14 @@
 				(hide yes)
 			)
 		)
+		(property "SNAPEDA_PN" ""
+			(at 99.06 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "a790d01b-f8a0-4058-b4ce-43cac0f93fc8")
 		)
@@ -5219,6 +5299,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" ""
+			(at 96.52 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -5290,6 +5378,14 @@
 				(hide yes)
 			)
 		)
+		(property "SNAPEDA_PN" ""
+			(at 54.61 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "a829b822-1b3d-49b1-a7da-f4cce67c47d2")
 		)
@@ -5357,6 +5453,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" ""
+			(at 87.63 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "2"
@@ -5491,6 +5595,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" ""
+			(at 156.21 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "2"
@@ -5693,6 +5805,14 @@
 				(hide yes)
 			)
 		)
+		(property "SNAPEDA_PN" ""
+			(at 96.52 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "745dcb89-97d4-4dbb-a6e7-555f437b983d")
 		)
@@ -5762,6 +5882,14 @@
 				(hide yes)
 			)
 		)
+		(property "SNAPEDA_PN" ""
+			(at 130.81 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "1a06e682-27a4-48b8-b678-c7769b2a9ca0")
 		)
@@ -5829,6 +5957,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" ""
+			(at 96.52 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -6049,6 +6185,14 @@
 				(hide yes)
 			)
 		)
+		(property "SNAPEDA_PN" ""
+			(at 125.73 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "12"
 			(uuid "447164f8-0f2e-4762-b00f-671a85b95084")
 		)
@@ -6257,6 +6401,14 @@
 				(hide yes)
 			)
 		)
+		(property "SNAPEDA_PN" ""
+			(at 196.85 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "52200780-d324-4dcd-bd57-43ed6abcc5f3")
 		)
@@ -6325,6 +6477,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" ""
+			(at 189.23 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "2"
@@ -6459,6 +6619,14 @@
 				(hide yes)
 			)
 		)
+		(property "SNAPEDA_PN" ""
+			(at 104.14 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "f9934caa-4378-4c41-ae57-5c9611562df4")
 		)
@@ -6527,6 +6695,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" ""
+			(at 200.66 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "2"
@@ -6615,6 +6791,14 @@
 				(hide yes)
 			)
 		)
+		(property "SNAPEDA_PN" ""
+			(at 105.41 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "3"
 			(uuid "b008ad99-5d5d-4561-a8eb-2b22d5b30646")
 		)
@@ -6691,6 +6875,14 @@
 				(hide yes)
 			)
 		)
+		(property "SNAPEDA_PN" ""
+			(at 68.58 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "eeb61e29-4e47-4272-8082-718c0dcef42d")
 		)
@@ -6758,6 +6950,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" ""
+			(at 60.96 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -6893,6 +7093,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" ""
+			(at 90.17 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "2"
@@ -7096,6 +7304,14 @@
 				(hide yes)
 			)
 		)
+		(property "SNAPEDA_PN" ""
+			(at 96.52 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "8d0f5b85-671a-4328-9311-650fc996b269")
 		)
@@ -7172,6 +7388,81 @@
 			(project "Battery_Management_System"
 				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/850aa2e1-891c-4236-acc3-4b228cde0b31"
 					(reference "#PWR087")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Small")
+		(at 118.11 50.8 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8edb3871-9695-44a6-93e0-e2308c008a96")
+		(property "Reference" "TP39"
+			(at 124.46 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint_Small"
+			(at 121.92 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm"
+			(at 113.03 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 113.03 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 118.11 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" ""
+			(at 118.11 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "fac885f1-0099-40a8-9118-7f8792fbd4eb")
+		)
+		(instances
+			(project "Battery_Management_System"
+				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/850aa2e1-891c-4236-acc3-4b228cde0b31"
+					(reference "TP39")
 					(unit 1)
 				)
 			)
@@ -7351,6 +7642,14 @@
 				(hide yes)
 			)
 		)
+		(property "SNAPEDA_PN" ""
+			(at 102.87 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "32d62499-2a74-48c2-ab57-213e3d6399b5")
 		)
@@ -7418,6 +7717,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" ""
+			(at 85.09 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "2"
@@ -7584,6 +7891,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" ""
+			(at 110.49 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -7855,6 +8170,14 @@
 				(hide yes)
 			)
 		)
+		(property "SNAPEDA_PN" ""
+			(at 165.1 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "0437e45e-30de-499d-99ad-a031e797ce39")
 		)
@@ -7936,6 +8259,14 @@
 				(hide yes)
 			)
 		)
+		(property "SNAPEDA_PN" ""
+			(at 48.26 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "8790e727-fc49-4074-b814-6ead155ee799")
 		)
@@ -8003,6 +8334,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" ""
+			(at 128.27 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "2"

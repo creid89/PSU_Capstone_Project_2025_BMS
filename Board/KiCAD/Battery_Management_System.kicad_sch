@@ -6,8 +6,8 @@
 	(paper "A")
 	(title_block
 		(title "Battery Management System")
-		(date "2025-04-21")
-		(rev "0.0.4")
+		(date "2025-05-09")
+		(rev "0.0.5")
 		(company "Portland State University")
 		(comment 1 "Fernando Custodio, Tyler Tran")
 		(comment 2 "Daniel Anishchenko, Cuauhtemoc Gomez, Cody Reid")
@@ -1100,7 +1100,7 @@
 	)
 	(text "Cell 3"
 		(exclude_from_sim no)
-		(at 200.66 119.38 0)
+		(at 208.28 119.38 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1130,7 +1130,7 @@
 	)
 	(text "Cell 4\n"
 		(exclude_from_sim no)
-		(at 200.66 116.84 0)
+		(at 208.28 116.84 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1160,7 +1160,7 @@
 	)
 	(text "To battey cells\n1, 2, 3, or 4 cells"
 		(exclude_from_sim no)
-		(at 220.98 120.65 0)
+		(at 228.6 120.65 0)
 		(effects
 			(font
 				(size 1.905 1.905)
@@ -1170,7 +1170,7 @@
 	)
 	(text "Cell 2"
 		(exclude_from_sim no)
-		(at 200.66 121.92 0)
+		(at 208.28 121.92 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1190,7 +1190,7 @@
 	)
 	(text "Power out \nto Load"
 		(exclude_from_sim no)
-		(at 210.82 57.15 0)
+		(at 217.17 57.15 0)
 		(effects
 			(font
 				(size 1.905 1.905)
@@ -1200,7 +1200,7 @@
 	)
 	(text "USB to Serial Breaktout \nFT232RL"
 		(exclude_from_sim no)
-		(at 41.91 106.68 0)
+		(at 38.1 106.68 0)
 		(effects
 			(font
 				(size 1.905 1.905)
@@ -1220,7 +1220,7 @@
 	)
 	(text "Cell 1\n"
 		(exclude_from_sim no)
-		(at 200.66 124.46 0)
+		(at 208.28 124.46 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1237,6 +1237,12 @@
 			)
 		)
 		(uuid "c61534aa-3b51-4eac-868c-37aba43c9901")
+	)
+	(junction
+		(at 138.43 129.54)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1b0412a5-084e-4d34-b89b-1d8a680e8487")
 	)
 	(junction
 		(at 143.51 85.09)
@@ -1263,10 +1269,16 @@
 		(uuid "4e341fe1-0ee9-4cae-94c3-735a95073ccb")
 	)
 	(junction
-		(at 82.55 59.69)
+		(at 134.62 73.66)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "65d9f577-c9d6-472d-bc86-9c08538e28ee")
+		(uuid "68469320-5306-4ff6-8fba-e42b2e38798a")
+	)
+	(junction
+		(at 138.43 121.92)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "80a1baa1-1791-41dc-a23a-ba60f05718a9")
 	)
 	(junction
 		(at 146.05 87.63)
@@ -1275,21 +1287,45 @@
 		(uuid "8518edd1-cf06-430e-900f-f15662eaed16")
 	)
 	(junction
+		(at 138.4568 127)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9429e65e-cc3f-4813-bd18-a53cad5d87a0")
+	)
+	(junction
+		(at 69.85 85.09)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a52fc868-ee51-4d95-b6f1-02464398030c")
+	)
+	(junction
+		(at 69.85 87.63)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ac002cd6-9986-4a5f-ab75-5e162a057f62")
+	)
+	(junction
+		(at 138.3993 124.46)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d7815f9d-fe09-478c-9731-a853888e7ab7")
+	)
+	(junction
 		(at 106.68 157.48)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fbc01320-29bd-4e54-bab5-8d3dbbe080bd")
 	)
 	(no_connect
-		(at 66.04 107.95)
+		(at 60.96 107.95)
 		(uuid "03d481e1-4cd8-4c7f-8350-76d7d89d1920")
 	)
 	(no_connect
-		(at 66.04 110.49)
+		(at 60.96 110.49)
 		(uuid "3d235de4-5cc4-4daa-8cc0-f85d422d80f9")
 	)
 	(no_connect
-		(at 66.04 100.33)
+		(at 60.96 100.33)
 		(uuid "fdfb51f0-8fd5-495a-8c04-52c97f80a9e6")
 	)
 	(wire
@@ -1314,17 +1350,7 @@
 	)
 	(wire
 		(pts
-			(xy 186.69 123.19) (xy 189.23 123.19)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "07bb2dc4-0037-4372-8863-3eaead60747a")
-	)
-	(wire
-		(pts
-			(xy 186.69 115.57) (xy 189.23 115.57)
+			(xy 186.69 115.57) (xy 196.85 115.57)
 		)
 		(stroke
 			(width 0)
@@ -1334,7 +1360,7 @@
 	)
 	(wire
 		(pts
-			(xy 77.47 85.09) (xy 67.31 85.09)
+			(xy 77.47 85.09) (xy 69.85 85.09)
 		)
 		(stroke
 			(width 0)
@@ -1354,13 +1380,23 @@
 	)
 	(wire
 		(pts
-			(xy 68.58 59.69) (xy 82.55 59.69)
+			(xy 68.58 59.69) (xy 101.6 59.69)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "1b8248b7-1bb9-4087-9e9e-d5019c531149")
+	)
+	(wire
+		(pts
+			(xy 60.96 105.41) (xy 73.66 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b91eb72-f90f-40f4-bda8-eeb70147fa12")
 	)
 	(wire
 		(pts
@@ -1394,7 +1430,7 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 114.3) (xy 67.31 113.03)
+			(xy 62.23 114.3) (xy 62.23 113.03)
 		)
 		(stroke
 			(width 0)
@@ -1404,7 +1440,7 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 129.54) (xy 133.35 99.06)
+			(xy 133.35 124.46) (xy 133.35 99.06)
 		)
 		(stroke
 			(width 0)
@@ -1434,7 +1470,7 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 113.03) (xy 66.04 113.03)
+			(xy 62.23 113.03) (xy 60.96 113.03)
 		)
 		(stroke
 			(width 0)
@@ -1454,13 +1490,13 @@
 	)
 	(wire
 		(pts
-			(xy 66.04 102.87) (xy 71.12 102.87)
+			(xy 96.52 110.49) (xy 96.52 146.05)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "3d560355-a766-4459-95e1-e25d3b00c2fe")
+		(uuid "3be740bb-b40a-4406-a00c-217772791592")
 	)
 	(wire
 		(pts
@@ -1474,7 +1510,7 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 134.62) (xy 148.59 134.62)
+			(xy 128.27 129.54) (xy 138.43 129.54)
 		)
 		(stroke
 			(width 0)
@@ -1514,6 +1550,16 @@
 	)
 	(wire
 		(pts
+			(xy 138.3993 124.46) (xy 133.35 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4d67f6e6-3125-414f-9f76-f4bf68175e80")
+	)
+	(wire
+		(pts
 			(xy 73.66 105.41) (xy 73.66 99.06)
 		)
 		(stroke
@@ -1524,13 +1570,43 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 127) (xy 148.59 127)
+			(xy 101.6 110.49) (xy 101.6 163.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4ef2a3ef-d047-49cd-a196-83beba57a35b")
+	)
+	(wire
+		(pts
+			(xy 104.14 110.49) (xy 104.14 172.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4fdb0c1b-d961-4f63-b873-9e7de4a130bb")
+	)
+	(wire
+		(pts
+			(xy 135.89 121.92) (xy 138.43 121.92)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "527521a1-5e89-4bb0-97ae-991b82581100")
+	)
+	(wire
+		(pts
+			(xy 186.69 123.19) (xy 196.85 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "53a4de8e-970d-4edd-80d1-a789122a9469")
 	)
 	(wire
 		(pts
@@ -1574,7 +1650,7 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 104.14) (xy 128.27 134.62)
+			(xy 128.27 104.14) (xy 128.27 129.54)
 		)
 		(stroke
 			(width 0)
@@ -1584,23 +1660,23 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 110.49) (xy 104.14 172.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5eddf36c-cd38-4c8e-8616-3ae84de7b596")
-	)
-	(wire
-		(pts
-			(xy 130.81 132.08) (xy 148.59 132.08)
+			(xy 130.81 127) (xy 138.4568 127)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "601e1868-944c-409f-bd84-2d96768b6296")
+	)
+	(wire
+		(pts
+			(xy 196.85 125.73) (xy 189.23 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "689a7dc1-7005-4e54-baee-61c56ab1fb6f")
 	)
 	(wire
 		(pts
@@ -1611,6 +1687,16 @@
 			(type default)
 		)
 		(uuid "6cad5af2-1eb4-4979-aba8-2d490911cdb0")
+	)
+	(wire
+		(pts
+			(xy 186.69 118.11) (xy 196.85 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6d1c86f9-da3b-476f-8313-7355cbb9b133")
 	)
 	(wire
 		(pts
@@ -1634,13 +1720,33 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 110.49) (xy 101.6 163.83)
+			(xy 138.4568 127) (xy 148.59 127)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "85e0c892-c836-4376-8587-2c221c4de345")
+		(uuid "82997920-fbf5-4337-937b-965997c58d10")
+	)
+	(wire
+		(pts
+			(xy 186.69 55.88) (xy 196.85 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "86ca5a44-c27b-4846-ba4f-b920fab5ccc1")
+	)
+	(wire
+		(pts
+			(xy 186.69 120.65) (xy 196.85 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "87f73ea2-e475-46c7-8d43-aba2c64ba28c")
 	)
 	(wire
 		(pts
@@ -1651,6 +1757,16 @@
 			(type default)
 		)
 		(uuid "8b9e2134-686e-4d84-b5d7-7f706b914da3")
+	)
+	(wire
+		(pts
+			(xy 69.85 87.63) (xy 67.31 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8f9cd02a-82b1-42d6-af43-c6f3610acfa1")
 	)
 	(wire
 		(pts
@@ -1684,13 +1800,43 @@
 	)
 	(wire
 		(pts
-			(xy 66.04 105.41) (xy 73.66 105.41)
+			(xy 134.62 62.23) (xy 134.62 73.66)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "aba192dd-0f0f-46f1-846b-d7d7b73f6c67")
+		(uuid "a2e9eef8-6691-4089-adc2-8489888dd35e")
+	)
+	(wire
+		(pts
+			(xy 138.43 121.92) (xy 148.59 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a7b0d512-77f5-4487-b4e2-6a679699f76d")
+	)
+	(wire
+		(pts
+			(xy 138.43 129.54) (xy 148.59 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ac578bb2-8a1f-4602-be18-5da2601c5db0")
+	)
+	(wire
+		(pts
+			(xy 60.96 102.87) (xy 71.12 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ada960b7-6aa3-494b-b5ad-6961d836acdb")
 	)
 	(wire
 		(pts
@@ -1704,7 +1850,7 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 87.63) (xy 67.31 87.63)
+			(xy 74.93 87.63) (xy 69.85 87.63)
 		)
 		(stroke
 			(width 0)
@@ -1734,7 +1880,7 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 101.6) (xy 130.81 132.08)
+			(xy 130.81 101.6) (xy 130.81 127)
 		)
 		(stroke
 			(width 0)
@@ -1774,23 +1920,23 @@
 	)
 	(wire
 		(pts
-			(xy 186.69 118.11) (xy 189.23 118.11)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c43e33fc-17f2-49f5-bf11-f883923faae1")
-	)
-	(wire
-		(pts
-			(xy 135.89 96.52) (xy 135.89 127)
+			(xy 135.89 96.52) (xy 135.89 121.92)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "c549e5f4-6396-4b3e-8b99-cd6bb8cd207f")
+	)
+	(wire
+		(pts
+			(xy 148.59 62.23) (xy 134.62 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c5c76755-98c5-4159-a137-eda7adb3e0b3")
 	)
 	(wire
 		(pts
@@ -1801,16 +1947,6 @@
 			(type default)
 		)
 		(uuid "c6eea1d2-a131-46d9-a188-e584e103d628")
-	)
-	(wire
-		(pts
-			(xy 96.52 110.49) (xy 96.52 146.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c94a728c-2186-433e-b01e-ee05c35ac4ca")
 	)
 	(wire
 		(pts
@@ -1834,13 +1970,13 @@
 	)
 	(wire
 		(pts
-			(xy 186.69 55.88) (xy 190.5 55.88)
+			(xy 134.62 82.55) (xy 125.73 82.55)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d5302804-6c5d-4e19-8cee-da432058f961")
+		(uuid "d4e58ee4-4e46-459e-a861-c38b75d4acfc")
 	)
 	(wire
 		(pts
@@ -1854,6 +1990,16 @@
 	)
 	(wire
 		(pts
+			(xy 134.62 73.66) (xy 134.62 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dd585c86-6fc7-4dcb-81f2-132bb58288c6")
+	)
+	(wire
+		(pts
 			(xy 106.68 148.59) (xy 106.68 157.48)
 		)
 		(stroke
@@ -1864,17 +2010,7 @@
 	)
 	(wire
 		(pts
-			(xy 82.55 59.69) (xy 101.6 59.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ed9dfc4b-87bd-4d9c-853a-ad000e19fefb")
-	)
-	(wire
-		(pts
-			(xy 148.59 129.54) (xy 133.35 129.54)
+			(xy 148.59 124.46) (xy 138.3993 124.46)
 		)
 		(stroke
 			(width 0)
@@ -1924,17 +2060,17 @@
 	)
 	(wire
 		(pts
-			(xy 186.69 120.65) (xy 189.23 120.65)
+			(xy 69.85 85.09) (xy 67.31 85.09)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "fc851406-f210-463d-9cf3-911f9adc3a05")
+		(uuid "f9d64633-6d41-4040-ae0c-5e8735826c4c")
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 67.31 114.3 0)
+		(at 62.23 114.3 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1942,7 +2078,7 @@
 		(dnp no)
 		(uuid "0333e382-e82b-4106-af59-67b1a8375ae1")
 		(property "Reference" "#PWR077"
-			(at 67.31 120.65 0)
+			(at 62.23 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1951,7 +2087,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 67.31 118.11 0)
+			(at 62.23 118.11 0)
 			(effects
 				(font
 					(size 0.889 0.889)
@@ -1959,7 +2095,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 67.31 114.3 0)
+			(at 62.23 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1968,7 +2104,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 67.31 114.3 0)
+			(at 62.23 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1977,7 +2113,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 67.31 114.3 0)
+			(at 62.23 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1992,6 +2128,81 @@
 			(project "Battery Management System"
 				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f"
 					(reference "#PWR077")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Small")
+		(at 146.05 87.63 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "0566a40a-1069-4763-b9b7-385430ae84db")
+		(property "Reference" "TP8"
+			(at 147.32 92.71 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint_Small"
+			(at 147.32 88.8999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm"
+			(at 151.13 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 151.13 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 146.05 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" ""
+			(at 146.05 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8cd75bd3-d032-441f-b10c-d55e1da0b832")
+		)
+		(instances
+			(project "Battery_Management_System"
+				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f"
+					(reference "TP8")
 					(unit 1)
 				)
 			)
@@ -2116,6 +2327,14 @@
 				(hide yes)
 			)
 		)
+		(property "SNAPEDA_PN" ""
+			(at 62.23 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "78349864-1511-46f8-82f8-d17a00b785e0")
 		)
@@ -2136,7 +2355,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x06_Socket")
-		(at 60.96 105.41 0)
+		(at 55.88 105.41 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -2145,7 +2364,7 @@
 		(dnp no)
 		(uuid "2445d403-ebc9-4798-ac66-0e1bbc494c6a")
 		(property "Reference" "J1"
-			(at 60.96 97.79 0)
+			(at 55.88 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2153,7 +2372,7 @@
 			)
 		)
 		(property "Value" "Conn_01x06_Socket"
-			(at 57.15 97.79 0)
+			(at 52.07 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2162,7 +2381,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical"
-			(at 60.96 105.41 0)
+			(at 55.88 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2171,7 +2390,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 60.96 105.41 0)
+			(at 55.88 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2180,12 +2399,20 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x06, script generated"
-			(at 60.96 105.41 0)
+			(at 55.88 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" ""
+			(at 55.88 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "6"
@@ -2269,6 +2496,14 @@
 				(hide yes)
 			)
 		)
+		(property "SNAPEDA_PN" ""
+			(at 113.03 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "68717b0f-9e36-400e-9c66-44621ead9fcb")
 		)
@@ -2279,6 +2514,82 @@
 			(project "Battery_Management_System"
 				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f"
 					(reference "J10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Small")
+		(at 138.43 129.54 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3ce908bc-3522-40d1-8df5-1435214306ef")
+		(property "Reference" "TP17"
+			(at 139.7 128.2699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint_Small"
+			(at 139.7 130.8099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm"
+			(at 143.51 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 143.51 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 138.43 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" ""
+			(at 138.43 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c98584e9-3bdd-445f-a020-747423bbb233")
+		)
+		(instances
+			(project "Battery_Management_System"
+				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f"
+					(reference "TP17")
 					(unit 1)
 				)
 			)
@@ -2338,6 +2649,14 @@
 				(hide yes)
 			)
 		)
+		(property "SNAPEDA_PN" ""
+			(at 113.03 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "12692e62-8224-400c-a49a-cb7614347b90")
 		)
@@ -2348,6 +2667,82 @@
 			(project "Battery_Management_System"
 				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f"
 					(reference "J13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Small")
+		(at 134.62 73.66 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "584ca5b7-8604-4241-96fe-79d9cd3db989")
+		(property "Reference" "TP6"
+			(at 135.89 72.3899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint_Small"
+			(at 135.89 74.9299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm"
+			(at 139.7 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 139.7 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 134.62 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" ""
+			(at 134.62 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "69be56a9-2fbd-438d-b984-307ef2a4730e")
+		)
+		(instances
+			(project "Battery_Management_System"
+				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f"
+					(reference "TP6")
 					(unit 1)
 				)
 			)
@@ -2405,6 +2800,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" ""
+			(at 113.03 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "2"
@@ -2488,8 +2891,83 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint_Small")
+		(at 143.51 85.09 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "6a0a350e-5f48-4a61-910c-55d0933131dd")
+		(property "Reference" "TP7"
+			(at 139.7 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint_Small"
+			(at 144.78 86.3599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm"
+			(at 148.59 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 148.59 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 143.51 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" ""
+			(at 143.51 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f21b5273-2cc7-4bd2-9934-ae354aaae5f5")
+		)
+		(instances
+			(project "Battery_Management_System"
+				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f"
+					(reference "TP7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
-		(at 190.5 58.42 0)
+		(at 196.85 58.42 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -2498,7 +2976,7 @@
 		(dnp no)
 		(uuid "850bd9de-204f-46b1-8924-656250717e1f")
 		(property "Reference" "#PWR082"
-			(at 190.5 64.77 0)
+			(at 196.85 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2507,7 +2985,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 190.5 62.23 0)
+			(at 196.85 62.23 0)
 			(effects
 				(font
 					(size 0.889 0.889)
@@ -2515,7 +2993,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 190.5 58.42 0)
+			(at 196.85 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2524,7 +3002,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 190.5 58.42 0)
+			(at 196.85 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2533,7 +3011,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 190.5 58.42 0)
+			(at 196.85 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2548,6 +3026,82 @@
 			(project "Battery Management System"
 				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f"
 					(reference "#PWR082")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Small")
+		(at 69.85 85.09 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "966a5bed-c44e-4dc5-bb5f-39ec6207a3c4")
+		(property "Reference" "TP24"
+			(at 71.12 83.8199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint_Small"
+			(at 71.12 86.3599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm"
+			(at 74.93 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 74.93 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 69.85 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" ""
+			(at 69.85 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "00c7ac95-b76d-4076-b70c-e317c34e6060")
+		)
+		(instances
+			(project "Battery_Management_System"
+				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f"
+					(reference "TP24")
 					(unit 1)
 				)
 			)
@@ -2621,7 +3175,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
-		(at 195.58 55.88 0)
+		(at 201.93 55.88 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2629,7 +3183,7 @@
 		(dnp no)
 		(uuid "a4724f70-690b-4a1b-941d-f83a3d6c3ee6")
 		(property "Reference" "J8"
-			(at 194.31 53.34 0)
+			(at 200.66 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2638,7 +3192,7 @@
 			)
 		)
 		(property "Value" "Conn_01x02"
-			(at 195.58 52.07 0)
+			(at 201.93 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2647,7 +3201,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
-			(at 195.58 55.88 0)
+			(at 201.93 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2656,7 +3210,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 195.58 55.88 0)
+			(at 201.93 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2665,12 +3219,20 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 195.58 55.88 0)
+			(at 201.93 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" ""
+			(at 201.93 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "2"
@@ -2690,7 +3252,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x05")
-		(at 194.31 120.65 0)
+		(at 201.93 120.65 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2698,7 +3260,7 @@
 		(dnp no)
 		(uuid "ae5adf3a-6ebc-419d-b54a-e46ad65377de")
 		(property "Reference" "J7"
-			(at 193.04 109.22 0)
+			(at 200.66 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2707,7 +3269,7 @@
 			)
 		)
 		(property "Value" "Conn_01x05"
-			(at 189.23 111.76 0)
+			(at 196.85 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2716,7 +3278,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical"
-			(at 194.31 120.65 0)
+			(at 201.93 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2725,7 +3287,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 194.31 120.65 0)
+			(at 201.93 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2734,12 +3296,20 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 194.31 120.65 0)
+			(at 201.93 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" ""
+			(at 201.93 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "4"
@@ -2761,6 +3331,310 @@
 			(project ""
 				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f"
 					(reference "J7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Small")
+		(at 138.4568 127 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b38652a1-a0bf-412c-9848-fcbc11fdcbdf")
+		(property "Reference" "TP16"
+			(at 139.7268 125.7299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint_Small"
+			(at 139.7268 128.2699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm"
+			(at 143.5368 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 143.5368 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 138.4568 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" ""
+			(at 138.4568 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a89204d4-7729-4890-9153-1fc02c7c2b89")
+		)
+		(instances
+			(project "Battery_Management_System"
+				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f"
+					(reference "TP16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Small")
+		(at 69.85 87.63 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b61c2c74-edd7-4e67-9a58-8f4c311f24a0")
+		(property "Reference" "TP25"
+			(at 71.12 86.3599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint_Small"
+			(at 71.12 88.8999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm"
+			(at 74.93 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 74.93 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 69.85 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" ""
+			(at 69.85 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ec8a8edf-38e6-4087-bb81-0c1a502d3b96")
+		)
+		(instances
+			(project "Battery_Management_System"
+				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f"
+					(reference "TP25")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Small")
+		(at 138.43 121.92 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cc8fcd0d-c8a0-423f-96d9-039cba7f618a")
+		(property "Reference" "TP14"
+			(at 139.7 120.6499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint_Small"
+			(at 139.7 123.1899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm"
+			(at 143.51 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 143.51 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 138.43 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" ""
+			(at 138.43 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "290c4c2a-9d03-460e-96e7-8a79a24d7740")
+		)
+		(instances
+			(project "Battery_Management_System"
+				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f"
+					(reference "TP14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Small")
+		(at 138.3993 124.46 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cd94770f-10bb-4db4-b150-5ac8a4d29303")
+		(property "Reference" "TP15"
+			(at 139.6693 123.1899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint_Small"
+			(at 139.6693 125.7299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm"
+			(at 143.4793 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 143.4793 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 138.3993 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" ""
+			(at 138.3993 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4e1a1f63-ffe2-4b57-bff6-4db820eaa100")
+		)
+		(instances
+			(project "Battery_Management_System"
+				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f"
+					(reference "TP15")
 					(unit 1)
 				)
 			)
@@ -2818,6 +3692,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" ""
+			(at 113.03 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "2"
@@ -2890,6 +3772,14 @@
 				(hide yes)
 			)
 		)
+		(property "SNAPEDA_PN" ""
+			(at 63.5 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "85a8fc8e-cef9-4470-b081-fd8f99a15d9c")
 		)
@@ -2907,7 +3797,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint_Small")
-		(at 82.55 59.69 0)
+		(at 101.6 59.69 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -2916,7 +3806,7 @@
 		(fields_autoplaced yes)
 		(uuid "ebf36c11-2341-4785-9982-4bce62b45f2e")
 		(property "Reference" "TP1"
-			(at 83.82 58.4199 0)
+			(at 102.87 58.4199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2925,7 +3815,7 @@
 			)
 		)
 		(property "Value" "TestPoint_Small"
-			(at 83.82 60.9599 0)
+			(at 102.87 60.9599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2935,7 +3825,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm"
-			(at 87.63 59.69 0)
+			(at 106.68 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2944,7 +3834,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 87.63 59.69 0)
+			(at 106.68 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2953,12 +3843,20 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 82.55 59.69 0)
+			(at 101.6 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" ""
+			(at 101.6 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -3072,7 +3970,7 @@
 				(justify left top)
 			)
 		)
-		(pin "BATT" output
+		(pin "BATT" input
 			(at 173.99 102.87 90)
 			(uuid "fb2a73f9-7474-4734-9691-08d7580ede39")
 			(effects
@@ -3083,7 +3981,7 @@
 			)
 		)
 		(pin "Cell_Balancer_2" input
-			(at 148.59 132.08 180)
+			(at 148.59 127 180)
 			(uuid "82d25958-d499-4f24-b130-59115187bba0")
 			(effects
 				(font
@@ -3093,7 +3991,7 @@
 			)
 		)
 		(pin "Cell_Balancer_1" input
-			(at 148.59 134.62 180)
+			(at 148.59 129.54 180)
 			(uuid "40c8ad78-5901-4548-91ee-106e6ce52102")
 			(effects
 				(font
@@ -3103,7 +4001,7 @@
 			)
 		)
 		(pin "Cell_Balancer_3" input
-			(at 148.59 129.54 180)
+			(at 148.59 124.46 180)
 			(uuid "aa47d6d4-7c8f-48ad-bb17-59b683f762c7")
 			(effects
 				(font
@@ -3113,7 +4011,7 @@
 			)
 		)
 		(pin "Cell_Balancer_4" input
-			(at 148.59 127 180)
+			(at 148.59 121.92 180)
 			(uuid "a06b3358-dfc8-4723-83d6-80c9d7b4502a")
 			(effects
 				(font
@@ -3225,7 +4123,7 @@
 				(hide yes)
 			)
 		)
-		(pin "BATT" input
+		(pin "BATT" output
 			(at 173.99 88.9 270)
 			(uuid "44067171-5ad4-443b-bb16-5b92fbd46328")
 			(effects
@@ -3265,7 +4163,7 @@
 				(justify left)
 			)
 		)
-		(pin "Vsys" input
+		(pin "Vsys" output
 			(at 186.69 55.88 0)
 			(uuid "d183d372-990e-4033-ae82-79e9077cec6a")
 			(effects
@@ -3273,6 +4171,16 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+			)
+		)
+		(pin "CHRG_OK" output
+			(at 148.59 62.23 180)
+			(uuid "cd5c9009-9a1f-4ca8-b5f7-5ab86911e884")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(instances
@@ -3465,6 +4373,16 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+			)
+		)
+		(pin "CHRG_OK" input
+			(at 125.73 82.55 0)
+			(uuid "833046bc-d078-445c-8fd5-9fb18a599ecf")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 		(instances
