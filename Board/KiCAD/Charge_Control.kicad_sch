@@ -944,7 +944,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "BQ25730RSNR_1"
+		(symbol "BQ25730RSNR:BQ25730RSNR"
 			(pin_names
 				(offset 1.016)
 			)
@@ -977,7 +977,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" ""
+			(property "Datasheet" "https://www.ti.com/lit/ds/symlink/bq25730.pdf"
 				(at 0 0 0)
 				(effects
 					(font
@@ -986,7 +986,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" ""
+			(property "Description" "Charger IC Multi-Chemistry 32-QFN (4x4)"
 				(at 0 0 0)
 				(effects
 					(font
@@ -995,140 +995,36 @@
 					(hide yes)
 				)
 			)
-			(property "MF" "Texas Instruments"
+			(property "MFR" "Texas Instruments"
 				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify bottom)
 					(hide yes)
 				)
 			)
-			(property "MAXIMUM_PACKAGE_HEIGHT" "0.8 mm"
+			(property "MPN" "BQ25730RSNR"
 				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify bottom)
 					(hide yes)
 				)
 			)
-			(property "Package" "QFN-32 Texas Instruments"
+			(property "SNAPEDA_PN" ""
 				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify bottom)
-					(hide yes)
 				)
 			)
-			(property "Price" "None"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Check_prices" "https://www.snapeda.com/parts/BQ25730RSNR/Texas+Instruments/view-part/?ref=eda"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "STANDARD" "Manufacturer Recommendations"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "PARTREV" "February 2021"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "SnapEDA_Link" "https://www.snapeda.com/parts/BQ25730RSNR/Texas+Instruments/view-part/?ref=snap"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "MP" "BQ25730RSNR"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Description_1" "I²C 1-5 cell NVDC buck-boost battery charge controller with power path and USB-C® PD OTG"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "MANUFACTURER" "Texas Instruments"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Availability" "In Stock"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "SNAPEDA_PN" "BQ25730RSNR"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(symbol "BQ25730RSNR_1_0_0"
+			(symbol "BQ25730RSNR_0_0"
 				(rectangle
-					(start -31.75 29.21)
-					(end 31.496 -31.75)
+					(start -31.496 29.21)
+					(end 31.75 -31.75)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -1605,24 +1501,6 @@
 						)
 					)
 				)
-				(pin power_in line
-					(at 36.83 -3.81 180)
-					(length 5.08)
-					(name "PGND"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "27"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
 				(pin input line
 					(at 36.83 -10.16 180)
 					(length 5.08)
@@ -1696,7 +1574,7 @@
 					)
 				)
 			)
-			(symbol "BQ25730RSNR_1_1_0"
+			(symbol "BQ25730RSNR_1_0"
 				(pin bidirectional line
 					(at -15.24 -36.83 90)
 					(length 5.08)
@@ -1711,6 +1589,216 @@
 						(effects
 							(font
 								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 36.83 -3.81 180)
+					(length 5.08)
+					(name "PGND"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "27"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+			(symbol "BQ25730RSNR_1_1"
+				(pin power_in line
+					(at 36.83 -3.81 180)
+					(length 5.08)
+					(hide yes)
+					(name "33"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "33"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 36.83 -3.81 180)
+					(length 5.08)
+					(hide yes)
+					(name "34"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "34"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 36.83 -3.81 180)
+					(length 5.08)
+					(hide yes)
+					(name "35"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "35"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 36.83 -3.81 180)
+					(length 5.08)
+					(hide yes)
+					(name "36"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "36"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 36.83 -3.81 180)
+					(length 5.08)
+					(hide yes)
+					(name "37"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "37"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 36.83 -3.81 180)
+					(length 5.08)
+					(hide yes)
+					(name "38"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "38"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 36.83 -3.81 180)
+					(length 5.08)
+					(hide yes)
+					(name "39"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "39"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 36.83 -3.81 180)
+					(length 5.08)
+					(hide yes)
+					(name "40"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "40"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 36.83 -3.81 180)
+					(length 5.08)
+					(hide yes)
+					(name "41"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "41"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 36.83 -3.81 180)
+					(length 5.08)
+					(hide yes)
+					(name "42"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "42"
+						(effects
+							(font
+								(size 1.27 1.27)
 							)
 						)
 					)
@@ -5218,7 +5306,6 @@
 		(uuid "f6a1d5b9-ca9b-42f6-99f6-1f858a76b402")
 	)
 	(symbol
-		(lib_name "BQ25730RSNR_1")
 		(lib_id "BQ25730RSNR:BQ25730RSNR")
 		(at 123.19 88.9 0)
 		(unit 1)
@@ -5393,6 +5480,36 @@
 		)
 		(pin "27"
 			(uuid "6bdd51e4-071b-4b28-9d66-e96eaf71375f")
+		)
+		(pin "39"
+			(uuid "e7520fdd-07e2-4bd4-bad8-c84caf92277a")
+		)
+		(pin "33"
+			(uuid "244d0b53-fb7c-46e6-9df2-4e7c02e9c821")
+		)
+		(pin "40"
+			(uuid "76725f71-72e8-45f4-9f98-7eefd1926c1b")
+		)
+		(pin "35"
+			(uuid "3f62e4d7-85b6-4b1a-9a8e-71abeaea1763")
+		)
+		(pin "38"
+			(uuid "f5bf0500-861b-4e4b-949b-0986da90770b")
+		)
+		(pin "36"
+			(uuid "6c5ad2c9-7b1f-4902-b363-468821fbf6d8")
+		)
+		(pin "41"
+			(uuid "62ae8aff-0fa2-4afc-9955-1da97138ee27")
+		)
+		(pin "34"
+			(uuid "5128e049-ea3a-46d3-a58e-301e31af57bb")
+		)
+		(pin "37"
+			(uuid "a4f1d967-2dd0-436a-a5dd-487e66043a65")
+		)
+		(pin "42"
+			(uuid "cbda9773-da75-4f93-b17c-29519280cd7a")
 		)
 		(instances
 			(project ""

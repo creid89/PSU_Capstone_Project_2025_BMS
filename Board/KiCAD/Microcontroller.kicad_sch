@@ -1672,6 +1672,14 @@
 					(hide yes)
 				)
 			)
+			(property "SNAPEDA_PN" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
 			(symbol "STM32F103C8T6_0_0"
 				(rectangle
 					(start -29.21 29.21)
