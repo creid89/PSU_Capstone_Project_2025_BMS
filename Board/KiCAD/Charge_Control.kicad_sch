@@ -498,6 +498,8 @@
 						)
 					)
 				)
+			)
+			(symbol "AON7407_1_0"
 				(pin passive line
 					(at 2.54 -5.08 90)
 					(length 2.54)
@@ -508,7 +510,7 @@
 							)
 						)
 					)
-					(number "5_6_7_8"
+					(number "5-8"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -3142,6 +3144,12 @@
 		(uuid "3fe87835-fc6d-4788-b757-bef22aeaaabe")
 	)
 	(junction
+		(at 170.18 35.56)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "50adf9da-6bf4-4140-a264-0dcfbd6c7fa0")
+	)
+	(junction
 		(at 199.39 19.05)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3254,12 +3262,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a1313314-f71e-40dd-b56f-61d45270ff98")
-	)
-	(junction
-		(at 170.18 35.56)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a14e30eb-25aa-4e6f-8efa-7d7b25e3aecf")
 	)
 	(junction
 		(at 217.17 35.56)
@@ -3638,6 +3640,16 @@
 			(type default)
 		)
 		(uuid "274b8070-3b14-4f6d-a453-10e48c8be5b7")
+	)
+	(wire
+		(pts
+			(xy 171.45 35.56) (xy 170.18 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "286871bb-a9be-4b9f-8859-3278187b24aa")
 	)
 	(wire
 		(pts
@@ -4358,16 +4370,6 @@
 			(type default)
 		)
 		(uuid "996fde31-f627-43fc-b066-488158e1059e")
-	)
-	(wire
-		(pts
-			(xy 170.18 35.56) (xy 171.45 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9ae555fc-c740-449c-ab1f-ab72436bde72")
 	)
 	(wire
 		(pts
@@ -9389,7 +9391,7 @@
 		(pin "3"
 			(uuid "d31e0102-b552-4cf6-bb77-73e75debb102")
 		)
-		(pin "5_6_7_8"
+		(pin "5-8"
 			(uuid "4cab3e9f-5baf-4634-9c91-2d058cfa430b")
 		)
 		(pin "4"

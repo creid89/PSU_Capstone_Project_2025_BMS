@@ -301,6 +301,10 @@
   "erc": {
     "erc_exclusions": [
       [
+        "multiple_net_names|1600200|927100|2018e42c-2dc2-4fee-a583-4d1607a83de9|5128e049-ea3a-46d3-a58e-301e31af57bb|/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/70546578-20d6-4cac-ac3f-606caa4a96bc|/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/70546578-20d6-4cac-ac3f-606caa4a96bc|/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/70546578-20d6-4cac-ac3f-606caa4a96bc",
+        ""
+      ],
+      [
         "multiple_net_names|1600200|927100|4ad1a6f1-c171-45d9-9b8f-80fcf752e793|3f62e4d7-85b6-4b1a-9a8e-71abeaea1763|/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/70546578-20d6-4cac-ac3f-606caa4a96bc|/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/70546578-20d6-4cac-ac3f-606caa4a96bc|/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/70546578-20d6-4cac-ac3f-606caa4a96bc",
         ""
       ],
