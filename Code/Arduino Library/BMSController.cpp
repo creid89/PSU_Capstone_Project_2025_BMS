@@ -6,7 +6,7 @@ BMSController::BMSController(uint8_t i2cAddress, uint8_t sdaPin, uint8_t sclPin)
 }
 
 void BMSController::begin() {
-  // Optionally reserve I2C buffers or do nothing
+  // Initialize if needed
 }
 
 void BMSController::sendFloat(uint8_t command, float value) {
@@ -60,4 +60,28 @@ float BMSController::getValue(uint8_t command) {
   memcpy(&value, buf, 4);
 
   return value;
+}
+
+float BMSController::getChargeCurrent() {
+  return getValue(0x06);
+}
+
+float BMSController::getCell1Voltage() {
+  return getValue(0x01);
+}
+
+float BMSController::getCell2Voltage() {
+  return getValue(0x02);
+}
+
+float BMSController::getCell3Voltage() {
+  return getValue(0x03);
+}
+
+float BMSController::getCell4Voltage() {
+  return getValue(0x04);
+}
+
+float BMSController::getTotalPackVoltage() {
+  return getValue(0x05);
 }
