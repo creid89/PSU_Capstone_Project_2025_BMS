@@ -1,4 +1,4 @@
-//LTC2943_and_BQ_and_INA_Driver_v0_6
+//Integrated BMS Driver V1_1
 //Sodium ION BMS
 
 //Include wire for I2C
@@ -33,8 +33,8 @@ float CELL3_VOLTAGE = 0.00;
 float CELL4_VOLTAGE = 0.00;
 
 //Balancer Declarations
-float CellVMax = 4.0;
-
+float CellVMax = 3.90;
+float CellCutOffV = 4.05;
 
 
 //////////////////////////////////////////////////////////////////////
@@ -414,7 +414,46 @@ void EnableBalancerPins(){
   pinMode(PA6, OUTPUT);
 
 }
+// Call this each loop to automatically stop charging if any cell exceeds cutoff
+void checkCellCutoff() {
+  // First gather which cells are over the cutoff
+  bool anyOver = false;
+  String overList = "";
+
+  if (CELL1_VOLTAGE_LTC2943 >= CellCutOffV) {
+    anyOver = true;
+    overList += "1 ";
+  }
+  if (CELL2_VOLTAGE >= CellCutOffV) {
+    anyOver = true;
+    overList += "2 ";
+  }
+  if (CELL3_VOLTAGE >= CellCutOffV) {
+    anyOver = true;
+    overList += "3 ";
+  }
+  if (CELL4_VOLTAGE >= CellCutOffV) {
+    anyOver = true;
+    overList += "4 ";
+  }
+
+  // If any are over and we’re currently charging, stop and report
+  if (anyOver && CHARGING) {
+    disableCharging();
+    CHARGING = false;
+
+    Serial.println(F("\n=== CHARGING STOPPED: CELL CUTOFF ==="));
+    Serial.print  (F("Cells over cutoff ("));
+    Serial.print  (CellCutOffV, 2);
+    Serial.print  (F(" V): "));
+    Serial.println(overList);              // e.g. "1 3 "
+    Serial.println(F("=====================================\n"));
+  }
+}
+
 void Balance_Cells(bool bal){
+
+  
   disableCharging();
   delay(200);
   //Grab each cells Voltage
@@ -431,10 +470,13 @@ void Balance_Cells(bool bal){
 
   //Grab LTC voltage too
   CELL1_VOLTAGE_LTC2943 = Request_Voltage_LTC2943()- INA_0x44_VOLTAGE;
-  enableCharging();
-  //Balance if true
+
+  //Check if any Cells are overvolted
+  checkCellCutoff()
   if(bal == true)
   {
+    enableCharging();
+    MaintainChargingBQ();
     //If cell 1 outside of CellVMax Activate Balancer on Cell 1
     if(CELL1_VOLTAGE_LTC2943 >= CellVMax){
       Serial.print("CELL 1 OUT OF VOLTAGE RANGE, BYPASSING\n");
@@ -545,12 +587,12 @@ void handleSerialCharging() {
       cmd.trim();
       cmd.toUpperCase();
       if (cmd == "START") {
-        enableCharging();
+        //enableCharging();
         CHARGING = true;
         Serial.println(F("⚡ Charging ENABLED"));
       }
       else if (cmd == "STOP") {
-        disableCharging();
+        //disableCharging();
         CHARGING = false;
         Serial.println(F("⛔ Charging DISABLED"));
       }
@@ -591,12 +633,12 @@ void loop() {
 
   //Grrab user Input
   handleSerialCharging();
-
+  Serial.print("Charging: ");Serial.print(CHARGING);
   //BQ loop code, Charge if User wants Charge Dont charge otherwise
   Balance_Cells(CHARGING);
-  if(CHARGING == true){
-    MaintainChargingBQ();
-  }
+  //if(CHARGING == true){
+    //MaintainChargingBQ();
+  //}
 
   //Print out LTC status
   Serial.println("LTC2943 Measurements:");
