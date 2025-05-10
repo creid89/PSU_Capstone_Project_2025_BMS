@@ -1598,6 +1598,16 @@
 		)
 		(uuid "14403705-9ba2-4724-b526-f1664067cd4c")
 	)
+	(text "Update symbol for INA219 back to its original form, edit messes with something "
+		(exclude_from_sim no)
+		(at 63.5 20.32 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "160321b6-e7d2-49c1-a270-2b65c4474c21")
+	)
 	(text "Address: 0x40"
 		(exclude_from_sim no)
 		(at 50.8 157.48 0)
