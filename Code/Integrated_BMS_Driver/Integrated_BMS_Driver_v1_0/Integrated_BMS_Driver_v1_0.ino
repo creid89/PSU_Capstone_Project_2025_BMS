@@ -33,8 +33,8 @@ float CELL3_VOLTAGE = 0.00;
 float CELL4_VOLTAGE = 0.00;
 
 //Balancer Declarations
-float CellVMax = 4.0;
-
+float CellVMax = 3.9;
+float CellCutOffV = 4.05;
 
 
 //////////////////////////////////////////////////////////////////////
@@ -435,6 +435,7 @@ void Balance_Cells(bool bal){
   //Balance if true
   if(bal == true)
   {
+    MaintainChargingBQ();
     //If cell 1 outside of CellVMax Activate Balancer on Cell 1
     if(CELL1_VOLTAGE_LTC2943 >= CellVMax){
       Serial.print("CELL 1 OUT OF VOLTAGE RANGE, BYPASSING\n");
@@ -594,9 +595,9 @@ void loop() {
 
   //BQ loop code, Charge if User wants Charge Dont charge otherwise
   Balance_Cells(CHARGING);
-  if(CHARGING == true){
-    MaintainChargingBQ();
-  }
+  //if(CHARGING == true){
+    //MaintainChargingBQ();
+  //}
 
   //Print out LTC status
   Serial.println("LTC2943 Measurements:");
