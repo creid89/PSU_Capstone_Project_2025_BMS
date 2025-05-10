@@ -5269,14 +5269,6 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
-			(at 125.73 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "14"
 			(uuid "4eb43792-9976-4025-be34-ba62e8f08ff3")
 		)
@@ -5430,7 +5422,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10uF"
+		(property "Value" "10u"
 			(at 214.63 57.15 0)
 			(effects
 				(font
@@ -5482,14 +5474,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 214.63 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -5559,14 +5543,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 85.09 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "1"
@@ -5834,14 +5810,6 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
-			(at 162.56 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "46687d51-7036-4f9f-8d6e-3b81da016c6f")
 		)
@@ -5872,7 +5840,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1uF"
+		(property "Value" "1u"
 			(at 232.41 41.91 0)
 			(effects
 				(font
@@ -5906,14 +5874,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 231.14 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -6181,14 +6141,6 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
-			(at 77.47 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "b63e4f31-712e-4f1f-878c-6ec346b19db0")
 		)
@@ -6258,14 +6210,6 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
-			(at 198.12 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "9dc1b42e-c17e-4cd4-a7be-7f944436f54b")
 		)
@@ -6299,7 +6243,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "5,1"
+		(property "Value" "5.1"
 			(at 71.12 68.58 0)
 			(effects
 				(font
@@ -6335,14 +6279,6 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
-			(at 69.85 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "407af24b-47e4-4cbd-8d82-02a7a8fb700a")
 		)
@@ -6376,7 +6312,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "33pF"
+		(property "Value" "33p"
 			(at 82.55 116.84 0)
 			(effects
 				(font
@@ -6412,14 +6348,6 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
-			(at 81.28 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "2"
 			(uuid "727c0271-83b7-4e59-9411-640610d9459b")
 		)
@@ -6453,7 +6381,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1uF"
+		(property "Value" "1u"
 			(at 81.28 99.06 0)
 			(effects
 				(font
@@ -6487,14 +6415,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 81.28 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -6566,14 +6486,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 85.09 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "1"
@@ -6708,52 +6620,13 @@
 				(hide yes)
 			)
 		)
-		(property "PARTREV" "G"
+		(property "MFR" "Alpha & Omega Semiconductor"
 			(at 143.51 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify bottom)
 				(hide yes)
-			)
-		)
-		(property "STANDARD" "Manufacturer Recommendations"
-			(at 143.51 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" "0.90 mm"
-			(at 143.51 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" "Alpha & Omega Semiconductor"
-			(at 143.51 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 143.51 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "3"
@@ -6928,7 +6801,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47nF"
+		(property "Value" "47n"
 			(at 130.81 62.23 0)
 			(effects
 				(font
@@ -6962,14 +6835,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 130.81 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -7041,14 +6906,6 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
-			(at 85.09 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "82d4d345-b82b-45a3-9401-e57349e9ac4f")
 		)
@@ -7116,14 +6973,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 48.26 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "1"
@@ -7325,14 +7174,6 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
-			(at 193.04 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "f9f60883-ea8b-4d31-a523-738168fc2c56")
 		)
@@ -7366,7 +7207,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "33nF"
+		(property "Value" "33n"
 			(at 66.04 82.55 0)
 			(effects
 				(font
@@ -7400,14 +7241,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 66.04 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -7545,52 +7378,13 @@
 				(hide yes)
 			)
 		)
-		(property "PARTREV" "G"
+		(property "MFR" "Alpha & Omega Semiconductor"
 			(at 156.21 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify bottom)
 				(hide yes)
-			)
-		)
-		(property "STANDARD" "Manufacturer Recommendations"
-			(at 156.21 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" "0.90 mm"
-			(at 156.21 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" "Alpha & Omega Semiconductor"
-			(at 156.21 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 156.21 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "3"
@@ -7765,7 +7559,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10nF"
+		(property "Value" "10n"
 			(at 85.09 57.15 0)
 			(effects
 				(font
@@ -7799,14 +7593,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 85.09 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -7877,14 +7663,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 144.78 140.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "1"
@@ -7982,7 +7760,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10nF"
+		(property "Value" "10n"
 			(at 74.93 77.47 0)
 			(effects
 				(font
@@ -8016,14 +7794,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 73.66 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -8095,14 +7865,6 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
-			(at 73.66 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "4b2a6445-c71c-44f5-88a1-208353afb546")
 		)
@@ -8136,7 +7898,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10uF"
+		(property "Value" "10u"
 			(at 167.64 57.15 0)
 			(effects
 				(font
@@ -8190,14 +7952,6 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
-			(at 167.64 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "2"
 			(uuid "238d34f6-2022-42b1-93ec-f8a82f375420")
 		)
@@ -8231,7 +7985,7 @@
 				)
 			)
 		)
-		(property "Value" "4.7uH"
+		(property "Value" "4.7u"
 			(at 125.73 48.26 90)
 			(effects
 				(font
@@ -8264,14 +8018,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 125.73 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "1"
@@ -8307,7 +8053,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "680pF"
+		(property "Value" "680p"
 			(at 77.47 125.73 0)
 			(effects
 				(font
@@ -8341,14 +8087,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 76.2 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -8449,7 +8187,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "33nF"
+		(property "Value" "33n"
 			(at 83.82 77.47 0)
 			(effects
 				(font
@@ -8483,14 +8221,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 82.55 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -8561,14 +8291,6 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
-			(at 227.33 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "2"
 			(uuid "08f77bb6-8ba6-45aa-84d9-6f5670038b43")
 		)
@@ -8602,7 +8324,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47nF"
+		(property "Value" "47n"
 			(at 120.65 62.23 0)
 			(effects
 				(font
@@ -8636,14 +8358,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 120.65 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -8715,14 +8429,6 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
-			(at 185.42 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "ee4423ab-c543-40e3-af55-54c5910c0bf8")
 		)
@@ -8756,7 +8462,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10uF"
+		(property "Value" "10u"
 			(at 57.15 59.69 0)
 			(effects
 				(font
@@ -8808,14 +8514,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 57.15 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -8954,14 +8652,6 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
-			(at 116.84 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "f4f7fa80-0cb2-4a4f-ba03-cdda817a83cb")
 		)
@@ -8992,7 +8682,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "3.3uF"
+		(property "Value" "3.3u"
 			(at 167.64 106.68 0)
 			(effects
 				(font
@@ -9026,14 +8716,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 167.64 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -9171,106 +8853,6 @@
 				(hide yes)
 			)
 		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" "0.9mm"
-			(at 179.07 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Package" "DFN-8 Alpha &amp;"
-			(at 179.07 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Price" "None"
-			(at 179.07 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Check_prices" "https://www.snapeda.com/parts/AON7407/Alpha/view-part/?ref=eda"
-			(at 179.07 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "STANDARD" "Manufacturer Recommendations"
-			(at 179.07 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "PARTREV" "0"
-			(at 179.07 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "SnapEDA_Link" "https://www.snapeda.com/parts/AON7407/Alpha/view-part/?ref=snap"
-			(at 179.07 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Description_1" "P-Channel 20 V 14.5A (Ta), 40A (Tc) 3.1W (Ta), 29W (Tc) Surface Mount 8-DFN-EP (3x3)"
-			(at 179.07 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Availability" "In Stock"
-			(at 179.07 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" "Alpha Omega"
-			(at 179.07 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
 		(property "MFR" "Alpha & Omega Semiconductor"
 			(at 179.07 53.34 0)
 			(effects
@@ -9287,14 +8869,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 179.07 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "3"
@@ -9375,14 +8949,6 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
-			(at 85.09 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "5688393c-fd34-402f-ad22-7c6fd4a2841c")
 		)
@@ -9452,52 +9018,13 @@
 				(hide yes)
 			)
 		)
-		(property "PARTREV" "G"
+		(property "MFR" "Alpha & Omega Semiconductor"
 			(at 95.25 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify bottom)
 				(hide yes)
-			)
-		)
-		(property "STANDARD" "Manufacturer Recommendations"
-			(at 95.25 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" "0.90 mm"
-			(at 95.25 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" "Alpha & Omega Semiconductor"
-			(at 95.25 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 95.25 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "3"
@@ -9578,14 +9105,6 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
-			(at 194.31 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "3e88b398-e6e3-4450-9d6a-0deb3a6315f6")
 		)
@@ -9655,12 +9174,22 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
+		(property "MFR" "Stackpole Electronics Inc"
 			(at 104.14 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RMCF0603FT10K0"
+			(at 104.14 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -9762,7 +9291,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "33uF"
+		(property "Value" "33u"
 			(at 201.93 39.37 0)
 			(effects
 				(font
@@ -9798,14 +9327,6 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
-			(at 201.93 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "2"
 			(uuid "0f0df4ce-8aff-4d96-8d15-78d126811ad0")
 		)
@@ -9839,7 +9360,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "33uF"
+		(property "Value" "33u"
 			(at 196.85 39.37 0)
 			(effects
 				(font
@@ -9873,14 +9394,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 196.85 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -9950,14 +9463,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 87.63 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "1"
@@ -10123,7 +9628,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10uF"
+		(property "Value" "10u"
 			(at 219.71 57.15 0)
 			(effects
 				(font
@@ -10175,14 +9680,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 219.71 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -10271,14 +9768,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 242.57 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "6"
@@ -10371,52 +9860,13 @@
 				(hide yes)
 			)
 		)
-		(property "PARTREV" "G"
+		(property "MFR" "Alpha & Omega Semiconductor"
 			(at 107.95 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify bottom)
 				(hide yes)
-			)
-		)
-		(property "STANDARD" "Manufacturer Recommendations"
-			(at 107.95 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" "0.90 mm"
-			(at 107.95 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" "Alpha & Omega Semiconductor"
-			(at 107.95 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 107.95 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "3"
@@ -10461,7 +9911,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100pF"
+		(property "Value" "100p"
 			(at 173.99 133.35 0)
 			(effects
 				(font
@@ -10497,14 +9947,6 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
-			(at 173.99 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "2"
 			(uuid "4e895654-2b99-4f7f-85c1-05351a33a93d")
 		)
@@ -10538,7 +9980,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.7nF"
+		(property "Value" "4.7n"
 			(at 77.47 114.3 0)
 			(effects
 				(font
@@ -10572,14 +10014,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 76.2 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -10848,14 +10282,6 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
-			(at 134.62 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "8de256db-1386-469f-8899-c9970f421749")
 		)
@@ -10886,7 +10312,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "0.1uF"
+		(property "Value" "100n"
 			(at 195.58 59.69 0)
 			(effects
 				(font
@@ -10922,14 +10348,6 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
-			(at 194.31 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "2"
 			(uuid "3d20a852-b10a-468c-83b8-dcaa6eabc914")
 		)
@@ -10963,7 +10381,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10uF"
+		(property "Value" "10u"
 			(at 64.77 59.69 0)
 			(effects
 				(font
@@ -11015,14 +10433,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 64.77 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -11160,14 +10570,6 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
-			(at 130.81 140.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "df907f6b-d993-4f6c-965f-e7cfff372e4c")
 		)
@@ -11198,7 +10600,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1uF"
+		(property "Value" "1u"
 			(at 48.26 62.23 0)
 			(effects
 				(font
@@ -11232,14 +10634,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 48.26 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -11309,14 +10703,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 173.99 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "1"
@@ -11417,7 +10803,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "15pF"
+		(property "Value" "15p"
 			(at 82.55 123.19 0)
 			(effects
 				(font
@@ -11451,14 +10837,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 81.28 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -11595,14 +10973,6 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
-			(at 190.5 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "f02c3914-18b6-4552-a104-d5247d8efc34")
 		)
@@ -11701,7 +11071,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100pF"
+		(property "Value" "100p"
 			(at 180.34 133.35 0)
 			(effects
 				(font
@@ -11735,14 +11105,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 180.34 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -11815,14 +11177,6 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
-			(at 227.33 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "a36fccce-fd8b-42a5-a5da-37f57b30ce0a")
 		)
@@ -11856,7 +11210,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10uF"
+		(property "Value" "10u"
 			(at 172.72 57.15 0)
 			(effects
 				(font
@@ -11908,14 +11262,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 172.72 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
