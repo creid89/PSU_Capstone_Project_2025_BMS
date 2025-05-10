@@ -10,17 +10,33 @@ void setup() {
   Serial.begin(115200);
   BMS.begin();
 
+  delay(2500);
+
   BMS.setChargeVoltage(16.8);
   BMS.setVsysMin(8.0);
   BMS.setInputVoltageLimit(12.5);
   BMS.setChargeCurrent(1.5);
   BMS.setInputCurrentLimit(3000);
-
-  float chargeCurrent = BMS.getValue(0x06);
-  Serial.print("Charge Current: ");
-  Serial.println(chargeCurrent, 3);
 }
 
 void loop() {
-  // Add periodic reads or config here
+  Serial.print("Charge Current: ");
+  Serial.println(BMS.getChargeCurrent(), 3);
+
+  Serial.print("Cell 1 Voltage: ");
+  Serial.println(BMS.getCell1Voltage(), 3);
+
+  Serial.print("Cell 2 Voltage: ");
+  Serial.println(BMS.getCell2Voltage(), 3);
+
+  Serial.print("Cell 3 Voltage: ");
+  Serial.println(BMS.getCell3Voltage(), 3);
+
+  Serial.print("Cell 4 Voltage: ");
+  Serial.println(BMS.getCell4Voltage(), 3);
+
+  Serial.print("Total Pack Voltage: ");
+  Serial.println(BMS.getTotalPackVoltage(), 3);
+
+  delay(3000);
 }

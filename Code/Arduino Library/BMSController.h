@@ -13,11 +13,18 @@ class BMSController {
     bool setInputVoltageLimit(float volts);
     bool setChargeCurrent(float amps);
     bool setInputCurrentLimit(float milliamps);
-    float getValue(uint8_t command);
-    
+
+    float getChargeCurrent();
+    float getCell1Voltage();
+    float getCell2Voltage();
+    float getCell3Voltage();
+    float getCell4Voltage();
+    float getTotalPackVoltage();
+
   private:
     uint8_t _address;
     void sendFloat(uint8_t command, float value);
+    float getValue(uint8_t command);
 };
 
 #endif
