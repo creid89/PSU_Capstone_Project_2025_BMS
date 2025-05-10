@@ -3249,12 +3249,22 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
+		(property "MFR" "Stackpole Electronics Inc"
 			(at 106.68 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RMCF0603FT10K0"
+			(at 106.68 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -3325,12 +3335,22 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
+		(property "MFR" "Stackpole Electronics Inc"
 			(at 116.84 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RMCF0603FT10K0"
+			(at 116.84 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -3401,14 +3421,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 69.85 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "3"
@@ -3500,14 +3512,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 125.73 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "1"
@@ -3651,12 +3655,13 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
+		(property "MFR" "Alpha & Omega Semiconductor"
 			(at 111.76 165.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3733,14 +3738,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 125.73 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "1"
@@ -4146,14 +4143,6 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
-			(at 69.85 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "3"
 			(uuid "6db992fe-3e9a-492e-931b-1409e0b5646f")
 		)
@@ -4240,12 +4229,22 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
+		(property "MFR" "Stackpole Electronics Inc"
 			(at 114.3 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RMCF0603FT10K0"
+			(at 114.3 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -4448,14 +4447,6 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
-			(at 132.08 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "2"
 			(uuid "58fe7f0b-0aa0-409d-80b6-9763c97645ee")
 		)
@@ -4526,12 +4517,22 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
+		(property "MFR" "Stackpole Electronics Inc"
 			(at 106.68 168.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RMCF0603FT10K0"
+			(at 106.68 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -4600,14 +4601,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 132.08 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -4810,12 +4803,22 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
+		(property "MFR" "Stackpole Electronics Inc"
 			(at 106.68 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RMCF0603FT10K0"
+			(at 106.68 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -4885,14 +4888,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 63.5 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "1"
@@ -5028,14 +5023,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 63.5 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "1"
@@ -5177,14 +5164,6 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
-			(at 125.73 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "3d1877b5-93ef-4bdb-b824-46517ca00b3d")
 		)
@@ -5253,14 +5232,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 132.08 163.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -5334,14 +5305,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 125.73 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "1"
@@ -5481,12 +5444,22 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
+		(property "MFR" "Stackpole Electronics Inc"
 			(at 106.68 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RMCF0603FT10K0"
+			(at 106.68 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -5555,14 +5528,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 132.08 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -5699,12 +5664,22 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
+		(property "MFR" "Stackpole Electronics Inc"
 			(at 114.3 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RMCF0603FT10K0"
+			(at 114.3 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -5845,12 +5820,13 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
+		(property "MFR" "Alpha & Omega Semiconductor"
 			(at 111.76 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -5990,12 +5966,22 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
+		(property "MFR" "Stackpole Electronics Inc"
 			(at 116.84 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RMCF0603FT10K0"
+			(at 116.84 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -6135,12 +6121,13 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
+		(property "MFR" "Alpha & Omega Semiconductor"
 			(at 111.76 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -6218,12 +6205,13 @@
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" ""
+		(property "MFR" "Alpha & Omega Semiconductor"
 			(at 111.76 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -6362,14 +6350,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 63.5 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "1"
@@ -6572,14 +6552,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" ""
-			(at 68.58 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "3"
