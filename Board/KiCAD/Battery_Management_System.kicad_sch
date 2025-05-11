@@ -2442,7 +2442,7 @@
 			)
 		)
 		(property "Package" "61300311121"
-			(at 46.99 90.17 0)
+			(at 40.132 97.282 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2482,7 +2482,7 @@
 			)
 		)
 		(property "MFR" "Würth Elektronik"
-			(at 46.99 90.17 0)
+			(at 46.228 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2490,7 +2490,7 @@
 			)
 		)
 		(property "MPN" "732-5316-ND"
-			(at 46.99 90.17 0)
+			(at 46.99 99.568 0)
 			(effects
 				(font
 					(size 1.27 1.27)
