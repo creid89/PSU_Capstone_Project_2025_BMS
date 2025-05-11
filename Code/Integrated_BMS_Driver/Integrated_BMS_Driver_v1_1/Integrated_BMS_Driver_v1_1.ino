@@ -33,7 +33,7 @@ float CELL3_VOLTAGE = 0.00;
 float CELL4_VOLTAGE = 0.00;
 
 //Balancer Declarations
-float CellVMax = 3.90;
+float CellVMax = 3.9;
 float CellCutOffV = 4.05;
 
 
@@ -415,39 +415,41 @@ void EnableBalancerPins(){
 
 }
 // Call this each loop to automatically stop charging if any cell exceeds cutoff
-void checkCellCutoff() {
-  // First gather which cells are over the cutoff
-  bool anyOver = false;
+void checkCellCutoff() { // Gather which cells are over the hard cutoff
+  bool anyOverCutoff = false;
   String overList = "";
+  if (CELL1_VOLTAGE_LTC2943 >= CellCutOffV) { anyOverCutoff = true; overList += "1 "; }
+  if (CELL2_VOLTAGE         >= CellCutOffV) { anyOverCutoff = true; overList += "2 "; }
+  if (CELL3_VOLTAGE         >= CellCutOffV) { anyOverCutoff = true; overList += "3 "; }
+  if (CELL4_VOLTAGE         >= CellCutOffV) { anyOverCutoff = true; overList += "4 "; }
 
-  if (CELL1_VOLTAGE_LTC2943 >= CellCutOffV) {
-    anyOver = true;
-    overList += "1 ";
-  }
-  if (CELL2_VOLTAGE >= CellCutOffV) {
-    anyOver = true;
-    overList += "2 ";
-  }
-  if (CELL3_VOLTAGE >= CellCutOffV) {
-    anyOver = true;
-    overList += "3 ";
-  }
-  if (CELL4_VOLTAGE >= CellCutOffV) {
-    anyOver = true;
-    overList += "4 ";
-  }
+  // Check if *all* cells are above the balancing voltage (CellVMax)
+  bool allAboveMax =
+       (CELL1_VOLTAGE_LTC2943 >= CellVMax) &&
+       (CELL2_VOLTAGE         >= CellVMax) &&
+       (CELL3_VOLTAGE         >= CellVMax) &&
+       (CELL4_VOLTAGE         >= CellVMax);
 
-  // If any are over and we’re currently charging, stop and report
-  if (anyOver && CHARGING) {
+  // 1) Hard cutoff trumps all
+  if (anyOverCutoff && CHARGING) {
     disableCharging();
     CHARGING = false;
-
-    Serial.println(F("\n=== CHARGING STOPPED: CELL CUTOFF ==="));
+    Serial.println(F("\n=== CHARGING STOPPED: HARD CUTOFF ==="));
     Serial.print  (F("Cells over cutoff ("));
     Serial.print  (CellCutOffV, 2);
     Serial.print  (F(" V): "));
-    Serial.println(overList);              // e.g. "1 3 "
+    Serial.println(overList);  
     Serial.println(F("=====================================\n"));
+  }
+  // 2) If we’re still charging but *all* cells are above the balancing max:
+  else if (allAboveMax && CHARGING) {
+    disableCharging();
+    CHARGING = false;
+    Serial.println(F("\n=== CHARGING STOPPED: ALL CELLS ABOVE MAX ==="));
+    Serial.print  (F("All cells ≥ "));
+    Serial.print  (CellVMax, 2);
+    Serial.println(F(" V"));
+    Serial.println(F("============================================\n"));
   }
 }
 
@@ -455,7 +457,7 @@ void Balance_Cells(bool bal){
 
   
   disableCharging();
-  delay(200);
+  delay(400);
   //Grab each cells Voltage
   INA_0x40_VOLTAGE = ina260_0x40.readBusVoltage()/1000.00;
   INA_0x41_VOLTAGE = ina260_0x41.readBusVoltage()/1000.00;
@@ -472,72 +474,71 @@ void Balance_Cells(bool bal){
   CELL1_VOLTAGE_LTC2943 = Request_Voltage_LTC2943()- INA_0x44_VOLTAGE;
 
   //Check if any Cells are overvolted
-  checkCellCutoff()
+  checkCellCutoff();
   if(bal == true)
   {
     enableCharging();
     MaintainChargingBQ();
     //If cell 1 outside of CellVMax Activate Balancer on Cell 1
     if(CELL1_VOLTAGE_LTC2943 >= CellVMax){
+      Serial.print("CELL 1 (LTC) Voltage: ");
+      Serial.println(CELL1_VOLTAGE_LTC2943);
+      Serial.print("CELL 1 (INA) Voltage: ");
+      Serial.println(CELL1_VOLTAGE);
       Serial.print("CELL 1 OUT OF VOLTAGE RANGE, BYPASSING\n");
       digitalWrite(PB1, HIGH);
-      Serial.print("CELL 1 (LTC) Voltage: ");
-      Serial.println(CELL1_VOLTAGE_LTC2943);
-      Serial.print("CELL 1 (INA) Voltage: ");
-      Serial.println(CELL1_VOLTAGE);
     }
     else{
-      Serial.print("Cell 1 in balance\n");
-      digitalWrite(PB1, LOW);
       Serial.print("CELL 1 (LTC) Voltage: ");
       Serial.println(CELL1_VOLTAGE_LTC2943);
       Serial.print("CELL 1 (INA) Voltage: ");
       Serial.println(CELL1_VOLTAGE);
+      Serial.print("Cell 1 in balance\n");
+      digitalWrite(PB1, LOW);
     }
     //If cell 2 outside of CellVMax Activate Balancer on Cell 2
     if(CELL2_VOLTAGE >= CellVMax)
     {
+      Serial.print("CELL 2 Voltage: ");
+      Serial.println(CELL2_VOLTAGE);
       Serial.print("CELL 2 OUT OF VOLTAGE RANGE, BYPASSING\n");
       digitalWrite(PB0, HIGH);
-      Serial.print("CELL 2 Voltage: ");
-      Serial.println(CELL2_VOLTAGE);
     }
     else{
-      Serial.print("Cell 2 in balance\n");
-      digitalWrite(PB0, LOW);
       Serial.print("CELL 2 Voltage: ");
       Serial.println(CELL2_VOLTAGE);
+      Serial.print("Cell 2 in balance\n");
+      digitalWrite(PB0, LOW);
     }
     //If cell 3 outside of CellVMax Activate Blancer on Cell 3
     if(CELL3_VOLTAGE >= CellVMax)
     {
+      Serial.print("CELL 3 Voltage: ");
+      Serial.println(CELL3_VOLTAGE);
       Serial.print("CELL 3 OUT OF VOLTAGE RANGE, BYPASSING\n");
       digitalWrite(PA7, HIGH);
-      Serial.print("CELL 3 Voltage: ");
-      Serial.println(CELL3_VOLTAGE);
-
     }
     else{
-      Serial.print("Cell 3 in balance\n");
-      digitalWrite(PA7, LOW);
       Serial.print("CELL 3 Voltage: ");
       Serial.println(CELL3_VOLTAGE);
+      Serial.print("Cell 3 in balance\n");
+      digitalWrite(PA7, LOW);
     }
     //If cell 4 outside of CellVMax Activate Blancer on Cell 4
     //USING LTC_2943
     if(CELL4_VOLTAGE >= CellVMax)
     {
-      Serial.print("CELL 4 OUT OF VOLTAGE RANGE, BYPASSING\n");
-      digitalWrite(PA6, HIGH);
       Serial.print("CELL 4 Voltage: ");
       Serial.println(CELL4_VOLTAGE);
+      Serial.print("CELL 4 OUT OF VOLTAGE RANGE, BYPASSING\n");
+      digitalWrite(PA6, HIGH);
       Serial.println("");
     }
     else{
-      Serial.print("Cell 4 in balance\n");
-      digitalWrite(PA6, LOW);
       Serial.print("CELL 4 Voltage: ");
       Serial.println(CELL4_VOLTAGE);
+      Serial.print("Cell 4 in balance\n");
+      digitalWrite(PA6, LOW);
       Serial.println("");
     }
 
@@ -633,7 +634,7 @@ void loop() {
 
   //Grrab user Input
   handleSerialCharging();
-  Serial.print("Charging: ");Serial.print(CHARGING);
+  Serial.print("Charging: ");Serial.println(CHARGING);
   //BQ loop code, Charge if User wants Charge Dont charge otherwise
   Balance_Cells(CHARGING);
   //if(CHARGING == true){
@@ -655,9 +656,11 @@ void loop() {
   float charge_mAh = Request_SoC_LTC2943();
   Serial.print("Accumulated Charge: "); Serial.print(charge_mAh); Serial.println(" mAh");
   Serial.println();
+  Serial.print("Actual Accumulated Charge: "); Serial.print(charge_mAh+4000); Serial.println(" mAh");
+  Serial.println();
   
   Serial.println("----------------------------------------------------");
   Serial.println("");
-  delay(2000);
+  delay(10000);
 }
 //EOF
