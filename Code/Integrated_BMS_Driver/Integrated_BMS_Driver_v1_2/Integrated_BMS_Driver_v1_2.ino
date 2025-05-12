@@ -412,6 +412,8 @@ void EnableBalancerPins(){
   pinMode(PA7, OUTPUT);
   //Cell 4 Balance
   pinMode(PA6, OUTPUT);
+  //CHG_OK
+  pinMode(PA1, INPUT);
   
 
 }
@@ -456,7 +458,13 @@ void checkCellCutoff() { // Gather which cells are over the hard cutoff
 
 void Balance_Cells(bool bal){
 
-  
+  if (bal) {
+    if (digitalRead(PA1) != HIGH) {
+      Serial.println(F("⚠️  POWER NOT PRESENT: Please plug in charger before balancing/charging."));
+      // bail out of charging logic but still report voltages
+      bal = false;
+    }
+  }
   disableCharging();
   delay(400);
   //Grab each cells Voltage
