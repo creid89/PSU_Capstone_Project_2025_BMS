@@ -6032,7 +6032,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6490/3372_0603B104K500XD.pdf"
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/729/CL05B104KA5NNNC_Spec.pdf"
 			(at 63.5 137.16 0)
 			(effects
 				(font
@@ -6090,7 +6090,7 @@
 				)
 			)
 		)
-		(property "MFR" "Aillen"
+		(property "MFR" "Samsung Electro-Mechanics"
 			(at 63.5 137.16 0)
 			(effects
 				(font
@@ -6098,7 +6098,7 @@
 				)
 			)
 		)
-		(property "MPN" "3372-0603B104K500XDTR-ND"
+		(property "MPN" "1276-6720-1-ND"
 			(at 63.5 137.16 0)
 			(effects
 				(font
@@ -6114,7 +6114,7 @@
 				)
 			)
 		)
-		(property "Package" "0603B104K500XD"
+		(property "Package" "CL05B104KA5NNNC"
 			(at 63.5 137.16 0)
 			(effects
 				(font
@@ -6271,7 +6271,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6490/3372_0603B104K500XD.pdf"
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/729/CL05B104KA5NNNC_Spec.pdf"
 			(at 63.5 99.06 0)
 			(effects
 				(font
@@ -6329,7 +6329,7 @@
 				)
 			)
 		)
-		(property "MFR" "Aillen"
+		(property "MFR" "Samsung Electro-Mechanics"
 			(at 63.5 99.06 0)
 			(effects
 				(font
@@ -6337,7 +6337,7 @@
 				)
 			)
 		)
-		(property "MPN" "3372-0603B104K500XDTR-ND"
+		(property "MPN" "1276-6720-1-ND"
 			(at 63.5 99.06 0)
 			(effects
 				(font
@@ -6353,7 +6353,7 @@
 				)
 			)
 		)
-		(property "Package" "0603B104K500XD"
+		(property "Package" "CL05B104KA5NNNC"
 			(at 63.5 99.06 0)
 			(effects
 				(font
@@ -8670,7 +8670,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6490/3372_0603B104K500XD.pdf"
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/729/CL05B104KA5NNNC_Spec.pdf"
 			(at 63.5 60.96 0)
 			(effects
 				(font
@@ -8728,7 +8728,7 @@
 				)
 			)
 		)
-		(property "MFR" "Aillen"
+		(property "MFR" "Samsung Electro-Mechanics"
 			(at 63.5 60.96 0)
 			(effects
 				(font
@@ -8736,7 +8736,7 @@
 				)
 			)
 		)
-		(property "MPN" "3372-0603B104K500XDTR-ND"
+		(property "MPN" "1276-6720-1-ND"
 			(at 63.5 60.96 0)
 			(effects
 				(font
@@ -8752,7 +8752,7 @@
 				)
 			)
 		)
-		(property "Package" "0603B104K500XD"
+		(property "Package" "CL05B104KA5NNNC"
 			(at 63.5 60.96 0)
 			(effects
 				(font

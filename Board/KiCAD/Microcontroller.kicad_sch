@@ -4835,7 +4835,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6490/3372_0603B104K500XD.pdf"
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/729/CL05B104KA5NNNC_Spec.pdf"
 			(at 73.66 82.55 0)
 			(effects
 				(font
@@ -4893,7 +4893,7 @@
 				)
 			)
 		)
-		(property "MFR" "Aillen"
+		(property "MFR" "Samsung Electro-Mechanics"
 			(at 73.66 82.55 0)
 			(effects
 				(font
@@ -4901,7 +4901,7 @@
 				)
 			)
 		)
-		(property "MPN" "3372-0603B104K500XDTR-ND"
+		(property "MPN" "1276-6720-1-ND"
 			(at 73.66 82.55 0)
 			(effects
 				(font
@@ -4917,7 +4917,7 @@
 				)
 			)
 		)
-		(property "Package" "0603B104K500XD"
+		(property "Package" "CL05B104KA5NNNC"
 			(at 73.66 82.55 0)
 			(effects
 				(font
@@ -5184,7 +5184,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6490/3372_0603B104K500XD.pdf"
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/729/CL05B104KA5NNNC_Spec.pdf"
 			(at 67.31 82.55 0)
 			(effects
 				(font
@@ -5242,7 +5242,7 @@
 				)
 			)
 		)
-		(property "MFR" "Aillen"
+		(property "MFR" "Samsung Electro-Mechanics"
 			(at 67.31 82.55 0)
 			(effects
 				(font
@@ -5250,7 +5250,7 @@
 				)
 			)
 		)
-		(property "MPN" "3372-0603B104K500XDTR-ND"
+		(property "MPN" "1276-6720-1-ND"
 			(at 67.31 82.55 0)
 			(effects
 				(font
@@ -5266,7 +5266,7 @@
 				)
 			)
 		)
-		(property "Package" "0603B104K500XD"
+		(property "Package" "CL05B104KA5NNNC"
 			(at 67.31 82.55 0)
 			(effects
 				(font
@@ -5708,7 +5708,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/5491/0603N200J251SD.pdf"
+		(property "Datasheet" "https://datasheets.kyocera-avx.com/600S.pdf"
 			(at 96.52 179.07 0)
 			(effects
 				(font
@@ -5774,7 +5774,7 @@
 				)
 			)
 		)
-		(property "Package" "0603N200J251SD"
+		(property "Package" "600S200FT250XT4K"
 			(at 96.52 179.07 0)
 			(effects
 				(font
@@ -5814,7 +5814,7 @@
 				)
 			)
 		)
-		(property "MFR" "Aillen"
+		(property "MFR" "KYOCERA AVX"
 			(at 96.52 179.07 0)
 			(effects
 				(font
@@ -5822,7 +5822,7 @@
 				)
 			)
 		)
-		(property "MPN" "3372-0603N200J251SDTR-ND"
+		(property "MPN" "478-600S200FT250XT4KCT-ND"
 			(at 96.52 179.07 0)
 			(effects
 				(font
@@ -5881,7 +5881,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6490/3372_0603B104K500XD.pdf"
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/729/CL05B104KA5NNNC_Spec.pdf"
 			(at 54.61 82.55 0)
 			(effects
 				(font
@@ -5939,7 +5939,7 @@
 				)
 			)
 		)
-		(property "MFR" "Aillen"
+		(property "MFR" "Samsung Electro-Mechanics"
 			(at 54.61 82.55 0)
 			(effects
 				(font
@@ -5947,7 +5947,7 @@
 				)
 			)
 		)
-		(property "MPN" "3372-0603B104K500XDTR-ND"
+		(property "MPN" "1276-6720-1-ND"
 			(at 54.61 82.55 0)
 			(effects
 				(font
@@ -5963,7 +5963,7 @@
 				)
 			)
 		)
-		(property "Package" "0603B104K500XD"
+		(property "Package" "CL05B104KA5NNNC"
 			(at 54.61 82.55 0)
 			(effects
 				(font
@@ -6597,7 +6597,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/5491/0603N200J251SD.pdf"
+		(property "Datasheet" "https://datasheets.kyocera-avx.com/600S.pdf"
 			(at 96.52 166.37 0)
 			(effects
 				(font
@@ -6663,7 +6663,7 @@
 				)
 			)
 		)
-		(property "Package" "0603N200J251SD"
+		(property "Package" "600S200FT250XT4K"
 			(at 96.52 166.37 0)
 			(effects
 				(font
@@ -6703,7 +6703,7 @@
 				)
 			)
 		)
-		(property "MFR" "Aillen"
+		(property "MFR" "KYOCERA AVX"
 			(at 96.52 166.37 0)
 			(effects
 				(font
@@ -6711,7 +6711,7 @@
 				)
 			)
 		)
-		(property "MPN" "3372-0603N200J251SDTR-ND"
+		(property "MPN" "478-600S200FT250XT4KCT-ND"
 			(at 96.52 166.37 0)
 			(effects
 				(font
@@ -6770,7 +6770,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6490/3372_0603B104K500XD.pdf"
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/729/CL05B104KA5NNNC_Spec.pdf"
 			(at 130.81 63.5 0)
 			(effects
 				(font
@@ -6828,7 +6828,7 @@
 				)
 			)
 		)
-		(property "MFR" "Aillen"
+		(property "MFR" "Samsung Electro-Mechanics"
 			(at 130.81 63.5 0)
 			(effects
 				(font
@@ -6836,7 +6836,7 @@
 				)
 			)
 		)
-		(property "MPN" "3372-0603B104K500XDTR-ND"
+		(property "MPN" "1276-6720-1-ND"
 			(at 130.81 63.5 0)
 			(effects
 				(font
@@ -6852,7 +6852,7 @@
 				)
 			)
 		)
-		(property "Package" "0603B104K500XD"
+		(property "Package" "CL05B104KA5NNNC"
 			(at 130.81 63.5 0)
 			(effects
 				(font
@@ -6943,7 +6943,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/5491/0603N200J251SD.pdf"
+		(property "Datasheet" "https://datasheets.kyocera-avx.com/600S.pdf"
 			(at 96.52 171.45 0)
 			(effects
 				(font
@@ -7009,7 +7009,7 @@
 				)
 			)
 		)
-		(property "Package" "0603N200J251SD"
+		(property "Package" "600S200FT250XT4K"
 			(at 96.52 171.45 0)
 			(effects
 				(font
@@ -7049,7 +7049,7 @@
 				)
 			)
 		)
-		(property "MFR" "Aillen"
+		(property "MFR" "KYOCERA AVX"
 			(at 96.52 171.45 0)
 			(effects
 				(font
@@ -7057,7 +7057,7 @@
 				)
 			)
 		)
-		(property "MPN" "3372-0603N200J251SDTR-ND"
+		(property "MPN" "478-600S200FT250XT4KCT-ND"
 			(at 96.52 171.45 0)
 			(effects
 				(font
@@ -8505,7 +8505,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6490/3372_1206B104K500BD.pdf"
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/4819/TMK107ABJ225KA-T_SS.pdf"
 			(at 44.45 46.99 0)
 			(effects
 				(font
@@ -8571,7 +8571,7 @@
 				)
 			)
 		)
-		(property "Package" "1206B104K500BD"
+		(property "Package" "TMK107ABJ225KA-T"
 			(at 44.45 46.99 0)
 			(effects
 				(font
@@ -8611,7 +8611,7 @@
 				)
 			)
 		)
-		(property "MFR" "Aillen"
+		(property "MFR" "Taiyo Yuden"
 			(at 44.45 46.99 0)
 			(effects
 				(font
@@ -8619,7 +8619,7 @@
 				)
 			)
 		)
-		(property "MPN" "3372-1206B104K500BDTR-ND"
+		(property "MPN" "587-2909-1-ND"
 			(at 44.45 46.99 0)
 			(effects
 				(font
@@ -8678,7 +8678,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6490/3372_0603B104K500XD.pdf"
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/729/CL05B104KA5NNNC_Spec.pdf"
 			(at 60.96 82.55 0)
 			(effects
 				(font
@@ -8736,7 +8736,7 @@
 				)
 			)
 		)
-		(property "MFR" "Aillen"
+		(property "MFR" "Samsung Electro-Mechanics"
 			(at 60.96 82.55 0)
 			(effects
 				(font
@@ -8744,7 +8744,7 @@
 				)
 			)
 		)
-		(property "MPN" "3372-0603B104K500XDTR-ND"
+		(property "MPN" "1276-6720-1-ND"
 			(at 60.96 82.55 0)
 			(effects
 				(font
@@ -8760,7 +8760,7 @@
 				)
 			)
 		)
-		(property "Package" "0603B104K500XD"
+		(property "Package" "CL05B104KA5NNNC"
 			(at 60.96 82.55 0)
 			(effects
 				(font
@@ -9222,7 +9222,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/5491/0603N200J251SD.pdf"
+		(property "Datasheet" "https://datasheets.kyocera-avx.com/600S.pdf"
 			(at 96.52 156.21 0)
 			(effects
 				(font
@@ -9288,7 +9288,7 @@
 				)
 			)
 		)
-		(property "Package" "0603N200J251SD"
+		(property "Package" "600S200FT250XT4K"
 			(at 96.52 156.21 0)
 			(effects
 				(font
@@ -9328,7 +9328,7 @@
 				)
 			)
 		)
-		(property "MFR" "Aillen"
+		(property "MFR" "KYOCERA AVX"
 			(at 96.52 156.21 0)
 			(effects
 				(font
@@ -9336,7 +9336,7 @@
 				)
 			)
 		)
-		(property "MPN" "3372-0603N200J251SDTR-ND"
+		(property "MPN" "478-600S200FT250XT4KCT-ND"
 			(at 96.52 156.21 0)
 			(effects
 				(font
@@ -10603,7 +10603,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6490/3372_0603B104K500XD.pdf"
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/729/CL05B104KA5NNNC_Spec.pdf"
 			(at 48.26 82.55 0)
 			(effects
 				(font
@@ -10661,7 +10661,7 @@
 				)
 			)
 		)
-		(property "MFR" "Aillen"
+		(property "MFR" "Samsung Electro-Mechanics"
 			(at 48.26 82.55 0)
 			(effects
 				(font
@@ -10669,7 +10669,7 @@
 				)
 			)
 		)
-		(property "MPN" "3372-0603B104K500XDTR-ND"
+		(property "MPN" "1276-6720-1-ND"
 			(at 48.26 82.55 0)
 			(effects
 				(font
@@ -10685,7 +10685,7 @@
 				)
 			)
 		)
-		(property "Package" "0603B104K500XD"
+		(property "Package" "CL05B104KA5NNNC"
 			(at 48.26 82.55 0)
 			(effects
 				(font
