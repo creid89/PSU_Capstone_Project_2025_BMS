@@ -6231,7 +6231,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6482/3372_0603B105K100XD.pdf"
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/3584/CL10B105KP8NNNC_Spec.pdf"
 			(at 231.14 41.91 0)
 			(effects
 				(font
@@ -6289,7 +6289,7 @@
 				)
 			)
 		)
-		(property "MFR" "Aillen"
+		(property "MFR" "Samsung Electro-Mechanics"
 			(at 231.14 41.91 0)
 			(effects
 				(font
@@ -6298,7 +6298,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "3372-0603B105K100XDTR-ND"
+		(property "MPN" "1276-1946-1-ND"
 			(at 231.14 41.91 0)
 			(effects
 				(font
@@ -7307,7 +7307,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6482/3372_0603B105K100XD.pdf"
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/3584/CL10B105KP8NNNC_Spec.pdf"
 			(at 81.28 100.33 0)
 			(effects
 				(font
@@ -7365,7 +7365,7 @@
 				)
 			)
 		)
-		(property "MFR" "Aillen"
+		(property "MFR" "Samsung Electro-Mechanics"
 			(at 81.28 100.33 0)
 			(effects
 				(font
@@ -7374,7 +7374,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "3372-0603B105K100XDTR-ND"
+		(property "MPN" "1276-1946-1-ND"
 			(at 81.28 100.33 0)
 			(effects
 				(font
@@ -7687,7 +7687,7 @@
 				)
 			)
 		)
-		(property "Value" "AON7408"
+		(property "Value" "AONR32320C"
 			(at 138.43 59.69 90)
 			(effects
 				(font
@@ -7705,7 +7705,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.aosmd.com/sites/default/files/media/AOSGreenPolicy.pdf"
+		(property "Datasheet" "https://www.aosmd.com/res/datasheets/AONR32320C.pdf"
 			(at 143.51 59.69 0)
 			(effects
 				(font
@@ -7780,7 +7780,7 @@
 				)
 			)
 		)
-		(property "Package" "AON7408"
+		(property "Package" "AONR32320C"
 			(at 143.51 59.69 0)
 			(effects
 				(font
@@ -7821,7 +7821,7 @@
 				)
 			)
 		)
-		(property "MPN" "785-1307-1-ND"
+		(property "MPN" "785-AONR32320CCT-ND"
 			(at 143.51 59.69 0)
 			(effects
 				(font
@@ -8020,7 +8020,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GCJ188R71H104KA12-02B.pdf"
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/729/CL05B104KA5NNNC_Spec.pdf"
 			(at 130.81 60.96 0)
 			(effects
 				(font
@@ -9078,7 +9078,7 @@
 				)
 			)
 		)
-		(property "Value" "AON7408"
+		(property "Value" "AONR32320C"
 			(at 156.21 48.26 90)
 			(effects
 				(font
@@ -9096,7 +9096,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.aosmd.com/sites/default/files/media/AOSGreenPolicy.pdf"
+		(property "Datasheet" "https://www.aosmd.com/res/datasheets/AONR32320C.pdf"
 			(at 156.21 53.34 0)
 			(effects
 				(font
@@ -9171,7 +9171,7 @@
 				)
 			)
 		)
-		(property "Package" "AON7408"
+		(property "Package" "AONR32320C"
 			(at 156.21 53.34 0)
 			(effects
 				(font
@@ -9212,7 +9212,7 @@
 				)
 			)
 		)
-		(property "MPN" "785-1307-1-ND"
+		(property "MPN" "785-AONR32320CCT-ND"
 			(at 156.21 53.34 0)
 			(effects
 				(font
@@ -11101,7 +11101,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GCJ188R71H104KA12-02B.pdf"
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/729/CL05B104KA5NNNC_Spec.pdf"
 			(at 120.65 60.96 0)
 			(effects
 				(font
@@ -12434,7 +12434,7 @@
 				)
 			)
 		)
-		(property "Value" "AON7408"
+		(property "Value" "AONR32320C"
 			(at 95.25 48.26 90)
 			(effects
 				(font
@@ -12452,7 +12452,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.aosmd.com/sites/default/files/media/AOSGreenPolicy.pdf"
+		(property "Datasheet" "https://www.aosmd.com/res/datasheets/AONR32320C.pdf"
 			(at 95.25 53.34 0)
 			(effects
 				(font
@@ -12527,7 +12527,7 @@
 				)
 			)
 		)
-		(property "Package" "AON7408"
+		(property "Package" "AONR32320C"
 			(at 95.25 53.34 0)
 			(effects
 				(font
@@ -12568,7 +12568,7 @@
 				)
 			)
 		)
-		(property "MPN" "785-1307-1-ND"
+		(property "MPN" "785-AONR32320CCT-ND"
 			(at 95.25 53.34 0)
 			(effects
 				(font
@@ -14068,7 +14068,7 @@
 				)
 			)
 		)
-		(property "Value" "AON7408"
+		(property "Value" "AONR32320C"
 			(at 113.03 59.69 90)
 			(effects
 				(font
@@ -14086,7 +14086,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.aosmd.com/sites/default/files/media/AOSGreenPolicy.pdf"
+		(property "Datasheet" "https://www.aosmd.com/res/datasheets/AONR32320C.pdf"
 			(at 107.95 59.69 0)
 			(effects
 				(font
@@ -14161,7 +14161,7 @@
 				)
 			)
 		)
-		(property "Package" "AON7408"
+		(property "Package" "AONR32320C"
 			(at 107.95 59.69 0)
 			(effects
 				(font
@@ -14202,7 +14202,7 @@
 				)
 			)
 		)
-		(property "MPN" "785-1307-1-ND"
+		(property "MPN" "785-AONR32320CCT-ND"
 			(at 107.95 59.69 0)
 			(effects
 				(font
@@ -14271,7 +14271,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6490/3372_0603N101J500SD.pdf"
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM1885C1H101JA01-01.pdf"
 			(at 173.99 132.08 0)
 			(effects
 				(font
@@ -14329,7 +14329,7 @@
 				)
 			)
 		)
-		(property "MFR" "NextGen Components"
+		(property "MFR" "Murata Electronics"
 			(at 173.99 132.08 0)
 			(effects
 				(font
@@ -14338,7 +14338,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "3372-0603N101J500SDTR-ND"
+		(property "MPN" "490-1427-1-ND"
 			(at 173.99 132.08 0)
 			(effects
 				(font
@@ -14355,7 +14355,7 @@
 				)
 			)
 		)
-		(property "Package" "0603N101J500SD"
+		(property "Package" "GRM1885C1H101JA01D"
 			(at 173.99 132.08 0)
 			(effects
 				(font
@@ -14974,7 +14974,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6490/3372_0603B104K500XD.pdf"
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/729/CL05B104KA5NNNC_Spec.pdf"
 			(at 194.31 59.69 0)
 			(effects
 				(font
@@ -15032,7 +15032,7 @@
 				)
 			)
 		)
-		(property "MFR" "Aillen"
+		(property "MFR" "Samsung Electro-Mechanics"
 			(at 194.31 59.69 0)
 			(effects
 				(font
@@ -15041,7 +15041,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "3372-0603B104K500XDTR-ND"
+		(property "MPN" "1276-6720-1-ND"
 			(at 194.31 59.69 0)
 			(effects
 				(font
@@ -15058,7 +15058,7 @@
 				)
 			)
 		)
-		(property "Package" "0603B104K500XD"
+		(property "Package" "CL05B104KA5NNNC"
 			(at 194.31 59.69 0)
 			(effects
 				(font
@@ -15546,7 +15546,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6482/3372_0603B105K100XD.pdf"
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/3584/CL10B105KP8NNNC_Spec.pdf"
 			(at 48.26 60.96 0)
 			(effects
 				(font
@@ -15604,7 +15604,7 @@
 				)
 			)
 		)
-		(property "MFR" "Aillen"
+		(property "MFR" "Samsung Electro-Mechanics"
 			(at 48.26 60.96 0)
 			(effects
 				(font
@@ -15613,7 +15613,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "3372-0603B105K100XDTR-ND"
+		(property "MPN" "1276-1946-1-ND"
 			(at 48.26 60.96 0)
 			(effects
 				(font
@@ -16445,7 +16445,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6490/3372_0603N101J500SD.pdf"
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM1885C1H101JA01-01.pdf"
 			(at 180.34 132.08 0)
 			(effects
 				(font
@@ -16503,7 +16503,7 @@
 				)
 			)
 		)
-		(property "MFR" "NextGen Components"
+		(property "MFR" "Murata Electronics"
 			(at 180.34 132.08 0)
 			(effects
 				(font
@@ -16512,7 +16512,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "3372-0603N101J500SDTR-ND"
+		(property "MPN" "490-1427-1-ND"
 			(at 180.34 132.08 0)
 			(effects
 				(font
@@ -16529,7 +16529,7 @@
 				)
 			)
 		)
-		(property "Package" "0603N101J500SD"
+		(property "Package" "GRM1885C1H101JA01D"
 			(at 180.34 132.08 0)
 			(effects
 				(font
