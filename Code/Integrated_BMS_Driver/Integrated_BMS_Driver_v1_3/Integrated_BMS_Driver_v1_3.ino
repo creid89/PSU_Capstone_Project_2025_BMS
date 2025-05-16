@@ -19,7 +19,9 @@ Adafruit_INA260 ina260_0x44;
 //Used to toggle balancing
 volatile bool CHARGING = false;
 String serialCmdBuffer = "";    // accumulator for incoming chars for Charge control
-volatile bool BALANCE = false;  //Used to toggle balancing
+volatile bool BALANCE = false;  //Used to toggle balancing (Depricated)
+volatile bool CHARGE_ON_PLUGIN = false;  // when true, charging auto‑starts on plugin
+
 
 //Global Variable
 //float PACK_CURRENT;
@@ -590,7 +592,6 @@ void printSerialMenu() {
   Serial.println(F("=============================\n"));
 }
 
-
 void handleSerialCharging() {
   while (Serial.available()) {
     char c = Serial.read();
@@ -599,30 +600,37 @@ void handleSerialCharging() {
       String cmd = serialCmdBuffer;
       cmd.trim();
       cmd.toUpperCase();
+
       if (cmd == "START") {
-        //enableCharging();
         CHARGING = true;
         Serial.println(F("⚡ Charging ENABLED"));
       }
       else if (cmd == "STOP") {
-        //disableCharging();
         CHARGING = false;
         Serial.println(F("⛔ Charging DISABLED"));
+      }
+      else if (cmd == "AUTO") {
+        CHARGE_ON_PLUGIN = !CHARGE_ON_PLUGIN;
+        Serial.print(F("🔄 Auto‑charge on plugin "));
+        Serial.println(CHARGE_ON_PLUGIN ? F("ENABLED") : F("DISABLED"));
       }
       else {
         Serial.print(F("Unknown command: "));
         Serial.println(cmd);
-        Serial.println(F("  Use START or STOP"));
+        Serial.println(F("  Use START, STOP or AUTO"));
       }
+
       serialCmdBuffer = "";             // clear for next line
-    } else {
+    }
+    else {
       serialCmdBuffer += c;             // accumulate chars
-      // optional: cap buffer length to avoid runaway
+      // cap buffer length
       if (serialCmdBuffer.length() > 20)
         serialCmdBuffer = serialCmdBuffer.substring(serialCmdBuffer.length() - 20);
     }
   }
 }
+
 
 
 /////////////////////////////////////////////////////////////////////////
