@@ -14,7 +14,6 @@
 Adafruit_INA260 ina260_0x40;
 Adafruit_INA260 ina260_0x41;
 Adafruit_INA260 ina260_0x44;
-//Adafruit_INA260 ina260_0x45;
 
 //Used to toggle balancing
 volatile bool CHARGING = false;
@@ -28,7 +27,6 @@ volatile bool CHARGE_ON_PLUGIN = false;  // when true, charging auto‑starts on
 float INA_0x40_VOLTAGE = 0.0;
 float INA_0x41_VOLTAGE = 0.0;
 float INA_0x44_VOLTAGE = 0.0;
-//float INA_0x45_VOLTAGE = 0.0;
 float CELL1_VOLTAGE_LTC2943 = 0.00;
 float CELL1_VOLTAGE = 0.00;
 float CELL2_VOLTAGE = 0.00;
@@ -39,7 +37,11 @@ float CELL4_VOLTAGE = 0.00;
 float CellVMax = 3.9;
 float CellCutOffV = 4.05;
 
-
+float voltage = 0;
+float current = 0;
+float tempC = 0;
+float charge_mAh = 0;
+float real_charge_mAh = 0;
 //////////////////////////////////////////////////////////////////////
 //LTC2943 Sense scaling Configuration parameters
 float Pack_stock_capacity = 10400; //mA (2600*4)
@@ -476,26 +478,31 @@ void Balance_Cells(){
   INA_0x40_VOLTAGE = ina260_0x40.readBusVoltage()/1000.00;
   INA_0x41_VOLTAGE = ina260_0x41.readBusVoltage()/1000.00;
   INA_0x44_VOLTAGE = ina260_0x44.readBusVoltage()/1000.00;
-  //INA_0x45_VOLTAGE = ina260_0x45.readBusVoltage()/1000.00;
 
   //Calulate Cell Voltages based off of INA readings
-  //CELL1_VOLTAGE = INA_0x45_VOLTAGE - INA_0x44_VOLTAGE;
+  CELL1_VOLTAGE_LTC2943 = Request_Voltage_LTC2943()- INA_0x44_VOLTAGE;
   CELL2_VOLTAGE = INA_0x44_VOLTAGE - INA_0x41_VOLTAGE;
   CELL3_VOLTAGE = INA_0x41_VOLTAGE - INA_0x40_VOLTAGE;
   CELL4_VOLTAGE = INA_0x40_VOLTAGE;
-
-  //Grab LTC voltage too
-  CELL1_VOLTAGE_LTC2943 = Request_Voltage_LTC2943()- INA_0x44_VOLTAGE;
+  
 
   //Check if any Cells are overvolted
   checkCellCutoff();
+
+  if (CHARGING) {
+    if (digitalRead(PA1) != HIGH) {
+      Serial.println(F("⚠️  POWER NOT PRESENT: Please plug in charger before balancing/charging."));
+      // bail out of charging logic but still report voltages
+      CHARGING = false;
+    }
+  }
   if(CHARGING == true)
   {
     enableCharging();
     MaintainChargingBQ();
     //If cell 1 outside of CellVMax Activate Balancer on Cell 1
     if(CELL1_VOLTAGE_LTC2943 >= CellVMax){
-      Serial.print("CELL 1 (LTC) Voltage: ");
+      Serial.print("CELL 1 Voltage: ");
       Serial.println(CELL1_VOLTAGE_LTC2943);
       //Serial.print("CELL 1 (INA) Voltage: ");
       //Serial.println(CELL1_VOLTAGE);
@@ -503,7 +510,7 @@ void Balance_Cells(){
       digitalWrite(PB1, HIGH);
     }
     else{
-      Serial.print("CELL 1 (LTC) Voltage: ");
+      Serial.print("CELL 1 Voltage: ");
       Serial.println(CELL1_VOLTAGE_LTC2943);
       //Serial.print("CELL 1 (INA) Voltage: ");
       //Serial.println(CELL1_VOLTAGE);
@@ -652,35 +659,40 @@ void loop() {
   // Keep analog section active if Pack is disconnected temporarily
   //write_LTC2943_Register(REG_CONTROL, 0b11111000);
 
-  //Grrab user Input
+  //Grab user Input
   handleSerialCharging();
+  //Print Charging status
   Serial.print("Charging: ");Serial.println(CHARGING);
   //BQ loop code, Charge if User wants Charge Dont charge otherwise
   Balance_Cells();
-  //if(CHARGING == true){
-    //MaintainChargingBQ();
-  //}
 
   //Print out LTC status
   Serial.println("LTC2943 Measurements:");
   //Voltage (16-bit, 23.6V full-scale)
-  float voltage = Request_Voltage_LTC2943();
+  voltage = Request_Voltage_LTC2943();
   Serial.print("Voltage: "); Serial.print(voltage); Serial.println(" V");
+
   //Current (12-bit, ±60mV full scale, offset binary)
-  float current = Request_Current_LTC2943();
+  current = Request_Current_LTC2943();
   Serial.print("Current: "); Serial.print(current, 2); Serial.println(" mA");
+
   //Temperature (11-bit, 510K full-scale)
-  float tempC = Request_Temp_LTC2943();
+  tempC = Request_Temp_LTC2943();
   Serial.print("Temperature: "); Serial.print(tempC); Serial.println(" °C");
+
   //Accumulated Charge
-  float charge_mAh = Request_SoC_LTC2943();
+  charge_mAh = Request_SoC_LTC2943();
   Serial.print("Accumulated Charge: "); Serial.print(charge_mAh); Serial.println(" mAh");
   Serial.println();
-  Serial.print("Actual Accumulated Charge: "); Serial.print(charge_mAh+Pack_stock_capacity); Serial.println(" mAh");
+
+  //Adjust Charge to compensate for how LTC tracks Coulombs
+  real_charge_mAh = charge_mAh+Pack_stock_capacity;
+  Serial.print("Actual Accumulated Charge: "); Serial.print(real_charge_mAh); Serial.println(" mAh");
   Serial.println();
-  
+
   Serial.println("----------------------------------------------------");
   Serial.println("");
-  delay(10000);
+  //Delay for testing will need to be removed
+  delay(6000);
 }
 //EOF
