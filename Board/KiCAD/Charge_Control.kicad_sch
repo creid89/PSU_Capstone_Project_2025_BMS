@@ -5323,6 +5323,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -5618,6 +5619,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -5767,6 +5769,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "MPN" "RMCF0603FT15K0CT-ND"
@@ -5775,6 +5778,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "PARTREV" ""
@@ -5791,6 +5795,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -6290,6 +6295,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "MPN" "3372-0603B105K100XDTR-ND"
@@ -6298,6 +6304,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "PARTREV" ""
@@ -6314,6 +6321,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -6659,6 +6667,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "MPN" "RMCF0603FT5R10CT-ND"
@@ -6667,6 +6676,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "PARTREV" ""
@@ -6683,6 +6693,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -6742,7 +6753,7 @@
 		(dnp no)
 		(uuid "212b443c-f05d-4e16-a965-f306886c4fe3")
 		(property "Reference" "R6"
-			(at 196.85 73.66 0)
+			(at 198.12 71.12 90)
 			(effects
 				(font
 					(size 0.762 0.762)
@@ -6832,6 +6843,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "MPN" "RMCF0603FT10R0CT-ND"
@@ -6840,6 +6852,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "PARTREV" ""
@@ -6856,6 +6869,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -7005,6 +7019,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "MPN" "RMCF0603FT5R10CT-ND"
@@ -7013,6 +7028,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "PARTREV" ""
@@ -7029,6 +7045,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -7180,12 +7197,13 @@
 				)
 			)
 		)
-		(property "Package" "GRM1885C1H330JA01D"
+		(property "Package" ""
 			(at 81.28 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -7226,6 +7244,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "MPN" "490-1415-1-ND"
@@ -7234,6 +7253,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -7351,6 +7371,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "MPN" "3372-0603B105K100XDTR-ND"
@@ -7359,6 +7380,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "PARTREV" ""
@@ -7375,6 +7397,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -7763,6 +7786,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -7803,6 +7827,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "3"
@@ -8067,6 +8092,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -8107,6 +8133,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "MPN" "490-4934-1-ND"
@@ -8115,6 +8142,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -8232,6 +8260,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "MPN" "RMCF0603FT220KCT-ND"
@@ -8240,6 +8269,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "PARTREV" ""
@@ -8256,6 +8286,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -8405,14 +8436,16 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
-		(property "MPN" "RMCF1206FT2R20CT-ND"
+		(property "MPN" ""
 			(at 48.26 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "PARTREV" ""
@@ -8429,6 +8462,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -8708,6 +8742,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "MPN" "RMCF0603FT33K0CT-ND"
@@ -8716,6 +8751,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "PARTREV" ""
@@ -8732,6 +8768,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -8889,6 +8926,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -8923,12 +8961,13 @@
 				)
 			)
 		)
-		(property "MFR" "Murata Electronics"
+		(property "MFR" ""
 			(at 66.04 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "MPN" "490-8025-1-ND"
@@ -8937,6 +8976,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -9137,6 +9177,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -9177,6 +9218,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "3"
@@ -9441,6 +9483,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -9481,6 +9524,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "MPN" "490-3194-1-ND"
@@ -9489,6 +9533,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -9834,6 +9879,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -9874,6 +9920,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "MPN" "490-3194-1-ND"
@@ -9882,6 +9929,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -9999,6 +10047,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "MPN" "CSR1206FK10L0CT-ND"
@@ -10007,6 +10056,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "PARTREV" ""
@@ -10023,6 +10073,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -10198,6 +10249,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -10258,7 +10310,7 @@
 		(fields_autoplaced yes)
 		(uuid "612c6333-e69e-4d89-9087-1b1c05e656ab")
 		(property "Reference" "L2"
-			(at 125.73 45.72 90)
+			(at 125.73 43.18 90)
 			(effects
 				(font
 					(size 0.889 0.889)
@@ -10266,7 +10318,7 @@
 			)
 		)
 		(property "Value" "4.7u"
-			(at 125.73 48.26 90)
+			(at 125.73 45.72 90)
 			(effects
 				(font
 					(size 0.889 0.889)
@@ -10354,6 +10406,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -10388,7 +10441,7 @@
 				)
 			)
 		)
-		(property "MFR" "EPCOS - TDK Electronics"
+		(property "MFR" ""
 			(at 125.73 50.8 0)
 			(effects
 				(font
@@ -10397,11 +10450,12 @@
 			)
 		)
 		(property "MPN" "495-1805-1-ND"
-			(at 125.73 50.8 0)
+			(at 125.73 48.26 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -10527,6 +10581,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -10567,6 +10622,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "MPN" "399-C0603C681F5GACTUCT-ND"
@@ -10575,6 +10631,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -10765,6 +10822,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -10799,12 +10857,13 @@
 				)
 			)
 		)
-		(property "MFR" "Murata Electronics"
+		(property "MFR" "urata Electronics"
 			(at 82.55 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "MPN" "490-8025-1-ND"
@@ -10813,6 +10872,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -10929,6 +10989,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "MPN" "CSR1206FK20L0CT-ND"
@@ -10937,6 +10998,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "PARTREV" ""
@@ -10953,6 +11015,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -11110,6 +11173,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -11150,6 +11214,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "MPN" "490-4934-1-ND"
@@ -11158,6 +11223,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -11275,6 +11341,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "MPN" "RMCF0603FT187KCT-ND"
@@ -11283,6 +11350,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "PARTREV" ""
@@ -11299,6 +11367,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -11474,6 +11543,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -11852,6 +11922,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -11886,7 +11957,7 @@
 				)
 			)
 		)
-		(property "MFR" "Samsung Electro-Mechanics"
+		(property "MFR" ""
 			(at 167.64 105.41 0)
 			(effects
 				(font
@@ -11900,6 +11971,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -12109,6 +12181,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -12267,6 +12340,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "MPN" "RMCF0603JT39K0CT-ND"
@@ -12275,6 +12349,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "PARTREV" ""
@@ -12291,6 +12366,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -12457,6 +12533,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -12497,6 +12574,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "3"
@@ -12623,6 +12701,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "MPN" "CSR1206FK10L0CT-ND"
@@ -12631,6 +12710,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "PARTREV" ""
@@ -12647,6 +12727,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -12822,6 +12903,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -13045,6 +13127,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -13085,6 +13168,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "MPN" "490-1415-1-ND"
@@ -13093,6 +13177,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -13218,6 +13303,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -13258,6 +13344,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "MPN" "490-1415-1-ND"
@@ -13266,6 +13353,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -13383,6 +13471,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "MPN" "RMCF0603FT383KCT-ND"
@@ -13391,6 +13480,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "PARTREV" ""
@@ -13407,6 +13497,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -13712,6 +13803,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -14075,6 +14167,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -14115,6 +14208,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "3"
@@ -14241,6 +14335,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "MPN" "3372-0603N101J500SDTR-ND"
@@ -14249,6 +14344,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "PARTREV" ""
@@ -14265,6 +14361,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -14422,6 +14519,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -14462,6 +14560,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "MPN" "445-6912-1-ND"
@@ -14470,6 +14569,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -14938,6 +15038,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "MPN" "3372-0603B104K500XDTR-ND"
@@ -14946,6 +15047,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "PARTREV" ""
@@ -14962,6 +15064,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -15137,6 +15240,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -15506,6 +15610,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "MPN" "3372-0603B105K100XDTR-ND"
@@ -15514,6 +15619,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "PARTREV" ""
@@ -15530,6 +15636,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -15679,6 +15786,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "MPN" "RMCF0603FT10R0CT-ND"
@@ -15687,6 +15795,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "PARTREV" ""
@@ -15703,6 +15812,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -15925,6 +16035,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -15965,6 +16076,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "MPN" "478-600S150JT250XT4KCT-ND"
@@ -15973,6 +16085,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -16065,7 +16178,7 @@
 		(dnp no)
 		(uuid "f54f199d-17ca-42e6-a31d-3b1137bae6e8")
 		(property "Reference" "R5"
-			(at 191.77 71.12 0)
+			(at 190.5 72.39 90)
 			(effects
 				(font
 					(size 0.762 0.762)
@@ -16155,6 +16268,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "MPN" "RMCF0603FT10R0CT-ND"
@@ -16163,6 +16277,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "PARTREV" ""
@@ -16179,6 +16294,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -16393,6 +16509,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "MPN" "3372-0603N101J500SDTR-ND"
@@ -16401,6 +16518,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "PARTREV" ""
@@ -16417,6 +16535,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
@@ -16750,6 +16869,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Price" ""
