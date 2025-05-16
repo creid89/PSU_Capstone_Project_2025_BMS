@@ -1812,6 +1812,16 @@
 		)
 		(uuid "14403705-9ba2-4724-b526-f1664067cd4c")
 	)
+	(text "Edited"
+		(exclude_from_sim no)
+		(at 170.688 68.326 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "299a7403-73ec-459a-9653-a1742b8ce1a7")
+	)
 	(text "0x40"
 		(exclude_from_sim no)
 		(at 73.66 144.78 0)
