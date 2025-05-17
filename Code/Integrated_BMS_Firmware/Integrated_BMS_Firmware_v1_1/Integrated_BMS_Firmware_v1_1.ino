@@ -8,6 +8,7 @@
 //include for interrupts
 #include <HardwareSerial.h>
 #include <STM32TimerInterrupt.h>
+#include "stm32f1xx.h"
 
 ////////////////////////////////////////////////////////////////
 // Create instances for each INA260 sensor
@@ -59,12 +60,14 @@ const float QLSB = 0.340f
                  * (LTC2943_PRESCALER / 4096.0f);
 
 //////////////////////////////////////////////////////////////////////
+int numOfCells = 4;
+
 //BQ25730 Configuration parameters
-float ChargeVoltageValue = 17.000;         // Charging target voltage
-float VsysMinValue = 13.3;                 // Minimum system voltage
-float inputVoltageValue = 12.0;            // Input voltage limit (used for VINDPM)
-float chargeCurrentValue = 1.00;           // Battery charging current (in amps)
-float inputCurrentLimitValue = 2100.00;    // Input current limit (in milliamps) - based on supply/adapter limit
+float ChargeVoltageValue;         // Charging target voltage - Later Change to --> float ChargeVoltageValue  = (numOfCells * CellMaxCutOffV) + 1;
+float VsysMinValue;                 // Minimum system voltage
+float inputVoltageValue;            // Input voltage limit (used for VINDPM)
+float chargeCurrentValue;           // Battery charging current (in amps)
+float inputCurrentLimitValue;    // Input current limit (in milliamps) - based on supply/adapter limit
 
 unsigned long lastCheck1 = 0;
 const unsigned long I2CcheckInterval = 5000;
@@ -73,6 +76,11 @@ unsigned long lastCheck2 = 0;
 const unsigned long registerUpdateInterval = 2500;
 
 //////////////////////////////////////////////////////////////////////
+
+//Define Slave Address of STM32 for controller comms
+float responseData = 0.0;
+TwoWire myI2C2(PB11, PB10);
+#define SLAVE_ADDRESS 0x58
 //Adress for LTC2943
 #define LTC2943_ADDR 0x64  // 7-bit I2C address
 //Adress for BQ25730
@@ -694,14 +702,106 @@ void handleSerialCharging() {
   }
 }
 
+// Handle command + optional float reception
+void onReceive(int howMany) {
+  if (howMany == 1) {
+    uint8_t command = myI2C2.read();
+    switch (command) {
+      case 0x01:
+        CELL1_VOLTAGE = Request_Voltage_LTC2943() - INA_0x44_VOLTAGE;
+        responseData = CELL1_VOLTAGE;
+        break;
+      case 0x02:
+        CELL2_VOLTAGE = INA_0x44_VOLTAGE - INA_0x41_VOLTAGE;
+        responseData = CELL2_VOLTAGE;
+        break;
+      case 0x03:
+        CELL3_VOLTAGE = INA_0x41_VOLTAGE - INA_0x40_VOLTAGE;
+        responseData = CELL3_VOLTAGE;
+        break;
+      case 0x04:
+        CELL4_VOLTAGE = INA_0x40_VOLTAGE;
+        responseData = CELL4_VOLTAGE;
+        break;
+      case 0x05:
+        responseData = voltage;
+        break;
+      case 0x06:
+        responseData = current;
+        break;
+      case 0x08:
+        // Future SOC calculation
+        responseData = 0.0;
+        break;
+      default:
+        responseData = -1.0;
+        break;
+    }
+  } else if (howMany == 5) {
+    uint8_t command = myI2C2.read();
+    uint8_t buffer[4];
+    for (int i = 0; i < 4; i++) {
+      buffer[i] = myI2C2.read();
+    }
+    float receivedFloat;
+    memcpy(&receivedFloat, buffer, sizeof(float));
 
+    Serial.print("Received float command 0x");
+    Serial.print(command, HEX);
+    Serial.print(" with value: ");
+    Serial.println(receivedFloat, 5);
+
+    switch (command) {
+      case 0x10:
+        ChargeVoltageValue = receivedFloat;
+        Serial.print("ChargeVoltageValue Recieved From Peripheral: \t");Serial.print(ChargeVoltageValue);
+        break;
+      case 0x11:
+        VsysMinValue = receivedFloat;
+        Serial.print("VsysMinValue Recieved From Peripheral: \t");Serial.print(VsysMinValue);
+        break;
+      case 0x12:
+        VsysMinValue = receivedFloat;
+        Serial.print("VsysMinValue Recieved From Peripheral: \t");Serial.print(VsysMinValue);
+        break;
+      case 0x13:
+        inputVoltageValue = receivedFloat;
+        Serial.print("inputVoltageValue Recieved From Peripheral: \t");Serial.print(inputVoltageValue);
+        break;
+      case 0x14:
+        chargeCurrentValue = receivedFloat;
+        Serial.print("chargeCurrentValue Recieved From Peripheral: \t");Serial.print(chargeCurrentValue);
+        break;
+      case 0x15:
+        inputCurrentLimitValue = receivedFloat;
+        Serial.print("inputCurrentLimitValue Recieved From Peripheral: \t");Serial.print(inputCurrentLimitValue);
+        break;
+      default:
+        Serial.println("Unknown float write command");
+        break;
+    }
+  }
+}
+
+// Send response back to master
+void onRequest() {
+  myI2C2.write((uint8_t *)&responseData, sizeof(responseData));
+  responseData = 0.0;
+}
 
 /////////////////////////////////////////////////////////////////////////
 void setup() {
   Serial.begin(9600);
+  while (!Serial);
   delay(3000);
   Wire.begin();
   delay(100);
+
+  myI2C2.begin(SLAVE_ADDRESS);
+  myI2C2.onReceive(onReceive);
+  myI2C2.onRequest(onRequest);
+
+
   setupLTC2943();
   CheckBQConnectionWithComms();
   CheckIfINAConnected();
