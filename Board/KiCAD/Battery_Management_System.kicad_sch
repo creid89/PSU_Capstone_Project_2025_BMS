@@ -1546,7 +1546,7 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 63.5) (xy 53.34 62.23)
+			(xy 53.34 66.04) (xy 53.34 62.23)
 		)
 		(stroke
 			(width 0)
@@ -2147,7 +2147,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
 			(at 151.13 87.63 0)
 			(effects
 				(font
@@ -2911,7 +2911,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
 			(at 143.51 129.54 0)
 			(effects
 				(font
@@ -3243,7 +3243,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
 			(at 139.7 73.66 0)
 			(effects
 				(font
@@ -3639,7 +3639,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
 			(at 148.59 85.09 0)
 			(effects
 				(font
@@ -3861,7 +3861,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
 			(at 59.69 87.63 0)
 			(effects
 				(font
@@ -4444,7 +4444,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
 			(at 143.51 127 0)
 			(effects
 				(font
@@ -4600,7 +4600,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
 			(at 59.69 90.17 0)
 			(effects
 				(font
@@ -4756,7 +4756,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
 			(at 143.51 121.92 0)
 			(effects
 				(font
@@ -4912,7 +4912,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
 			(at 143.51 124.46 0)
 			(effects
 				(font
@@ -5421,7 +5421,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
 			(at 106.68 59.69 0)
 			(effects
 				(font
@@ -5550,7 +5550,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 53.34 63.5 0)
+		(at 53.34 66.04 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5558,7 +5558,7 @@
 		(dnp no)
 		(uuid "f47151e2-7602-4688-b73b-3ded81b0d96f")
 		(property "Reference" "#PWR074"
-			(at 53.34 69.85 0)
+			(at 53.34 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5567,7 +5567,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 53.34 67.31 0)
+			(at 53.34 69.85 0)
 			(effects
 				(font
 					(size 0.889 0.889)
@@ -5575,7 +5575,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 53.34 63.5 0)
+			(at 53.34 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5584,7 +5584,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 53.34 63.5 0)
+			(at 53.34 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5593,7 +5593,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 53.34 63.5 0)
+			(at 53.34 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
