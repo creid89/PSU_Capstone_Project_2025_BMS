@@ -1,4 +1,4 @@
-//Integrated BMS Driver V1_1
+//Integrated BMS Driver V1_3
 //Sodium ION BMS
 
 //Include wire for I2C
@@ -23,7 +23,6 @@ volatile bool CHARGE_ON_PLUGIN = false;  // when true, charging auto‑starts on
 
 
 //Global Variable
-//float PACK_CURRENT;
 float INA_0x40_VOLTAGE = 0.0;
 float INA_0x41_VOLTAGE = 0.0;
 float INA_0x44_VOLTAGE = 0.0;
@@ -363,6 +362,7 @@ void dumpAllBQRegisters() {
     Serial.println(value, HEX);
   }
 }
+//Write to charge register to stop failsafe from lack of comms
 void MaintainChargingBQ(){
   // Periodically check I2C communication
   if (millis() - lastCheck1 > I2CcheckInterval) {
@@ -387,6 +387,7 @@ void MaintainChargingBQ(){
 }
 //////////////////////////////////////////////////////////////////////////////////////////////
 //INA Functions
+//Check if INA260s are connected
 void CheckIfINAConnected()
 {
    if (!ina260_0x40.begin(0x40)) {
