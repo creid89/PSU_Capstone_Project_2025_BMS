@@ -19,7 +19,7 @@ Adafruit_INA260 ina260_0x44;
 //Used to toggle balancing
 volatile bool CHARGING = false;
 String serialCmdBuffer = "";    // accumulator for incoming chars for Charge control
-volatile bool CHARGE_ON_PLUGIN = false;  // when true, charging auto‑starts on plugin
+volatile bool CHARGE_ON_PLUGIN = true;  // when true, charging auto‑starts on plugin
 volatile bool STOPCHARGING = false;
 volatile bool KILLLOAD = false;
 volatile bool PLUGGEDIN = false;
