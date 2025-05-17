@@ -63,11 +63,11 @@ const float QLSB = 0.340f
 int numOfCells = 4;
 
 //BQ25730 Configuration parameters
-float ChargeVoltageValue;         // Charging target voltage - Later Change to --> float ChargeVoltageValue  = (numOfCells * CellMaxCutOffV) + 1;
+float ChargeVoltageValue=18;         // Charging target voltage - Later Change to --> float ChargeVoltageValue  = (numOfCells * CellMaxCutOffV) + 1;
 float VsysMinValue;                 // Minimum system voltage
 float inputVoltageValue;            // Input voltage limit (used for VINDPM)
-float chargeCurrentValue;           // Battery charging current (in amps)
-float inputCurrentLimitValue;    // Input current limit (in milliamps) - based on supply/adapter limit
+float chargeCurrentValue=1;           // Battery charging current (in amps)
+float inputCurrentLimitValue=1;    // Input current limit (in milliamps) - based on supply/adapter limit
 
 unsigned long lastCheck1 = 0;
 const unsigned long I2CcheckInterval = 5000;
@@ -497,7 +497,7 @@ void checkCellandSocCutoff() {
   }
 
   //SoC says pack is charged stop charging
-  if (Pack_stock_capacity == real_charge_mAh) {
+  if (real_charge_mAh >= Pack_stock_capacity) {
     disableCharging();
     CHARGING = false;
     Serial.println(F("\n=== CHARGING STOPPED: Pack is Fully Charged (SoC) ==="));
@@ -508,7 +508,7 @@ void checkCellandSocCutoff() {
   }
 
   //Disable DisCharging if SoC is empty
-  if (real_charge_mAh == 0) {
+  if (real_charge_mAh <= 0) {
     //STOPDISCHARGING();
     Serial.println(F("\n=== DISCHARGING STOPPED: Pack is EMPTY (SoC) ==="));
     Serial.print  (F("Pack at:"));
