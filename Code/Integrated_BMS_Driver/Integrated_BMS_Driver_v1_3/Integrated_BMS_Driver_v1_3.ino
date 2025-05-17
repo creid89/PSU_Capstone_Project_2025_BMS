@@ -465,11 +465,28 @@ void checkCellCutoff() { // Gather which cells are over the hard cutoff
 }
 
 void Balance_Cells(){
-  if (CHARGING) {
-    if (digitalRead(PA1) != HIGH) {
+  if (CHARGING && !CHARGE_ON_PLUGIN) {
+    /**if (digitalRead(PA1) != HIGH) {
       Serial.println(F("⚠️  POWER NOT PRESENT: Please plug in charger before balancing/charging."));
       // bail out of charging logic but still report voltages
       CHARGING = false;
+    }**/
+    Serial.println(F("⚠️  Auto Charge off, ENDING CHARGING"));
+      // bail out of charging logic but still report voltages
+      CHARGING = false;
+      disableCharging();
+  }
+
+  if (CHARGE_ON_PLUGIN) {
+    if (digitalRead(PA1) == HIGH) {
+      Serial.println(F("⚠️  Auto charge on: Charging"));
+      CHARGING = true;
+    }
+    else
+    {
+      Serial.println(F("⚠️  Auto charge on: Please plug in charger to start balancing/charging."));
+      CHARGING = false;
+      disableCharging();
     }
   }
 
@@ -490,13 +507,7 @@ void Balance_Cells(){
   //Check if any Cells are overvolted
   checkCellCutoff();
 
-  if (CHARGING) {
-    if (digitalRead(PA1) != HIGH) {
-      Serial.println(F("⚠️  POWER NOT PRESENT: Please plug in charger before balancing/charging."));
-      // bail out of charging logic but still report voltages
-      CHARGING = false;
-    }
-  }
+
   if(CHARGING == true)
   {
     enableCharging();
