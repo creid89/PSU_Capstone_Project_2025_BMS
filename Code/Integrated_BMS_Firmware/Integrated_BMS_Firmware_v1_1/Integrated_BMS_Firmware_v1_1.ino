@@ -461,6 +461,11 @@ void checkCellandSocCutoff() {
        (CELL3_VOLTAGE         >= CellFullChargeV) &&
        (CELL4_VOLTAGE         >= CellFullChargeV);
 
+
+  charge_mAh = Request_SoC_LTC2943();
+  //Adjust Charge to compensate for how LTC tracks Coulombs
+  real_charge_mAh = charge_mAh+Pack_stock_capacity;
+
   //Any cell charged over CellMaxCutOffV stop charging
   if (anyOverCutoff && CHARGING) {
     disableCharging();
@@ -512,7 +517,7 @@ void checkCellandSocCutoff() {
     //STOPDISCHARGING();
     Serial.println(F("\n=== DISCHARGING STOPPED: Pack is EMPTY (SoC) ==="));
     Serial.print  (F("Pack at:"));
-    Serial.print  (Pack_stock_capacity);
+    Serial.print  (real_charge_mAh);
     Serial.println(F(" mAh"));
     Serial.println(F("============================================\n"));
     
