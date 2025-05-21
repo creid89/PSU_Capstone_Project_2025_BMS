@@ -32332,13 +32332,13 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "\nEPL Battery Management System Rev 2\n05/19/25\n\nDaniel Anishchenko, Cuauhtemoc Gomez, \nCody Reid, Fernando Custodio, Tyler Tran\nPortland State University"
-		(at 233.7308 74.4728 90)
+	(gr_text "\nEPL Battery Management System \n\nRev 2\n\n05/21/25\n\nCuauhtemoc Gomez\nDaniel Anishchenko\nFernando Custodio\nCody Reid\nTyler Tran\n\nPortland State University"
+		(at 242.5446 72.6186 90)
 		(layer "B.SilkS")
 		(uuid "ce5b9fe1-0da7-40b8-b9b7-b9d202eae33e")
 		(effects
 			(font
-				(size 1.2 1.2)
+				(size 1.5 1.5)
 				(thickness 0.25)
 				(bold yes)
 			)
