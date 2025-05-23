@@ -1100,6 +1100,16 @@
 		)
 		(uuid "07891edd-7b62-40e1-b439-ab68dcaf36a5")
 	)
+	(text "Status LED:\nDo I have power coming in?\n"
+		(exclude_from_sim no)
+		(at 34.29 24.13 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "340d25f4-97cb-40af-b17f-4828e40ec8fa")
+	)
 	(text "I2C to Host \nMicrocontroller"
 		(exclude_from_sim no)
 		(at 29.21 90.17 0)
@@ -1110,9 +1120,9 @@
 		)
 		(uuid "367f4b59-7586-43f3-93e1-d0541687a929")
 	)
-	(text "10K NTC Thermistor Cell 1"
+	(text "10K NTC \nThermistor \nCell 1"
 		(exclude_from_sim no)
-		(at 128.27 147.32 0)
+		(at 115.57 116.84 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1130,9 +1140,9 @@
 		)
 		(uuid "40b6fcd5-b919-4f59-8a3e-202cb2c474e6")
 	)
-	(text "10K NTC Thermistor Cell 1"
+	(text "10K NTC \nThermistor \nCell 3"
 		(exclude_from_sim no)
-		(at 128.27 165.1 0)
+		(at 115.57 134.62 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1140,15 +1150,25 @@
 		)
 		(uuid "42055bbb-6354-495e-b63a-9b97f601e909")
 	)
-	(text "10K NTC Thermistor Cell 1"
+	(text "10K NTC \nThermistor \nCell 2\n"
 		(exclude_from_sim no)
-		(at 128.27 156.21 0)
+		(at 115.57 125.73 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 		)
 		(uuid "49279d1d-fc2b-4ef1-ab19-75b669a0c4c5")
+	)
+	(text "Error LED:\nsomething went wrong"
+		(exclude_from_sim no)
+		(at 121.92 34.29 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "4e1c4b4d-14f2-42ea-b6cc-690147f7fcd1")
 	)
 	(text "To battey cells\n1, 2, 3, or 4 cells\n(Na Ion, Li Ion, Other TBD!)\n"
 		(exclude_from_sim no)
@@ -1210,9 +1230,29 @@
 		)
 		(uuid "b461102d-0e53-4541-8c71-91ac2f3ce261")
 	)
-	(text "10K NTC Thermistor Cell 1"
+	(text "Blinking LED:\nFast blinking for fast charging / high current\nslow blinking for slow charging \\ low current\nstatic / fully charged\n\ngpio connected"
 		(exclude_from_sim no)
-		(at 128.27 173.99 0)
+		(at 58.42 160.02 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "c2091156-96a3-4d63-8d2a-5ef32b739544")
+	)
+	(text "Status LED:\nAm I fully CHarged?"
+		(exclude_from_sim no)
+		(at 236.22 102.87 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "c2d3b8e3-785f-4b48-aebc-759aa9cbdc21")
+	)
+	(text "10K NTC \nThermistor \nCell 4"
+		(exclude_from_sim no)
+		(at 115.57 143.51 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1233,22 +1273,10 @@
 		(uuid "30143adf-b5e3-4977-8598-a39e70cc3564")
 	)
 	(junction
-		(at 106.68 166.37)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4893397a-2c18-4199-b155-ef765ab0fdc5")
-	)
-	(junction
 		(at 101.6 59.69)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4cbaf06b-9bf3-4bc2-bb2d-8b17d8b3d9b1")
-	)
-	(junction
-		(at 106.68 175.26)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4e341fe1-0ee9-4cae-94c3-735a95073ccb")
 	)
 	(junction
 		(at 134.62 73.66)
@@ -1298,12 +1326,6 @@
 		(color 0 0 0 0)
 		(uuid "d7815f9d-fe09-478c-9731-a853888e7ab7")
 	)
-	(junction
-		(at 106.68 157.48)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "fbc01320-29bd-4e54-bab5-8d3dbbe080bd")
-	)
 	(wire
 		(pts
 			(xy 148.59 114.3) (xy 146.05 114.3)
@@ -1323,6 +1345,16 @@
 			(type default)
 		)
 		(uuid "04dfb4e0-2091-484d-9778-d2fea84086da")
+	)
+	(wire
+		(pts
+			(xy 102.87 119.38) (xy 102.87 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "071afe74-febc-4a69-9238-e0f65e732494")
 	)
 	(wire
 		(pts
@@ -1356,16 +1388,6 @@
 	)
 	(wire
 		(pts
-			(xy 107.95 148.59) (xy 106.68 148.59)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1253da00-9649-4a9a-8a7e-9831ab4b9529")
-	)
-	(wire
-		(pts
 			(xy 52.07 59.69) (xy 101.6 59.69)
 		)
 		(stroke
@@ -1393,6 +1415,16 @@
 			(type default)
 		)
 		(uuid "1e02b80f-5512-482b-92d1-5e13700613f9")
+	)
+	(wire
+		(pts
+			(xy 102.87 137.16) (xy 102.87 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1fa1f2a6-c7b0-406c-8e63-4fd94893ce82")
 	)
 	(wire
 		(pts
@@ -1446,7 +1478,7 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 110.49) (xy 99.06 154.94)
+			(xy 95.25 110.49) (xy 95.25 124.46)
 		)
 		(stroke
 			(width 0)
@@ -1456,7 +1488,7 @@
 	)
 	(wire
 		(pts
-			(xy 107.95 163.83) (xy 101.6 163.83)
+			(xy 102.87 133.35) (xy 97.79 133.35)
 		)
 		(stroke
 			(width 0)
@@ -1476,7 +1508,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 146.05) (xy 107.95 146.05)
+			(xy 92.71 115.57) (xy 102.87 115.57)
 		)
 		(stroke
 			(width 0)
@@ -1486,7 +1518,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 110.49) (xy 96.52 146.05)
+			(xy 92.71 110.49) (xy 92.71 115.57)
 		)
 		(stroke
 			(width 0)
@@ -1536,16 +1568,6 @@
 	)
 	(wire
 		(pts
-			(xy 106.68 166.37) (xy 106.68 175.26)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "44c24039-94b8-4c7b-9e30-37a93accefed")
-	)
-	(wire
-		(pts
 			(xy 53.34 66.04) (xy 53.34 62.23)
 		)
 		(stroke
@@ -1576,7 +1598,7 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 110.49) (xy 101.6 163.83)
+			(xy 97.79 110.49) (xy 97.79 133.35)
 		)
 		(stroke
 			(width 0)
@@ -1586,7 +1608,7 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 110.49) (xy 104.14 172.72)
+			(xy 100.33 110.49) (xy 100.33 142.24)
 		)
 		(stroke
 			(width 0)
@@ -1636,7 +1658,7 @@
 	)
 	(wire
 		(pts
-			(xy 106.68 175.26) (xy 106.68 177.8)
+			(xy 102.87 144.78) (xy 102.87 146.05)
 		)
 		(stroke
 			(width 0)
@@ -1706,16 +1728,6 @@
 	)
 	(wire
 		(pts
-			(xy 107.95 166.37) (xy 106.68 166.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7110e720-7c2f-429f-b50e-dc58239e6898")
-	)
-	(wire
-		(pts
 			(xy 138.43 127) (xy 148.59 127)
 		)
 		(stroke
@@ -1746,16 +1758,6 @@
 	)
 	(wire
 		(pts
-			(xy 107.95 175.26) (xy 106.68 175.26)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8b9e2134-686e-4d84-b5d7-7f706b914da3")
-	)
-	(wire
-		(pts
 			(xy 54.61 90.17) (xy 52.07 90.17)
 		)
 		(stroke
@@ -1783,16 +1785,6 @@
 			(type default)
 		)
 		(uuid "98c01762-d442-40ea-8437-5efcf3d1c741")
-	)
-	(wire
-		(pts
-			(xy 106.68 157.48) (xy 106.68 166.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a0ff7be8-299a-4560-ad29-f299b5376e9c")
 	)
 	(wire
 		(pts
@@ -1876,7 +1868,7 @@
 	)
 	(wire
 		(pts
-			(xy 107.95 172.72) (xy 104.14 172.72)
+			(xy 102.87 142.24) (xy 100.33 142.24)
 		)
 		(stroke
 			(width 0)
@@ -1903,6 +1895,16 @@
 			(type default)
 		)
 		(uuid "ba55c7a1-754f-41e9-a3dd-4dc97da78998")
+	)
+	(wire
+		(pts
+			(xy 102.87 128.27) (xy 102.87 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bf8f7d98-be8e-445c-8ed8-6d910a4adbcb")
 	)
 	(wire
 		(pts
@@ -1936,7 +1938,7 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 154.94) (xy 107.95 154.94)
+			(xy 95.25 124.46) (xy 102.87 124.46)
 		)
 		(stroke
 			(width 0)
@@ -1973,16 +1975,6 @@
 			(type default)
 		)
 		(uuid "dd585c86-6fc7-4dcb-81f2-132bb58288c6")
-	)
-	(wire
-		(pts
-			(xy 106.68 148.59) (xy 106.68 157.48)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e13b82f7-aeca-413e-8b8b-7610e67e8299")
 	)
 	(wire
 		(pts
@@ -2023,16 +2015,6 @@
 			(type default)
 		)
 		(uuid "f56bc468-1989-4bd9-956f-5c724685e106")
-	)
-	(wire
-		(pts
-			(xy 107.95 157.48) (xy 106.68 157.48)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f76ce369-c84e-45da-9344-a95674568167")
 	)
 	(wire
 		(pts
@@ -2417,7 +2399,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
-		(at 113.03 146.05 0)
+		(at 107.95 115.57 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2425,7 +2407,7 @@
 		(dnp no)
 		(uuid "3c9dde21-041e-418c-a0d5-94a87a29f398")
 		(property "Reference" "J10"
-			(at 111.76 143.51 0)
+			(at 106.68 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2434,7 +2416,7 @@
 			)
 		)
 		(property "Value" "Conn_01x02"
-			(at 113.03 142.24 0)
+			(at 107.95 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2443,7 +2425,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
-			(at 113.03 146.05 0)
+			(at 107.95 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2452,7 +2434,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 113.03 146.05 0)
+			(at 107.95 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2461,7 +2443,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 113.03 146.05 0)
+			(at 107.95 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2470,7 +2452,7 @@
 			)
 		)
 		(property "MFR" "TE Connectivity AMP Connectors"
-			(at 113.03 146.05 0)
+			(at 107.95 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2479,7 +2461,7 @@
 			)
 		)
 		(property "MPN" "5-146285-2-ND"
-			(at 113.03 146.05 0)
+			(at 107.95 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2572,7 +2554,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
-		(at 113.03 172.72 0)
+		(at 107.95 142.24 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2580,7 +2562,7 @@
 		(dnp no)
 		(uuid "4baea95a-2af7-4fe0-b272-88debe3891b6")
 		(property "Reference" "J13"
-			(at 111.76 170.18 0)
+			(at 106.68 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2589,7 +2571,7 @@
 			)
 		)
 		(property "Value" "Conn_01x02"
-			(at 113.03 168.91 0)
+			(at 107.95 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2598,7 +2580,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
-			(at 113.03 172.72 0)
+			(at 107.95 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2607,7 +2589,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 113.03 172.72 0)
+			(at 107.95 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2616,7 +2598,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 113.03 172.72 0)
+			(at 107.95 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2625,7 +2607,7 @@
 			)
 		)
 		(property "MFR" "TE Connectivity AMP Connectors"
-			(at 113.03 172.72 0)
+			(at 107.95 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2634,7 +2616,7 @@
 			)
 		)
 		(property "MPN" "5-146285-2-ND"
-			(at 113.03 172.72 0)
+			(at 107.95 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2727,7 +2709,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
-		(at 113.03 154.94 0)
+		(at 107.95 124.46 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2735,7 +2717,7 @@
 		(dnp no)
 		(uuid "5b2952ac-767d-4bd8-a1e8-9a459340b0aa")
 		(property "Reference" "J11"
-			(at 111.76 152.4 0)
+			(at 106.68 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2744,7 +2726,7 @@
 			)
 		)
 		(property "Value" "Conn_01x02"
-			(at 113.03 151.13 0)
+			(at 107.95 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2753,7 +2735,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
-			(at 113.03 154.94 0)
+			(at 107.95 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2762,7 +2744,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 113.03 154.94 0)
+			(at 107.95 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2771,7 +2753,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 113.03 154.94 0)
+			(at 107.95 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2780,7 +2762,7 @@
 			)
 		)
 		(property "MFR" "TE Connectivity AMP Connectors"
-			(at 113.03 154.94 0)
+			(at 107.95 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2789,7 +2771,7 @@
 			)
 		)
 		(property "MPN" "5-146285-2-ND"
-			(at 113.03 154.94 0)
+			(at 107.95 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3080,7 +3062,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 106.68 177.8 0)
+		(at 102.87 146.05 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3089,7 +3071,7 @@
 		(dnp no)
 		(uuid "a1783597-5cbe-4df5-b8c0-4105e394709f")
 		(property "Reference" "#PWR090"
-			(at 106.68 184.15 0)
+			(at 102.87 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3098,7 +3080,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 106.68 181.61 0)
+			(at 102.87 149.86 0)
 			(effects
 				(font
 					(size 0.889 0.889)
@@ -3106,7 +3088,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 106.68 177.8 0)
+			(at 102.87 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3115,7 +3097,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 106.68 177.8 0)
+			(at 102.87 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3124,7 +3106,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 106.68 177.8 0)
+			(at 102.87 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3465,6 +3447,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 102.87 128.27 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "cbf2dfb6-f705-4688-96c5-8123c573b85a")
+		(property "Reference" "#PWR094"
+			(at 102.87 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 102.87 132.08 0)
+			(effects
+				(font
+					(size 0.889 0.889)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 102.87 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 102.87 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 102.87 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cb1deae6-f44d-4ea6-b675-ebefa356fab5")
+		)
+		(instances
+			(project "Battery_Management_System"
+				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f"
+					(reference "#PWR094")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector:TestPoint_Small")
 		(at 138.43 121.92 0)
 		(unit 1)
@@ -3602,7 +3650,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
-		(at 113.03 163.83 0)
+		(at 107.95 133.35 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3610,7 +3658,7 @@
 		(dnp no)
 		(uuid "d567560a-892c-4147-96c6-98d1d5c19fa2")
 		(property "Reference" "J12"
-			(at 111.76 161.29 0)
+			(at 106.68 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3619,7 +3667,7 @@
 			)
 		)
 		(property "Value" "Conn_01x02"
-			(at 113.03 160.02 0)
+			(at 107.95 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3628,7 +3676,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
-			(at 113.03 163.83 0)
+			(at 107.95 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3637,7 +3685,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 113.03 163.83 0)
+			(at 107.95 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3646,7 +3694,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 113.03 163.83 0)
+			(at 107.95 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3655,7 +3703,7 @@
 			)
 		)
 		(property "MFR" "TE Connectivity AMP Connectors"
-			(at 113.03 163.83 0)
+			(at 107.95 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3664,7 +3712,7 @@
 			)
 		)
 		(property "MPN" "5-146285-2-ND"
-			(at 113.03 163.83 0)
+			(at 107.95 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3682,6 +3730,72 @@
 			(project "Battery_Management_System"
 				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f"
 					(reference "J12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 102.87 119.38 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d635260b-8021-4ffc-8471-bfa06fede426")
+		(property "Reference" "#PWR095"
+			(at 102.87 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 102.87 123.19 0)
+			(effects
+				(font
+					(size 0.889 0.889)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 102.87 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 102.87 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 102.87 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7fce5a37-c985-49ac-a184-2c6edd6a121d")
+		)
+		(instances
+			(project "Battery_Management_System"
+				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f"
+					(reference "#PWR095")
 					(unit 1)
 				)
 			)
@@ -3903,6 +4017,72 @@
 			(project ""
 				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f"
 					(reference "TP1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 102.87 137.16 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ef7f8ed5-0386-4b1f-8701-f08b4320e71a")
+		(property "Reference" "#PWR093"
+			(at 102.87 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 102.87 140.97 0)
+			(effects
+				(font
+					(size 0.889 0.889)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 102.87 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 102.87 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 102.87 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9246484b-abd0-4d04-a7cd-aaf75c48d6d0")
+		)
+		(instances
+			(project "Battery_Management_System"
+				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f"
+					(reference "#PWR093")
 					(unit 1)
 				)
 			)
@@ -4363,7 +4543,7 @@
 			)
 		)
 		(pin "Thermistor C1" input
-			(at 96.52 110.49 270)
+			(at 92.71 110.49 270)
 			(uuid "b3f4ea27-bd74-4d7f-bd93-4fbdfb87bc34")
 			(effects
 				(font
@@ -4373,7 +4553,7 @@
 			)
 		)
 		(pin "Thermistor C2" input
-			(at 99.06 110.49 270)
+			(at 95.25 110.49 270)
 			(uuid "f60748f1-6dcb-44b5-9c82-0d96f1ab71a3")
 			(effects
 				(font
@@ -4383,7 +4563,7 @@
 			)
 		)
 		(pin "Thermistor C3" input
-			(at 101.6 110.49 270)
+			(at 97.79 110.49 270)
 			(uuid "f2a79fab-328c-454f-868b-1e94d5166f57")
 			(effects
 				(font
@@ -4393,7 +4573,7 @@
 			)
 		)
 		(pin "Thermistor C4" input
-			(at 104.14 110.49 270)
+			(at 100.33 110.49 270)
 			(uuid "eef3370e-6f45-4ffd-8ed4-48e94596efd2")
 			(effects
 				(font
