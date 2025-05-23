@@ -1,11 +1,12 @@
+
 #include <BMSController.h>
 
 //Using Huzzah Adafruit ESP32
-#define SDA_PIN 23
-#define SCL_PIN 22
+//#define SDA_PIN 23
+//#define SCL_PIN 22
 #define BMS_ADDR 0x58
 
-BMSController BMS(BMS_ADDR, SDA_PIN, SCL_PIN);
+BMSController BMS(BMS_ADDR);
 
 void setup() {
   Serial.begin(115200);

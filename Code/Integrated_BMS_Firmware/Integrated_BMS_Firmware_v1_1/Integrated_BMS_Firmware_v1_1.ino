@@ -432,7 +432,15 @@ void EnableBalancerPins(){
   pinMode(PA6, OUTPUT);
   //CHG_OK
   pinMode(PA1, INPUT);
-  
+
+  //PowerPlugInsertedLED
+  pinMode(PB15, OUTPUT);//28
+  //ErrorLED
+  pinMode(PB14, OUTPUT);//27
+  //PowerLED
+  pinMode(PB13, OUTPUT);//26
+  //ChargeLED
+  pinMode(PB12, OUTPUT);//25
 
 }
 // Call this each loop to automatically stop charging if any cell exceeds charge or discharge conditions
