@@ -435,11 +435,11 @@ void EnableBalancerPins(){
 
   //PowerPlugInsertedLED
   pinMode(PB15, OUTPUT);//28
-  //ErrorLED
-  pinMode(PB14, OUTPUT);//27
-  //PowerLED
-  pinMode(PB13, OUTPUT);//26
   //ChargeLED
+  pinMode(PB14, OUTPUT);//27
+  //BMS_ERROR_LED
+  pinMode(PB13, OUTPUT);//26
+  //BMS_STATUS_LED
   pinMode(PB12, OUTPUT);//25
 
 }
