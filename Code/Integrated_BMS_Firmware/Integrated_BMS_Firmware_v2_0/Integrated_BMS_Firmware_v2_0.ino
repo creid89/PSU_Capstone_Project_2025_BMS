@@ -1,5 +1,5 @@
-//Integrated BMS Firmware V1_0
-//Sodium ION BMS
+//Integrated BMS Firmware V2_0
+//Sodium & Lithium ION BMS
 
 //Include wire for I2C
 #include <Wire.h>
@@ -39,7 +39,7 @@ float CellFullChargeV = 3.9;
 float CellMaxCutOffV = 4.05;
 float CellMinCutOffV = 2.0;
 
-float voltage = 0;
+float PackVoltage = 0;
 float current = 0;
 float tempC = 0;
 float charge_mAh = 0;
@@ -149,16 +149,16 @@ uint16_t Read_LTC2943_Register(uint8_t reg) {
 float Request_Voltage_LTC2943(){
   uint16_t vRaw = Read_LTC2943_Register(REG_VOLTAGE_MSB);
   // Voltage (16-bit, 23.6V full-scale)
-  float voltage = 23.6 * vRaw / 65535.0;
-  return voltage;
+  float LTCvoltage = 23.6 * vRaw / 65535.0;
+  return LTCvoltage;
 }
 
 float Request_Current_LTC2943(){
   // Current (12-bit, ±60mV full scale, offset binary)
   uint16_t iRaw = Read_LTC2943_Register(REG_CURRENT_MSB);
   int16_t iOffset = iRaw - 32767;
-  float current = (60.0 / RSENSE) * iOffset / 32767.0;
-  return current;
+  float LTCcurrent = (60.0 / RSENSE) * iOffset / 32767.0;
+  return LTCcurrent;
 }
 
 float Request_Temp_LTC2943(){
@@ -571,7 +571,26 @@ void Balance_Cells(){
 
   //Check if any Cells are overvolted
   checkCellandSocCutoff();
+  
+  //Voltage (16-bit, 23.6V full-scale)
+  PackVoltage = Request_Voltage_LTC2943();
+  
 
+  
+  
+
+  //Temperature (11-bit, 510K full-scale)
+  tempC = Request_Temp_LTC2943();
+  
+
+  //Accumulated Charge
+  charge_mAh = Request_SoC_LTC2943();
+  
+
+  //Adjust Charge to compensate for how LTC tracks Coulombs
+  real_charge_mAh = charge_mAh+Pack_stock_capacity;
+  Serial.print("Actual Accumulated Charge: "); Serial.print(real_charge_mAh); Serial.println(" mAh");
+  Serial.println();
 
   if(CHARGING == true)
   {
@@ -654,19 +673,15 @@ void Balance_Cells(){
     Serial.println(CELL4_VOLTAGE);
     Serial.println("");
 
-    /**
-    Serial.print("Voltage of ina260_0x40 = ");
-    Serial.println(INA_0x40_VOLTAGE); 
-    Serial.print("Voltage of ina260_0x41 = ");
-    Serial.println(INA_0x41_VOLTAGE); 
-    Serial.print("Voltage of ina260_0x44 = ");
-    Serial.println(INA_0x44_VOLTAGE); 
-    Serial.print("Voltage of ina260_0x45 = ");
-    Serial.println(INA_0x45_VOLTAGE); 
-    Serial.println("");
-    **/
-  }
  
+}
+//Print out LTC status
+  Serial.println("LTC2943 Measurements:");
+  Serial.print("Pack Voltage: "); Serial.print(PackVoltage); Serial.println(" V");
+  Serial.print("Current: "); Serial.print(current, 2); Serial.println(" mA");
+  Serial.print("Temperature: "); Serial.print(tempC); Serial.println(" °C");
+  Serial.print("Accumulated Charge: "); Serial.print(charge_mAh); Serial.println(" mAh");
+  Serial.println();
 }
 /////////////////////////////////////////////////////////////////////////
 void printSerialMenu() {
@@ -721,7 +736,7 @@ void onReceive(int howMany) {
     uint8_t command = myI2C2.read();
     switch (command) {
       case 0x01:
-        CELL1_VOLTAGE = voltage - INA_0x44_VOLTAGE;
+        CELL1_VOLTAGE = PackVoltage - INA_0x44_VOLTAGE;
         responseData = CELL1_VOLTAGE;
         break;
       case 0x02:
@@ -737,7 +752,7 @@ void onReceive(int howMany) {
         responseData = CELL4_VOLTAGE;
         break;
       case 0x05:
-        responseData = voltage;
+        responseData = PackVoltage;
         break;
       case 0x06:
         responseData = current;
@@ -832,32 +847,15 @@ void loop() {
   handleSerialCharging();
   //Print Charging status
   Serial.print("Charging: ");Serial.println(CHARGING);
-  //BQ loop code, Charge if User wants Charge Dont charge otherwise
-  Balance_Cells();
-
-  //Print out LTC status
-  Serial.println("LTC2943 Measurements:");
-  //Voltage (16-bit, 23.6V full-scale)
-  voltage = Request_Voltage_LTC2943();
-  Serial.print("Voltage: "); Serial.print(voltage); Serial.println(" V");
+  
 
   //Current (12-bit, ±60mV full scale, offset binary)
   current = Request_Current_LTC2943();
-  Serial.print("Current: "); Serial.print(current, 2); Serial.println(" mA");
 
-  //Temperature (11-bit, 510K full-scale)
-  tempC = Request_Temp_LTC2943();
-  Serial.print("Temperature: "); Serial.print(tempC); Serial.println(" °C");
+  
+  Balance_Cells();
 
-  //Accumulated Charge
-  charge_mAh = Request_SoC_LTC2943();
-  Serial.print("Accumulated Charge: "); Serial.print(charge_mAh); Serial.println(" mAh");
-  Serial.println();
-
-  //Adjust Charge to compensate for how LTC tracks Coulombs
-  real_charge_mAh = charge_mAh+Pack_stock_capacity;
-  Serial.print("Actual Accumulated Charge: "); Serial.print(real_charge_mAh); Serial.println(" mAh");
-  Serial.println();
+  
 
   Serial.println("----------------------------------------------------");
   Serial.println("");
