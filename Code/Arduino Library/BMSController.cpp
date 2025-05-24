@@ -1,8 +1,8 @@
 #include "BMSController.h"
 
-BMSController::BMSController(uint8_t i2cAddress, uint8_t sdaPin, uint8_t sclPin) {
+BMSController::BMSController(uint8_t i2cAddress) {
   _address = i2cAddress;
-  Wire.begin(sdaPin, sclPin);
+  Wire.begin();
 }
 
 void BMSController::begin() {

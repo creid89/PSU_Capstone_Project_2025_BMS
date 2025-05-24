@@ -6,7 +6,7 @@
 
 class BMSController {
   public:
-    BMSController(uint8_t i2cAddress, uint8_t sdaPin, uint8_t sclPin);
+    BMSController(uint8_t i2cAddress);
     void begin();
     bool setChargeVoltage(float volts);
     bool setVsysMin(float volts);

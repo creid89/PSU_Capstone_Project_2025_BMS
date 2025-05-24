@@ -721,7 +721,7 @@ void onReceive(int howMany) {
     uint8_t command = myI2C2.read();
     switch (command) {
       case 0x01:
-        CELL1_VOLTAGE = Request_Voltage_LTC2943() - INA_0x44_VOLTAGE;
+        CELL1_VOLTAGE = voltage - INA_0x44_VOLTAGE;
         responseData = CELL1_VOLTAGE;
         break;
       case 0x02:
