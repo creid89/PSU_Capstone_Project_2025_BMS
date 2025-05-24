@@ -13,6 +13,8 @@ class BMSController {
     bool setInputVoltageLimit(float volts);
     bool setChargeCurrent(float amps);
     bool setInputCurrentLimit(float milliamps);
+	bool setCellMaxCutOffV(float volts);
+	bool setPack_stock_capacity(float mAh);
 
     float getChargeCurrent();
     float getCell1Voltage();

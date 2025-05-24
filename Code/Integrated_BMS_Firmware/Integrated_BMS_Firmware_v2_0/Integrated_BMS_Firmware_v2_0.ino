@@ -1,4 +1,4 @@
-//Integrated BMS Firmware V2_0
+//Integrated BMS Firmware V2_0TIMER
 //Sodium & Lithium ION BMS
 
 //Include wire for I2C
@@ -35,9 +35,9 @@ float CELL3_VOLTAGE = 0.00;
 float CELL4_VOLTAGE = 0.00;
 
 //Balancer Declarations
-float CellFullChargeV = 3.9;
-float CellMaxCutOffV = 4.05;
-float CellMinCutOffV = 2.0;
+float CellMaxCutOffV; //need from user --> Done
+float CellFullChargeV = CellMaxCutOffV - 0.1;
+float CellMinCutOffV = 2.0; //need from user --> Done
 
 float PackVoltage = 0;
 float current = 0;
@@ -46,7 +46,7 @@ float charge_mAh = 0;
 float real_charge_mAh = 0;
 //////////////////////////////////////////////////////////////////////
 //LTC2943 Sense scaling Configuration parameters
-float Pack_stock_capacity = 100; //mA (2600*4 = 10400)
+float Pack_stock_capacity = 5200; //mA (2600*4 = 10400) //need from user --> Done
 // Sense resistor in Ohms
 const float RSENSE = 0.1f;
 
@@ -171,7 +171,7 @@ float Request_Temp_LTC2943(){
 float Request_SoC_LTC2943(){
   // Accumulated Charge (SoC)
   uint16_t acr = Read_LTC2943_Register(REG_ACC_CHARGE_MSB);
-  float charge_mAh = (acr - 32767) * QLSB;
+  float charge_mAh = (acr - 32767) * QLSB *10;
   return charge_mAh;
 }
 
@@ -478,22 +478,22 @@ void checkCellandSocCutoff() {
   if (anyOverCutoff && CHARGING) {
     disableCharging();
     CHARGING = false;
-    Serial.println(F("\n=== CHARGING STOPPED: HARD UV CUTOFF ==="));
+    Serial.println(F("\n=== CHARGING STOPPED: HARD OV CUTOFF ==="));
     Serial.print  (F("Cells over cutoff ("));
     Serial.print  (CellMaxCutOffV, 2);
     Serial.print  (F(" V): "));
-    Serial.println(underList);  
+    Serial.println(overList);  
     Serial.println(F("=====================================\n"));
   }
 
   //Any cell falls under anyUnderCutoff stop discharging
   if (anyUnderCutoff) {
     //STOPDISCHARGING();
-    Serial.println(F("\n=== DISCHARGING STOPPED: HARD OV CUTOFF ==="));
+    Serial.println(F("\n=== DISCHARGING STOPPED: HARD UV CUTOFF ==="));
     Serial.print  (F("Cells under cutoff ("));
     Serial.print  (CellMinCutOffV, 2);
     Serial.print  (F(" V): "));
-    Serial.println(overList);  
+    Serial.println(underList);  
     Serial.println(F("=====================================\n"));
     
   }
@@ -502,7 +502,7 @@ void checkCellandSocCutoff() {
    if (allAboveMax && CHARGING) {
     disableCharging();
     CHARGING = false;
-    Serial.println(F("\n=== CHARGING STOPPED: ALL CELLS ABOVE CellFullChargeV ==="));
+    Serial.println(F("\n=== CHARGING STOPPED: ALL CELLS ABOVE CellFullChargeVolt ==="));
     Serial.print  (F("All cells ≥ "));
     Serial.print  (CellFullChargeV, 2);
     Serial.println(F(" V"));
@@ -575,22 +575,16 @@ void Balance_Cells(){
   //Voltage (16-bit, 23.6V full-scale)
   PackVoltage = Request_Voltage_LTC2943();
   
-
-  
-  
-
   //Temperature (11-bit, 510K full-scale)
   tempC = Request_Temp_LTC2943();
   
-
   //Accumulated Charge
   charge_mAh = Request_SoC_LTC2943();
   
 
   //Adjust Charge to compensate for how LTC tracks Coulombs
   real_charge_mAh = charge_mAh+Pack_stock_capacity;
-  Serial.print("Actual Accumulated Charge: "); Serial.print(real_charge_mAh); Serial.println(" mAh");
-  Serial.println();
+  
 
   if(CHARGING == true)
   {
@@ -681,15 +675,16 @@ void Balance_Cells(){
   Serial.print("Current: "); Serial.print(current, 2); Serial.println(" mA");
   Serial.print("Temperature: "); Serial.print(tempC); Serial.println(" °C");
   Serial.print("Accumulated Charge: "); Serial.print(charge_mAh); Serial.println(" mAh");
+  Serial.print("Actual Accumulated Charge: "); Serial.print(real_charge_mAh); Serial.println(" mAh");
   Serial.println();
 }
 /////////////////////////////////////////////////////////////////////////
-void printSerialMenu() {
+/**void printSerialMenu() {
   Serial.println(F("\n=== Charging Control Menu ==="));
   Serial.println(F("  Type START to begin charging"));
   Serial.println(F("  Type STOP  to halt charging"));
   Serial.println(F("=============================\n"));
-}
+}**/
 
 void handleSerialCharging() {
   while (Serial.available()) {
@@ -759,7 +754,7 @@ void onReceive(int howMany) {
         break;
       case 0x08:
         // Future SOC calculation
-        responseData = 0.0;
+        responseData = real_charge_mAh;
         break;
       default:
         responseData = -1.0;
@@ -804,6 +799,19 @@ void onReceive(int howMany) {
         inputCurrentLimitValue = receivedFloat;
         Serial.print("inputCurrentLimitValue Recieved From Peripheral: \t");Serial.print(inputCurrentLimitValue);
         break;
+        break;
+      case 0x16:
+        CellMaxCutOffV = receivedFloat;
+        Serial.print("CellMaxCutOffV Recieved From Peripheral: \t");Serial.print(CellMaxCutOffV);
+        break;
+      case 0x17:
+        CellMinCutOffV = receivedFloat;
+        Serial.print("CellMinCutOffV Recieved From Peripheral: \t");Serial.print(CellMinCutOffV);
+        break;
+      case 0x18:
+        Pack_stock_capacity = receivedFloat;
+        Serial.print("Pack_stock_capacity Recieved From Peripheral: \t");Serial.print(Pack_stock_capacity);
+        break;
       default:
         Serial.println("Unknown float write command");
         break;
@@ -834,7 +842,7 @@ void setup() {
   CheckBQConnectionWithComms();
   CheckIfINAConnected();
   EnableBalancerPins();
-  printSerialMenu();
+  //printSerialMenu();
 }
 
 void loop() {

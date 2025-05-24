@@ -45,6 +45,24 @@ bool BMSController::setInputCurrentLimit(float milliamps) {
   return true;
 }
 
+bool BMSController::setCellMaxCutOffV(float volts) {
+  sendFloat(0x16, volts);
+  return true;
+}
+
+bool BMSController::setCellMinCutOffV(float volts) {
+  sendFloat(0x17, volts);
+  return true;
+}
+
+bool BMSController::setPack_stock_capacity(float mAh) {
+  sendFloat(0x18, mAh);
+  return true;
+}
+
+
+
+
 float BMSController::getValue(uint8_t command) {
   float value = -1.0;
 
