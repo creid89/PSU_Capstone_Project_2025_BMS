@@ -1112,7 +1112,7 @@
 	)
 	(text "I2C to Host \nMicrocontroller"
 		(exclude_from_sim no)
-		(at 29.21 90.17 0)
+		(at 34.29 90.17 0)
 		(effects
 			(font
 				(size 1.905 1.905)
@@ -1202,7 +1202,7 @@
 	)
 	(text "Serial Debug\n(FT232RL)"
 		(exclude_from_sim no)
-		(at 27.94 110.49 0)
+		(at 41.91 104.14 0)
 		(effects
 			(font
 				(size 1.905 1.905)
@@ -2334,7 +2334,7 @@
 		(dnp no)
 		(uuid "1837a4ac-0986-4fc2-a16d-e2edc00e7f81")
 		(property "Reference" "J1"
-			(at 55.88 93.98 0)
+			(at 55.88 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
