@@ -171,7 +171,7 @@ float Request_Temp_LTC2943(){
 float Request_SoC_LTC2943(){
   // Accumulated Charge (SoC)
   uint16_t acr = Read_LTC2943_Register(REG_ACC_CHARGE_MSB);
-  float charge_mAh = (acr - 32767) * QLSB *10;
+  float charge_mAh = (acr - 32767) * QLSB;
   return charge_mAh;
 }
 
@@ -777,40 +777,41 @@ void onReceive(int howMany) {
     switch (command) {
       case 0x10:
         ChargeVoltageValue = receivedFloat;
-        Serial.print("ChargeVoltageValue Recieved From Peripheral: \t");Serial.print(ChargeVoltageValue);
+        Serial.print("ChargeVoltageValue Recieved From Peripheral:  ");Serial.println(ChargeVoltageValue);
         break;
       case 0x11:
         VsysMinValue = receivedFloat;
-        Serial.print("VsysMinValue Recieved From Peripheral: \t");Serial.print(VsysMinValue);
+        Serial.print("VsysMinValue Recieved From Peripheral:  ");Serial.println(VsysMinValue);
         break;
       case 0x12:
         VsysMinValue = receivedFloat;
-        Serial.print("VsysMinValue Recieved From Peripheral: \t");Serial.print(VsysMinValue);
+        Serial.print("VsysMinValue Recieved From Peripheral:  ");Serial.println(VsysMinValue);
         break;
       case 0x13:
         inputVoltageValue = receivedFloat;
-        Serial.print("inputVoltageValue Recieved From Peripheral: \t");Serial.print(inputVoltageValue);
+        Serial.print("inputVoltageValue Recieved From Peripheral:  ");Serial.println(inputVoltageValue);
         break;
       case 0x14:
         chargeCurrentValue = receivedFloat;
-        Serial.print("chargeCurrentValue Recieved From Peripheral: \t");Serial.print(chargeCurrentValue);
+        Serial.print("chargeCurrentValue Recieved From Peripheral:  ");Serial.println(chargeCurrentValue);
         break;
       case 0x15:
         inputCurrentLimitValue = receivedFloat;
-        Serial.print("inputCurrentLimitValue Recieved From Peripheral: \t");Serial.print(inputCurrentLimitValue);
+        Serial.print("inputCurrentLimitValue Recieved From Peripheral:  ");Serial.println(inputCurrentLimitValue);
         break;
         break;
       case 0x16:
         CellMaxCutOffV = receivedFloat;
-        Serial.print("CellMaxCutOffV Recieved From Peripheral: \t");Serial.print(CellMaxCutOffV);
+        CellFullChargeV = CellMaxCutOffV - 0.1;
+        Serial.print("CellMaxCutOffV Recieved From Peripheral:  ");Serial.println(CellMaxCutOffV);
         break;
       case 0x17:
         CellMinCutOffV = receivedFloat;
-        Serial.print("CellMinCutOffV Recieved From Peripheral: \t");Serial.print(CellMinCutOffV);
+        Serial.print("CellMinCutOffV Recieved From Peripheral:  ");Serial.println(CellMinCutOffV);
         break;
       case 0x18:
         Pack_stock_capacity = receivedFloat;
-        Serial.print("Pack_stock_capacity Recieved From Peripheral: \t");Serial.print(Pack_stock_capacity);
+        Serial.print("Pack_stock_capacity Recieved From Peripheral:  ");Serial.println(Pack_stock_capacity);
         break;
       default:
         Serial.println("Unknown float write command");
