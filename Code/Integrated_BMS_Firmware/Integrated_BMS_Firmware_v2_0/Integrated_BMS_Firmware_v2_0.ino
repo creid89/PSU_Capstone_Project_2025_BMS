@@ -24,6 +24,18 @@ volatile bool STOPCHARGING = false;
 volatile bool KILLLOAD = false;
 volatile bool PLUGGEDIN = false;
 
+//Timer Flags
+volatile bool TEST_FLAG = false;
+
+// Create a timer instance using TIM2 (adjust if needed)
+STM32Timer ITimer2(TIM2);
+
+// Timer ISR: set flags for sensor and serial update
+void onTimerISR() {
+    volatile bool TEST_FLAG = true;
+}
+
+
 //Global Variable
 float INA_0x40_VOLTAGE = 0.0;
 float INA_0x41_VOLTAGE = 0.0;
@@ -553,7 +565,7 @@ void checkCellandSocCutoff() {
     Serial.print  (real_charge_mAh);
     Serial.println(F(" mAh"));
     Serial.println(F("============================================\n"));
-    disableVSYS();
+    //disableVSYS();
     
   }
 }
@@ -870,6 +882,13 @@ void setup() {
   CheckIfINAConnected();
   EnableBalancerPins();
   //printSerialMenu();
+
+  // Start the timer interrupt to trigger every 500,000 microseconds (5000 ms)
+  if (ITimer2.attachInterruptInterval(5000000, SystemCheck)) {
+    Serial.println("Timer2 started, checking sensors every 500 ms");
+  } else {
+    Serial.println("Failed to start Timer2");
+  }
 }
 void SystemCheck()
 {
@@ -899,6 +918,12 @@ Serial.println("----------------------------------------------------");
 void loop() {
   //
   __asm__("nop");
-  
+  /*Serial.print("Line 921 -- Inside loop()................n\n\n\n\n");
+  //Serial.print("TEST_FLAG Value = ");Serial.println(TEST_FLAG);
+  if(TEST_FLAG){
+    Serial.print("\n\n\n---- In TEST_FLAG if------\n\n\n");
+    TEST_FLAG = false;
+    SystemCheck();
+  }*/
 }
 //EOF
