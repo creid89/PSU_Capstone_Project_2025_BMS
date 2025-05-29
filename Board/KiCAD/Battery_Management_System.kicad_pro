@@ -251,7 +251,36 @@
     "equivalence_files": []
   },
   "erc": {
-    "erc_exclusions": [],
+    "erc_exclusions": [
+      [
+        "multiple_net_names|1600200|927100|2018e42c-2dc2-4fee-a583-4d1607a83de9|5128e049-ea3a-46d3-a58e-301e31af57bb|/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/70546578-20d6-4cac-ac3f-606caa4a96bc|/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/70546578-20d6-4cac-ac3f-606caa4a96bc|/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/70546578-20d6-4cac-ac3f-606caa4a96bc",
+        ""
+      ],
+      [
+        "multiple_net_names|1600200|927100|4ad1a6f1-c171-45d9-9b8f-80fcf752e793|3f62e4d7-85b6-4b1a-9a8e-71abeaea1763|/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/70546578-20d6-4cac-ac3f-606caa4a96bc|/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/70546578-20d6-4cac-ac3f-606caa4a96bc|/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/70546578-20d6-4cac-ac3f-606caa4a96bc",
+        ""
+      ],
+      [
+        "power_pin_not_driven|1600200|685800|f1f4b4f6-eb9c-4700-b0ac-08d3c7023eb9|00000000-0000-0000-0000-000000000000|/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/70546578-20d6-4cac-ac3f-606caa4a96bc|/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/70546578-20d6-4cac-ac3f-606caa4a96bc|",
+        ""
+      ],
+      [
+        "power_pin_not_driven|1905000|927100|b181d476-20ba-4228-a0eb-df32f26de4f7|00000000-0000-0000-0000-000000000000|/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/70546578-20d6-4cac-ac3f-606caa4a96bc|/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/70546578-20d6-4cac-ac3f-606caa4a96bc|",
+        ""
+      ],
+      [
+        "power_pin_not_driven|800100|1320800|d98b7d05-84b1-42d2-8552-0dac9772c427|00000000-0000-0000-0000-000000000000|/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/3133b2c6-34e4-40b3-b23f-0442236a32da|/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/3133b2c6-34e4-40b3-b23f-0442236a32da|",
+        ""
+      ],
+      [
+        "power_pin_not_driven|863600|952500|407b3926-9c1b-4b22-940f-249d7fa4ef6c|00000000-0000-0000-0000-000000000000|/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/70546578-20d6-4cac-ac3f-606caa4a96bc|/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/70546578-20d6-4cac-ac3f-606caa4a96bc|",
+        ""
+      ],
+      [
+        "power_pin_not_driven|965200|1295400|6ce4e6b1-8b43-4106-9836-ea1e76b48f22|00000000-0000-0000-0000-000000000000|/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/70546578-20d6-4cac-ac3f-606caa4a96bc|/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/70546578-20d6-4cac-ac3f-606caa4a96bc|",
+        ""
+      ]
+    ],
     "meta": {
       "version": 0
     },
@@ -455,7 +484,7 @@
       "no_connect_dangling": "warning",
       "pin_not_connected": "error",
       "pin_not_driven": "error",
-      "pin_to_pin": "warning",
+      "pin_to_pin": "error",
       "power_pin_not_driven": "error",
       "same_local_global_label": "warning",
       "similar_label_and_power": "warning",
@@ -508,7 +537,7 @@
         "microvia_drill": 0.1,
         "name": "RF-50-max",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 0,
+        "priority": 1,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.38,
         "via_diameter": 0.4572,
@@ -525,7 +554,7 @@
         "microvia_drill": 0.1,
         "name": "RF-50-min",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 1,
+        "priority": 0,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.38,
         "via_diameter": 0.4572,
@@ -548,7 +577,7 @@
       "plot": "build",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "Battery_Management_System.stl",
       "svg": "",
       "vrml": ""
     },

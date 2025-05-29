@@ -6,13 +6,16 @@
 
 class BMSController {
   public:
-    BMSController(uint8_t i2cAddress, uint8_t sdaPin, uint8_t sclPin);
+    BMSController(uint8_t i2cAddress);
     void begin();
     bool setChargeVoltage(float volts);
     bool setVsysMin(float volts);
     bool setInputVoltageLimit(float volts);
     bool setChargeCurrent(float amps);
     bool setInputCurrentLimit(float milliamps);
+	bool setCellMaxCutOffV(float volts);
+	bool setCellMinCutOffV(float volts);
+	bool setPack_stock_capacity(float mAh);
 
     float getChargeCurrent();
     float getCell1Voltage();

@@ -1,8 +1,8 @@
 #include "BMSController.h"
 
-BMSController::BMSController(uint8_t i2cAddress, uint8_t sdaPin, uint8_t sclPin) {
+BMSController::BMSController(uint8_t i2cAddress) {
   _address = i2cAddress;
-  Wire.begin(sdaPin, sclPin);
+  Wire.begin();
 }
 
 void BMSController::begin() {
@@ -44,6 +44,24 @@ bool BMSController::setInputCurrentLimit(float milliamps) {
   sendFloat(0x15, milliamps);
   return true;
 }
+
+bool BMSController::setCellMaxCutOffV(float volts) {
+  sendFloat(0x16, volts);
+  return true;
+}
+
+bool BMSController::setCellMinCutOffV(float volts) {
+  sendFloat(0x17, volts);
+  return true;
+}
+
+bool BMSController::setPack_stock_capacity(float mAh) {
+  sendFloat(0x18, mAh);
+  return true;
+}
+
+
+
 
 float BMSController::getValue(uint8_t command) {
   float value = -1.0;
