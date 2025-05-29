@@ -1100,16 +1100,6 @@
 		)
 		(uuid "07891edd-7b62-40e1-b439-ab68dcaf36a5")
 	)
-	(text "Status LED:\nDo I have power coming in?\n"
-		(exclude_from_sim no)
-		(at 34.29 24.13 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "340d25f4-97cb-40af-b17f-4828e40ec8fa")
-	)
 	(text "I2C to Host \nMicrocontroller"
 		(exclude_from_sim no)
 		(at 34.29 90.17 0)
@@ -1229,16 +1219,6 @@
 			)
 		)
 		(uuid "b461102d-0e53-4541-8c71-91ac2f3ce261")
-	)
-	(text "Blinking LED:\nFast blinking for fast charging / high current\nslow blinking for slow charging \\ low current\nstatic / fully charged\n\ngpio connected"
-		(exclude_from_sim no)
-		(at 58.42 160.02 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "c2091156-96a3-4d63-8d2a-5ef32b739544")
 	)
 	(text "Status LED:\nAm I fully CHarged?"
 		(exclude_from_sim no)

@@ -7077,7 +7077,11 @@
 			(uuid "f633d722-502f-402c-b9ee-ce2ef32587dc")
 		)
 		(instances
-			(project "Battery Management System"
+			(project ""
+				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/70546578-20d6-4cac-ac3f-606caa4a96bc"
+					(reference "U9")
+					(unit 1)
+				)
 				(path "/1ea1a1f5-2618-4570-85b6-e164c8f0e76f/850aa2e1-891c-4236-acc3-4b228cde0b31"
 					(reference "U9")
 					(unit 1)
