@@ -203,7 +203,7 @@ float Request_SoC_LTC2943(){
 
 
   charge_mAh = 1000*(float)(acr*LTC2943_CHARGE_lsb*prescalar*50E-3)/(resistor*4096);
-
+//
   return charge_mAh;
 }
 
