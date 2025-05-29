@@ -24,7 +24,7 @@ volatile bool STOPCHARGING = false;
 volatile bool KILLLOAD = false;
 volatile bool PLUGGEDIN = false;
 volatile bool OVERHEAT = false;
-volatile bool ERROR = false;
+volatile bool ERRORFLG = false;
 
 //Timer Flags
 volatile bool TEST_FLAG = false;
@@ -34,7 +34,7 @@ STM32Timer ITimer2(TIM2);
 
 // Timer ISR: set flags for sensor and serial update
 void onTimerISR() {
-    volatile bool TEST_FLAG = true;
+  TEST_FLAG = true;
 }
 
 
@@ -202,7 +202,7 @@ float Request_SoC_LTC2943(){
   //float charge_mAh = (acr - 32767) * QLSB;
 
 
-  charge_mAh = 1000*(float)(acr*LTC2943_CHARGE_lsb*prescalar*50E-3)/(resistor*4096);
+  charge_mAh = 1000*(float)(acr*LTC2943_CHARGE_lsb*prescaler*50E-3)/(resistor*4096);
 //
   return charge_mAh;
 }
@@ -500,13 +500,13 @@ void EnableBalancerPins(){
   pinMode(PB12, OUTPUT);//25
 
   //Thermister  1
-  pinmode(PA2,INPUT);
+  pinMode(PA2,INPUT);
   //Thermister  2
-  pinmode(PA3,INPUT);
+  pinMode(PA3,INPUT);
   //Thermister  3
-  pinmode(PA4,INPUT);
+  pinMode(PA4,INPUT);
   //Thermister  4
-  pinmode(PA5,INPUT);
+  pinMode(PA5,INPUT);
 }
 // Call this each loop to automatically stop charging if any cell exceeds charge or discharge conditions
 
@@ -793,17 +793,17 @@ void handleSerialCharging() {
 
 void TempCheck() {
   // Read analog values
-  int t1 = analogRead(THERM1_PIN);
-  int t2 = analogRead(THERM2_PIN);
-  int t3 = analogRead(THERM3_PIN);
-  int t4 = analogRead(THERM4_PIN);
+  int t1 = analogRead(PA2);
+  int t2 = analogRead(PA3);
+  int t3 = analogRead(PA4);
+  int t4 = analogRead(PA5);
 
   // Check if any reading exceeds threshold
   if(t1 > THERMISTER_THRESHOLD || t2 > THERMISTER_THRESHOLD || t3 > THERMISTER_THRESHOLD || t4 > THERMISTER_THRESHOLD)
   {
     disableCharging();
-    ERROR = true;
-    OVERHEAT=true;
+    ERRORFLG = true;
+    OVERHEAT = true;
     disableVSYS();
   }
 }
