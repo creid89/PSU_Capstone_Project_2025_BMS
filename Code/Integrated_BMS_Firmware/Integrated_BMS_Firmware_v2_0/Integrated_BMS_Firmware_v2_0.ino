@@ -49,6 +49,17 @@ float CELL3_VOLTAGE = 0.00;
 float CELL4_VOLTAGE = 0.00;
   // 3.3V / 2 = 1.65V --> scaled to 12-bit ADC: (1.65 / 3.3) * 4095 ≈ 2047
   const int THERMISTER_THRESHOLD = 2047;
+  
+  //resistance value for LTC2943
+  float resistor = .1;
+  const float LTC2943_CHARGE_lsb = 0.34E-3;
+const float LTC2943_VOLTAGE_lsb = 1.44E-3;
+const float LTC2943_CURRENT_lsb = 29.3E-6;
+const float LTC2943_TEMPERATURE_lsb = 0.25;
+const float LTC2943_FULLSCALE_VOLTAGE = 23.6;
+const float LTC2943_FULLSCALE_CURRENT = 60E-3;
+const float LTC2943_FULLSCALE_TEMPERATURE = 510;
+float prescaler = 4096;
 
 //Balancer Declarations
 float CellMaxCutOffV; //need from user --> Done
@@ -188,7 +199,11 @@ float Request_Temp_LTC2943(){
 float Request_SoC_LTC2943(){
   // Accumulated Charge (SoC)
   uint16_t acr = Read_LTC2943_Register(REG_ACC_CHARGE_MSB);
-  float charge_mAh = (acr - 32767) * QLSB;
+  //float charge_mAh = (acr - 32767) * QLSB;
+
+
+  charge_mAh = 1000*(float)(acr*LTC2943_CHARGE_lsb*prescalar*50E-3)/(resistor*4096);
+
   return charge_mAh;
 }
 
@@ -941,7 +956,6 @@ void SystemCheck()
   
   Balance_Cells();
   TempCheck();
-  
 
   Serial.println("----------------------------------------------------");
   Serial.println("");
