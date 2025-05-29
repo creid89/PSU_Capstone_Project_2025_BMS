@@ -244,6 +244,31 @@ bool checkBQConnection() {
 // Charger Configuration
 // -----------------------------
 
+void disableVSYS() {
+  Serial.println("------------- VSYS HAS BEEN DISABLED BECAUSE OF LOW BATTERY -----------------");
+
+    // Step 1: Ensure OTG is disabled
+    uint16_t chargeOption0 = readBQ25730(0x12);
+    chargeOption0 &= ~(1 << 5);  // Clear EN_OTG bit
+    writeBQ25730(0x12, chargeOption0);
+
+    // Step 2: Ensure BATFETOFF_HIZ is cleared
+    uint16_t chargeOption3 = readBQ25730(0x34);
+    chargeOption3 &= ~(1 << 1);  // Clear BATFETOFF_HIZ
+    writeBQ25730(0x34, chargeOption3);
+
+    // Step 3: Force BATFET off
+    chargeOption3 |= (1 << 7);   // Set BATFET_ENZ bit
+    writeBQ25730(0x34, chargeOption3);
+
+    // Step 4: Confirm
+    chargeOption3 = readBQ25730(0x34);
+    Serial.print("ChargeOption3 after BATFET_ENZ set: ");
+    Serial.println(chargeOption3, HEX);
+
+}
+
+
 void setChargeVoltage(float voltage_V) {
   if (voltage_V < 1.024 || voltage_V > 23.000) {
     Serial.println("Charge voltage out of range (1.024V – 23.000V).");
@@ -521,13 +546,14 @@ void checkCellandSocCutoff() {
   }
 
   //Disable DisCharging if SoC is empty
-  if (real_charge_mAh <= 0) {
+  if (real_charge_mAh >= 0 && CHARGING == false) {
     //STOPDISCHARGING();
     Serial.println(F("\n=== DISCHARGING STOPPED: Pack is EMPTY (SoC) ==="));
     Serial.print  (F("Pack at:"));
     Serial.print  (real_charge_mAh);
     Serial.println(F(" mAh"));
     Serial.println(F("============================================\n"));
+    disableVSYS();
     
   }
 }
