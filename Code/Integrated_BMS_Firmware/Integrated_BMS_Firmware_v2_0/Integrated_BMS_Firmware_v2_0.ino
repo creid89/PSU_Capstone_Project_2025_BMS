@@ -871,9 +871,9 @@ void setup() {
   EnableBalancerPins();
   //printSerialMenu();
 }
-
-void loop() {
-  Serial.println("----------------------------------------------------");
+void SystemCheck()
+{
+Serial.println("----------------------------------------------------");
   //LTC2943 loop code 
   // Keep analog section active if Pack is disconnected temporarily
   //write_LTC2943_Register(REG_CONTROL, 0b11111000);
@@ -894,7 +894,11 @@ void loop() {
 
   Serial.println("----------------------------------------------------");
   Serial.println("");
-  //Delay for testing will need to be removed
-  delay(6000);
+}
+
+void loop() {
+  //
+  __asm__("nop");
+  
 }
 //EOF
