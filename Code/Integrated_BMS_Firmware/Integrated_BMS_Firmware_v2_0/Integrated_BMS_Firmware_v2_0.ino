@@ -23,6 +23,8 @@ volatile bool CHARGE_ON_PLUGIN = true;  // when true, charging auto‑starts on 
 volatile bool STOPCHARGING = false;
 volatile bool KILLLOAD = false;
 volatile bool PLUGGEDIN = false;
+volatile bool OVERHEAT = false;
+volatile bool ERROR = false;
 
 //Timer Flags
 volatile bool TEST_FLAG = false;
@@ -45,6 +47,8 @@ float CELL1_VOLTAGE = 0.00;
 float CELL2_VOLTAGE = 0.00;
 float CELL3_VOLTAGE = 0.00;
 float CELL4_VOLTAGE = 0.00;
+  // 3.3V / 2 = 1.65V --> scaled to 12-bit ADC: (1.65 / 3.3) * 4095 ≈ 2047
+  const int THERMISTER_THRESHOLD = 2047;
 
 //Balancer Declarations
 float CellMaxCutOffV; //need from user --> Done
@@ -56,6 +60,7 @@ float current = 0;
 float tempC = 0;
 float charge_mAh = 0;
 float real_charge_mAh = 0;
+
 //////////////////////////////////////////////////////////////////////
 //LTC2943 Sense scaling Configuration parameters
 float Pack_stock_capacity = 5200; //mA (2600*4 = 10400) //need from user --> Done
@@ -479,6 +484,14 @@ void EnableBalancerPins(){
   //BMS_STATUS_LED
   pinMode(PB12, OUTPUT);//25
 
+  //Thermister  1
+  pinmode(PA2,INPUT);
+  //Thermister  2
+  pinmode(PA3,INPUT);
+  //Thermister  3
+  pinmode(PA4,INPUT);
+  //Thermister  4
+  pinmode(PA5,INPUT);
 }
 // Call this each loop to automatically stop charging if any cell exceeds charge or discharge conditions
 
@@ -706,7 +719,7 @@ void Balance_Cells(){
     Serial.println("");
 
  
-}
+  }
 //Print out LTC status
   Serial.println("LTC2943 Measurements:");
   Serial.print("Pack Voltage: "); Serial.print(PackVoltage); Serial.println(" V");
@@ -762,6 +775,24 @@ void handleSerialCharging() {
     }
   }
 }
+
+void TempCheck() {
+  // Read analog values
+  int t1 = analogRead(THERM1_PIN);
+  int t2 = analogRead(THERM2_PIN);
+  int t3 = analogRead(THERM3_PIN);
+  int t4 = analogRead(THERM4_PIN);
+
+  // Check if any reading exceeds threshold
+  if(t1 > THERMISTER_THRESHOLD || t2 > THERMISTER_THRESHOLD || t3 > THERMISTER_THRESHOLD || t4 > THERMISTER_THRESHOLD)
+  {
+    disableCharging();
+    ERROR = true;
+    OVERHEAT=true;
+    disableVSYS();
+  }
+}
+
 
 // Handle command + optional float reception
 void onReceive(int howMany) {
@@ -864,7 +895,7 @@ void onRequest() {
   responseData = 0.0;
 }
 
-/////////////////////////////////////////////////////////////////////////
+
 void setup() {
   Serial.begin(9600);
   while (!Serial);
@@ -890,9 +921,10 @@ void setup() {
     Serial.println("Failed to start Timer2");
   }
 }
+
 void SystemCheck()
 {
-Serial.println("----------------------------------------------------");
+  Serial.println("----------------------------------------------------");
   //LTC2943 loop code 
   // Keep analog section active if Pack is disconnected temporarily
   //write_LTC2943_Register(REG_CONTROL, 0b11111000);
@@ -908,7 +940,7 @@ Serial.println("----------------------------------------------------");
 
   
   Balance_Cells();
-
+  TempCheck();
   
 
   Serial.println("----------------------------------------------------");
@@ -916,7 +948,6 @@ Serial.println("----------------------------------------------------");
 }
 
 void loop() {
-  //
   __asm__("nop");
   /*Serial.print("Line 921 -- Inside loop()................n\n\n\n\n");
   //Serial.print("TEST_FLAG Value = ");Serial.println(TEST_FLAG);
