@@ -1,19 +1,25 @@
 #include <EEPROM.h>
 
-#define EEPROM_ADDR 0  // Start address in emulated EEPROM
+#define EEPROM_ADDR_1 0                  // Start address for first float
+#define EEPROM_ADDR_2 (EEPROM_ADDR_1 + sizeof(float))  // Next address for second float
 
-int storedValue;
+float storedValue1;
+float storedValue2;
 
 void setup() {
   Serial.begin(115200);
   delay(500);  // Wait for Serial Monitor
 
-  // Read stored value from flash
-  EEPROM.get(EEPROM_ADDR, storedValue);
-  Serial.print("Value read from flash: ");
-  Serial.println(storedValue);
+  // Read stored values from flash
+  EEPROM.get(EEPROM_ADDR_1, storedValue1);
+  EEPROM.get(EEPROM_ADDR_2, storedValue2);
 
-  Serial.println("Enter a new integer value to store (or leave blank to keep current):");
+  Serial.print("Value read storedValue1 from flash: ");
+  Serial.println(storedValue1);
+  Serial.print("Value read storedValue2 from flash: ");
+  Serial.println(storedValue2);
+
+  Serial.println("\nEnter two float values separated by a space (e.g., '12.34 56.78'):");
 }
 
 void loop() {
@@ -22,19 +28,32 @@ void loop() {
     input.trim();
 
     if (input.length() > 0) {
-      int newValue = input.toInt();
-      Serial.print("Writing new value to flash: ");
-      Serial.println(newValue);
+      // Split the input by space
+      int spaceIndex = input.indexOf(' ');
+      if (spaceIndex == -1) {
+        Serial.println("Please provide two float values separated by a space.");
+        return;
+      }
 
-      // Store the new value in flash
-      EEPROM.put(EEPROM_ADDR, newValue);
-      // No EEPROM.commit() needed on STM32!
+      String val1Str = input.substring(0, spaceIndex);
+      String val2Str = input.substring(spaceIndex + 1);
 
-      Serial.println("Value saved! Reboot or power cycle to test reload.");
+      float newValue1 = val1Str.toFloat();
+      float newValue2 = val2Str.toFloat();
+
+      Serial.print("Writing storedValue1 to flash: ");
+      Serial.println(newValue1);
+      EEPROM.put(EEPROM_ADDR_1, newValue1);
+
+      Serial.print("Writing storedValue2 to flash: ");
+      Serial.println(newValue2);
+      EEPROM.put(EEPROM_ADDR_2, newValue2);
+
+      Serial.println("Values saved! Reboot or power cycle to test reload.");
     } else {
-      Serial.println("No input provided. Keeping current value.");
+      Serial.println("No input provided. Keeping current values.");
     }
 
-    Serial.println("Enter another value:");
+    Serial.println("\nEnter two float values separated by a space:");
   }
 }
