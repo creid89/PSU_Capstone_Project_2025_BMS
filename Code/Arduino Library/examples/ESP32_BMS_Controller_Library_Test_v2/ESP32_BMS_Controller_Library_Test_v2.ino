@@ -10,9 +10,16 @@ BMSController BMS(BMS_ADDR);
 
 void setup() {
   Serial.begin(115200);
-  BMS.begin();
 
-  delay(2500);
+  while (!BMS.begin()) {
+    Serial.println();
+    Serial.println("Waiting for BMS to respond...");
+    delay(2000);
+  }
+  Serial.println("——————————————————————");
+  Serial.println("          BMS connected!");
+  Serial.println("——————————————————————");
+  delay(500);
 
   BMS.setChargeVoltage(16.8);       // command 0x10
   delay(100);
@@ -30,6 +37,10 @@ void setup() {
   delay(100);
   BMS.setPack_stock_capacity(5200);   // command 0x18 
 
+  BMS.FinishedConfiguration(true);  //command 0x19
+  Serial.println("——————————————————————");
+  Serial.println("          BMS Configured!");
+  Serial.println("——————————————————————");
 }
 
 void loop() {

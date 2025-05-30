@@ -5,8 +5,13 @@ BMSController::BMSController(uint8_t i2cAddress) {
   Wire.begin();
 }
 
-void BMSController::begin() {
-  // Initialize if needed
+bool BMSController::begin() {
+  Wire.begin();
+  Wire.beginTransmission(_address);
+  if (Wire.endTransmission() == 0) {
+    return true;  // Device responded
+  }
+  return false;  // No response
 }
 
 void BMSController::sendFloat(uint8_t command, float value) {
@@ -59,7 +64,15 @@ bool BMSController::setPack_stock_capacity(float mAh) {
   sendFloat(0x18, mAh);
   return true;
 }
-
+bool BMSController::FinishedConfiguration(bool completed) {
+  if(completed == true)
+  {
+	  sendFloat(0x18, completed);
+	  return true;
+	  
+  }
+  return false;
+}
 
 
 

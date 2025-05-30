@@ -555,7 +555,7 @@ void checkCellandSocCutoff() {
     Serial.print  (CellMaxCutOffV, 2);
     Serial.print  (F(" V): "));
     Serial.println(overList);  
-    Serial.println(F("=====================================\n"));
+    Serial.println(F("===========================================\n"));
   }
 
   //Any cell falls under anyUnderCutoff stop discharging
@@ -566,7 +566,7 @@ void checkCellandSocCutoff() {
     Serial.print  (CellMinCutOffV, 2);
     Serial.print  (F(" V): "));
     Serial.println(underList);  
-    Serial.println(F("=====================================\n"));
+    Serial.println(F("=============================================\n"));
     
   }
 
@@ -578,7 +578,7 @@ void checkCellandSocCutoff() {
     Serial.print  (F("All cells ≥ "));
     Serial.print  (CellFullChargeV, 2);
     Serial.println(F(" V"));
-    Serial.println(F("============================================\n"));
+    Serial.println(F("=============================================================\n"));
   }
 
   //SoC says pack is charged stop charging
@@ -587,9 +587,9 @@ void checkCellandSocCutoff() {
     CHARGING = false;
     Serial.println(F("\n=== CHARGING STOPPED: Pack is Fully Charged (SoC) ==="));
     Serial.print  (F("Pack at:"));
-    Serial.print  (Pack_stock_capacity);
+    Serial.print  (real_charge_mAh);
     Serial.println(F(" mAh"));
-    Serial.println(F("============================================\n"));
+    Serial.println(F("=======================================================\n"));
   }
 
   //Disable DisCharging if SoC is empty
@@ -965,7 +965,7 @@ void setup() {
   //printSerialMenu();
 
   // Start the timer interrupt to trigger every 500,000 microseconds (5000 ms)
-  if (ITimer2.attachInterruptInterval(2000000, SystemCheck)) {
+  if (ITimer2.attachInterruptInterval(5000000, SystemCheck)) {
     Serial.println("Timer2 started, checking sensors every 500 ms");
   } else {
     Serial.println("Failed to start Timer2");
