@@ -813,12 +813,14 @@ void TempCheck() {
   }
 }
 void ConfigCheck(){
-  
-  if(configstatus == 8){
+  Serial.print("Config status:");Serial.print(configstatus);Serial.println("/8");
+  if(configstatus >= 7){
     CONFIGURED = true;
+    Serial.println("Namaste");
   }
   else{
     CONFIGURED = false;
+    Serial.println("Fuck you");
   }
 
 
@@ -918,6 +920,7 @@ void onReceive(int howMany) {
         Pack_stock_capacity = receivedFloat;
         Serial.print("Pack_stock_capacity Recieved From Peripheral:  ");Serial.println(Pack_stock_capacity);
         configstatus++;
+        ConfigCheck();
         break;
         case 0x19:
         ConfigStatusFromMaster = receivedFloat;
@@ -925,7 +928,8 @@ void onReceive(int howMany) {
         if(ConfigStatusFromMaster == 1)
         {
           Serial.println("Master reported Configuration complete");
-          configstatus = 8;
+          configstatus = 7;
+          ConfigCheck();
         }
         break;
       default:
@@ -986,7 +990,9 @@ void SystemCheck()
 
   }
   else{
-    Serial.println("AWAITING CONFIGURATION");
+    Serial.println("        AWAITING CONFIGURATION");
+    //Serial.print("Config Flag:");Serial.println(CONFIGURED);
+    //Serial.print("Config status:");Serial.print(configstatus);Serial.println("/8");
   }
   
 
