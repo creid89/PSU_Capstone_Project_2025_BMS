@@ -16,7 +16,7 @@ Adafruit_INA260 ina260_0x40;
 Adafruit_INA260 ina260_0x41;
 Adafruit_INA260 ina260_0x44;
 
-//Used to toggle balancing
+//Major system flags
 volatile bool CHARGING = false;
 String serialCmdBuffer = "";    // accumulator for incoming chars for Charge control
 volatile bool CHARGE_ON_PLUGIN = true;  // when true, charging auto‑starts on plugin
@@ -38,7 +38,7 @@ void onTimerISR() {
 }
 
 
-//Global Variable
+//INA219/260 & BQ25730 vars
 float INA_0x40_VOLTAGE = 0.0;
 float INA_0x41_VOLTAGE = 0.0;
 float INA_0x44_VOLTAGE = 0.0;
@@ -47,12 +47,14 @@ float CELL1_VOLTAGE = 0.00;
 float CELL2_VOLTAGE = 0.00;
 float CELL3_VOLTAGE = 0.00;
 float CELL4_VOLTAGE = 0.00;
-  // 3.3V / 2 = 1.65V --> scaled to 12-bit ADC: (1.65 / 3.3) * 4095 ≈ 2047
-  const int THERMISTER_THRESHOLD = 2047;
-  
-  //resistance value for LTC2943
-  float resistor = .1;
-  const float LTC2943_CHARGE_lsb = 0.34E-3;
+
+// 3.3V / 2 = 1.65V --> scaled to 12-bit ADC: (1.65 / 3.3) * 4095 ≈ 2047
+const int THERMISTER_THRESHOLD = 2047;
+
+//LTC scaling factors
+//resistance value for LTC2943
+float resistor = .1;
+const float LTC2943_CHARGE_lsb = 0.34E-3;
 const float LTC2943_VOLTAGE_lsb = 1.44E-3;
 const float LTC2943_CURRENT_lsb = 29.3E-6;
 const float LTC2943_TEMPERATURE_lsb = 0.25;
@@ -66,28 +68,25 @@ float CellMaxCutOffV; //need from user --> Done
 float CellFullChargeV = CellMaxCutOffV - 0.1;
 float CellMinCutOffV = 2.0; //need from user --> Done
 
+//vars for returns to main system
 float PackVoltage = 0;
 float current = 0;
 float tempC = 0;
 float charge_mAh = 0;
 float real_charge_mAh = 0;
 
-//////////////////////////////////////////////////////////////////////
 //LTC2943 Sense scaling Configuration parameters
 float Pack_stock_capacity = 5200; //mA (2600*4 = 10400) //need from user --> Done
 // Sense resistor in Ohms
 const float RSENSE = 0.1f;
 
-// CONTROL register prescaler setting (bits B[5:3] = 0b111 → M = 16384)
+//CONTROL register prescaler setting (bits B[5:3] = 0b111 → M = 16384)
 const float LTC2943_PRESCALER = 16384.0f;
 
-// qLSB in mAh/count, per datasheet p.15:
-//   qLSB = 0.340 mAh × (50 mΩ / RSENSE) × (M / 4096)
-const float QLSB = 0.340f
-                 * (50e-3f / RSENSE)
-                 * (LTC2943_PRESCALER / 4096.0f);
+//qLSB in mAh/count, per datasheet p.15:
+//qLSB = 0.340 mAh × (50 mΩ / RSENSE) × (M / 4096)
+const float QLSB = 0.340f * (50e-3f / RSENSE) * (LTC2943_PRESCALER / 4096.0f);
 
-//////////////////////////////////////////////////////////////////////
 int numOfCells = 4;
 
 //BQ25730 Configuration parameters
@@ -109,6 +108,7 @@ const unsigned long registerUpdateInterval = 2500;
 float responseData = 0.0;
 TwoWire myI2C2(PB11, PB10);
 #define SLAVE_ADDRESS 0x58
+
 //Adress for LTC2943
 #define LTC2943_ADDR 0x64  // 7-bit I2C address
 //Adress for BQ25730
@@ -479,8 +479,8 @@ void CheckIfINAConnected()
 }
 
 //Enables GPIO pins for balancer, CHGOK, LEDS, 
-void EnableBalancerPins(){
-  //Define Pins as outputs to balancer
+void EnableGPIOPins(){
+  //Balancer bypass GPIO bank
   //Cell 1 Balance
   pinMode(PB1, OUTPUT);
   //Cell 2 Balance
@@ -492,6 +492,7 @@ void EnableBalancerPins(){
   //CHG_OK
   pinMode(PA1, INPUT);
 
+  //LED bank
   //PowerPlugInsertedLED
   pinMode(PB15, OUTPUT);//28
   //ChargeLED
@@ -501,6 +502,7 @@ void EnableBalancerPins(){
   //BMS_STATUS_LED
   pinMode(PB12, OUTPUT);//25
 
+  //Thermister bank
   //Thermister  1
   pinMode(PA2,INPUT);
   //Thermister  2
@@ -803,6 +805,7 @@ void TempCheck() {
   // Check if any reading exceeds threshold
   if(t1 > THERMISTER_THRESHOLD || t2 > THERMISTER_THRESHOLD || t3 > THERMISTER_THRESHOLD || t4 > THERMISTER_THRESHOLD)
   {
+    Serial.print("THERMISTER ERROR FLAG ON",t1,t2,t3,t4);
     disableCharging();
     ERRORFLG = true;
     OVERHEAT = true;
@@ -839,7 +842,6 @@ void onReceive(int howMany) {
         responseData = current;
         break;
       case 0x08:
-        // Future SOC calculation
         responseData = real_charge_mAh;
         break;
       default:
@@ -928,7 +930,7 @@ void setup() {
   setupLTC2943();
   CheckBQConnectionWithComms();
   CheckIfINAConnected();
-  EnableBalancerPins();
+  EnableGPIOPins();
   //printSerialMenu();
 
   // Start the timer interrupt to trigger every 500,000 microseconds (5000 ms)
@@ -939,6 +941,7 @@ void setup() {
   }
 }
 
+//SystemCheck is Basically the main() loop, gets called every 500ms by timer
 void SystemCheck()
 {
   Serial.println("----------------------------------------------------");
