@@ -602,7 +602,7 @@ void checkCellandSocCutoff() {
   }
 }
 
-void Balance_Cells(){
+void ChargeAndBalanceControl(){
   if (CHARGING && !CHARGE_ON_PLUGIN) {
     Serial.println(F("⚠️  Auto Charge off, ENDING CHARGING"));
       // bail out of charging logic but still report voltages
@@ -748,13 +748,7 @@ void Balance_Cells(){
   Serial.print("Actual Accumulated Charge: "); Serial.print(real_charge_mAh); Serial.println(" mAh");
   Serial.println();
 }
-/////////////////////////////////////////////////////////////////////////
-/**void printSerialMenu() {
-  Serial.println(F("\n=== Charging Control Menu ==="));
-  Serial.println(F("  Type START to begin charging"));
-  Serial.println(F("  Type STOP  to halt charging"));
-  Serial.println(F("=============================\n"));
-}**/
+
 
 void handleSerialCharging() {
   while (Serial.available()) {
@@ -805,7 +799,7 @@ void TempCheck() {
   // Check if any reading exceeds threshold
   if(t1 > THERMISTER_THRESHOLD || t2 > THERMISTER_THRESHOLD || t3 > THERMISTER_THRESHOLD || t4 > THERMISTER_THRESHOLD)
   {
-    Serial.print("THERMISTER ERROR FLAG ON",t1,t2,t3,t4);
+    Serial.print("THERMISTER ERROR FLAG ON Voltages:"); Serial.print(t1); Serial.print(t2); Serial.print(t3); Serial.println(t4);
     disableCharging();
     ERRORFLG = true;
     OVERHEAT = true;
@@ -959,7 +953,7 @@ void SystemCheck()
   current = Request_Current_LTC2943();
 
   
-  Balance_Cells();
+  ChargeAndBalanceControl();
   TempCheck();
 
   Serial.println("----------------------------------------------------");
