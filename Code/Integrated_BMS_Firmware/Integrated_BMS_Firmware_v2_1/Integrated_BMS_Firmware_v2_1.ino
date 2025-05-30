@@ -28,7 +28,10 @@ volatile bool ERRORFLG = false;
 
 //Timer Flags
 volatile bool TEST_FLAG = false;
+volatile bool CONFIGURED = false;
 
+int configstatus = 0;
+int ConfigStatusFromMaster;
 // Create a timer instance using TIM2 (adjust if needed)
 STM32Timer ITimer2(TIM2);
 
@@ -624,6 +627,9 @@ void ChargeAndBalanceControl(){
       disableCharging();
     }
   }
+  
+  //Current (12-bit, ±60mV full scale, offset binary)
+  current = Request_Current_LTC2943();
 
   disableCharging();
   delay(400);
@@ -806,7 +812,17 @@ void TempCheck() {
     disableVSYS();
   }
 }
+void ConfigCheck(){
+  
+  if(configstatus == 8){
+    CONFIGURED = true;
+  }
+  else{
+    CONFIGURED = false;
+  }
 
+
+}
 
 // Handle command + optional float reception
 void onReceive(int howMany) {
@@ -860,40 +876,57 @@ void onReceive(int howMany) {
       case 0x10:
         ChargeVoltageValue = receivedFloat;
         Serial.print("ChargeVoltageValue Recieved From Peripheral:  ");Serial.println(ChargeVoltageValue);
+        configstatus++;
         break;
       case 0x11:
         VsysMinValue = receivedFloat;
         Serial.print("VsysMinValue Recieved From Peripheral:  ");Serial.println(VsysMinValue);
+        configstatus++;
         break;
       case 0x12:
         VsysMinValue = receivedFloat;
         Serial.print("VsysMinValue Recieved From Peripheral:  ");Serial.println(VsysMinValue);
+        configstatus++;
         break;
       case 0x13:
         inputVoltageValue = receivedFloat;
         Serial.print("inputVoltageValue Recieved From Peripheral:  ");Serial.println(inputVoltageValue);
+        configstatus++;
         break;
       case 0x14:
         chargeCurrentValue = receivedFloat;
         Serial.print("chargeCurrentValue Recieved From Peripheral:  ");Serial.println(chargeCurrentValue);
+        configstatus++;
         break;
       case 0x15:
         inputCurrentLimitValue = receivedFloat;
         Serial.print("inputCurrentLimitValue Recieved From Peripheral:  ");Serial.println(inputCurrentLimitValue);
-        break;
+        configstatus++;
         break;
       case 0x16:
         CellMaxCutOffV = receivedFloat;
         CellFullChargeV = CellMaxCutOffV - 0.1;
         Serial.print("CellMaxCutOffV Recieved From Peripheral:  ");Serial.println(CellMaxCutOffV);
+        configstatus++;
         break;
       case 0x17:
         CellMinCutOffV = receivedFloat;
         Serial.print("CellMinCutOffV Recieved From Peripheral:  ");Serial.println(CellMinCutOffV);
+        configstatus++;
         break;
       case 0x18:
         Pack_stock_capacity = receivedFloat;
         Serial.print("Pack_stock_capacity Recieved From Peripheral:  ");Serial.println(Pack_stock_capacity);
+        configstatus++;
+        break;
+        case 0x19:
+        ConfigStatusFromMaster = receivedFloat;
+        Serial.print("Configuration status from Master: ");Serial.println(ConfigStatusFromMaster);
+        if(ConfigStatusFromMaster == 1)
+        {
+          Serial.println("Master reported Configuration complete");
+          configstatus = 8;
+        }
         break;
       default:
         Serial.println("Unknown float write command");
@@ -928,7 +961,7 @@ void setup() {
   //printSerialMenu();
 
   // Start the timer interrupt to trigger every 500,000 microseconds (5000 ms)
-  if (ITimer2.attachInterruptInterval(5000000, SystemCheck)) {
+  if (ITimer2.attachInterruptInterval(2000000, SystemCheck)) {
     Serial.println("Timer2 started, checking sensors every 500 ms");
   } else {
     Serial.println("Failed to start Timer2");
@@ -942,19 +975,20 @@ void SystemCheck()
   //LTC2943 loop code 
   // Keep analog section active if Pack is disconnected temporarily
   //write_LTC2943_Register(REG_CONTROL, 0b11111000);
+  if(CONFIGURED == true){
 
-  //Grab user Input
+    //Grab user Input
   handleSerialCharging();
   //Print Charging status
   Serial.print("Charging: ");Serial.println(CHARGING);
-  
-
-  //Current (12-bit, ±60mV full scale, offset binary)
-  current = Request_Current_LTC2943();
-
-  
   ChargeAndBalanceControl();
   TempCheck();
+
+  }
+  else{
+    Serial.println("AWAITING CONFIGURATION");
+  }
+  
 
   Serial.println("----------------------------------------------------");
   Serial.println("");
