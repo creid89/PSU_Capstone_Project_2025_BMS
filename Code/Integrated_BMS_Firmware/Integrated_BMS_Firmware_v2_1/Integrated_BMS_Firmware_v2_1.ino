@@ -552,7 +552,7 @@ void checkCellandSocCutoff() {
     CHARGING = false;
     Serial.println(F("\n=== CHARGING STOPPED: HARD OV CUTOFF ==="));
     Serial.print  (F("Cells over cutoff ("));
-    Serial.print  (CellMaxCutOffV, 2);
+    Serial.print  (CellMaxCutOffV, 3);
     Serial.print  (F(" V): "));
     Serial.println(overList);  
     Serial.println(F("===========================================\n"));
@@ -593,7 +593,7 @@ void checkCellandSocCutoff() {
   }
 
   //Disable DisCharging if SoC is empty
-  if (real_charge_mAh >= 0 && CHARGING == false) {
+  if (real_charge_mAh <= 0 && CHARGING == false) {
     //STOPDISCHARGING();
     Serial.println(F("\n=== DISCHARGING STOPPED: Pack is EMPTY (SoC) ==="));
     Serial.print  (F("Pack at:"));
@@ -817,10 +817,12 @@ void ConfigCheck(){
   if(configstatus >= 7){
     CONFIGURED = true;
     Serial.println("Namaste");
+    ITimer2.attachInterruptInterval(5000000, SystemCheck);
   }
   else{
     CONFIGURED = false;
     Serial.println("Fuck you");
+    ITimer2.attachInterruptInterval(5000000, SystemCheck);
   }
 
 
@@ -828,6 +830,7 @@ void ConfigCheck(){
 
 // Handle command + optional float reception
 void onReceive(int howMany) {
+  
   if (howMany == 1) {
     uint8_t command = myI2C2.read();
     switch (command) {
@@ -873,7 +876,9 @@ void onReceive(int howMany) {
     Serial.print(command, HEX);
     Serial.print(" with value: ");
     Serial.println(receivedFloat, 5);
-
+    
+    //Pause timer to avoid collision
+    ITimer2.detachInterrupt();
     switch (command) {
       case 0x10:
         ChargeVoltageValue = receivedFloat;
@@ -929,6 +934,7 @@ void onReceive(int howMany) {
         {
           Serial.println("Master reported Configuration complete");
           configstatus = 7;
+          
           ConfigCheck();
         }
         break;
@@ -958,6 +964,8 @@ void setup() {
   myI2C2.onRequest(onRequest);
 
 
+  setupLTC2943();
+  setupLTC2943();
   setupLTC2943();
   CheckBQConnectionWithComms();
   CheckIfINAConnected();
