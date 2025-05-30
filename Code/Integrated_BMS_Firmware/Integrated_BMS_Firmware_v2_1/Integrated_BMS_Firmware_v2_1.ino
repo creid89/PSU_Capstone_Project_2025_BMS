@@ -1,4 +1,4 @@
-//Integrated BMS Firmware V2_0TIMER
+//Integrated BMS Firmware V2_1
 //Sodium & Lithium ION BMS
 
 //Include wire for I2C
@@ -429,6 +429,7 @@ void dumpAllBQRegisters() {
     Serial.println(value, HEX);
   }
 }
+
 //Write to charge register to stop failsafe from lack of comms
 void MaintainChargingBQ(){
   // Periodically check I2C communication
@@ -452,7 +453,8 @@ void MaintainChargingBQ(){
   }
   
 }
-//////////////////////////////////////////////////////////////////////////////////////////////
+
+
 //INA Functions
 //Check if INA260s are connected
 void CheckIfINAConnected()
@@ -476,7 +478,7 @@ void CheckIfINAConnected()
   } */
 }
 
-///////////////////////////////////////////////////////////////////
+//Enables GPIO pins for balancer, CHGOK, LEDS, 
 void EnableBalancerPins(){
   //Define Pins as outputs to balancer
   //Cell 1 Balance
