@@ -280,17 +280,17 @@ bool checkBQConnection() {
 // -----------------------------
 
 void disableVSYS() {
-  Serial.println("------------- VSYS HAS BEEN DISABLED BECAUSE OF LOW BATTERY -----------------");
+  Serial.println("------------- VSYS HAS BEEN DISABLED BECAUSE OF something -----------------");
 
     // Step 1: Ensure OTG is disabled
-    uint16_t chargeOption0 = readBQ25730(0x12);
-    chargeOption0 &= ~(1 << 5);  // Clear EN_OTG bit
-    writeBQ25730(0x12, chargeOption0);
+    //uint16_t chargeOption0 = readBQ25730(0x12);
+    //chargeOption0 &= ~(1 << 5);  // Clear EN_OTG bit
+    //writeBQ25730(0x12, chargeOption0);
 
     // Step 2: Ensure BATFETOFF_HIZ is cleared
-    uint16_t chargeOption3 = readBQ25730(0x34);
-    chargeOption3 &= ~(1 << 1);  // Clear BATFETOFF_HIZ
-    writeBQ25730(0x34, chargeOption3);
+    //uint16_t chargeOption3 = readBQ25730(0x34);
+    //chargeOption3 &= ~(1 << 1);  // Clear BATFETOFF_HIZ
+    //writeBQ25730(0x34, chargeOption3);
 
     // Step 3: Force BATFET off
     chargeOption3 |= (1 << 7);   // Set BATFET_ENZ bit
@@ -567,6 +567,7 @@ void checkCellandSocCutoff() {
     Serial.print  (F(" V): "));
     Serial.println(underList);  
     Serial.println(F("=============================================\n"));
+    disableVSYS();
     
   }
 
@@ -600,7 +601,7 @@ void checkCellandSocCutoff() {
     Serial.print  (real_charge_mAh);
     Serial.println(F(" mAh"));
     Serial.println(F("============================================\n"));
-    //disableVSYS();
+    disableVSYS();
     
   }
 }
