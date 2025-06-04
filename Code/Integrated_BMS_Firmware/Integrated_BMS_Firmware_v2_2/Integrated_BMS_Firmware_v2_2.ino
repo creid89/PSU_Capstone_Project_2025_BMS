@@ -13,14 +13,14 @@
 
 //EEPROM Storage for Init System Values Passed by Controller uC
 #define EEPROM_ADDR_1  0                                       // float 1
-#define EEPROM_ADDR_2  (EEPROM_ADDR_1 + sizeof(float))         // float 2
-#define EEPROM_ADDR_3  (EEPROM_ADDR_2 + sizeof(float))         // float 3
-#define EEPROM_ADDR_4  (EEPROM_ADDR_3 + sizeof(float))         // float 4
-#define EEPROM_ADDR_5  (EEPROM_ADDR_4 + sizeof(float))         // float 5
-#define EEPROM_ADDR_6  (EEPROM_ADDR_5 + sizeof(float))         // float 6
-#define EEPROM_ADDR_7  (EEPROM_ADDR_6 + sizeof(float))         // float 7
-#define EEPROM_ADDR_8  (EEPROM_ADDR_7 + sizeof(float))         // float 8
-#define EEPROM_TOTAL_LENGTH (8 * sizeof(float))              // Total length for 8 floats
+#define EEPROM_ADDR_2  (EEPROM_ADDR_1 + (2*sizeof(float)))         // float 2
+#define EEPROM_ADDR_3  (EEPROM_ADDR_2 + (2*sizeof(float)))        // float 3
+#define EEPROM_ADDR_4  (EEPROM_ADDR_3 + (2*sizeof(float)))        // float 4
+#define EEPROM_ADDR_5  (EEPROM_ADDR_4 + (2*sizeof(float)))         // float 5
+#define EEPROM_ADDR_6  (EEPROM_ADDR_5 + (2*sizeof(float)))         // float 6
+#define EEPROM_ADDR_7  (EEPROM_ADDR_6 + (2*sizeof(float)))         // float 7
+#define EEPROM_ADDR_8  (EEPROM_ADDR_7 + (2*sizeof(float)))         // float 8
+#define EEPROM_TOTAL_LENGTH (8 * (2*sizeof(float)))              // Total length for 8 floats
 
 ////////////////////////////////////////////////////////////////
 // Create instances for each INA260 sensor
@@ -81,7 +81,7 @@ float prescaler = 4096;
 //Balancer Declarations
 float CellMaxCutOffV; //need from user --> Done
 float CellFullChargeV = CellMaxCutOffV - 0.1;
-float CellMinCutOffV = 2.0; //need from user --> Done
+float CellMinCutOffV; //need from user --> Done
 
 //vars for returns to main system
 float PackVoltage = 0;
@@ -214,7 +214,7 @@ float Request_Temp_LTC2943(){
 float Request_SoC_LTC2943(){
   // Accumulated Charge (SoC)
   uint16_t acr = Read_LTC2943_Register(REG_ACC_CHARGE_MSB);
-  //float charge_mAh = (acr - 32767) * QLSB;
+  //charge_mAh = (acr - 32767) * QLSB;
 
 
   charge_mAh = 1000*(float)(acr*LTC2943_CHARGE_lsb*prescaler*50E-3)/(resistor*4096);
@@ -225,7 +225,7 @@ float Request_SoC_LTC2943(){
 void setupLTC2943() {
   // Reset charge accumulator
   write_LTC2943_Register(REG_CONTROL, 0b11111001); // Set bit 0 to 1 to reset
-  delay(1);
+  delay(50);
   write_LTC2943_Register(REG_CONTROL, 0b11111000); // Re-enable analog section, auto mode, prescaler 4096
 }
 
@@ -261,7 +261,7 @@ void writeBQ25730(uint8_t regAddr, uint16_t data) {
   Wire.write(data & 0xFF);          // Low byte
   Wire.write((data >> 8) & 0xFF);   // High byte
   Wire.endTransmission();
-  delay(5);
+  delay(50);
 }
 
 uint16_t readBQ25730(uint8_t regAddr) {
@@ -325,7 +325,7 @@ void setChargeVoltage(float voltage_V) {
   uint16_t stepCount = static_cast<uint16_t>(voltage_V / 0.008 + 0.5);
   uint16_t encoded = (stepCount & 0x1FFF) << 3;
 
-  delay(2500);
+  delay(50);
   Serial.print("Writing 0x"); Serial.print(encoded, HEX);
   Serial.print(" to ChargeVoltage ("); Serial.print(voltage_V); Serial.println(" V)");
   writeBQ25730(ChargeVoltage, encoded);
@@ -340,7 +340,7 @@ void setChargeCurrent(float current_A) {
   uint16_t stepCount = static_cast<uint16_t>(current_A / 0.128 + 0.5);
   uint16_t encoded = (stepCount << 6) & 0x1FC0;
 
-  delay(2500);
+  delay(50);
   Serial.print("Writing 0x"); Serial.print(encoded, HEX);
   Serial.print(" to ChargeCurrent Register ("); Serial.print(current_A); Serial.println(" A)");
   writeBQ25730(ChargeCurrent, encoded);
@@ -354,7 +354,7 @@ void setInputCurrentLimit(float current_mA) {
   uint16_t code = static_cast<uint16_t>(current_mA / 50.0f);
   uint16_t regValue = (code << 8) & 0x7F00;
 
-  delay(2500);
+  delay(50);
   Serial.print("Writing 0x"); Serial.print(regValue, HEX);
   Serial.print(" to IIN_HOST Register ("); Serial.print(current_mA); Serial.println(" mA)");
   writeBQ25730(IIN_HOST, regValue);
@@ -369,7 +369,7 @@ void setInputVoltage(float voltage_V) {
   uint16_t stepCount = static_cast<uint16_t>((voltage_V - 3.2) / 0.064 + 0.5);
   uint16_t encoded = (stepCount << 6) & 0x3FC0;
 
-  delay(2500);
+  delay(50);
   Serial.print("Writing 0x"); Serial.print(encoded, HEX);
   Serial.print(" to InputVoltage Register ("); Serial.print(voltage_V); Serial.println(" V)");
   writeBQ25730(InputVoltage, encoded);
@@ -383,7 +383,7 @@ void set_VSYS_MIN(float voltage_V) {
 
   uint16_t encoded = static_cast<uint16_t>(voltage_V * 10) << 8;
 
-  delay(2500);
+  delay(50);
   Serial.print("Writing 0x"); Serial.print(encoded, HEX);
   Serial.print(" to VSYS_MIN ("); Serial.print(voltage_V); Serial.println(" V)");
   writeBQ25730(VSYS_MIN, encoded);
@@ -453,9 +453,9 @@ void MaintainChargingBQ(){
     if (!checkI2C()) {
       Serial.println("I2C comms lost. Attempting to reinitialize...");
       Wire.end();
-      delay(100);
+      delay(50);
       Wire.begin();
-      delay(100);
+      delay(50);
     }
   }
 
@@ -640,13 +640,13 @@ void ChargeAndBalanceControl(){
       disableCharging();
     }
   }
-  Serial.print("\n\n\nMade it through initial charge control logic\n\n\n");
+  //Serial.print("\n\n\nMade it through initial charge control logic\n\n\n");
   //Current (12-bit, ±60mV full scale, offset binary)
   current = Request_Current_LTC2943();
  
   disableCharging();
-  delay(400);
-   Serial.println("Its the LTC (Fuck)\n\n\n");
+  delay(50);
+
   //Grab each cells Voltage
   INA_0x40_VOLTAGE = ina260_0x40.readBusVoltage()/1000.00;
   INA_0x41_VOLTAGE = ina260_0x41.readBusVoltage()/1000.00;
@@ -827,8 +827,11 @@ void TempCheck() {
   }
 }
 void ConfigCheck(){
-  Serial.print("Config status:");Serial.print(configstatus);Serial.println("/8");
-  if(configstatus >= 8){
+  ITimer2.detachInterrupt();
+  //ITimer2.attachInterruptInterval(5000000, SystemCheck);
+  //Serial.print("Config status:");Serial.print(configstatus);Serial.println("/8");
+  /*
+  if(configstatus >= 7){
     CONFIGURED = true;
     Serial.println("Namaste bitches");
     ITimer2.attachInterruptInterval(5000000, SystemCheck);
@@ -837,9 +840,20 @@ void ConfigCheck(){
     CONFIGURED = false;
     Serial.println("Fuck you");
     ITimer2.attachInterruptInterval(5000000, SystemCheck);
-  }
+  }*/
+  EEPROM.put(EEPROM_ADDR_1, ChargeVoltageValue);
+  EEPROM.put(EEPROM_ADDR_2, VsysMinValue);
+  EEPROM.put(EEPROM_ADDR_3, inputVoltageValue);
+  EEPROM.put(EEPROM_ADDR_4, chargeCurrentValue);
+  EEPROM.put(EEPROM_ADDR_5, inputCurrentLimitValue);
+  EEPROM.put(EEPROM_ADDR_6, CellMaxCutOffV);
+  EEPROM.put(EEPROM_ADDR_7, CellMinCutOffV);
+  EEPROM.put(EEPROM_ADDR_8, Pack_stock_capacity);
 
-
+  CONFIGURED = true;
+  
+  Serial.print("");
+  ITimer2.attachInterruptInterval(5000000, SystemCheck);
 }
 
 // Handle command + optional float reception
@@ -897,65 +911,72 @@ void onReceive(int howMany) {
       case 0x10:
         ChargeVoltageValue = receivedFloat;
         Serial.print("ChargeVoltageValue Recieved From Peripheral:  ");Serial.println(ChargeVoltageValue);
-        EEPROM.put(EEPROM_ADDR_1, ChargeVoltageValue);
-        configstatus++;
+        //EEPROM.put(EEPROM_ADDR_1, ChargeVoltageValue);
+        //delay(10);
+        //configstatus++;
         break;
       case 0x11:
         VsysMinValue = receivedFloat;
         Serial.print("VsysMinValue Recieved From Peripheral:  ");Serial.println(VsysMinValue);
-        EEPROM.put(EEPROM_ADDR_2, VsysMinValue);
-        configstatus++;
-        break;
-      case 0x12:
-        VsysMinValue = receivedFloat;
-        Serial.print("VsysMinValue Recieved From Peripheral:  ");Serial.println(VsysMinValue);
-        configstatus++;
+        //EEPROM.put(EEPROM_ADDR_2, VsysMinValue);
+        //delay(10);
+        //configstatus++;
         break;
       case 0x13:
         inputVoltageValue = receivedFloat;
         Serial.print("inputVoltageValue Recieved From Peripheral:  ");Serial.println(inputVoltageValue);
-        EEPROM.put(EEPROM_ADDR_3, inputVoltageValue);
-        configstatus++;
+        //EEPROM.put(EEPROM_ADDR_3, inputVoltageValue);
+        //delay(10);
+        //configstatus++;
         break;
       case 0x14:
         chargeCurrentValue = receivedFloat;
         Serial.print("chargeCurrentValue Recieved From Peripheral:  ");Serial.println(chargeCurrentValue);
-        EEPROM.put(EEPROM_ADDR_4, chargeCurrentValue);
-        configstatus++;
+        //EEPROM.put(EEPROM_ADDR_4, chargeCurrentValue);
+        //delay(10);
+        //configstatus++;
         break;
       case 0x15:
         inputCurrentLimitValue = receivedFloat;
         Serial.print("inputCurrentLimitValue Recieved From Peripheral:  ");Serial.println(inputCurrentLimitValue);
-        EEPROM.put(EEPROM_ADDR_5, inputCurrentLimitValue);
-        configstatus++;
+        //EEPROM.put(EEPROM_ADDR_5, inputCurrentLimitValue);
+        //delay(10);
+        //configstatus++;
         break;
       case 0x16:
         CellMaxCutOffV = receivedFloat;
         CellFullChargeV = CellMaxCutOffV - 0.1;
         Serial.print("CellMaxCutOffV Recieved From Peripheral:  ");Serial.println(CellMaxCutOffV);
-        EEPROM.put(EEPROM_ADDR_6, CellMaxCutOffV);
-        configstatus++;
+        //EEPROM.put(EEPROM_ADDR_6, CellMaxCutOffV);
+        //delay(10);
+        //configstatus++;
         break;
       case 0x17:
         CellMinCutOffV = receivedFloat;
+        delay(10);
         Serial.print("CellMinCutOffV Recieved From Peripheral:  ");Serial.println(CellMinCutOffV);
-        EEPROM.put(EEPROM_ADDR_7, CellMinCutOffV);
-        configstatus++;
+        //EEPROM.put(EEPROM_ADDR_7, CellMinCutOffV);
+        //delay(10);
+        //configstatus++;
         break;
       case 0x18:
         Pack_stock_capacity = receivedFloat;
         Serial.print("Pack_stock_capacity Recieved From Peripheral:  ");Serial.println(Pack_stock_capacity);
-        EEPROM.put(EEPROM_ADDR_8, Pack_stock_capacity);
-        configstatus++;
+        //EEPROM.put(EEPROM_ADDR_8, Pack_stock_capacity);
+        delay(10);
+        Serial.println("\n\n\n\n\n\nLine 967\n\n\n\n\n\n\n");
+        //configstatus++;
         ConfigCheck();
         break;
         case 0x19:
+        Serial.println("\n\n\n\n\n\nLine 972\n\n\n\n\n\n\n");
         ConfigStatusFromMaster = receivedFloat;
+        Serial.println("\n\n\n\n\n\nLine 974\n\n\n\n\n\n\n");
         Serial.print("Configuration status from Master: ");Serial.println(ConfigStatusFromMaster);
         if(ConfigStatusFromMaster == 1)
         {
           Serial.println("Master reported Configuration complete");
-          configstatus = 8;
+          //configstatus = 8;
           
           ConfigCheck();
         }
@@ -976,9 +997,10 @@ void onRequest() {
 void EEPROM_Check(){
 
   if (isEEPROMInitialized(EEPROM_ADDR_1, EEPROM_TOTAL_LENGTH)) {
-    delay(3000);
-    Serial.print("\n\n\n\n\--------Made it inot EEPROM Check---------\n\n\n\n\n");
+    delay(50);
+    Serial.print("\n\n\n\n\-------- Made it into EEPROM_Check Function ---------\n\n\n\n\n");
     // Read stored values from flash
+    
     EEPROM.get(EEPROM_ADDR_1, ChargeVoltageValue);
     EEPROM.get(EEPROM_ADDR_2, VsysMinValue);
     EEPROM.get(EEPROM_ADDR_3, inputVoltageValue);
@@ -987,6 +1009,7 @@ void EEPROM_Check(){
     EEPROM.get(EEPROM_ADDR_6, CellMaxCutOffV);
     EEPROM.get(EEPROM_ADDR_7, CellMinCutOffV);
     EEPROM.get(EEPROM_ADDR_8, Pack_stock_capacity);
+    
     CONFIGURED = true;
     SystemCheck();
     /*Serial.print("Value read storedValue1 from flash: ");
@@ -1014,28 +1037,33 @@ bool isEEPROMInitialized(int startAddr, size_t length) {
   return false;  // All bytes are 0xFF → uninitialized
   
 }
+
+void clearEEPROM() {
+  for (int i = 0; i < EEPROM_TOTAL_LENGTH; i++) {
+    EEPROM.write(i, 0xFF);
+  }
+  Serial.println("EEPROM wiped to 0xFF. Reboot to confirm.");
+}
+
 void setup() {
   Serial.begin(9600);
   while (!Serial);
-  delay(3000);
+  delay(100);
   Wire.begin();
   delay(100);
 
+  clearEEPROM();
   EEPROM_Check();
   myI2C2.begin(SLAVE_ADDRESS);
   myI2C2.onReceive(onReceive);
   myI2C2.onRequest(onRequest);
 
-  
-
-
-  setupLTC2943();
-  setupLTC2943();
   setupLTC2943();
   CheckBQConnectionWithComms();
   CheckIfINAConnected();
+
   EnableGPIOPins();
-  //printSerialMenu();
+
 
   // Start the timer interrupt to trigger every 500,000 microseconds (5000 ms)
   if (ITimer2.attachInterruptInterval(5000000, SystemCheck)) {
@@ -1049,6 +1077,7 @@ void setup() {
 void SystemCheck()
 {
   Serial.println("----------------------------------------------------");
+  ITimer2.detachInterrupt();
   //LTC2943 loop code 
   // Keep analog section active if Pack is disconnected temporarily
   //write_LTC2943_Register(REG_CONTROL, 0b11111000);
@@ -1063,7 +1092,7 @@ void SystemCheck()
 
   }
   else{
-    Serial.println("        AWAITING CONFIGURATION");
+    Serial.println("            AWAITING CONFIGURATION");
     //Serial.print("Config Flag:");Serial.println(CONFIGURED);
     //Serial.print("Config status:");Serial.print(configstatus);Serial.println("/8");
   }
@@ -1071,6 +1100,7 @@ void SystemCheck()
 
   Serial.println("----------------------------------------------------");
   Serial.println("");
+  ITimer2.attachInterruptInterval(5000000, SystemCheck);
 }
 
 void loop() {

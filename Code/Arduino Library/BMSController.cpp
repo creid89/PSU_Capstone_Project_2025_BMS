@@ -67,7 +67,7 @@ bool BMSController::setPack_stock_capacity(float mAh) {
 bool BMSController::FinishedConfiguration(bool completed) {
   if(completed == true)
   {
-	  sendFloat(0x18, completed);
+	  sendFloat(0x19, completed);
 	  return true;
 	  
   }

@@ -1,44 +1,70 @@
+#include <Wire.h>
 #include <EEPROM.h>
 
-#define EEPROM_ADDR_1 0                                      // Start address for first float
-#define EEPROM_ADDR_2 (EEPROM_ADDR_1 + sizeof(float))        // Next address for second float
-#define EEPROM_TOTAL_LENGTH (2 * sizeof(float))              // Total length for 2 floats
+#define EEPROM_ADDR_1  0
+#define EEPROM_ADDR_2  (EEPROM_ADDR_1 + sizeof(float))
+#define EEPROM_ADDR_3  (EEPROM_ADDR_2 + sizeof(float))
+#define EEPROM_ADDR_4  (EEPROM_ADDR_3 + sizeof(float))
+#define EEPROM_ADDR_5  (EEPROM_ADDR_4 + sizeof(float))
+#define EEPROM_ADDR_6  (EEPROM_ADDR_5 + sizeof(float))
+#define EEPROM_ADDR_7  (EEPROM_ADDR_6 + sizeof(float))
+#define EEPROM_ADDR_8  (EEPROM_ADDR_7 + sizeof(float))
+#define EEPROM_TOTAL_LENGTH (8 * sizeof(float))  // 32 bytes
 
 float storedValue1;
 float storedValue2;
 
+// Check if EEPROM is initialized
 bool isEEPROMInitialized(int startAddr, size_t length) {
   for (size_t i = 0; i < length; i++) {
     if (EEPROM.read(startAddr + i) != 0xFF) {
-      Serial.print("EEPROM has data");
-      return true;  // Found non-blank byte
-      
+      return true;
     }
   }
-  Serial.print("EEPROM has NO data");
-  return false;  // All bytes are 0xFF → uninitialized
-  
+  return false;
+}
+
+// Wipe EEPROM by filling with 0xFF
+void clearEEPROM() {
+  for (int i = 0; i < EEPROM_TOTAL_LENGTH; i++) {
+    EEPROM.write(i, 0xFF);
+  }
+  Serial.println("EEPROM wiped to 0xFF. Reboot to confirm.");
+}
+
+// Dump EEPROM byte-by-byte for inspection
+void dumpEEPROM(int startAddr, size_t length) {
+  Serial.println("EEPROM RAW DUMP:");
+  for (size_t i = 0; i < length; i++) {
+    if (i % 8 == 0) Serial.print("0x" + String(startAddr + i, HEX) + ": ");
+    Serial.print(EEPROM.read(startAddr + i), HEX);
+    Serial.print(" ");
+    if (i % 8 == 7) Serial.println();
+  }
+  Serial.println();
 }
 
 void setup() {
   Serial.begin(115200);
-  delay(1000);  // Wait for Serial Monitor
+  delay(500);
+
+  Serial.println("\n=== EEPROM Test Utility ===");
 
   if (isEEPROMInitialized(EEPROM_ADDR_1, EEPROM_TOTAL_LENGTH)) {
-    // Read stored values from flash
     EEPROM.get(EEPROM_ADDR_1, storedValue1);
     EEPROM.get(EEPROM_ADDR_2, storedValue2);
 
-    Serial.print("Value read storedValue1 from flash: ");
-    Serial.println(storedValue1);
-    Serial.print("Value read storedValue2 from flash: ");
-    Serial.println(storedValue2);
+    Serial.println("EEPROM has stored values:");
+    Serial.print("storedValue1: "); Serial.println(storedValue1, 4);
+    Serial.print("storedValue2: "); Serial.println(storedValue2, 4);
   } else {
-    Serial.println("EEPROM is uninitialized or blank.");
-    Serial.println("Please enter two float values to initialize it.");
+    Serial.println("EEPROM is blank or uninitialized.");
   }
 
-  Serial.println("\nEnter two float values separated by a space (e.g., '12.34 56.78'):");
+  dumpEEPROM(EEPROM_ADDR_1, EEPROM_TOTAL_LENGTH);
+
+  Serial.println("\nType two float values separated by a space (e.g., '12.34 56.78') to store.");
+  Serial.println("Or type 'CLEAR' to erase EEPROM.");
 }
 
 void loop() {
@@ -46,33 +72,36 @@ void loop() {
     String input = Serial.readStringUntil('\n');
     input.trim();
 
-    if (input.length() > 0) {
-      // Split the input by space
-      int spaceIndex = input.indexOf(' ');
-      if (spaceIndex == -1) {
-        Serial.println("Please provide two float values separated by a space.");
-        return;
-      }
-
-      String val1Str = input.substring(0, spaceIndex);
-      String val2Str = input.substring(spaceIndex + 1);
-
-      float newValue1 = val1Str.toFloat();
-      float newValue2 = val2Str.toFloat();
-
-      Serial.print("Writing storedValue1 to flash: ");
-      Serial.println(newValue1);
-      EEPROM.put(EEPROM_ADDR_1, newValue1);
-
-      Serial.print("Writing storedValue2 to flash: ");
-      Serial.println(newValue2);
-      EEPROM.put(EEPROM_ADDR_2, newValue2);
-
-      Serial.println("Values saved! Reboot or power cycle to test reload.");
-    } else {
-      Serial.println("No input provided. Keeping current values.");
+    if (input.equalsIgnoreCase("CLEAR")) {
+      clearEEPROM();
+      return;
     }
 
-    Serial.println("\nEnter two float values separated by a space:");
+    int spaceIndex = input.indexOf(' ');
+    if (spaceIndex == -1) {
+      Serial.println("Invalid input. Please enter two float values or 'CLEAR'.");
+      return;
+    }
+
+    String val1Str = input.substring(0, spaceIndex);
+    String val2Str = input.substring(spaceIndex + 1);
+
+    float val1 = val1Str.toFloat();
+    float val2 = val2Str.toFloat();
+
+    EEPROM.put(EEPROM_ADDR_1, val1);
+    EEPROM.put(EEPROM_ADDR_2, val2);
+
+    Serial.println("Values written to EEPROM.");
+    Serial.println("Verifying...");
+
+    EEPROM.get(EEPROM_ADDR_1, storedValue1);
+    EEPROM.get(EEPROM_ADDR_2, storedValue2);
+
+    Serial.print("storedValue1 (verified): "); Serial.println(storedValue1, 4);
+    Serial.print("storedValue2 (verified): "); Serial.println(storedValue2, 4);
+
+    dumpEEPROM(EEPROM_ADDR_1, EEPROM_TOTAL_LENGTH);
+    Serial.println("Done. You may enter new values or 'CLEAR'.");
   }
 }
