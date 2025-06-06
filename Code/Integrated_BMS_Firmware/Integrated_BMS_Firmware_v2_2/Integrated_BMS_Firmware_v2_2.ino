@@ -20,7 +20,8 @@
 #define EEPROM_ADDR_6  (EEPROM_ADDR_5 + (2*sizeof(float)))         // float 6
 #define EEPROM_ADDR_7  (EEPROM_ADDR_6 + (2*sizeof(float)))         // float 7
 #define EEPROM_ADDR_8  (EEPROM_ADDR_7 + (2*sizeof(float)))         // float 8
-#define EEPROM_TOTAL_LENGTH (8 * (2*sizeof(float)))              // Total length for 8 floats
+#define EEPROM_ADDR_9  (EEPROM_ADDR_7 + (2*sizeof(float)))         // float 9
+#define EEPROM_TOTAL_LENGTH (9 * (2*sizeof(float)))              // Total length for 8 floats
 
 ////////////////////////////////////////////////////////////////
 // Create instances for each INA260 sensor
@@ -39,7 +40,8 @@ volatile bool OVERHEAT = false;
 volatile bool ERRORFLG = false;
 
 //Timer Flags
-volatile bool TEST_FLAG = false;
+volatile bool EEPROM_LOADED = false;
+float EEPROM_CONFIG_FLAG;
 volatile bool CONFIGURED = false;
 
 int configstatus = 0;
@@ -49,7 +51,7 @@ STM32Timer ITimer2(TIM2);
 
 // Timer ISR: set flags for sensor and serial update
 void onTimerISR() {
-  TEST_FLAG = true;
+  //TEST_FLAG = true;
 }
 
 
@@ -214,10 +216,10 @@ float Request_Temp_LTC2943(){
 float Request_SoC_LTC2943(){
   // Accumulated Charge (SoC)
   uint16_t acr = Read_LTC2943_Register(REG_ACC_CHARGE_MSB);
-  //charge_mAh = (acr - 32767) * QLSB;
+  charge_mAh = (acr - 32767) * QLSB;
 
 
-  charge_mAh = 1000*(float)(acr*LTC2943_CHARGE_lsb*prescaler*50E-3)/(resistor*4096);
+  //charge_mAh = 1000*(float)(acr*LTC2943_CHARGE_lsb*prescaler*50E-3)/(resistor*4096);
 //
   return charge_mAh;
 }
@@ -530,7 +532,7 @@ void EnableGPIOPins(){
 // Call this each loop to automatically stop charging if any cell exceeds charge or discharge conditions
 
 void checkCellandSocCutoff() { 
-  Serial.print("\n\n\nMade it into voltage calcs");
+  //Serial.print("\n\n\nMade it into voltage calcs");
   // Gather which cells are over the hard cutoff
   bool anyOverCutoff = false;
   String overList = "";
@@ -625,7 +627,9 @@ void ChargeAndBalanceControl(){
       CHARGING = false;
       disableCharging();
   }
-
+  else{
+    Serial.println("keeping on chargin'");
+  }
   if (CHARGE_ON_PLUGIN) {
     if (digitalRead(PA1) == HIGH) {
       Serial.println(F("⚠️  Auto charge on: Charging"));
@@ -643,10 +647,10 @@ void ChargeAndBalanceControl(){
   //Serial.print("\n\n\nMade it through initial charge control logic\n\n\n");
   //Current (12-bit, ±60mV full scale, offset binary)
   current = Request_Current_LTC2943();
- 
+  //Serial.print("\n----------------- LINE 650 -------------\n"); 
   disableCharging();
-  delay(50);
-
+  //delay(50);
+  //Serial.print("\n----------------- LINE 653 -------------\n"); 
   //Grab each cells Voltage
   INA_0x40_VOLTAGE = ina260_0x40.readBusVoltage()/1000.00;
   INA_0x41_VOLTAGE = ina260_0x41.readBusVoltage()/1000.00;
@@ -675,7 +679,7 @@ void ChargeAndBalanceControl(){
   //Adjust Charge to compensate for how LTC tracks Coulombs
   real_charge_mAh = charge_mAh+Pack_stock_capacity;
   
-  Serial.print("\n\n\nMade it through charge control logic\n\n\n");
+  //Serial.print("\n\n\nMade it through charge control logic\n\n\n");
   if(CHARGING == true)
   {
     enableCharging();
@@ -841,6 +845,7 @@ void ConfigCheck(){
     Serial.println("Fuck you");
     ITimer2.attachInterruptInterval(5000000, SystemCheck);
   }*/
+  EEPROM_CONFIG_FLAG = 1;
   EEPROM.put(EEPROM_ADDR_1, ChargeVoltageValue);
   EEPROM.put(EEPROM_ADDR_2, VsysMinValue);
   EEPROM.put(EEPROM_ADDR_3, inputVoltageValue);
@@ -849,9 +854,9 @@ void ConfigCheck(){
   EEPROM.put(EEPROM_ADDR_6, CellMaxCutOffV);
   EEPROM.put(EEPROM_ADDR_7, CellMinCutOffV);
   EEPROM.put(EEPROM_ADDR_8, Pack_stock_capacity);
-
+  EEPROM.put(EEPROM_ADDR_9, EEPROM_CONFIG_FLAG);
   CONFIGURED = true;
-  
+  ConfigAndStartBQ();
   Serial.print("");
   ITimer2.attachInterruptInterval(5000000, SystemCheck);
 }
@@ -964,14 +969,14 @@ void onReceive(int howMany) {
         Serial.print("Pack_stock_capacity Recieved From Peripheral:  ");Serial.println(Pack_stock_capacity);
         //EEPROM.put(EEPROM_ADDR_8, Pack_stock_capacity);
         delay(10);
-        Serial.println("\n\n\n\n\n\nLine 967\n\n\n\n\n\n\n");
+        //Serial.println("\n\n\n\n\n\nLine 967\n\n\n\n\n\n\n");
         //configstatus++;
         ConfigCheck();
         break;
         case 0x19:
-        Serial.println("\n\n\n\n\n\nLine 972\n\n\n\n\n\n\n");
+        //Serial.println("\n\n\n\n\n\nLine 972\n\n\n\n\n\n\n");
         ConfigStatusFromMaster = receivedFloat;
-        Serial.println("\n\n\n\n\n\nLine 974\n\n\n\n\n\n\n");
+        //Serial.println("\n\n\n\n\n\nLine 974\n\n\n\n\n\n\n");
         Serial.print("Configuration status from Master: ");Serial.println(ConfigStatusFromMaster);
         if(ConfigStatusFromMaster == 1)
         {
@@ -998,7 +1003,7 @@ void EEPROM_Check(){
 
   if (isEEPROMInitialized(EEPROM_ADDR_1, EEPROM_TOTAL_LENGTH)) {
     delay(50);
-    Serial.print("\n\n\n\n\-------- Made it into EEPROM_Check Function ---------\n\n\n\n\n");
+    //Serial.print("\n\n\n\n\-------- Made it into EEPROM_Check Function ---------\n\n\n\n\n");
     // Read stored values from flash
     
     EEPROM.get(EEPROM_ADDR_1, ChargeVoltageValue);
@@ -1011,6 +1016,7 @@ void EEPROM_Check(){
     EEPROM.get(EEPROM_ADDR_8, Pack_stock_capacity);
     
     CONFIGURED = true;
+    ConfigAndStartBQ();
     SystemCheck();
     /*Serial.print("Value read storedValue1 from flash: ");
     Serial.println(storedValue1);
@@ -1046,14 +1052,30 @@ void clearEEPROM() {
 }
 
 void setup() {
+  delay(5000);
   Serial.begin(9600);
   while (!Serial);
   delay(100);
   Wire.begin();
   delay(100);
 
-  clearEEPROM();
-  EEPROM_Check();
+  //clearEEPROM();
+  EEPROM.get(EEPROM_ADDR_9, EEPROM_CONFIG_FLAG);
+  if(EEPROM_CONFIG_FLAG == 1 )
+  {
+    /*EEPROM.get(EEPROM_ADDR_1, ChargeVoltageValue);
+    EEPROM.get(EEPROM_ADDR_2, VsysMinValue);
+    EEPROM.get(EEPROM_ADDR_3, inputVoltageValue);
+    EEPROM.get(EEPROM_ADDR_4, chargeCurrentValue);
+    EEPROM.get(EEPROM_ADDR_5, inputCurrentLimitValue);
+    EEPROM.get(EEPROM_ADDR_6, CellMaxCutOffV);
+    EEPROM.get(EEPROM_ADDR_7, CellMinCutOffV);
+    EEPROM.get(EEPROM_ADDR_8, Pack_stock_capacity);
+    CONFIGURED = true;*/
+    Serial.println("Grabbing Config from EEPROM, Mashallah");
+    EEPROM_Check();
+  }
+  
   myI2C2.begin(SLAVE_ADDRESS);
   myI2C2.onReceive(onReceive);
   myI2C2.onRequest(onRequest);
