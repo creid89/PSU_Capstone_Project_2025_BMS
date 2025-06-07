@@ -231,7 +231,7 @@ float Request_SoC_LTC2943(){
 void setupLTC2943() {
   // Reset charge accumulator
   write_LTC2943_Register(REG_CONTROL, 0b11111001); // Set bit 0 to 1 to reset
-  delay(50);
+  //delay(50);
   write_LTC2943_Register(REG_CONTROL, 0b11111000); // Re-enable analog section, auto mode, prescaler 4096
 }
 
@@ -267,7 +267,7 @@ void writeBQ25730(uint8_t regAddr, uint16_t data) {
   Wire.write(data & 0xFF);          // Low byte
   Wire.write((data >> 8) & 0xFF);   // High byte
   Wire.endTransmission();
-  delay(50);
+  //delay(50);
 }
 
 uint16_t readBQ25730(uint8_t regAddr) {
@@ -331,7 +331,7 @@ void setChargeVoltage(float voltage_V) {
   uint16_t stepCount = static_cast<uint16_t>(voltage_V / 0.008 + 0.5);
   uint16_t encoded = (stepCount & 0x1FFF) << 3;
 
-  delay(50);
+  //delay(50);
   Serial.print("Writing 0x"); Serial.print(encoded, HEX);
   Serial.print(" to ChargeVoltage ("); Serial.print(voltage_V); Serial.println(" V)");
   writeBQ25730(ChargeVoltage, encoded);
@@ -346,7 +346,7 @@ void setChargeCurrent(float current_A) {
   uint16_t stepCount = static_cast<uint16_t>(current_A / 0.128 + 0.5);
   uint16_t encoded = (stepCount << 6) & 0x1FC0;
 
-  delay(50);
+  //delay(50);
   Serial.print("Writing 0x"); Serial.print(encoded, HEX);
   Serial.print(" to ChargeCurrent Register ("); Serial.print(current_A); Serial.println(" A)");
   writeBQ25730(ChargeCurrent, encoded);
@@ -360,7 +360,7 @@ void setInputCurrentLimit(float current_mA) {
   uint16_t code = static_cast<uint16_t>(current_mA / 50.0f);
   uint16_t regValue = (code << 8) & 0x7F00;
 
-  delay(50);
+  //delay(50);
   Serial.print("Writing 0x"); Serial.print(regValue, HEX);
   Serial.print(" to IIN_HOST Register ("); Serial.print(current_mA); Serial.println(" mA)");
   writeBQ25730(IIN_HOST, regValue);
@@ -375,7 +375,7 @@ void setInputVoltage(float voltage_V) {
   uint16_t stepCount = static_cast<uint16_t>((voltage_V - 3.2) / 0.064 + 0.5);
   uint16_t encoded = (stepCount << 6) & 0x3FC0;
 
-  delay(50);
+  //delay(50);
   Serial.print("Writing 0x"); Serial.print(encoded, HEX);
   Serial.print(" to InputVoltage Register ("); Serial.print(voltage_V); Serial.println(" V)");
   writeBQ25730(InputVoltage, encoded);
@@ -389,7 +389,7 @@ void set_VSYS_MIN(float voltage_V) {
 
   uint16_t encoded = static_cast<uint16_t>(voltage_V * 10) << 8;
 
-  delay(50);
+  //delay(50);
   Serial.print("Writing 0x"); Serial.print(encoded, HEX);
   Serial.print(" to VSYS_MIN ("); Serial.print(voltage_V); Serial.println(" V)");
   writeBQ25730(VSYS_MIN, encoded);
@@ -408,7 +408,7 @@ void disableCharging() {
 
 void enableADC() {
   writeBQ25730(ADCOption, 0x40FF);
-  delay(50);
+  //delay(50);
 }
 
 // -----------------------------
@@ -459,9 +459,9 @@ void MaintainChargingBQ(){
     if (!checkI2C()) {
       Serial.println("I2C comms lost. Attempting to reinitialize...");
       Wire.end();
-      delay(50);
+      //delay(50);
       Wire.begin();
-      delay(50);
+      //delay(50);
     }
   }
 
@@ -984,7 +984,7 @@ void onReceive(int howMany) {
         Pack_stock_capacity = receivedFloat;
         Serial.print("Pack_stock_capacity Recieved From Peripheral:  ");Serial.println(Pack_stock_capacity);
         //EEPROM.put(EEPROM_ADDR_8, Pack_stock_capacity);
-        delay(10);
+        //delay(50);
         //Serial.println("\n\n\n\n\n\nLine 967\n\n\n\n\n\n\n");
         //configstatus++;
         ConfigCheck();
@@ -1018,7 +1018,7 @@ void onRequest() {
 void EEPROM_Check(){
 
   if (isEEPROMInitialized(EEPROM_ADDR_1, EEPROM_TOTAL_LENGTH)) {
-    delay(50);
+    //delay(50);
     //Serial.print("\n\n\n\n\-------- Made it into EEPROM_Check Function ---------\n\n\n\n\n");
     // Read stored values from flash
     
@@ -1071,9 +1071,9 @@ void setup() {
   delay(5000);
   Serial.begin(9600);
   while (!Serial);
-  delay(100);
+  //delay(50);
   Wire.begin();
-  delay(100);
+  //delay(50);
 
   clearEEPROM();
   EEPROM.get(EEPROM_ADDR_9, EEPROM_CONFIG_FLAG);

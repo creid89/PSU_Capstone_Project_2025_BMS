@@ -25,11 +25,11 @@ class BMSController {
     float getCell4Voltage();
     float getTotalPackVoltage();
 	float getSoC();
+	float getPercentSoC();
 
   private:
     uint8_t _address;
-    void sendFloat2(uint8_t command, float value);
-	void sendFloat(uint8_t command, float value);
+    void sendFloat(uint8_t command, float value);
     float getValue(uint8_t command);
 };
 

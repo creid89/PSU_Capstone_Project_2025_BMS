@@ -1,4 +1,5 @@
 #include "BMSController.h"
+float SoCGiven;
 
 BMSController::BMSController(uint8_t i2cAddress) {
   _address = i2cAddress;
@@ -14,7 +15,7 @@ bool BMSController::begin() {
   return false;  // No response
 }
 
-void BMSController::sendFloat2(uint8_t command, float value) {
+/**void BMSController::sendFloat(uint8_t command, float value) {
   Wire.beginTransmission(_address);
   Wire.write(command);
 
@@ -23,8 +24,7 @@ void BMSController::sendFloat2(uint8_t command, float value) {
   Wire.write(buf, 4);
 
   Wire.endTransmission();
-}
-
+}**/
 ///////////////////////////////////EXPIREMENTAL/////////////////////////////////////////////////
 void BMSController::sendFloat(uint8_t command, float value) {
   const uint8_t maxRetries = 10;
@@ -58,8 +58,7 @@ void BMSController::sendFloat(uint8_t command, float value) {
     Serial.print("I2C transmission failed, error code: ");
     Serial.println(transmissionResult);
   }
-}
-////////////////////////////////////////////////////////////////////////////////
+}////////////////////////////////////////////////////////////////////////////////
 
 bool BMSController::setChargeVoltage(float volts) {
   sendFloat(0x10, volts);
@@ -97,6 +96,7 @@ bool BMSController::setCellMinCutOffV(float volts) {
 }
 
 bool BMSController::setPack_stock_capacity(float mAh) {
+SoCGiven = mAh;
   sendFloat(0x18, mAh);
   return true;
 }
@@ -155,4 +155,11 @@ float BMSController::getTotalPackVoltage() {
 
 float BMSController::getSoC() {
   return getValue(0x08);
+}
+
+float BMSController::getPercentSoC() {
+  float SoC = getValue(0x08);
+  float PercentSoC = SoC/SoCGiven*100;
+  return PercentSoC;
+  
 }

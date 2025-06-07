@@ -69,8 +69,12 @@ void loop() {
   Serial.print("Total Pack Voltage: ");
   Serial.println(totalPackVoltage , 3);
   delay(1500);
-  //float SoC = BMS.getSoC();
-  //Serial.print("SoC: ");
-  //Serial.println(SoC , 3);
+  float SoC = BMS.getSoC();
+  Serial.print("SoC: ");
+  Serial.println(SoC , 3);
   delay(1500);
+  float PercentSoC = BMS.getPercentSoC();
+  Serial.print("Percent SoC: ");
+  Serial.print(PercentSoC , 3);
+  Serial.println("%");
 }
