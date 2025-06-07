@@ -4,7 +4,7 @@
 //Include wire for I2C
 #include <Wire.h>
 //Includes for INA
-#include <Adafruit_INA260.h>
+#include <Adafruit_INA219.h>
 //include for interrupts
 #include <HardwareSerial.h>
 #include <STM32TimerInterrupt.h>
@@ -24,10 +24,10 @@
 #define EEPROM_TOTAL_LENGTH (9 * (2*sizeof(float)))              // Total length for 8 floats
 
 ////////////////////////////////////////////////////////////////
-// Create instances for each INA260 sensor
-Adafruit_INA260 ina260_0x40;
-Adafruit_INA260 ina260_0x41;
-Adafruit_INA260 ina260_0x44;
+// Create instances for each ina219 sensor
+Adafruit_INA219 ina219_0x40(0x40);
+Adafruit_INA219 ina219_0x41(0x41);
+Adafruit_INA219 ina219_0x44(0x44);
 
 //Major system flags
 volatile bool CHARGING = false;
@@ -477,24 +477,24 @@ void MaintainChargingBQ(){
 
 
 //INA Functions
-//Check if INA260s are connected
+//Check if ina219s are connected
 void CheckIfINAConnected()
 {
-   if (!ina260_0x40.begin(0x40)) {
-    Serial.println("Couldn't find INA260 at 0x40");
+   if (!ina219_0x40.begin()) {
+    Serial.println("Couldn't find ina219 at 0x40");
     while (1);
   }
-  if (!ina260_0x41.begin(0x41)) {
-    Serial.println("Couldn't find INA260 at 0x41");
+  if (!ina219_0x41.begin()) {
+    Serial.println("Couldn't find ina219 at 0x41");
     while (1);
   }
-  if (!ina260_0x44.begin(0x44)) {
-    Serial.println("Couldn't find INA260 at 0x44");
+  if (!ina219_0x44.begin()) {
+    Serial.println("Couldn't find ina219 at 0x44");
     while (1);
   }
   /*
-  if (!ina260_0x45.begin(0x45)) {
-    Serial.println("Couldn't find INA260 at 0x45");
+  if (!ina219_0x45.begin(0x45)) {
+    Serial.println("Couldn't find ina219 at 0x45");
     while (1);
   } */
 }
@@ -656,9 +656,9 @@ void ChargeAndBalanceControl(){
   //delay(50);
   //Serial.print("\n----------------- LINE 653 -------------\n"); 
   //Grab each cells Voltage
-  INA_0x40_VOLTAGE = ina260_0x40.readBusVoltage()/1000.00;
-  INA_0x41_VOLTAGE = ina260_0x41.readBusVoltage()/1000.00;
-  INA_0x44_VOLTAGE = ina260_0x44.readBusVoltage()/1000.00;
+  INA_0x40_VOLTAGE = ina219_0x40.getBusVoltage_V()/1000.00;
+  INA_0x41_VOLTAGE = ina219_0x41.getBusVoltage_V()/1000.00;
+  INA_0x44_VOLTAGE = ina219_0x44.getBusVoltage_V()/1000.00;
   
   //Calulate Cell Voltages based off of INA readings
   CELL1_VOLTAGE_LTC2943 = Request_Voltage_LTC2943()- INA_0x44_VOLTAGE;
