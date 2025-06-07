@@ -1059,7 +1059,7 @@ void setup() {
   Wire.begin();
   delay(100);
 
-  //clearEEPROM();
+  clearEEPROM();
   EEPROM.get(EEPROM_ADDR_9, EEPROM_CONFIG_FLAG);
   if(EEPROM_CONFIG_FLAG == 1 )
   {
