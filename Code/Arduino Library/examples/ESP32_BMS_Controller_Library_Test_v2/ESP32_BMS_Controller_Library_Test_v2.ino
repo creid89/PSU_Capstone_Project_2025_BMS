@@ -29,13 +29,13 @@ void setup() {
   delay(100);
   BMS.setChargeCurrent(1.5);        // command 0x14
   delay(100);
-  BMS.setInputCurrentLimit(3000);   // command 0x15
+  BMS.setInputCurrentLimit(3000.0);   // command 0x15
   delay(100);
   BMS.setCellMaxCutOffV(4.0);        // command 0x16
   delay(100);
   BMS.setCellMinCutOffV(2.0);        // command 0x17
   delay(100);
-  BMS.setPack_stock_capacity(5200);   // command 0x18 
+  BMS.setPack_stock_capacity(5200.0);   // command 0x18 
 
   BMS.FinishedConfiguration(true);  //command 0x19
   Serial.println("——————————————————————");

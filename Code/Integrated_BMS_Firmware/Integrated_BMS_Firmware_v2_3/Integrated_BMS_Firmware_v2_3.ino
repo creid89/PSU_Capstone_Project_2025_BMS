@@ -111,7 +111,7 @@ float ChargeVoltageValue=18;         // Charging target voltage - Later Change t
 float VsysMinValue;                 // Minimum system voltage
 float inputVoltageValue;            // Input voltage limit (used for VINDPM)
 float chargeCurrentValue=1;           // Battery charging current (in amps)
-float inputCurrentLimitValue=1;    // Input current limit (in milliamps) - based on supply/adapter limit
+float inputCurrentLimitValue = 1;    // Input current limit (in milliamps) - based on supply/adapter limit
 
 unsigned long lastCheck1 = 0;
 const unsigned long I2CcheckInterval = 5000;
@@ -931,21 +931,21 @@ void onReceive(int howMany) {
         inputVoltageValue = receivedFloat;
         Serial.print("inputVoltageValue Recieved From Peripheral:  ");Serial.println(inputVoltageValue);
         //EEPROM.put(EEPROM_ADDR_3, inputVoltageValue);
-        //delay(10);
+        //delay(50);
         //configstatus++;
         break;
       case 0x14:
         chargeCurrentValue = receivedFloat;
         Serial.print("chargeCurrentValue Recieved From Peripheral:  ");Serial.println(chargeCurrentValue);
         //EEPROM.put(EEPROM_ADDR_4, chargeCurrentValue);
-        //delay(10);
+        //delay(50);
         //configstatus++;
         break;
       case 0x15:
         inputCurrentLimitValue = receivedFloat;
         Serial.print("inputCurrentLimitValue Recieved From Peripheral:  ");Serial.println(inputCurrentLimitValue);
         //EEPROM.put(EEPROM_ADDR_5, inputCurrentLimitValue);
-        //delay(10);
+        //delay(50);
         //configstatus++;
         break;
       case 0x16:
@@ -953,7 +953,7 @@ void onReceive(int howMany) {
         CellFullChargeV = CellMaxCutOffV - 0.1;
         Serial.print("CellMaxCutOffV Recieved From Peripheral:  ");Serial.println(CellMaxCutOffV);
         //EEPROM.put(EEPROM_ADDR_6, CellMaxCutOffV);
-        //delay(10);
+        //delay(50);
         //configstatus++;
         break;
       case 0x17:
@@ -1111,7 +1111,7 @@ void SystemCheck()
   Serial.print("Charging: ");Serial.println(CHARGING);
   ChargeAndBalanceControl();
   TempCheck();
-
+  ITimer2.attachInterruptInterval(5000000, SystemCheck);
   }
   else{
     Serial.println("            AWAITING CONFIGURATION");
@@ -1123,7 +1123,7 @@ void SystemCheck()
 
   Serial.println("----------------------------------------------------");
   Serial.println("");
-  ITimer2.attachInterruptInterval(5000000, SystemCheck);
+  
 }
 
 void loop() {

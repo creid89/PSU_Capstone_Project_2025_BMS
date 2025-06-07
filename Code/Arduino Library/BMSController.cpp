@@ -14,7 +14,7 @@ bool BMSController::begin() {
   return false;  // No response
 }
 
-void BMSController::sendFloat(uint8_t command, float value) {
+/**void BMSController::sendFloat(uint8_t command, float value) {
   Wire.beginTransmission(_address);
   Wire.write(command);
 
@@ -23,7 +23,41 @@ void BMSController::sendFloat(uint8_t command, float value) {
   Wire.write(buf, 4);
 
   Wire.endTransmission();
-}
+}**/
+///////////////////////////////////EXPIREMENTAL/////////////////////////////////////////////////
+void BMSController::sendFloat(uint8_t command, float value) {
+  const uint8_t maxRetries = 10;
+  const uint16_t retryDelayMs = 5;
+
+  uint8_t retries = 0;
+  int transmissionResult = 4; // Arbitrary non-zero value to enter loop
+
+  // Retry loop to wait for the bus to become available
+  while (retries < maxRetries) {
+    Wire.beginTransmission(_address);
+    Wire.write(command);
+
+    uint8_t buf[4];
+    memcpy(buf, &value, sizeof(float));
+    Wire.write(buf, 4);
+
+    transmissionResult = Wire.endTransmission();
+    if (transmissionResult == 0) {
+      // Success
+      break;
+    } else {
+      // Transmission failed, possibly bus busy or NACKed
+      retries++;
+      delay(retryDelayMs);
+    }
+  }
+
+  if (transmissionResult != 0) {
+    // Optional: handle error here (e.g., log or raise flag)
+    Serial.print("I2C transmission failed, error code: ");
+    Serial.println(transmissionResult);
+  }
+}////////////////////////////////////////////////////////////////////////////////
 
 bool BMSController::setChargeVoltage(float volts) {
   sendFloat(0x10, volts);
