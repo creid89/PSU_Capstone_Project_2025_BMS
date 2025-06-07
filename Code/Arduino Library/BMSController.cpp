@@ -14,7 +14,7 @@ bool BMSController::begin() {
   return false;  // No response
 }
 
-/**void BMSController::sendFloat(uint8_t command, float value) {
+void BMSController::sendFloat2(uint8_t command, float value) {
   Wire.beginTransmission(_address);
   Wire.write(command);
 
@@ -23,7 +23,8 @@ bool BMSController::begin() {
   Wire.write(buf, 4);
 
   Wire.endTransmission();
-}**/
+}
+
 ///////////////////////////////////EXPIREMENTAL/////////////////////////////////////////////////
 void BMSController::sendFloat(uint8_t command, float value) {
   const uint8_t maxRetries = 10;
@@ -57,7 +58,8 @@ void BMSController::sendFloat(uint8_t command, float value) {
     Serial.print("I2C transmission failed, error code: ");
     Serial.println(transmissionResult);
   }
-}////////////////////////////////////////////////////////////////////////////////
+}
+////////////////////////////////////////////////////////////////////////////////
 
 bool BMSController::setChargeVoltage(float volts) {
   sendFloat(0x10, volts);
@@ -149,4 +151,8 @@ float BMSController::getCell4Voltage() {
 
 float BMSController::getTotalPackVoltage() {
   return getValue(0x05);
+}
+
+float BMSController::getSoC() {
+  return getValue(0x08);
 }

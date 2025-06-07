@@ -167,6 +167,10 @@ TwoWire myI2C2(PB11, PB10);
 #define Vmin_Active_Protection 0x3E
 //////////////////////////////////////////////////////////////////////
 
+void softwareReset() {
+  NVIC_SystemReset();
+}
+
 //LTC Functions 
 //write to LTC2943 register over I2C
 void write_LTC2943_Register(uint8_t reg, uint8_t value) {
@@ -795,6 +799,18 @@ void handleSerialCharging() {
         CHARGE_ON_PLUGIN = !CHARGE_ON_PLUGIN;
         Serial.print(F("🔄 Auto‑charge on plugin "));
         Serial.println(CHARGE_ON_PLUGIN ? F("ENABLED") : F("DISABLED"));
+      }
+      else if (cmd == "RST") {
+        Serial.print(F("Resettings"));
+        softwareReset();
+      }
+      else if (cmd == "reset") {
+        Serial.print(F("Resettings"));
+        softwareReset();
+      }
+      else if (cmd == "RESET") {
+        Serial.print(F("Resettings"));
+        softwareReset();
       }
       else {
         Serial.print(F("Unknown command: "));

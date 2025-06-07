@@ -37,7 +37,7 @@ void setup() {
   delay(100);
   BMS.setPack_stock_capacity(5200.0);   // command 0x18 
 
-  BMS.FinishedConfiguration(true);  //command 0x19
+  //BMS.FinishedConfiguration(true);  //command 0x19
   Serial.println("——————————————————————");
   Serial.println("          BMS Configured!");
   Serial.println("——————————————————————");
@@ -68,5 +68,9 @@ void loop() {
   float totalPackVoltage = BMS.getTotalPackVoltage();
   Serial.print("Total Pack Voltage: ");
   Serial.println(totalPackVoltage , 3);
+  delay(1500);
+  //float SoC = BMS.getSoC();
+  //Serial.print("SoC: ");
+  //Serial.println(SoC , 3);
   delay(1500);
 }
