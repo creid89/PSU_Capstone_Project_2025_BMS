@@ -1115,6 +1115,7 @@ void SystemCheck()
   }
   else{
     Serial.println("            AWAITING CONFIGURATION");
+    ITimer2.detachInterrupt();
     //Serial.print("Config Flag:");Serial.println(CONFIGURED);
     //Serial.print("Config status:");Serial.print(configstatus);Serial.println("/8");
   }
