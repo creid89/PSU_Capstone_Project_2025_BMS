@@ -625,6 +625,9 @@ void checkCellandSocCutoff() {
 }
 
 void ChargeAndBalanceControl(){
+  //BMS_STATUS_LED
+  digitalWrite(PB12, HIGH);
+
   if (CHARGING && !CHARGE_ON_PLUGIN) {
     Serial.println(F("⚠️  Auto Charge off, ENDING CHARGING"));
       // bail out of charging logic but still report voltages
@@ -656,9 +659,9 @@ void ChargeAndBalanceControl(){
   //delay(50);
   //Serial.print("\n----------------- LINE 653 -------------\n"); 
   //Grab each cells Voltage
-  INA_0x40_VOLTAGE = ina219_0x40.getBusVoltage_V()/1000.00;
-  INA_0x41_VOLTAGE = ina219_0x41.getBusVoltage_V()/1000.00;
-  INA_0x44_VOLTAGE = ina219_0x44.getBusVoltage_V()/1000.00;
+  INA_0x40_VOLTAGE = ina219_0x40.getBusVoltage_V();
+  INA_0x41_VOLTAGE = ina219_0x41.getBusVoltage_V();
+  INA_0x44_VOLTAGE = ina219_0x44.getBusVoltage_V();
   
   //Calulate Cell Voltages based off of INA readings
   CELL1_VOLTAGE_LTC2943 = Request_Voltage_LTC2943()- INA_0x44_VOLTAGE;
@@ -1074,8 +1077,22 @@ void setup() {
   //delay(50);
   Wire.begin();
   //delay(50);
+  EnableGPIOPins();
 
+  ////////////////////////////////LED BS/////////////////////////////////////////
 
+  //PowerPlugInsertedLED
+  digitalWrite(PB15, LOW);
+  //ChargeLED
+  digitalWrite(PB14, LOW);
+  //BMS_ERROR_LED
+  digitalWrite(PB13, LOW);
+  //BMS_STATUS_LED
+  digitalWrite(PB12, LOW);
+
+  ////////////////////////////////LED BS/////////////////////////////////////////
+  //PowerPlugInsertedLED
+  digitalWrite(PB15, HIGH);
   clearEEPROM();
   EEPROM.get(EEPROM_ADDR_9, EEPROM_CONFIG_FLAG);
   if(EEPROM_CONFIG_FLAG == 1 )
@@ -1102,7 +1119,7 @@ void setup() {
   CheckBQConnectionWithComms();
   CheckIfINAConnected();
 
-  EnableGPIOPins();
+  
 
 
   // Start the timer interrupt to trigger every 500,000 microseconds (5000 ms)
@@ -1116,6 +1133,8 @@ void setup() {
 //SystemCheck is Basically the main() loop, gets called every 500ms by timer
 void SystemCheck()
 {
+  //BMS_ERROR_LED
+  digitalWrite(PB13, HIGH);
   Serial.println("----------------------------------------------------");
   ITimer2.detachInterrupt();
   //LTC2943 loop code 
@@ -1145,6 +1164,8 @@ void SystemCheck()
 }
 
 void loop() {
+  //ChargeLED
+  digitalWrite(PB14, HIGH);
   __asm__("nop");
 }
 //EOF
