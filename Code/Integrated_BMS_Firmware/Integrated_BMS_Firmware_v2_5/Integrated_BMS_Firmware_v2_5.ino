@@ -1490,6 +1490,7 @@ void setup() {
   delay(5000);
   Serial.begin(9600);
   while (!Serial);
+  Serial.print("\n\n\n Hello, STM32 is Powered On\n\n\n");
   //delay(50);
   Wire.begin();
   //delay(50);

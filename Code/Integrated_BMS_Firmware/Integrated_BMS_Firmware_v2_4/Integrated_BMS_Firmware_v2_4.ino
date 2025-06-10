@@ -1,4 +1,4 @@
-//Integrated BMS Firmware V2_3
+//Integrated BMS Firmware V2_4
 //Sodium & Lithium ION BMS
 
 //Include wire for I2C
@@ -752,6 +752,7 @@ void ChargeAndBalanceControl(){
       Serial.print("Cell 4 in balance\n");
       digitalWrite(PA6, LOW);
       Serial.println("");
+
     }
 
   }
@@ -767,6 +768,8 @@ void ChargeAndBalanceControl(){
     Serial.print("CELL 4 Voltage: ");
     Serial.println(CELL4_VOLTAGE);
     Serial.println("");
+      //Grab each cells Voltage
+
 
  
   }
@@ -1074,6 +1077,8 @@ void setup() {
   delay(5000);
   Serial.begin(9600);
   while (!Serial);
+  while (!Serial);
+  Serial.print("\n\n\n Hello, STM32 is Powered On\n\n\n");
   //delay(50);
   Wire.begin();
   //delay(50);
@@ -1137,6 +1142,9 @@ void SystemCheck()
   digitalWrite(PB13, HIGH);
   Serial.println("----------------------------------------------------");
   ITimer2.detachInterrupt();
+  Serial.print("INA_0x40_VOLTAGE = ");Serial.println(INA_0x40_VOLTAGE);
+  Serial.print("INA_0x41_VOLTAGE = ");Serial.println(INA_0x41_VOLTAGE);
+  Serial.print("INA_0x44_VOLTAGE = ");Serial.println(INA_0x44_VOLTAGE);
   //LTC2943 loop code 
   // Keep analog section active if Pack is disconnected temporarily
   //write_LTC2943_Register(REG_CONTROL, 0b11111000);
@@ -1166,6 +1174,7 @@ void SystemCheck()
 void loop() {
   //ChargeLED
   digitalWrite(PB14, HIGH);
+
   __asm__("nop");
 }
 //EOF

@@ -3,7 +3,7 @@
 #include <HardwareSerial.h>
 
 // Define Serial2 on PA2 (TX2) and PA3 (RX2)
-HardwareSerial Serial2(PA3, PA2);  // RX, TX
+//HardwareSerial Serial2(PA3, PA2);  // RX, TX
 
 void setup() {
   // Initialize USB Serial for debugging
