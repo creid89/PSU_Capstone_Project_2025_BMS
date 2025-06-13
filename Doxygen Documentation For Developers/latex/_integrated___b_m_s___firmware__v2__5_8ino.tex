@@ -1,0 +1,400 @@
+\doxysection{Integrated\+\_\+\+BMS\+\_\+\+Firmware\+\_\+v2\+\_\+5.\+ino File Reference}
+\hypertarget{_integrated___b_m_s___firmware__v2__5_8ino}{}\label{_integrated___b_m_s___firmware__v2__5_8ino}\index{Integrated\_BMS\_Firmware\_v2\_5.ino@{Integrated\_BMS\_Firmware\_v2\_5.ino}}
+{\ttfamily \#include $<$Wire.\+h$>$}\newline
+{\ttfamily \#include $<$Adafruit\+\_\+\+INA219.\+h$>$}\newline
+{\ttfamily \#include $<$Hardware\+Serial.\+h$>$}\newline
+{\ttfamily \#include $<$STM32\+Timer\+Interrupt.\+h$>$}\newline
+{\ttfamily \#include "{}stm32f1xx.\+h"{}}\newline
+{\ttfamily \#include $<$EEPROM.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___e_e_p_r_o_m___storage_gaee0703dfc42668c07688ad1852528686}{EEPROM\+\_\+\+ADDR\+\_\+1}}~0
+\begin{DoxyCompactList}\small\item\em EEPROM address for float value 1 (Charge\+Voltage\+Value) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___e_e_p_r_o_m___storage_ga265ed0629d63043de6b184b2a0f0b9fb}{EEPROM\+\_\+\+ADDR\+\_\+2}}~(\mbox{\hyperlink{group___e_e_p_r_o_m___storage_gaee0703dfc42668c07688ad1852528686}{EEPROM\+\_\+\+ADDR\+\_\+1}} + (2\texorpdfstring{$\ast$}{*}sizeof(float)))
+\begin{DoxyCompactList}\small\item\em EEPROM address for float value 2 (Vsys\+Min\+Value) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___e_e_p_r_o_m___storage_ga3c7393a43aafeca00c5efd717a1f55c4}{EEPROM\+\_\+\+ADDR\+\_\+3}}~(\mbox{\hyperlink{group___e_e_p_r_o_m___storage_ga265ed0629d63043de6b184b2a0f0b9fb}{EEPROM\+\_\+\+ADDR\+\_\+2}} + (2\texorpdfstring{$\ast$}{*}sizeof(float)))
+\begin{DoxyCompactList}\small\item\em EEPROM address for float value 3 (input\+Voltage\+Value) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___e_e_p_r_o_m___storage_gac5c33773265b460eeed385892510f90f}{EEPROM\+\_\+\+ADDR\+\_\+4}}~(\mbox{\hyperlink{group___e_e_p_r_o_m___storage_ga3c7393a43aafeca00c5efd717a1f55c4}{EEPROM\+\_\+\+ADDR\+\_\+3}} + (2\texorpdfstring{$\ast$}{*}sizeof(float)))
+\begin{DoxyCompactList}\small\item\em EEPROM address for float value 4 (charge\+Current\+Value) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___e_e_p_r_o_m___storage_gaf001396e9ff5ac53b8da21b97f6f7f85}{EEPROM\+\_\+\+ADDR\+\_\+5}}~(\mbox{\hyperlink{group___e_e_p_r_o_m___storage_gac5c33773265b460eeed385892510f90f}{EEPROM\+\_\+\+ADDR\+\_\+4}} + (2\texorpdfstring{$\ast$}{*}sizeof(float)))
+\begin{DoxyCompactList}\small\item\em EEPROM address for float value 5 (input\+Current\+Limit\+Value) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___e_e_p_r_o_m___storage_ga22cfc4c08710370e49e56be758e70305}{EEPROM\+\_\+\+ADDR\+\_\+6}}~(\mbox{\hyperlink{group___e_e_p_r_o_m___storage_gaf001396e9ff5ac53b8da21b97f6f7f85}{EEPROM\+\_\+\+ADDR\+\_\+5}} + (2\texorpdfstring{$\ast$}{*}sizeof(float)))
+\begin{DoxyCompactList}\small\item\em EEPROM address for float value 6 (Cell\+Max\+Cut\+OffV) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___e_e_p_r_o_m___storage_gae6e81debe42429b1964ae196d76d6565}{EEPROM\+\_\+\+ADDR\+\_\+7}}~(\mbox{\hyperlink{group___e_e_p_r_o_m___storage_ga22cfc4c08710370e49e56be758e70305}{EEPROM\+\_\+\+ADDR\+\_\+6}} + (2\texorpdfstring{$\ast$}{*}sizeof(float)))
+\begin{DoxyCompactList}\small\item\em EEPROM address for float value 7 (Cell\+Min\+Cut\+OffV) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___e_e_p_r_o_m___storage_ga69ca8428728cbd66b7ab27a78dc594a6}{EEPROM\+\_\+\+ADDR\+\_\+8}}~(\mbox{\hyperlink{group___e_e_p_r_o_m___storage_gae6e81debe42429b1964ae196d76d6565}{EEPROM\+\_\+\+ADDR\+\_\+7}} + (2\texorpdfstring{$\ast$}{*}sizeof(float)))
+\begin{DoxyCompactList}\small\item\em EEPROM address for float value 8 (Pack\+\_\+stock\+\_\+capacity) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___e_e_p_r_o_m___storage_ga4923ef94973786af348671dd7df4f570}{EEPROM\+\_\+\+ADDR\+\_\+9}}~(\mbox{\hyperlink{group___e_e_p_r_o_m___storage_ga69ca8428728cbd66b7ab27a78dc594a6}{EEPROM\+\_\+\+ADDR\+\_\+8}} + (2\texorpdfstring{$\ast$}{*}sizeof(float)))
+\begin{DoxyCompactList}\small\item\em EEPROM address for float value 9 (EEPROM\+\_\+\+CONFIG\+\_\+\+FLAG) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___e_e_p_r_o_m___storage_gac2d2d7a3a28c2b8ca8d9232391d58965}{EEPROM\+\_\+\+TOTAL\+\_\+\+LENGTH}}~(9 \texorpdfstring{$\ast$}{*} (2\texorpdfstring{$\ast$}{*}sizeof(float)))
+\begin{DoxyCompactList}\small\item\em Total EEPROM length for 9 float values. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i2_c___communication_gae2f0ff6faf548539a21b93a034e278e8}{SLAVE\+\_\+\+ADDRESS}}~0x58
+\begin{DoxyCompactList}\small\item\em I2C slave address for STM32 controller communications. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___device___addresses_gaa3692e43bf120561ea512f597f0bc574}{LTC2943\+\_\+\+ADDR}}~0x64
+\begin{DoxyCompactList}\small\item\em 7-\/bit I2C address for LTC2943 fuel gauge \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___device___addresses_ga6f67eae0f043f27a86f1a9f143eec0d5}{BQ25730\+\_\+\+ADDR}}~0x6B
+\begin{DoxyCompactList}\small\item\em 7-\/bit I2C address for BQ25730 battery charger \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___l_t_c2943___registers_ga2306dddc82e5e58f23bd44c1086a5b6f}{REG\+\_\+\+STATUS}}~0x00
+\begin{DoxyCompactList}\small\item\em Status register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___l_t_c2943___registers_ga795320fb5aae950b22d29686eb75020a}{REG\+\_\+\+CONTROL}}~0x01
+\begin{DoxyCompactList}\small\item\em Control register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___l_t_c2943___registers_ga172ff3ecccfcd65e3542697473a819d1}{REG\+\_\+\+ACC\+\_\+\+CHARGE\+\_\+\+MSB}}~0x02
+\begin{DoxyCompactList}\small\item\em Accumulated charge MSB register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___l_t_c2943___registers_ga5d44bd3c26f56372d24c42027de28e7d}{REG\+\_\+\+VOLTAGE\+\_\+\+MSB}}~0x08
+\begin{DoxyCompactList}\small\item\em Voltage measurement MSB register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___l_t_c2943___registers_gab1fe04be7c6fa8cbc84827973d06c24e}{REG\+\_\+\+CURRENT\+\_\+\+MSB}}~0x0E
+\begin{DoxyCompactList}\small\item\em Current measurement MSB register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___l_t_c2943___registers_ga95f8c9c93ebef7205003e3c6ea414af1}{REG\+\_\+\+TEMPERATURE\+\_\+\+MSB}}~0x14
+\begin{DoxyCompactList}\small\item\em Temperature measurement MSB register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_gaac78bb5c6015a366540c3f8d7c548fde}{Charge\+Option0}}~0x00
+\begin{DoxyCompactList}\small\item\em Charge option 0 register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_gad6e1f5031739a25de0cddf1c782d217a}{Charge\+Current}}~0x02
+\begin{DoxyCompactList}\small\item\em Charge current setting register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_gaa64840fb06f883ea0ebc9f351094757a}{Charge\+Voltage}}~0x04
+\begin{DoxyCompactList}\small\item\em Charge voltage setting register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_ga7792b514f883254670f2e83791b2c3d4}{OTGVoltage}}~0x06
+\begin{DoxyCompactList}\small\item\em OTG voltage setting register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_gaaf3364950d097f8f4fa1d12d3d3af7fc}{OTGCurrent}}~0x08
+\begin{DoxyCompactList}\small\item\em OTG current setting register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_gac7e642a59502839811272866737f51bc}{Input\+Voltage}}~0x0A
+\begin{DoxyCompactList}\small\item\em Input voltage limit register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_gaa9c79b2f93acca2759b6406805ee83c5}{VSYS\+\_\+\+MIN}}~0x0C
+\begin{DoxyCompactList}\small\item\em Minimum system voltage register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_gaa29a39fd906ed360f0b67d32a3e27bb3}{IIN\+\_\+\+HOST}}~0x0E
+\begin{DoxyCompactList}\small\item\em Input current limit register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_gaa17f61dc9dc7035962829e5a2d8bb86d}{Charger\+Status}}~0x20
+\begin{DoxyCompactList}\small\item\em Charger status register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_ga348bea01ea03ad2ff6835de539babdc9}{Prochot\+Status}}~0x22
+\begin{DoxyCompactList}\small\item\em PROCHOT status register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_ga71e51e95c41739b9631d11735705de9c}{IIN\+\_\+\+DPM}}~0x24
+\begin{DoxyCompactList}\small\item\em Input current DPM register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_ga2dad2382179bdfe4d2754bd78bccea6b}{AADCVBUS\+\_\+\+PSYS}}~0x26
+\begin{DoxyCompactList}\small\item\em ADC VBUS and PSYS register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_gafa637902097b520f9f593b2fd60c77f9}{ADCIBAT}}~0x28
+\begin{DoxyCompactList}\small\item\em ADC battery current register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_ga1640a40f7d4afbfa78b89c03a1f0fd9d}{ADCIINCMPIN}}~0x2A
+\begin{DoxyCompactList}\small\item\em ADC input current and CMPIN register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_ga5774cfc33d87b0d74cd0e1780ac2230e}{ADCVSYSVBAT}}~0x2C
+\begin{DoxyCompactList}\small\item\em ADC VSYS and VBAT register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_gad6d06519161544439a58bb8f59fc3094}{MANUFACTURER\+\_\+\+ID}}~0x2E
+\begin{DoxyCompactList}\small\item\em Manufacturer ID register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_ga0b85963cace75e76ae726bcffb04eb70}{DEVICE\+\_\+\+ID}}~0x2F
+\begin{DoxyCompactList}\small\item\em Device ID register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_gadc1bb4d3202a65ad3c15a6261b4089ff}{Charge\+Option1}}~0x30
+\begin{DoxyCompactList}\small\item\em Charge option 1 register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_gacb60a1c5141ddcb6fe50e8618e806fcd}{Charge\+Option2}}~0x32
+\begin{DoxyCompactList}\small\item\em Charge option 2 register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_ga6ee3e3a95cd9eb55909e24fcc7a1b820}{Charge\+Option3}}~0x34
+\begin{DoxyCompactList}\small\item\em Charge option 3 register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_gaa635e19d529e94ea56823a75a477cd6d}{Prochot\+Option0}}~0x36
+\begin{DoxyCompactList}\small\item\em PROCHOT option 0 register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_gacca6325c7d578e1eaa5aa3ff4df415cb}{Prochot\+Option1}}~0x38
+\begin{DoxyCompactList}\small\item\em PROCHOT option 1 register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_ga0bd689b1a92bbc3bd70357706ad70f46}{ADCOption}}~0x3A
+\begin{DoxyCompactList}\small\item\em ADC option register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_ga631d121cd8b86fe334bbe62972b6d3ef}{Charge\+Option4}}~0x3C
+\begin{DoxyCompactList}\small\item\em Charge option 4 register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_ga846a4a302890eb6e570734edd83767b4}{Vmin\+\_\+\+Active\+\_\+\+Protection}}~0x3E
+\begin{DoxyCompactList}\small\item\em Minimum voltage active protection register. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Adafruit\+\_\+\+INA219 \mbox{\hyperlink{group___i_n_a219___instances_ga8e905d44cf0373198916f8e1ca66ee5f}{ina219\+\_\+0x40}} (0x40)
+\begin{DoxyCompactList}\small\item\em INA219 sensor instance at I2C address 0x40. \end{DoxyCompactList}\item 
+Adafruit\+\_\+\+INA219 \mbox{\hyperlink{group___i_n_a219___instances_ga56f30e8c95fde7870e4af71ceb16687b}{ina219\+\_\+0x41}} (0x41)
+\begin{DoxyCompactList}\small\item\em INA219 sensor instance at I2C address 0x41. \end{DoxyCompactList}\item 
+Adafruit\+\_\+\+INA219 \mbox{\hyperlink{group___i_n_a219___instances_gaa5ca337b19b295daa63ff6e8d12d01d1}{ina219\+\_\+0x44}} (0x44)
+\begin{DoxyCompactList}\small\item\em INA219 sensor instance at I2C address 0x44. \end{DoxyCompactList}\item 
+STM32\+Timer \mbox{\hyperlink{_integrated___b_m_s___firmware__v2__5_8ino_ad5eb889064b12e67d5f5360265f2da0b}{ITimer2}} (TIM2)
+\begin{DoxyCompactList}\small\item\em Timer instance using TIM2 for periodic system checks. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_integrated___b_m_s___firmware__v2__5_8ino_a7c07808a030f3c8a4ae4b3a3d6e405a7}{on\+Timer\+ISR}} ()
+\begin{DoxyCompactList}\small\item\em Timer interrupt service routine. \end{DoxyCompactList}\item 
+Two\+Wire \mbox{\hyperlink{group___i2_c___communication_gab82c6701343c93aee3b9f2a8313d80c7}{my\+I2\+C2}} (PB11, PB10)
+\begin{DoxyCompactList}\small\item\em I2C interface on pins PB11 (SDA) and PB10 (SCL) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_integrated___b_m_s___firmware__v2__5_8ino_a7dd54fc66122a231da37b565f13d23c5}{software\+Reset}} ()
+\begin{DoxyCompactList}\small\item\em Perform software reset of the microcontroller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___l_t_c2943___functions_ga3f185a7ea5181c81c278e4b301e5c071}{write\+\_\+\+LTC2943\+\_\+\+Register}} (uint8\+\_\+t reg, uint8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Write data to LTC2943 register over I2C. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___l_t_c2943___functions_gadfce70acd5fb291dcd8a3ec35f50a197}{Read\+\_\+\+LTC2943\+\_\+\+Register}} (uint8\+\_\+t reg)
+\begin{DoxyCompactList}\small\item\em Read 16-\/bit data from LTC2943 register over I2C. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___l_t_c2943___functions_gab8130f79f2477b6fe5092e35f9f8bedf}{Request\+\_\+\+Voltage\+\_\+\+LTC2943}} ()
+\begin{DoxyCompactList}\small\item\em Request voltage measurement from LTC2943. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___l_t_c2943___functions_ga26ad02f17e059ee27a93c8caac007c91}{Request\+\_\+\+Current\+\_\+\+LTC2943}} ()
+\begin{DoxyCompactList}\small\item\em Request current measurement from LTC2943. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___l_t_c2943___functions_gadaf2e32dc022344c6e22c0063126a22b}{Request\+\_\+\+Temp\+\_\+\+LTC2943}} ()
+\begin{DoxyCompactList}\small\item\em Request temperature measurement from LTC2943. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___l_t_c2943___functions_gadb5f5149cc120333588aafd68ee0a497}{Request\+\_\+\+So\+C\+\_\+\+LTC2943}} ()
+\begin{DoxyCompactList}\small\item\em Request State of Charge (SoC) from LTC2943. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___l_t_c2943___functions_ga2d00b3bc89474bcbe78a15895215c1fd}{setup\+LTC2943}} ()
+\begin{DoxyCompactList}\small\item\em Initialize and configure LTC2943 fuel gauge. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_gafd859bfac909576582c08cfd3aef4543}{Check\+BQConnection\+With\+Comms}} ()
+\begin{DoxyCompactList}\small\item\em Check BQ25730 connection and halt system if not responding. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_ga68faf4969b4fd59b23916844263fa728}{Config\+And\+Start\+BQ}} ()
+\begin{DoxyCompactList}\small\item\em Configure and start BQ25730 charger with initial settings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_gaf6496b205c191db45c1b03fdc69b37b8}{write\+BQ25730}} (uint8\+\_\+t reg\+Addr, uint16\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Write 16-\/bit data to BQ25730 register. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___b_q25730___functions_ga2c4dd77d242508e96fb3513e753976f7}{read\+BQ25730}} (uint8\+\_\+t reg\+Addr)
+\begin{DoxyCompactList}\small\item\em Read 16-\/bit data from BQ25730 register. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group___b_q25730___functions_ga1de5db1b0b55008babf30a501b39b6b7}{check\+I2C}} ()
+\begin{DoxyCompactList}\small\item\em Check I2C communication with BQ25730. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group___b_q25730___functions_gafc599b42d2e7ceba7c94028dfcd99125}{check\+BQConnection}} ()
+\begin{DoxyCompactList}\small\item\em Check basic I2C connection to BQ25730. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_ga2d4bd64f668a6ea0b2f5a8424d9a1100}{disable\+VSYS}} ()
+\begin{DoxyCompactList}\small\item\em Disable VSYS output due to low battery condition. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_ga01cd5968ed55b80dc4b92b0a52e0e466}{set\+Charge\+Voltage}} (float voltage\+\_\+V)
+\begin{DoxyCompactList}\small\item\em Set charging voltage target. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_ga97c42fd6e90822b907550eb226598161}{set\+Charge\+Current}} (float current\+\_\+A)
+\begin{DoxyCompactList}\small\item\em Set charging current limit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_ga3d8eff3631e2364d8be2890e9baabe63}{set\+Input\+Current\+Limit}} (float current\+\_\+mA)
+\begin{DoxyCompactList}\small\item\em Set input current limit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_ga418209c95fe881aa56d9e82ac1b4ad63}{set\+Input\+Voltage}} (float voltage\+\_\+V)
+\begin{DoxyCompactList}\small\item\em Sets the input voltage limit for the BQ25730 charge controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_gacb449db001d5ad9a7758556e5ca2160a}{set\+\_\+\+VSYS\+\_\+\+MIN}} (float voltage\+\_\+V)
+\begin{DoxyCompactList}\small\item\em Sets the minimum system voltage (VSYS\+\_\+\+MIN) for the BQ25730. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_gab30ea562af302301b7672b24f4481c86}{enable\+Charging}} ()
+\begin{DoxyCompactList}\small\item\em Enables charging by configuring Charge\+Option0 register. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_gae0f230a6e9357f99995951287147b6ee}{disable\+Charging}} ()
+\begin{DoxyCompactList}\small\item\em Disables charging by setting charge inhibit bit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_ga5eddb9004f705b0881f16a636b2d83cf}{enable\+ADC}} ()
+\begin{DoxyCompactList}\small\item\em Enables ADC measurements on the BQ25730. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_gaab5e0e511f1bb8041569b20b1489527b}{read\+Battery\+Current}} ()
+\begin{DoxyCompactList}\small\item\em Reads and displays battery current measurements. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_ga4984336d1011808120b4221bbd3c48af}{dump\+All\+BQRegisters}} ()
+\begin{DoxyCompactList}\small\item\em Dumps all BQ25730 registers for debugging. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_ga0882365eaa2c963c6b0b2e57237c6b90}{Maintain\+Charging\+BQ}} ()
+\begin{DoxyCompactList}\small\item\em Maintains charging operation and I2C communication. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_gabf363a8269099400e262e0c39becc8a0}{Check\+If\+INAConnected}} ()
+\begin{DoxyCompactList}\small\item\em Initializes and verifies INA219 current sensors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_ga5ef907155a3498383307a0e26da4e010}{Enable\+GPIOPins}} ()
+\begin{DoxyCompactList}\small\item\em Configures GPIO pins for various system functions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_gab7d6082d420719c5e210b8b387cda184}{check\+Celland\+Soc\+Cutoff}} ()
+\begin{DoxyCompactList}\small\item\em Monitors cell voltages and state of charge for safety cutoffs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_gac7f04b5f3622adc4c899012ea1d8e6e3}{Charge\+And\+Balance\+Control}} ()
+\begin{DoxyCompactList}\small\item\em Main charge and cell balancing control function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_gae1455fa902ab93ac72aa2c75cc301799}{handle\+Serial\+Charging}} ()
+\begin{DoxyCompactList}\small\item\em Processes serial commands for manual charge control. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_gad511a9c47838109c758c7c4284d2b242}{Temp\+Check}} ()
+\begin{DoxyCompactList}\small\item\em Monitors thermistor temperatures for overheat protection. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_ga5708add1ce23a932ff6c9f64cb84ae06}{Config\+Check}} ()
+\begin{DoxyCompactList}\small\item\em Performs final configuration check and saves settings to EEPROM. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_ga3e21dc6b2d0de8c60db0cf01b0625b4c}{on\+Receive}} (int how\+Many)
+\begin{DoxyCompactList}\small\item\em I2C receive event handler for command processing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_gac6532b6359ec1083f0936a3a1c93bdce}{on\+Request}} ()
+\begin{DoxyCompactList}\small\item\em I2C request event handler for sending response data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_ga3a0c6d2d9f8bac7b4f689eb7844c165d}{EEPROM\+\_\+\+Check}} ()
+\begin{DoxyCompactList}\small\item\em Checks and loads configuration from EEPROM if available. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group___b_q25730___functions_gac732a8f96986a17c049865fa413935b5}{is\+EEPROMInitialized}} (int start\+Addr, size\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Checks if EEPROM contains valid (non-\/blank) data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_gad56b6e6d2810d8f19d6debf12443fdfd}{clear\+EEPROM}} ()
+\begin{DoxyCompactList}\small\item\em Clears all EEPROM data by setting all bytes to 0x\+FF. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_ga4fc01d736fe50cf5b977f755b675f11d}{setup}} ()
+\begin{DoxyCompactList}\small\item\em System initialization and setup function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_ga47d79ee7b65523eac216088cb98bbfbb}{System\+Check}} ()
+\begin{DoxyCompactList}\small\item\em Main system monitoring and control function (Timer ISR) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_gafe461d27b9c48d5921c00d521181f12f}{loop}} ()
+\begin{DoxyCompactList}\small\item\em Main program loop (intentionally empty) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile bool \mbox{\hyperlink{group___system___flags_gab059d04c654d8a806c688773559f2ae0}{CHARGING}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating if charging is currently active. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{group___system___flags_ga86644aa854253a1760658fe149546d73}{serial\+Cmd\+Buffer}} = "{}"{}
+\begin{DoxyCompactList}\small\item\em Buffer for accumulating incoming serial characters for charge control. \end{DoxyCompactList}\item 
+volatile bool \mbox{\hyperlink{group___system___flags_gadb665910e54bfced898cfcc2fd5e3cac}{CHARGE\+\_\+\+ON\+\_\+\+PLUGIN}} = true
+\begin{DoxyCompactList}\small\item\em When true, charging auto-\/starts on charger plugin detection. \end{DoxyCompactList}\item 
+volatile bool \mbox{\hyperlink{group___system___flags_ga17764d61d98155d7b849bc7699033a54}{STOPCHARGING}} = false
+\begin{DoxyCompactList}\small\item\em Flag to request charging stop. \end{DoxyCompactList}\item 
+volatile bool \mbox{\hyperlink{group___system___flags_ga90776728be4ece882847dfcba9536d40}{KILLLOAD}} = false
+\begin{DoxyCompactList}\small\item\em Flag to disconnect load. \end{DoxyCompactList}\item 
+volatile bool \mbox{\hyperlink{group___system___flags_gab972cab2eca6c2137db8aa8c50e6197e}{PLUGGEDIN}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating charger is physically connected. \end{DoxyCompactList}\item 
+volatile bool \mbox{\hyperlink{group___system___flags_gafe12f1fddee011398a5ee94723ba053d}{OVERHEAT}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating thermal protection activation. \end{DoxyCompactList}\item 
+volatile bool \mbox{\hyperlink{group___system___flags_gacdff7a527b65595ffea4031b633f8dd7}{ERRORFLG}} = false
+\begin{DoxyCompactList}\small\item\em General error flag for system faults. \end{DoxyCompactList}\item 
+volatile bool \mbox{\hyperlink{group___timer___flags_ga7b9ed61a91551a6eba8538e43b952bdf}{EEPROM\+\_\+\+LOADED}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating EEPROM data has been loaded. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___timer___flags_gac2bf4e34565e980fe6ca7a4fd9f474b1}{EEPROM\+\_\+\+CONFIG\+\_\+\+FLAG}}
+\begin{DoxyCompactList}\small\item\em Configuration flag stored in EEPROM. \end{DoxyCompactList}\item 
+volatile bool \mbox{\hyperlink{group___timer___flags_ga05679ab0b17d3dccba1b74837dfdb514}{CONFIGURED}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating system is fully configured. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_integrated___b_m_s___firmware__v2__5_8ino_a365f940a31cbe7ca5671a540c848740a}{configstatus}} = 0
+\begin{DoxyCompactList}\small\item\em Configuration status counter (0-\/8) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_integrated___b_m_s___firmware__v2__5_8ino_abe309f422c02acc11ec4838fc677f9d4}{Config\+Status\+From\+Master}}
+\begin{DoxyCompactList}\small\item\em Configuration status received from master controller. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___i_n_a___b_q___variables_ga8b4b49db9ad94916f9adc377e69c9e57}{INA\+\_\+0x40\+\_\+\+VOLTAGE}} = 0.\+0
+\begin{DoxyCompactList}\small\item\em Voltage reading from INA219 at address 0x40. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___i_n_a___b_q___variables_ga4af4abc5ecad811620ef4b890334e89d}{INA\+\_\+0x41\+\_\+\+VOLTAGE}} = 0.\+0
+\begin{DoxyCompactList}\small\item\em Voltage reading from INA219 at address 0x41. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___i_n_a___b_q___variables_ga26de1d04338cf4ed6761b457761ba223}{INA\+\_\+0x44\+\_\+\+VOLTAGE}} = 0.\+0
+\begin{DoxyCompactList}\small\item\em Voltage reading from INA219 at address 0x44. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___i_n_a___b_q___variables_ga2fb53c44ade923be30da221c02a03671}{CELL1\+\_\+\+VOLTAGE\+\_\+\+LTC2943}} = 0.\+00
+\begin{DoxyCompactList}\small\item\em Cell 1 voltage calculated from LTC2943 readings. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___i_n_a___b_q___variables_gaf3c919cef6508faa4a05fc2814bfbc89}{CELL1\+\_\+\+VOLTAGE}} = 0.\+00
+\begin{DoxyCompactList}\small\item\em Cell 1 voltage (alternative calculation) \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___i_n_a___b_q___variables_ga0bb4c96e82217aba17d6ae4dd92fb321}{CELL2\+\_\+\+VOLTAGE}} = 0.\+00
+\begin{DoxyCompactList}\small\item\em Cell 2 voltage calculated from INA differential readings. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___i_n_a___b_q___variables_ga659d3f64ac77c3f519a420961f93aa7d}{CELL3\+\_\+\+VOLTAGE}} = 0.\+00
+\begin{DoxyCompactList}\small\item\em Cell 3 voltage calculated from INA differential readings. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___i_n_a___b_q___variables_ga5259f0507219016b5407e7f2835c7a9c}{CELL4\+\_\+\+VOLTAGE}} = 0.\+00
+\begin{DoxyCompactList}\small\item\em Cell 4 voltage (bottom cell in series stack) \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{_integrated___b_m_s___firmware__v2__5_8ino_af4149b811ed2986cc4a80a49c185d800}{THERMISTER\+\_\+\+THRESHOLD}} = 2047
+\begin{DoxyCompactList}\small\item\em Thermistor threshold value\+: 3.\+3V / 2 = 1.\+65V scaled to 12-\/bit ADC\+: (1.\+65 / 3.\+3) \texorpdfstring{$\ast$}{*} 4095 ≈ 2047. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___l_t_c2943___constants_ga23108a3e7eecf0a4cfb41299c1cf3984}{resistor}} = .\+1
+\begin{DoxyCompactList}\small\item\em Current sense resistor value in ohms for LTC2943. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{group___l_t_c2943___constants_ga3c2d7a794f54a524aa941f15e33a8843}{LTC2943\+\_\+\+CHARGE\+\_\+lsb}} = 0.\+34E-\/3
+\begin{DoxyCompactList}\small\item\em Charge LSB scaling factor. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{group___l_t_c2943___constants_ga6bcd8a9f362a8913eefe7af79d479528}{LTC2943\+\_\+\+VOLTAGE\+\_\+lsb}} = 1.\+44E-\/3
+\begin{DoxyCompactList}\small\item\em Voltage LSB scaling factor. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{group___l_t_c2943___constants_ga01529b2ddb8bcc9d6c04c7744970e4d6}{LTC2943\+\_\+\+CURRENT\+\_\+lsb}} = 29.\+3E-\/6
+\begin{DoxyCompactList}\small\item\em Current LSB scaling factor. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{group___l_t_c2943___constants_gab66b9a3d510a10ed47885e70e7a0e991}{LTC2943\+\_\+\+TEMPERATURE\+\_\+lsb}} = 0.\+25
+\begin{DoxyCompactList}\small\item\em Temperature LSB scaling factor. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{group___l_t_c2943___constants_ga2360d5059888714d3c0b1cfd414d7ca9}{LTC2943\+\_\+\+FULLSCALE\+\_\+\+VOLTAGE}} = 23.\+6
+\begin{DoxyCompactList}\small\item\em Full scale voltage range. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{group___l_t_c2943___constants_ga74517def17415b7a9f32a6aa4f9639bf}{LTC2943\+\_\+\+FULLSCALE\+\_\+\+CURRENT}} = 60E-\/3
+\begin{DoxyCompactList}\small\item\em Full scale current range. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{group___l_t_c2943___constants_ga06cd6f9ab332a1ad079f2eed5fc8b1b0}{LTC2943\+\_\+\+FULLSCALE\+\_\+\+TEMPERATURE}} = 510
+\begin{DoxyCompactList}\small\item\em Full scale temperature range. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___l_t_c2943___constants_gaf32bdae3663f4f865ddc2f0d9e3f1c4d}{prescaler}} = 4096
+\begin{DoxyCompactList}\small\item\em Prescaler value for calculations. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___balancer___variables_ga2a5d0786d84c613c066399cc4400161e}{Cell\+Max\+Cut\+OffV}}
+\begin{DoxyCompactList}\small\item\em Maximum cell voltage cutoff (user configurable) \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___balancer___variables_ga5d9eb135e1ed0a3e36f9d5d102252ad4}{Cell\+Full\+ChargeV}} = \mbox{\hyperlink{group___balancer___variables_ga2a5d0786d84c613c066399cc4400161e}{Cell\+Max\+Cut\+OffV}} -\/ 0.\+1
+\begin{DoxyCompactList}\small\item\em Full charge voltage threshold (0.\+1V below max) \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___balancer___variables_ga1907cbd861b4059ace56860db0efd49a}{Cell\+Min\+Cut\+OffV}}
+\begin{DoxyCompactList}\small\item\em Minimum cell voltage cutoff (user configurable) \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___system___returns_ga2dbe43100ea1f3d1fdcff6eec037708d}{Pack\+Voltage}} = 0
+\begin{DoxyCompactList}\small\item\em Total battery pack voltage. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___system___returns_gaf9653d31acfffa5a40aa709b2065e00b}{current}} = 0
+\begin{DoxyCompactList}\small\item\em Pack current (positive = charging, negative = discharging) \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___system___returns_ga42c4137e7cf1b6e09d086368c9a7ba3e}{tempC}} = 0
+\begin{DoxyCompactList}\small\item\em Battery temperature in Celsius. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___system___returns_gac8efb003b6c1a241ea5dd9ff2dc03bca}{charge\+\_\+m\+Ah}} = 0
+\begin{DoxyCompactList}\small\item\em Raw accumulated charge from LTC2943. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___system___returns_ga784f77a2f5ad392f19e98d54d584b5ad}{real\+\_\+charge\+\_\+m\+Ah}} = 0
+\begin{DoxyCompactList}\small\item\em Adjusted accumulated charge accounting for capacity offset. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___l_t_c2943___config_ga5b08370e4b228ece5ccba1dfb7b46fe6}{Pack\+\_\+stock\+\_\+capacity}} = 5200
+\begin{DoxyCompactList}\small\item\em Battery pack stock capacity in m\+Ah (user configurable) \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{group___l_t_c2943___config_ga4cdc31e32c357ab93aa60a1754f479f4}{RSENSE}} = 0.\+1f
+\begin{DoxyCompactList}\small\item\em Current sense resistor value in ohms. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{group___l_t_c2943___config_ga03552f92603004135f93ede2ab729d57}{LTC2943\+\_\+\+PRESCALER}} = 16384.\+0f
+\begin{DoxyCompactList}\small\item\em Control register prescaler setting (bits B\mbox{[}5\+:3\mbox{]} = 0b111 → M = 16384) \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{_integrated___b_m_s___firmware__v2__5_8ino_aad4f6ae034d1760d09f19a29596d801b}{QLSB}} = 0.\+340f \texorpdfstring{$\ast$}{*} (50e-\/3f / \mbox{\hyperlink{group___l_t_c2943___config_ga4cdc31e32c357ab93aa60a1754f479f4}{RSENSE}}) \texorpdfstring{$\ast$}{*} (\mbox{\hyperlink{group___l_t_c2943___config_ga03552f92603004135f93ede2ab729d57}{LTC2943\+\_\+\+PRESCALER}} / 4096.\+0f)
+\begin{DoxyCompactList}\small\item\em Charge LSB calculation\+: q\+LSB = 0.\+340 m\+Ah × (50 mΩ / RSENSE) × (M / 4096) per datasheet p.\+15. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_integrated___b_m_s___firmware__v2__5_8ino_a3177a344a7a3dcbd323a52dc070cd2aa}{num\+Of\+Cells}} = 4
+\begin{DoxyCompactList}\small\item\em Number of cells in series (4S configuration) \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___b_q25730___config_ga8d14ed475babc3429e584bd136fe2953}{Charge\+Voltage\+Value}} =18
+\begin{DoxyCompactList}\small\item\em Charging target voltage -\/ will be updated to (num\+Of\+Cells \texorpdfstring{$\ast$}{*} Cell\+Max\+Cut\+OffV) + 1. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___b_q25730___config_gadee1cbfed86e55ec920ab2411043b294}{Vsys\+Min\+Value}}
+\begin{DoxyCompactList}\small\item\em Minimum system voltage threshold. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___b_q25730___config_ga3cab3abd591774bda4bcbac71f3bd4ba}{input\+Voltage\+Value}}
+\begin{DoxyCompactList}\small\item\em Input voltage limit for VINDPM (input voltage DPM) \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___b_q25730___config_ga92e45958ddfacc7a25ee2bdc30dd63ab}{charge\+Current\+Value}} =1
+\begin{DoxyCompactList}\small\item\em Battery charging current in amps. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___b_q25730___config_ga865c0a5a532696237001f308ae122673}{input\+Current\+Limit\+Value}} = 1
+\begin{DoxyCompactList}\small\item\em Input current limit in amps (based on supply/adapter limit) \end{DoxyCompactList}\item 
+unsigned long \mbox{\hyperlink{group___timing___variables_ga23d682240b4f6e9b75d762209d655b6f}{last\+Check1}} = 0
+\begin{DoxyCompactList}\small\item\em Timestamp for last I2C communication check. \end{DoxyCompactList}\item 
+const unsigned long \mbox{\hyperlink{group___timing___variables_ga452004b01557777c2aec5d6dc826c73c}{I2\+Ccheck\+Interval}} = 5000
+\begin{DoxyCompactList}\small\item\em I2C check interval in milliseconds. \end{DoxyCompactList}\item 
+unsigned long \mbox{\hyperlink{group___timing___variables_ga8f2dbcad4dc507f38d43e866079b7f1e}{last\+Check2}} = 0
+\begin{DoxyCompactList}\small\item\em Timestamp for last register update. \end{DoxyCompactList}\item 
+const unsigned long \mbox{\hyperlink{group___timing___variables_ga3f868566afff9cc9f85c26b2bd7d030d}{register\+Update\+Interval}} = 2500
+\begin{DoxyCompactList}\small\item\em Register update interval in milliseconds. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___i2_c___communication_gaf7c6dd5ce3f4a173f87930551fcf4f90}{response\+Data}} = 0.\+0
+\begin{DoxyCompactList}\small\item\em Data to be sent back to I2C master. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{_integrated___b_m_s___firmware__v2__5_8ino_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_integrated___b_m_s___firmware__v2__5_8ino_ad5eb889064b12e67d5f5360265f2da0b}\index{Integrated\_BMS\_Firmware\_v2\_5.ino@{Integrated\_BMS\_Firmware\_v2\_5.ino}!ITimer2@{ITimer2}}
+\index{ITimer2@{ITimer2}!Integrated\_BMS\_Firmware\_v2\_5.ino@{Integrated\_BMS\_Firmware\_v2\_5.ino}}
+\doxysubsubsection{\texorpdfstring{ITimer2()}{ITimer2()}}
+{\footnotesize\ttfamily \label{_integrated___b_m_s___firmware__v2__5_8ino_ad5eb889064b12e67d5f5360265f2da0b} 
+STM32\+Timer ITimer2 (\begin{DoxyParamCaption}\item[{TIM2}]{}{}\end{DoxyParamCaption})}
+
+
+
+Timer instance using TIM2 for periodic system checks. 
+
+\Hypertarget{_integrated___b_m_s___firmware__v2__5_8ino_a7c07808a030f3c8a4ae4b3a3d6e405a7}\index{Integrated\_BMS\_Firmware\_v2\_5.ino@{Integrated\_BMS\_Firmware\_v2\_5.ino}!onTimerISR@{onTimerISR}}
+\index{onTimerISR@{onTimerISR}!Integrated\_BMS\_Firmware\_v2\_5.ino@{Integrated\_BMS\_Firmware\_v2\_5.ino}}
+\doxysubsubsection{\texorpdfstring{onTimerISR()}{onTimerISR()}}
+{\footnotesize\ttfamily \label{_integrated___b_m_s___firmware__v2__5_8ino_a7c07808a030f3c8a4ae4b3a3d6e405a7} 
+void on\+Timer\+ISR (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Timer interrupt service routine. 
+
+Called periodically to set flags for sensor and serial updates \begin{DoxyNote}{Note}
+Currently contains only a test placeholder 
+\end{DoxyNote}
+\Hypertarget{_integrated___b_m_s___firmware__v2__5_8ino_a7dd54fc66122a231da37b565f13d23c5}\index{Integrated\_BMS\_Firmware\_v2\_5.ino@{Integrated\_BMS\_Firmware\_v2\_5.ino}!softwareReset@{softwareReset}}
+\index{softwareReset@{softwareReset}!Integrated\_BMS\_Firmware\_v2\_5.ino@{Integrated\_BMS\_Firmware\_v2\_5.ino}}
+\doxysubsubsection{\texorpdfstring{softwareReset()}{softwareReset()}}
+{\footnotesize\ttfamily \label{_integrated___b_m_s___firmware__v2__5_8ino_a7dd54fc66122a231da37b565f13d23c5} 
+void software\+Reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Perform software reset of the microcontroller. 
+
+Triggers a system reset using NVIC (Nested Vector Interrupt Controller) \texorpdfstring{$<$}{<} Execute system reset
+
+\label{doc-var-members}
+\Hypertarget{_integrated___b_m_s___firmware__v2__5_8ino_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{_integrated___b_m_s___firmware__v2__5_8ino_a365f940a31cbe7ca5671a540c848740a}\index{Integrated\_BMS\_Firmware\_v2\_5.ino@{Integrated\_BMS\_Firmware\_v2\_5.ino}!configstatus@{configstatus}}
+\index{configstatus@{configstatus}!Integrated\_BMS\_Firmware\_v2\_5.ino@{Integrated\_BMS\_Firmware\_v2\_5.ino}}
+\doxysubsubsection{\texorpdfstring{configstatus}{configstatus}}
+{\footnotesize\ttfamily \label{_integrated___b_m_s___firmware__v2__5_8ino_a365f940a31cbe7ca5671a540c848740a} 
+int configstatus = 0}
+
+
+
+Configuration status counter (0-\/8) 
+
+\Hypertarget{_integrated___b_m_s___firmware__v2__5_8ino_abe309f422c02acc11ec4838fc677f9d4}\index{Integrated\_BMS\_Firmware\_v2\_5.ino@{Integrated\_BMS\_Firmware\_v2\_5.ino}!ConfigStatusFromMaster@{ConfigStatusFromMaster}}
+\index{ConfigStatusFromMaster@{ConfigStatusFromMaster}!Integrated\_BMS\_Firmware\_v2\_5.ino@{Integrated\_BMS\_Firmware\_v2\_5.ino}}
+\doxysubsubsection{\texorpdfstring{ConfigStatusFromMaster}{ConfigStatusFromMaster}}
+{\footnotesize\ttfamily \label{_integrated___b_m_s___firmware__v2__5_8ino_abe309f422c02acc11ec4838fc677f9d4} 
+int Config\+Status\+From\+Master}
+
+
+
+Configuration status received from master controller. 
+
+\Hypertarget{_integrated___b_m_s___firmware__v2__5_8ino_a3177a344a7a3dcbd323a52dc070cd2aa}\index{Integrated\_BMS\_Firmware\_v2\_5.ino@{Integrated\_BMS\_Firmware\_v2\_5.ino}!numOfCells@{numOfCells}}
+\index{numOfCells@{numOfCells}!Integrated\_BMS\_Firmware\_v2\_5.ino@{Integrated\_BMS\_Firmware\_v2\_5.ino}}
+\doxysubsubsection{\texorpdfstring{numOfCells}{numOfCells}}
+{\footnotesize\ttfamily \label{_integrated___b_m_s___firmware__v2__5_8ino_a3177a344a7a3dcbd323a52dc070cd2aa} 
+int num\+Of\+Cells = 4}
+
+
+
+Number of cells in series (4S configuration) 
+
+\Hypertarget{_integrated___b_m_s___firmware__v2__5_8ino_aad4f6ae034d1760d09f19a29596d801b}\index{Integrated\_BMS\_Firmware\_v2\_5.ino@{Integrated\_BMS\_Firmware\_v2\_5.ino}!QLSB@{QLSB}}
+\index{QLSB@{QLSB}!Integrated\_BMS\_Firmware\_v2\_5.ino@{Integrated\_BMS\_Firmware\_v2\_5.ino}}
+\doxysubsubsection{\texorpdfstring{QLSB}{QLSB}}
+{\footnotesize\ttfamily \label{_integrated___b_m_s___firmware__v2__5_8ino_aad4f6ae034d1760d09f19a29596d801b} 
+const float QLSB = 0.\+340f \texorpdfstring{$\ast$}{*} (50e-\/3f / \mbox{\hyperlink{group___l_t_c2943___config_ga4cdc31e32c357ab93aa60a1754f479f4}{RSENSE}}) \texorpdfstring{$\ast$}{*} (\mbox{\hyperlink{group___l_t_c2943___config_ga03552f92603004135f93ede2ab729d57}{LTC2943\+\_\+\+PRESCALER}} / 4096.\+0f)}
+
+
+
+Charge LSB calculation\+: q\+LSB = 0.\+340 m\+Ah × (50 mΩ / RSENSE) × (M / 4096) per datasheet p.\+15. 
+
+\Hypertarget{_integrated___b_m_s___firmware__v2__5_8ino_af4149b811ed2986cc4a80a49c185d800}\index{Integrated\_BMS\_Firmware\_v2\_5.ino@{Integrated\_BMS\_Firmware\_v2\_5.ino}!THERMISTER\_THRESHOLD@{THERMISTER\_THRESHOLD}}
+\index{THERMISTER\_THRESHOLD@{THERMISTER\_THRESHOLD}!Integrated\_BMS\_Firmware\_v2\_5.ino@{Integrated\_BMS\_Firmware\_v2\_5.ino}}
+\doxysubsubsection{\texorpdfstring{THERMISTER\_THRESHOLD}{THERMISTER\_THRESHOLD}}
+{\footnotesize\ttfamily \label{_integrated___b_m_s___firmware__v2__5_8ino_af4149b811ed2986cc4a80a49c185d800} 
+const int THERMISTER\+\_\+\+THRESHOLD = 2047}
+
+
+
+Thermistor threshold value\+: 3.\+3V / 2 = 1.\+65V scaled to 12-\/bit ADC\+: (1.\+65 / 3.\+3) \texorpdfstring{$\ast$}{*} 4095 ≈ 2047. 
+

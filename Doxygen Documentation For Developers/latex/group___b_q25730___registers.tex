@@ -1,0 +1,320 @@
+\doxysection{BQ25730 Register Addresses }
+\hypertarget{group___b_q25730___registers}{}\label{group___b_q25730___registers}\index{BQ25730 Register Addresses@{BQ25730 Register Addresses}}
+
+
+Register addresses for BQ25730 battery charger communication.  
+
+
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_gaac78bb5c6015a366540c3f8d7c548fde}{Charge\+Option0}}~0x00
+\begin{DoxyCompactList}\small\item\em Charge option 0 register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_gad6e1f5031739a25de0cddf1c782d217a}{Charge\+Current}}~0x02
+\begin{DoxyCompactList}\small\item\em Charge current setting register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_gaa64840fb06f883ea0ebc9f351094757a}{Charge\+Voltage}}~0x04
+\begin{DoxyCompactList}\small\item\em Charge voltage setting register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_ga7792b514f883254670f2e83791b2c3d4}{OTGVoltage}}~0x06
+\begin{DoxyCompactList}\small\item\em OTG voltage setting register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_gaaf3364950d097f8f4fa1d12d3d3af7fc}{OTGCurrent}}~0x08
+\begin{DoxyCompactList}\small\item\em OTG current setting register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_gac7e642a59502839811272866737f51bc}{Input\+Voltage}}~0x0A
+\begin{DoxyCompactList}\small\item\em Input voltage limit register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_gaa9c79b2f93acca2759b6406805ee83c5}{VSYS\+\_\+\+MIN}}~0x0C
+\begin{DoxyCompactList}\small\item\em Minimum system voltage register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_gaa29a39fd906ed360f0b67d32a3e27bb3}{IIN\+\_\+\+HOST}}~0x0E
+\begin{DoxyCompactList}\small\item\em Input current limit register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_gaa17f61dc9dc7035962829e5a2d8bb86d}{Charger\+Status}}~0x20
+\begin{DoxyCompactList}\small\item\em Charger status register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_ga348bea01ea03ad2ff6835de539babdc9}{Prochot\+Status}}~0x22
+\begin{DoxyCompactList}\small\item\em PROCHOT status register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_ga71e51e95c41739b9631d11735705de9c}{IIN\+\_\+\+DPM}}~0x24
+\begin{DoxyCompactList}\small\item\em Input current DPM register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_ga2dad2382179bdfe4d2754bd78bccea6b}{AADCVBUS\+\_\+\+PSYS}}~0x26
+\begin{DoxyCompactList}\small\item\em ADC VBUS and PSYS register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_gafa637902097b520f9f593b2fd60c77f9}{ADCIBAT}}~0x28
+\begin{DoxyCompactList}\small\item\em ADC battery current register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_ga1640a40f7d4afbfa78b89c03a1f0fd9d}{ADCIINCMPIN}}~0x2A
+\begin{DoxyCompactList}\small\item\em ADC input current and CMPIN register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_ga5774cfc33d87b0d74cd0e1780ac2230e}{ADCVSYSVBAT}}~0x2C
+\begin{DoxyCompactList}\small\item\em ADC VSYS and VBAT register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_gad6d06519161544439a58bb8f59fc3094}{MANUFACTURER\+\_\+\+ID}}~0x2E
+\begin{DoxyCompactList}\small\item\em Manufacturer ID register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_ga0b85963cace75e76ae726bcffb04eb70}{DEVICE\+\_\+\+ID}}~0x2F
+\begin{DoxyCompactList}\small\item\em Device ID register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_gadc1bb4d3202a65ad3c15a6261b4089ff}{Charge\+Option1}}~0x30
+\begin{DoxyCompactList}\small\item\em Charge option 1 register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_gacb60a1c5141ddcb6fe50e8618e806fcd}{Charge\+Option2}}~0x32
+\begin{DoxyCompactList}\small\item\em Charge option 2 register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_ga6ee3e3a95cd9eb55909e24fcc7a1b820}{Charge\+Option3}}~0x34
+\begin{DoxyCompactList}\small\item\em Charge option 3 register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_gaa635e19d529e94ea56823a75a477cd6d}{Prochot\+Option0}}~0x36
+\begin{DoxyCompactList}\small\item\em PROCHOT option 0 register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_gacca6325c7d578e1eaa5aa3ff4df415cb}{Prochot\+Option1}}~0x38
+\begin{DoxyCompactList}\small\item\em PROCHOT option 1 register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_ga0bd689b1a92bbc3bd70357706ad70f46}{ADCOption}}~0x3A
+\begin{DoxyCompactList}\small\item\em ADC option register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_ga631d121cd8b86fe334bbe62972b6d3ef}{Charge\+Option4}}~0x3C
+\begin{DoxyCompactList}\small\item\em Charge option 4 register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___b_q25730___registers_ga846a4a302890eb6e570734edd83767b4}{Vmin\+\_\+\+Active\+\_\+\+Protection}}~0x3E
+\begin{DoxyCompactList}\small\item\em Minimum voltage active protection register. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Register addresses for BQ25730 battery charger communication. 
+
+
+
+\label{doc-define-members}
+\Hypertarget{group___b_q25730___registers_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{group___b_q25730___registers_ga2dad2382179bdfe4d2754bd78bccea6b}\index{BQ25730 Register Addresses@{BQ25730 Register Addresses}!AADCVBUS\_PSYS@{AADCVBUS\_PSYS}}
+\index{AADCVBUS\_PSYS@{AADCVBUS\_PSYS}!BQ25730 Register Addresses@{BQ25730 Register Addresses}}
+\doxysubsubsection{\texorpdfstring{AADCVBUS\_PSYS}{AADCVBUS\_PSYS}}
+{\footnotesize\ttfamily \label{group___b_q25730___registers_ga2dad2382179bdfe4d2754bd78bccea6b} 
+\#define AADCVBUS\+\_\+\+PSYS~0x26}
+
+
+
+ADC VBUS and PSYS register. 
+
+\Hypertarget{group___b_q25730___registers_gafa637902097b520f9f593b2fd60c77f9}\index{BQ25730 Register Addresses@{BQ25730 Register Addresses}!ADCIBAT@{ADCIBAT}}
+\index{ADCIBAT@{ADCIBAT}!BQ25730 Register Addresses@{BQ25730 Register Addresses}}
+\doxysubsubsection{\texorpdfstring{ADCIBAT}{ADCIBAT}}
+{\footnotesize\ttfamily \label{group___b_q25730___registers_gafa637902097b520f9f593b2fd60c77f9} 
+\#define ADCIBAT~0x28}
+
+
+
+ADC battery current register. 
+
+\Hypertarget{group___b_q25730___registers_ga1640a40f7d4afbfa78b89c03a1f0fd9d}\index{BQ25730 Register Addresses@{BQ25730 Register Addresses}!ADCIINCMPIN@{ADCIINCMPIN}}
+\index{ADCIINCMPIN@{ADCIINCMPIN}!BQ25730 Register Addresses@{BQ25730 Register Addresses}}
+\doxysubsubsection{\texorpdfstring{ADCIINCMPIN}{ADCIINCMPIN}}
+{\footnotesize\ttfamily \label{group___b_q25730___registers_ga1640a40f7d4afbfa78b89c03a1f0fd9d} 
+\#define ADCIINCMPIN~0x2A}
+
+
+
+ADC input current and CMPIN register. 
+
+\Hypertarget{group___b_q25730___registers_ga0bd689b1a92bbc3bd70357706ad70f46}\index{BQ25730 Register Addresses@{BQ25730 Register Addresses}!ADCOption@{ADCOption}}
+\index{ADCOption@{ADCOption}!BQ25730 Register Addresses@{BQ25730 Register Addresses}}
+\doxysubsubsection{\texorpdfstring{ADCOption}{ADCOption}}
+{\footnotesize\ttfamily \label{group___b_q25730___registers_ga0bd689b1a92bbc3bd70357706ad70f46} 
+\#define ADCOption~0x3A}
+
+
+
+ADC option register. 
+
+\Hypertarget{group___b_q25730___registers_ga5774cfc33d87b0d74cd0e1780ac2230e}\index{BQ25730 Register Addresses@{BQ25730 Register Addresses}!ADCVSYSVBAT@{ADCVSYSVBAT}}
+\index{ADCVSYSVBAT@{ADCVSYSVBAT}!BQ25730 Register Addresses@{BQ25730 Register Addresses}}
+\doxysubsubsection{\texorpdfstring{ADCVSYSVBAT}{ADCVSYSVBAT}}
+{\footnotesize\ttfamily \label{group___b_q25730___registers_ga5774cfc33d87b0d74cd0e1780ac2230e} 
+\#define ADCVSYSVBAT~0x2C}
+
+
+
+ADC VSYS and VBAT register. 
+
+\Hypertarget{group___b_q25730___registers_gad6e1f5031739a25de0cddf1c782d217a}\index{BQ25730 Register Addresses@{BQ25730 Register Addresses}!ChargeCurrent@{ChargeCurrent}}
+\index{ChargeCurrent@{ChargeCurrent}!BQ25730 Register Addresses@{BQ25730 Register Addresses}}
+\doxysubsubsection{\texorpdfstring{ChargeCurrent}{ChargeCurrent}}
+{\footnotesize\ttfamily \label{group___b_q25730___registers_gad6e1f5031739a25de0cddf1c782d217a} 
+\#define Charge\+Current~0x02}
+
+
+
+Charge current setting register. 
+
+\Hypertarget{group___b_q25730___registers_gaac78bb5c6015a366540c3f8d7c548fde}\index{BQ25730 Register Addresses@{BQ25730 Register Addresses}!ChargeOption0@{ChargeOption0}}
+\index{ChargeOption0@{ChargeOption0}!BQ25730 Register Addresses@{BQ25730 Register Addresses}}
+\doxysubsubsection{\texorpdfstring{ChargeOption0}{ChargeOption0}}
+{\footnotesize\ttfamily \label{group___b_q25730___registers_gaac78bb5c6015a366540c3f8d7c548fde} 
+\#define Charge\+Option0~0x00}
+
+
+
+Charge option 0 register. 
+
+\Hypertarget{group___b_q25730___registers_gadc1bb4d3202a65ad3c15a6261b4089ff}\index{BQ25730 Register Addresses@{BQ25730 Register Addresses}!ChargeOption1@{ChargeOption1}}
+\index{ChargeOption1@{ChargeOption1}!BQ25730 Register Addresses@{BQ25730 Register Addresses}}
+\doxysubsubsection{\texorpdfstring{ChargeOption1}{ChargeOption1}}
+{\footnotesize\ttfamily \label{group___b_q25730___registers_gadc1bb4d3202a65ad3c15a6261b4089ff} 
+\#define Charge\+Option1~0x30}
+
+
+
+Charge option 1 register. 
+
+\Hypertarget{group___b_q25730___registers_gacb60a1c5141ddcb6fe50e8618e806fcd}\index{BQ25730 Register Addresses@{BQ25730 Register Addresses}!ChargeOption2@{ChargeOption2}}
+\index{ChargeOption2@{ChargeOption2}!BQ25730 Register Addresses@{BQ25730 Register Addresses}}
+\doxysubsubsection{\texorpdfstring{ChargeOption2}{ChargeOption2}}
+{\footnotesize\ttfamily \label{group___b_q25730___registers_gacb60a1c5141ddcb6fe50e8618e806fcd} 
+\#define Charge\+Option2~0x32}
+
+
+
+Charge option 2 register. 
+
+\Hypertarget{group___b_q25730___registers_ga6ee3e3a95cd9eb55909e24fcc7a1b820}\index{BQ25730 Register Addresses@{BQ25730 Register Addresses}!ChargeOption3@{ChargeOption3}}
+\index{ChargeOption3@{ChargeOption3}!BQ25730 Register Addresses@{BQ25730 Register Addresses}}
+\doxysubsubsection{\texorpdfstring{ChargeOption3}{ChargeOption3}}
+{\footnotesize\ttfamily \label{group___b_q25730___registers_ga6ee3e3a95cd9eb55909e24fcc7a1b820} 
+\#define Charge\+Option3~0x34}
+
+
+
+Charge option 3 register. 
+
+\Hypertarget{group___b_q25730___registers_ga631d121cd8b86fe334bbe62972b6d3ef}\index{BQ25730 Register Addresses@{BQ25730 Register Addresses}!ChargeOption4@{ChargeOption4}}
+\index{ChargeOption4@{ChargeOption4}!BQ25730 Register Addresses@{BQ25730 Register Addresses}}
+\doxysubsubsection{\texorpdfstring{ChargeOption4}{ChargeOption4}}
+{\footnotesize\ttfamily \label{group___b_q25730___registers_ga631d121cd8b86fe334bbe62972b6d3ef} 
+\#define Charge\+Option4~0x3C}
+
+
+
+Charge option 4 register. 
+
+\Hypertarget{group___b_q25730___registers_gaa17f61dc9dc7035962829e5a2d8bb86d}\index{BQ25730 Register Addresses@{BQ25730 Register Addresses}!ChargerStatus@{ChargerStatus}}
+\index{ChargerStatus@{ChargerStatus}!BQ25730 Register Addresses@{BQ25730 Register Addresses}}
+\doxysubsubsection{\texorpdfstring{ChargerStatus}{ChargerStatus}}
+{\footnotesize\ttfamily \label{group___b_q25730___registers_gaa17f61dc9dc7035962829e5a2d8bb86d} 
+\#define Charger\+Status~0x20}
+
+
+
+Charger status register. 
+
+\Hypertarget{group___b_q25730___registers_gaa64840fb06f883ea0ebc9f351094757a}\index{BQ25730 Register Addresses@{BQ25730 Register Addresses}!ChargeVoltage@{ChargeVoltage}}
+\index{ChargeVoltage@{ChargeVoltage}!BQ25730 Register Addresses@{BQ25730 Register Addresses}}
+\doxysubsubsection{\texorpdfstring{ChargeVoltage}{ChargeVoltage}}
+{\footnotesize\ttfamily \label{group___b_q25730___registers_gaa64840fb06f883ea0ebc9f351094757a} 
+\#define Charge\+Voltage~0x04}
+
+
+
+Charge voltage setting register. 
+
+\Hypertarget{group___b_q25730___registers_ga0b85963cace75e76ae726bcffb04eb70}\index{BQ25730 Register Addresses@{BQ25730 Register Addresses}!DEVICE\_ID@{DEVICE\_ID}}
+\index{DEVICE\_ID@{DEVICE\_ID}!BQ25730 Register Addresses@{BQ25730 Register Addresses}}
+\doxysubsubsection{\texorpdfstring{DEVICE\_ID}{DEVICE\_ID}}
+{\footnotesize\ttfamily \label{group___b_q25730___registers_ga0b85963cace75e76ae726bcffb04eb70} 
+\#define DEVICE\+\_\+\+ID~0x2F}
+
+
+
+Device ID register. 
+
+\Hypertarget{group___b_q25730___registers_ga71e51e95c41739b9631d11735705de9c}\index{BQ25730 Register Addresses@{BQ25730 Register Addresses}!IIN\_DPM@{IIN\_DPM}}
+\index{IIN\_DPM@{IIN\_DPM}!BQ25730 Register Addresses@{BQ25730 Register Addresses}}
+\doxysubsubsection{\texorpdfstring{IIN\_DPM}{IIN\_DPM}}
+{\footnotesize\ttfamily \label{group___b_q25730___registers_ga71e51e95c41739b9631d11735705de9c} 
+\#define IIN\+\_\+\+DPM~0x24}
+
+
+
+Input current DPM register. 
+
+\Hypertarget{group___b_q25730___registers_gaa29a39fd906ed360f0b67d32a3e27bb3}\index{BQ25730 Register Addresses@{BQ25730 Register Addresses}!IIN\_HOST@{IIN\_HOST}}
+\index{IIN\_HOST@{IIN\_HOST}!BQ25730 Register Addresses@{BQ25730 Register Addresses}}
+\doxysubsubsection{\texorpdfstring{IIN\_HOST}{IIN\_HOST}}
+{\footnotesize\ttfamily \label{group___b_q25730___registers_gaa29a39fd906ed360f0b67d32a3e27bb3} 
+\#define IIN\+\_\+\+HOST~0x0E}
+
+
+
+Input current limit register. 
+
+\Hypertarget{group___b_q25730___registers_gac7e642a59502839811272866737f51bc}\index{BQ25730 Register Addresses@{BQ25730 Register Addresses}!InputVoltage@{InputVoltage}}
+\index{InputVoltage@{InputVoltage}!BQ25730 Register Addresses@{BQ25730 Register Addresses}}
+\doxysubsubsection{\texorpdfstring{InputVoltage}{InputVoltage}}
+{\footnotesize\ttfamily \label{group___b_q25730___registers_gac7e642a59502839811272866737f51bc} 
+\#define Input\+Voltage~0x0A}
+
+
+
+Input voltage limit register. 
+
+\Hypertarget{group___b_q25730___registers_gad6d06519161544439a58bb8f59fc3094}\index{BQ25730 Register Addresses@{BQ25730 Register Addresses}!MANUFACTURER\_ID@{MANUFACTURER\_ID}}
+\index{MANUFACTURER\_ID@{MANUFACTURER\_ID}!BQ25730 Register Addresses@{BQ25730 Register Addresses}}
+\doxysubsubsection{\texorpdfstring{MANUFACTURER\_ID}{MANUFACTURER\_ID}}
+{\footnotesize\ttfamily \label{group___b_q25730___registers_gad6d06519161544439a58bb8f59fc3094} 
+\#define MANUFACTURER\+\_\+\+ID~0x2E}
+
+
+
+Manufacturer ID register. 
+
+\Hypertarget{group___b_q25730___registers_gaaf3364950d097f8f4fa1d12d3d3af7fc}\index{BQ25730 Register Addresses@{BQ25730 Register Addresses}!OTGCurrent@{OTGCurrent}}
+\index{OTGCurrent@{OTGCurrent}!BQ25730 Register Addresses@{BQ25730 Register Addresses}}
+\doxysubsubsection{\texorpdfstring{OTGCurrent}{OTGCurrent}}
+{\footnotesize\ttfamily \label{group___b_q25730___registers_gaaf3364950d097f8f4fa1d12d3d3af7fc} 
+\#define OTGCurrent~0x08}
+
+
+
+OTG current setting register. 
+
+\Hypertarget{group___b_q25730___registers_ga7792b514f883254670f2e83791b2c3d4}\index{BQ25730 Register Addresses@{BQ25730 Register Addresses}!OTGVoltage@{OTGVoltage}}
+\index{OTGVoltage@{OTGVoltage}!BQ25730 Register Addresses@{BQ25730 Register Addresses}}
+\doxysubsubsection{\texorpdfstring{OTGVoltage}{OTGVoltage}}
+{\footnotesize\ttfamily \label{group___b_q25730___registers_ga7792b514f883254670f2e83791b2c3d4} 
+\#define OTGVoltage~0x06}
+
+
+
+OTG voltage setting register. 
+
+\Hypertarget{group___b_q25730___registers_gaa635e19d529e94ea56823a75a477cd6d}\index{BQ25730 Register Addresses@{BQ25730 Register Addresses}!ProchotOption0@{ProchotOption0}}
+\index{ProchotOption0@{ProchotOption0}!BQ25730 Register Addresses@{BQ25730 Register Addresses}}
+\doxysubsubsection{\texorpdfstring{ProchotOption0}{ProchotOption0}}
+{\footnotesize\ttfamily \label{group___b_q25730___registers_gaa635e19d529e94ea56823a75a477cd6d} 
+\#define Prochot\+Option0~0x36}
+
+
+
+PROCHOT option 0 register. 
+
+\Hypertarget{group___b_q25730___registers_gacca6325c7d578e1eaa5aa3ff4df415cb}\index{BQ25730 Register Addresses@{BQ25730 Register Addresses}!ProchotOption1@{ProchotOption1}}
+\index{ProchotOption1@{ProchotOption1}!BQ25730 Register Addresses@{BQ25730 Register Addresses}}
+\doxysubsubsection{\texorpdfstring{ProchotOption1}{ProchotOption1}}
+{\footnotesize\ttfamily \label{group___b_q25730___registers_gacca6325c7d578e1eaa5aa3ff4df415cb} 
+\#define Prochot\+Option1~0x38}
+
+
+
+PROCHOT option 1 register. 
+
+\Hypertarget{group___b_q25730___registers_ga348bea01ea03ad2ff6835de539babdc9}\index{BQ25730 Register Addresses@{BQ25730 Register Addresses}!ProchotStatus@{ProchotStatus}}
+\index{ProchotStatus@{ProchotStatus}!BQ25730 Register Addresses@{BQ25730 Register Addresses}}
+\doxysubsubsection{\texorpdfstring{ProchotStatus}{ProchotStatus}}
+{\footnotesize\ttfamily \label{group___b_q25730___registers_ga348bea01ea03ad2ff6835de539babdc9} 
+\#define Prochot\+Status~0x22}
+
+
+
+PROCHOT status register. 
+
+\Hypertarget{group___b_q25730___registers_ga846a4a302890eb6e570734edd83767b4}\index{BQ25730 Register Addresses@{BQ25730 Register Addresses}!Vmin\_Active\_Protection@{Vmin\_Active\_Protection}}
+\index{Vmin\_Active\_Protection@{Vmin\_Active\_Protection}!BQ25730 Register Addresses@{BQ25730 Register Addresses}}
+\doxysubsubsection{\texorpdfstring{Vmin\_Active\_Protection}{Vmin\_Active\_Protection}}
+{\footnotesize\ttfamily \label{group___b_q25730___registers_ga846a4a302890eb6e570734edd83767b4} 
+\#define Vmin\+\_\+\+Active\+\_\+\+Protection~0x3E}
+
+
+
+Minimum voltage active protection register. 
+
+\Hypertarget{group___b_q25730___registers_gaa9c79b2f93acca2759b6406805ee83c5}\index{BQ25730 Register Addresses@{BQ25730 Register Addresses}!VSYS\_MIN@{VSYS\_MIN}}
+\index{VSYS\_MIN@{VSYS\_MIN}!BQ25730 Register Addresses@{BQ25730 Register Addresses}}
+\doxysubsubsection{\texorpdfstring{VSYS\_MIN}{VSYS\_MIN}}
+{\footnotesize\ttfamily \label{group___b_q25730___registers_gaa9c79b2f93acca2759b6406805ee83c5} 
+\#define VSYS\+\_\+\+MIN~0x0C}
+
+
+
+Minimum system voltage register. 
+

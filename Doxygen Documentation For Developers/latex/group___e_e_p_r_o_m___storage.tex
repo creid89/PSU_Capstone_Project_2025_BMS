@@ -1,0 +1,142 @@
+\doxysection{EEPROM Storage Addresses }
+\hypertarget{group___e_e_p_r_o_m___storage}{}\label{group___e_e_p_r_o_m___storage}\index{EEPROM Storage Addresses@{EEPROM Storage Addresses}}
+
+
+Include Wire library for I2C communication.  
+
+
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___e_e_p_r_o_m___storage_gaee0703dfc42668c07688ad1852528686}{EEPROM\+\_\+\+ADDR\+\_\+1}}~0
+\begin{DoxyCompactList}\small\item\em EEPROM address for float value 1 (Charge\+Voltage\+Value) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___e_e_p_r_o_m___storage_ga265ed0629d63043de6b184b2a0f0b9fb}{EEPROM\+\_\+\+ADDR\+\_\+2}}~(\mbox{\hyperlink{group___e_e_p_r_o_m___storage_gaee0703dfc42668c07688ad1852528686}{EEPROM\+\_\+\+ADDR\+\_\+1}} + (2\texorpdfstring{$\ast$}{*}sizeof(float)))
+\begin{DoxyCompactList}\small\item\em EEPROM address for float value 2 (Vsys\+Min\+Value) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___e_e_p_r_o_m___storage_ga3c7393a43aafeca00c5efd717a1f55c4}{EEPROM\+\_\+\+ADDR\+\_\+3}}~(\mbox{\hyperlink{group___e_e_p_r_o_m___storage_ga265ed0629d63043de6b184b2a0f0b9fb}{EEPROM\+\_\+\+ADDR\+\_\+2}} + (2\texorpdfstring{$\ast$}{*}sizeof(float)))
+\begin{DoxyCompactList}\small\item\em EEPROM address for float value 3 (input\+Voltage\+Value) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___e_e_p_r_o_m___storage_gac5c33773265b460eeed385892510f90f}{EEPROM\+\_\+\+ADDR\+\_\+4}}~(\mbox{\hyperlink{group___e_e_p_r_o_m___storage_ga3c7393a43aafeca00c5efd717a1f55c4}{EEPROM\+\_\+\+ADDR\+\_\+3}} + (2\texorpdfstring{$\ast$}{*}sizeof(float)))
+\begin{DoxyCompactList}\small\item\em EEPROM address for float value 4 (charge\+Current\+Value) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___e_e_p_r_o_m___storage_gaf001396e9ff5ac53b8da21b97f6f7f85}{EEPROM\+\_\+\+ADDR\+\_\+5}}~(\mbox{\hyperlink{group___e_e_p_r_o_m___storage_gac5c33773265b460eeed385892510f90f}{EEPROM\+\_\+\+ADDR\+\_\+4}} + (2\texorpdfstring{$\ast$}{*}sizeof(float)))
+\begin{DoxyCompactList}\small\item\em EEPROM address for float value 5 (input\+Current\+Limit\+Value) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___e_e_p_r_o_m___storage_ga22cfc4c08710370e49e56be758e70305}{EEPROM\+\_\+\+ADDR\+\_\+6}}~(\mbox{\hyperlink{group___e_e_p_r_o_m___storage_gaf001396e9ff5ac53b8da21b97f6f7f85}{EEPROM\+\_\+\+ADDR\+\_\+5}} + (2\texorpdfstring{$\ast$}{*}sizeof(float)))
+\begin{DoxyCompactList}\small\item\em EEPROM address for float value 6 (Cell\+Max\+Cut\+OffV) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___e_e_p_r_o_m___storage_gae6e81debe42429b1964ae196d76d6565}{EEPROM\+\_\+\+ADDR\+\_\+7}}~(\mbox{\hyperlink{group___e_e_p_r_o_m___storage_ga22cfc4c08710370e49e56be758e70305}{EEPROM\+\_\+\+ADDR\+\_\+6}} + (2\texorpdfstring{$\ast$}{*}sizeof(float)))
+\begin{DoxyCompactList}\small\item\em EEPROM address for float value 7 (Cell\+Min\+Cut\+OffV) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___e_e_p_r_o_m___storage_ga69ca8428728cbd66b7ab27a78dc594a6}{EEPROM\+\_\+\+ADDR\+\_\+8}}~(\mbox{\hyperlink{group___e_e_p_r_o_m___storage_gae6e81debe42429b1964ae196d76d6565}{EEPROM\+\_\+\+ADDR\+\_\+7}} + (2\texorpdfstring{$\ast$}{*}sizeof(float)))
+\begin{DoxyCompactList}\small\item\em EEPROM address for float value 8 (Pack\+\_\+stock\+\_\+capacity) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___e_e_p_r_o_m___storage_ga4923ef94973786af348671dd7df4f570}{EEPROM\+\_\+\+ADDR\+\_\+9}}~(\mbox{\hyperlink{group___e_e_p_r_o_m___storage_ga69ca8428728cbd66b7ab27a78dc594a6}{EEPROM\+\_\+\+ADDR\+\_\+8}} + (2\texorpdfstring{$\ast$}{*}sizeof(float)))
+\begin{DoxyCompactList}\small\item\em EEPROM address for float value 9 (EEPROM\+\_\+\+CONFIG\+\_\+\+FLAG) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___e_e_p_r_o_m___storage_gac2d2d7a3a28c2b8ca8d9232391d58965}{EEPROM\+\_\+\+TOTAL\+\_\+\+LENGTH}}~(9 \texorpdfstring{$\ast$}{*} (2\texorpdfstring{$\ast$}{*}sizeof(float)))
+\begin{DoxyCompactList}\small\item\em Total EEPROM length for 9 float values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Include Wire library for I2C communication. 
+
+Integrated BMS Firmware V2\+\_\+3 Sodium \& Lithium ION BMS Include Adafruit INA219 current/voltage sensor library Include hardware serial library for interrupt handling Include STM32 timer interrupt library for periodic tasks Include STM32 hardware abstraction layer Include EEPROM library for persistent storage
+
+EEPROM storage locations for system initialization values passed by controller MCU 
+
+\label{doc-define-members}
+\Hypertarget{group___e_e_p_r_o_m___storage_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{group___e_e_p_r_o_m___storage_gaee0703dfc42668c07688ad1852528686}\index{EEPROM Storage Addresses@{EEPROM Storage Addresses}!EEPROM\_ADDR\_1@{EEPROM\_ADDR\_1}}
+\index{EEPROM\_ADDR\_1@{EEPROM\_ADDR\_1}!EEPROM Storage Addresses@{EEPROM Storage Addresses}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_ADDR\_1}{EEPROM\_ADDR\_1}}
+{\footnotesize\ttfamily \label{group___e_e_p_r_o_m___storage_gaee0703dfc42668c07688ad1852528686} 
+\#define EEPROM\+\_\+\+ADDR\+\_\+1~0}
+
+
+
+EEPROM address for float value 1 (Charge\+Voltage\+Value) 
+
+\Hypertarget{group___e_e_p_r_o_m___storage_ga265ed0629d63043de6b184b2a0f0b9fb}\index{EEPROM Storage Addresses@{EEPROM Storage Addresses}!EEPROM\_ADDR\_2@{EEPROM\_ADDR\_2}}
+\index{EEPROM\_ADDR\_2@{EEPROM\_ADDR\_2}!EEPROM Storage Addresses@{EEPROM Storage Addresses}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_ADDR\_2}{EEPROM\_ADDR\_2}}
+{\footnotesize\ttfamily \label{group___e_e_p_r_o_m___storage_ga265ed0629d63043de6b184b2a0f0b9fb} 
+\#define EEPROM\+\_\+\+ADDR\+\_\+2~(\mbox{\hyperlink{group___e_e_p_r_o_m___storage_gaee0703dfc42668c07688ad1852528686}{EEPROM\+\_\+\+ADDR\+\_\+1}} + (2\texorpdfstring{$\ast$}{*}sizeof(float)))}
+
+
+
+EEPROM address for float value 2 (Vsys\+Min\+Value) 
+
+\Hypertarget{group___e_e_p_r_o_m___storage_ga3c7393a43aafeca00c5efd717a1f55c4}\index{EEPROM Storage Addresses@{EEPROM Storage Addresses}!EEPROM\_ADDR\_3@{EEPROM\_ADDR\_3}}
+\index{EEPROM\_ADDR\_3@{EEPROM\_ADDR\_3}!EEPROM Storage Addresses@{EEPROM Storage Addresses}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_ADDR\_3}{EEPROM\_ADDR\_3}}
+{\footnotesize\ttfamily \label{group___e_e_p_r_o_m___storage_ga3c7393a43aafeca00c5efd717a1f55c4} 
+\#define EEPROM\+\_\+\+ADDR\+\_\+3~(\mbox{\hyperlink{group___e_e_p_r_o_m___storage_ga265ed0629d63043de6b184b2a0f0b9fb}{EEPROM\+\_\+\+ADDR\+\_\+2}} + (2\texorpdfstring{$\ast$}{*}sizeof(float)))}
+
+
+
+EEPROM address for float value 3 (input\+Voltage\+Value) 
+
+\Hypertarget{group___e_e_p_r_o_m___storage_gac5c33773265b460eeed385892510f90f}\index{EEPROM Storage Addresses@{EEPROM Storage Addresses}!EEPROM\_ADDR\_4@{EEPROM\_ADDR\_4}}
+\index{EEPROM\_ADDR\_4@{EEPROM\_ADDR\_4}!EEPROM Storage Addresses@{EEPROM Storage Addresses}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_ADDR\_4}{EEPROM\_ADDR\_4}}
+{\footnotesize\ttfamily \label{group___e_e_p_r_o_m___storage_gac5c33773265b460eeed385892510f90f} 
+\#define EEPROM\+\_\+\+ADDR\+\_\+4~(\mbox{\hyperlink{group___e_e_p_r_o_m___storage_ga3c7393a43aafeca00c5efd717a1f55c4}{EEPROM\+\_\+\+ADDR\+\_\+3}} + (2\texorpdfstring{$\ast$}{*}sizeof(float)))}
+
+
+
+EEPROM address for float value 4 (charge\+Current\+Value) 
+
+\Hypertarget{group___e_e_p_r_o_m___storage_gaf001396e9ff5ac53b8da21b97f6f7f85}\index{EEPROM Storage Addresses@{EEPROM Storage Addresses}!EEPROM\_ADDR\_5@{EEPROM\_ADDR\_5}}
+\index{EEPROM\_ADDR\_5@{EEPROM\_ADDR\_5}!EEPROM Storage Addresses@{EEPROM Storage Addresses}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_ADDR\_5}{EEPROM\_ADDR\_5}}
+{\footnotesize\ttfamily \label{group___e_e_p_r_o_m___storage_gaf001396e9ff5ac53b8da21b97f6f7f85} 
+\#define EEPROM\+\_\+\+ADDR\+\_\+5~(\mbox{\hyperlink{group___e_e_p_r_o_m___storage_gac5c33773265b460eeed385892510f90f}{EEPROM\+\_\+\+ADDR\+\_\+4}} + (2\texorpdfstring{$\ast$}{*}sizeof(float)))}
+
+
+
+EEPROM address for float value 5 (input\+Current\+Limit\+Value) 
+
+\Hypertarget{group___e_e_p_r_o_m___storage_ga22cfc4c08710370e49e56be758e70305}\index{EEPROM Storage Addresses@{EEPROM Storage Addresses}!EEPROM\_ADDR\_6@{EEPROM\_ADDR\_6}}
+\index{EEPROM\_ADDR\_6@{EEPROM\_ADDR\_6}!EEPROM Storage Addresses@{EEPROM Storage Addresses}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_ADDR\_6}{EEPROM\_ADDR\_6}}
+{\footnotesize\ttfamily \label{group___e_e_p_r_o_m___storage_ga22cfc4c08710370e49e56be758e70305} 
+\#define EEPROM\+\_\+\+ADDR\+\_\+6~(\mbox{\hyperlink{group___e_e_p_r_o_m___storage_gaf001396e9ff5ac53b8da21b97f6f7f85}{EEPROM\+\_\+\+ADDR\+\_\+5}} + (2\texorpdfstring{$\ast$}{*}sizeof(float)))}
+
+
+
+EEPROM address for float value 6 (Cell\+Max\+Cut\+OffV) 
+
+\Hypertarget{group___e_e_p_r_o_m___storage_gae6e81debe42429b1964ae196d76d6565}\index{EEPROM Storage Addresses@{EEPROM Storage Addresses}!EEPROM\_ADDR\_7@{EEPROM\_ADDR\_7}}
+\index{EEPROM\_ADDR\_7@{EEPROM\_ADDR\_7}!EEPROM Storage Addresses@{EEPROM Storage Addresses}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_ADDR\_7}{EEPROM\_ADDR\_7}}
+{\footnotesize\ttfamily \label{group___e_e_p_r_o_m___storage_gae6e81debe42429b1964ae196d76d6565} 
+\#define EEPROM\+\_\+\+ADDR\+\_\+7~(\mbox{\hyperlink{group___e_e_p_r_o_m___storage_ga22cfc4c08710370e49e56be758e70305}{EEPROM\+\_\+\+ADDR\+\_\+6}} + (2\texorpdfstring{$\ast$}{*}sizeof(float)))}
+
+
+
+EEPROM address for float value 7 (Cell\+Min\+Cut\+OffV) 
+
+\Hypertarget{group___e_e_p_r_o_m___storage_ga69ca8428728cbd66b7ab27a78dc594a6}\index{EEPROM Storage Addresses@{EEPROM Storage Addresses}!EEPROM\_ADDR\_8@{EEPROM\_ADDR\_8}}
+\index{EEPROM\_ADDR\_8@{EEPROM\_ADDR\_8}!EEPROM Storage Addresses@{EEPROM Storage Addresses}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_ADDR\_8}{EEPROM\_ADDR\_8}}
+{\footnotesize\ttfamily \label{group___e_e_p_r_o_m___storage_ga69ca8428728cbd66b7ab27a78dc594a6} 
+\#define EEPROM\+\_\+\+ADDR\+\_\+8~(\mbox{\hyperlink{group___e_e_p_r_o_m___storage_gae6e81debe42429b1964ae196d76d6565}{EEPROM\+\_\+\+ADDR\+\_\+7}} + (2\texorpdfstring{$\ast$}{*}sizeof(float)))}
+
+
+
+EEPROM address for float value 8 (Pack\+\_\+stock\+\_\+capacity) 
+
+\Hypertarget{group___e_e_p_r_o_m___storage_ga4923ef94973786af348671dd7df4f570}\index{EEPROM Storage Addresses@{EEPROM Storage Addresses}!EEPROM\_ADDR\_9@{EEPROM\_ADDR\_9}}
+\index{EEPROM\_ADDR\_9@{EEPROM\_ADDR\_9}!EEPROM Storage Addresses@{EEPROM Storage Addresses}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_ADDR\_9}{EEPROM\_ADDR\_9}}
+{\footnotesize\ttfamily \label{group___e_e_p_r_o_m___storage_ga4923ef94973786af348671dd7df4f570} 
+\#define EEPROM\+\_\+\+ADDR\+\_\+9~(\mbox{\hyperlink{group___e_e_p_r_o_m___storage_ga69ca8428728cbd66b7ab27a78dc594a6}{EEPROM\+\_\+\+ADDR\+\_\+8}} + (2\texorpdfstring{$\ast$}{*}sizeof(float)))}
+
+
+
+EEPROM address for float value 9 (EEPROM\+\_\+\+CONFIG\+\_\+\+FLAG) 
+
+\Hypertarget{group___e_e_p_r_o_m___storage_gac2d2d7a3a28c2b8ca8d9232391d58965}\index{EEPROM Storage Addresses@{EEPROM Storage Addresses}!EEPROM\_TOTAL\_LENGTH@{EEPROM\_TOTAL\_LENGTH}}
+\index{EEPROM\_TOTAL\_LENGTH@{EEPROM\_TOTAL\_LENGTH}!EEPROM Storage Addresses@{EEPROM Storage Addresses}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_TOTAL\_LENGTH}{EEPROM\_TOTAL\_LENGTH}}
+{\footnotesize\ttfamily \label{group___e_e_p_r_o_m___storage_gac2d2d7a3a28c2b8ca8d9232391d58965} 
+\#define EEPROM\+\_\+\+TOTAL\+\_\+\+LENGTH~(9 \texorpdfstring{$\ast$}{*} (2\texorpdfstring{$\ast$}{*}sizeof(float)))}
+
+
+
+Total EEPROM length for 9 float values. 
+

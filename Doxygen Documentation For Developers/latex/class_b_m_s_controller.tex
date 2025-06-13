@@ -1,0 +1,663 @@
+\doxysection{BMSController Class Reference}
+\hypertarget{class_b_m_s_controller}{}\label{class_b_m_s_controller}\index{BMSController@{BMSController}}
+
+
+A class to control and monitor a Battery Management System via I2C communication.  
+
+
+
+
+{\ttfamily \#include $<$BMSController.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_b_m_s_controller_af7c9b9a742729e837f5c5de093bf0798}{BMSController}} (uint8\+\_\+t i2c\+Address)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{class_b_m_s_controller}{BMSController}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_b_m_s_controller_ad0330c551bd2763d0bbc61edcb687805}{begin}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the BMS controller and establish I2C communication. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_b_m_s_controller_a4e7d5ccb50f7abcc86ce3e7b98300ac0}{set\+Charge\+Voltage}} (float volts)
+\begin{DoxyCompactList}\small\item\em Set the target charging voltage. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_b_m_s_controller_ad31491af47be0dce070aa5cc27732db9}{set\+Vsys\+Min}} (float volts)
+\begin{DoxyCompactList}\small\item\em Set the minimum system voltage. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_b_m_s_controller_ac107ee28124114383c4a56118051b118}{set\+Input\+Voltage\+Limit}} (float volts)
+\begin{DoxyCompactList}\small\item\em Set the input voltage limit. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_b_m_s_controller_afe853e0f61f5a97e080307f34c9f8394}{set\+Charge\+Current}} (float amps)
+\begin{DoxyCompactList}\small\item\em Set the charging current limit. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_b_m_s_controller_a33a8d303d5ee5c97bbb9879cbbd0867b}{set\+Input\+Current\+Limit}} (float milliamps)
+\begin{DoxyCompactList}\small\item\em Set the input current limit. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_b_m_s_controller_ad832939c3deb3df7146b43766eed45ec}{set\+Cell\+Max\+Cut\+OffV}} (float volts)
+\begin{DoxyCompactList}\small\item\em Set the maximum cell voltage cutoff threshold. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_b_m_s_controller_a346b4d5662b9616e7b75f35b68f95341}{set\+Cell\+Min\+Cut\+OffV}} (float volts)
+\begin{DoxyCompactList}\small\item\em Set the minimum cell voltage cutoff threshold. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_b_m_s_controller_adc74dd9a0c2f5e2714a3abb3b841b5fe}{set\+Pack\+\_\+stock\+\_\+capacity}} (float m\+Ah)
+\begin{DoxyCompactList}\small\item\em Set the battery pack stock capacity. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_b_m_s_controller_af55434020be31e887cca12ac7f6f1fa3}{Finished\+Configuration}} (bool completed)
+\begin{DoxyCompactList}\small\item\em Signal that configuration is complete. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_b_m_s_controller_a8ff475067323d04b70fd4577e486be47}{get\+Charge\+Current}} ()
+\begin{DoxyCompactList}\small\item\em Get the current charging current. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_b_m_s_controller_a11802cf68db62fc066c5efabb49088c9}{get\+Cell1\+Voltage}} ()
+\begin{DoxyCompactList}\small\item\em Get the voltage of cell 1. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_b_m_s_controller_ae81e2abb3b872e474876fd14098b2ab5}{get\+Cell2\+Voltage}} ()
+\begin{DoxyCompactList}\small\item\em Get the voltage of cell 2. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_b_m_s_controller_a75ccacd13aa6d85c9db2b4426603c055}{get\+Cell3\+Voltage}} ()
+\begin{DoxyCompactList}\small\item\em Get the voltage of cell 3. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_b_m_s_controller_a6a7f66e0d3d7ff8138a30e09c384d3a6}{get\+Cell4\+Voltage}} ()
+\begin{DoxyCompactList}\small\item\em Get the voltage of cell 4. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_b_m_s_controller_ab5769d140538abeeb263f5e4f230a893}{get\+Total\+Pack\+Voltage}} ()
+\begin{DoxyCompactList}\small\item\em Get the total battery pack voltage. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_b_m_s_controller_acf1b248dec4fe80deb26ebed401e900a}{get\+SoC}} ()
+\begin{DoxyCompactList}\small\item\em Get the State of Charge in absolute units. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_b_m_s_controller_ace696a62fe235c4432ad8cf6393def18}{get\+Percent\+SoC}} ()
+\begin{DoxyCompactList}\small\item\em Get the State of Charge as a percentage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class to control and monitor a Battery Management System via I2C communication. 
+
+This class provides methods to configure charging parameters, voltage limits, current limits, and monitor individual cell voltages and state of charge. 
+
+\label{doc-constructors}
+\Hypertarget{class_b_m_s_controller_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_b_m_s_controller_af7c9b9a742729e837f5c5de093bf0798}\index{BMSController@{BMSController}!BMSController@{BMSController}}
+\index{BMSController@{BMSController}!BMSController@{BMSController}}
+\doxysubsubsection{\texorpdfstring{BMSController()}{BMSController()}}
+{\footnotesize\ttfamily \label{class_b_m_s_controller_af7c9b9a742729e837f5c5de093bf0798} 
+BMSController\+::\+BMSController (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{i2c\+Address}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for \doxylink{class_b_m_s_controller}{BMSController}. 
+
+Constructor for \doxylink{class_b_m_s_controller}{BMSController} class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em i2c\+Address} & The I2C address of the BMS device\\
+\hline
+\end{DoxyParams}
+Initializes the \doxylink{class_b_m_s_controller}{BMSController} with the specified I2C address and sets up the I2C communication interface.
+
+
+\begin{DoxyParams}{Parameters}
+{\em i2c\+Address} & I2C slave address of the BMS device (7-\/bit address)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Wire.\+begin() is called during construction to initialize I2C 
+\end{DoxyNote}
+
+
+\label{doc-func-members}
+\Hypertarget{class_b_m_s_controller_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_b_m_s_controller_ad0330c551bd2763d0bbc61edcb687805}\index{BMSController@{BMSController}!begin@{begin}}
+\index{begin@{begin}!BMSController@{BMSController}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily \label{class_b_m_s_controller_ad0330c551bd2763d0bbc61edcb687805} 
+bool BMSController\+::begin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initialize the BMS controller and establish I2C communication. 
+
+Initialize communication with the BMS device.
+
+\begin{DoxyReturn}{Returns}
+true if initialization successful, false otherwise
+\end{DoxyReturn}
+Tests communication with the BMS by attempting to establish an I2C connection. This function should be called after construction to verify the device is responding on the specified address.
+
+\begin{DoxyReturn}{Returns}
+true if BMS device responds to I2C communication 
+
+false if no response from BMS device
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function reinitializes Wire.\+begin() for safety 
+\end{DoxyNote}
+\Hypertarget{class_b_m_s_controller_af55434020be31e887cca12ac7f6f1fa3}\index{BMSController@{BMSController}!FinishedConfiguration@{FinishedConfiguration}}
+\index{FinishedConfiguration@{FinishedConfiguration}!BMSController@{BMSController}}
+\doxysubsubsection{\texorpdfstring{FinishedConfiguration()}{FinishedConfiguration()}}
+{\footnotesize\ttfamily \label{class_b_m_s_controller_af55434020be31e887cca12ac7f6f1fa3} 
+bool BMSController\+::\+Finished\+Configuration (\begin{DoxyParamCaption}\item[{bool}]{completed}{}\end{DoxyParamCaption})}
+
+
+
+Signal that configuration is complete. 
+
+Signal completion of BMS configuration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em completed} & true if configuration is finished, false otherwise \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if command sent successfully, false otherwise
+\end{DoxyReturn}
+Sends a configuration completion signal to the BMS to indicate that all configuration parameters have been set and the system should transition to operational mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em completed} & Configuration completion status (true = completed) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if completed is true and command was sent 
+
+false if completed is false or transmission failed
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Command code\+: 0x19 
+
+Only sends command if completed parameter is true 
+\end{DoxyNote}
+\Hypertarget{class_b_m_s_controller_a11802cf68db62fc066c5efabb49088c9}\index{BMSController@{BMSController}!getCell1Voltage@{getCell1Voltage}}
+\index{getCell1Voltage@{getCell1Voltage}!BMSController@{BMSController}}
+\doxysubsubsection{\texorpdfstring{getCell1Voltage()}{getCell1Voltage()}}
+{\footnotesize\ttfamily \label{class_b_m_s_controller_a11802cf68db62fc066c5efabb49088c9} 
+float BMSController\+::get\+Cell1\+Voltage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the voltage of cell 1. 
+
+\begin{DoxyReturn}{Returns}
+The voltage of cell 1 in volts
+\end{DoxyReturn}
+Retrieves the voltage measurement of the first cell in the battery pack.
+
+\begin{DoxyReturn}{Returns}
+Cell 1 voltage in volts 
+
+-\/1.\+0 if communication error
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Command code\+: 0x01 
+
+Calculated as\+: Pack\+Voltage -\/ INA\+\_\+0x44\+\_\+\+VOLTAGE 
+\end{DoxyNote}
+\Hypertarget{class_b_m_s_controller_ae81e2abb3b872e474876fd14098b2ab5}\index{BMSController@{BMSController}!getCell2Voltage@{getCell2Voltage}}
+\index{getCell2Voltage@{getCell2Voltage}!BMSController@{BMSController}}
+\doxysubsubsection{\texorpdfstring{getCell2Voltage()}{getCell2Voltage()}}
+{\footnotesize\ttfamily \label{class_b_m_s_controller_ae81e2abb3b872e474876fd14098b2ab5} 
+float BMSController\+::get\+Cell2\+Voltage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the voltage of cell 2. 
+
+\begin{DoxyReturn}{Returns}
+The voltage of cell 2 in volts
+\end{DoxyReturn}
+Retrieves the voltage measurement of the second cell in the battery pack.
+
+\begin{DoxyReturn}{Returns}
+Cell 2 voltage in volts 
+
+-\/1.\+0 if communication error
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Command code\+: 0x02 
+
+Calculated as\+: INA\+\_\+0x44\+\_\+\+VOLTAGE -\/ INA\+\_\+0x41\+\_\+\+VOLTAGE 
+\end{DoxyNote}
+\Hypertarget{class_b_m_s_controller_a75ccacd13aa6d85c9db2b4426603c055}\index{BMSController@{BMSController}!getCell3Voltage@{getCell3Voltage}}
+\index{getCell3Voltage@{getCell3Voltage}!BMSController@{BMSController}}
+\doxysubsubsection{\texorpdfstring{getCell3Voltage()}{getCell3Voltage()}}
+{\footnotesize\ttfamily \label{class_b_m_s_controller_a75ccacd13aa6d85c9db2b4426603c055} 
+float BMSController\+::get\+Cell3\+Voltage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the voltage of cell 3. 
+
+\begin{DoxyReturn}{Returns}
+The voltage of cell 3 in volts
+\end{DoxyReturn}
+Retrieves the voltage measurement of the third cell in the battery pack.
+
+\begin{DoxyReturn}{Returns}
+Cell 3 voltage in volts 
+
+-\/1.\+0 if communication error
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Command code\+: 0x03 
+
+Calculated as\+: INA\+\_\+0x41\+\_\+\+VOLTAGE -\/ INA\+\_\+0x40\+\_\+\+VOLTAGE 
+\end{DoxyNote}
+\Hypertarget{class_b_m_s_controller_a6a7f66e0d3d7ff8138a30e09c384d3a6}\index{BMSController@{BMSController}!getCell4Voltage@{getCell4Voltage}}
+\index{getCell4Voltage@{getCell4Voltage}!BMSController@{BMSController}}
+\doxysubsubsection{\texorpdfstring{getCell4Voltage()}{getCell4Voltage()}}
+{\footnotesize\ttfamily \label{class_b_m_s_controller_a6a7f66e0d3d7ff8138a30e09c384d3a6} 
+float BMSController\+::get\+Cell4\+Voltage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the voltage of cell 4. 
+
+\begin{DoxyReturn}{Returns}
+The voltage of cell 4 in volts
+\end{DoxyReturn}
+Retrieves the voltage measurement of the fourth cell in the battery pack.
+
+\begin{DoxyReturn}{Returns}
+Cell 4 voltage in volts 
+
+-\/1.\+0 if communication error
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Command code\+: 0x04 
+
+Directly reads INA\+\_\+0x40\+\_\+\+VOLTAGE 
+\end{DoxyNote}
+\Hypertarget{class_b_m_s_controller_a8ff475067323d04b70fd4577e486be47}\index{BMSController@{BMSController}!getChargeCurrent@{getChargeCurrent}}
+\index{getChargeCurrent@{getChargeCurrent}!BMSController@{BMSController}}
+\doxysubsubsection{\texorpdfstring{getChargeCurrent()}{getChargeCurrent()}}
+{\footnotesize\ttfamily \label{class_b_m_s_controller_a8ff475067323d04b70fd4577e486be47} 
+float BMSController\+::get\+Charge\+Current (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the current charging current. 
+
+Get the current charge/discharge current of the battery pack.
+
+\begin{DoxyReturn}{Returns}
+The charging current in amperes
+\end{DoxyReturn}
+Retrieves the instantaneous current flowing into (positive) or out of (negative) the battery pack.
+
+\begin{DoxyReturn}{Returns}
+Current in amperes (positive = charging, negative = discharging) 
+
+-\/1.\+0 if communication error
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Command code\+: 0x06 
+\end{DoxyNote}
+\Hypertarget{class_b_m_s_controller_ace696a62fe235c4432ad8cf6393def18}\index{BMSController@{BMSController}!getPercentSoC@{getPercentSoC}}
+\index{getPercentSoC@{getPercentSoC}!BMSController@{BMSController}}
+\doxysubsubsection{\texorpdfstring{getPercentSoC()}{getPercentSoC()}}
+{\footnotesize\ttfamily \label{class_b_m_s_controller_ace696a62fe235c4432ad8cf6393def18} 
+float BMSController\+::get\+Percent\+SoC (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the State of Charge as a percentage. 
+
+\begin{DoxyReturn}{Returns}
+The State of Charge as a percentage (0-\/100\%)
+\end{DoxyReturn}
+Calculates and returns the State of Charge as a percentage of the configured pack capacity. Requires \doxylink{class_b_m_s_controller_adc74dd9a0c2f5e2714a3abb3b841b5fe}{set\+Pack\+\_\+stock\+\_\+capacity()} to have been called previously with the correct pack capacity.
+
+\begin{DoxyReturn}{Returns}
+State of Charge as percentage (0-\/100\%) 
+
+Calculated percentage based on So\+CGiven capacity
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Calculation\+: (current\+\_\+\+SoC / So\+CGiven) \texorpdfstring{$\ast$}{*} 100 
+
+Requires So\+CGiven to be set via \doxylink{class_b_m_s_controller_adc74dd9a0c2f5e2714a3abb3b841b5fe}{set\+Pack\+\_\+stock\+\_\+capacity()} 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Returns invalid result if So\+CGiven is 0 or not set
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_b_m_s_controller_acf1b248dec4fe80deb26ebed401e900a}{get\+So\+C()} 
+
+\doxylink{class_b_m_s_controller_adc74dd9a0c2f5e2714a3abb3b841b5fe}{set\+Pack\+\_\+stock\+\_\+capacity()} 
+\end{DoxySeeAlso}
+\Hypertarget{class_b_m_s_controller_acf1b248dec4fe80deb26ebed401e900a}\index{BMSController@{BMSController}!getSoC@{getSoC}}
+\index{getSoC@{getSoC}!BMSController@{BMSController}}
+\doxysubsubsection{\texorpdfstring{getSoC()}{getSoC()}}
+{\footnotesize\ttfamily \label{class_b_m_s_controller_acf1b248dec4fe80deb26ebed401e900a} 
+float BMSController\+::get\+SoC (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the State of Charge in absolute units. 
+
+\begin{DoxyReturn}{Returns}
+The State of Charge value
+\end{DoxyReturn}
+Retrieves the current State of Charge measurement from the BMS in the original units (typically m\+Ah).
+
+\begin{DoxyReturn}{Returns}
+State of Charge in absolute units (m\+Ah) 
+
+-\/1.\+0 if communication error
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Command code\+: 0x08 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_b_m_s_controller_ace696a62fe235c4432ad8cf6393def18}{get\+Percent\+So\+C()} for percentage-\/based SoC 
+\end{DoxySeeAlso}
+\Hypertarget{class_b_m_s_controller_ab5769d140538abeeb263f5e4f230a893}\index{BMSController@{BMSController}!getTotalPackVoltage@{getTotalPackVoltage}}
+\index{getTotalPackVoltage@{getTotalPackVoltage}!BMSController@{BMSController}}
+\doxysubsubsection{\texorpdfstring{getTotalPackVoltage()}{getTotalPackVoltage()}}
+{\footnotesize\ttfamily \label{class_b_m_s_controller_ab5769d140538abeeb263f5e4f230a893} 
+float BMSController\+::get\+Total\+Pack\+Voltage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the total battery pack voltage. 
+
+Get the total voltage of the battery pack.
+
+\begin{DoxyReturn}{Returns}
+The total pack voltage in volts
+\end{DoxyReturn}
+Retrieves the combined voltage measurement of all cells in series.
+
+\begin{DoxyReturn}{Returns}
+Total pack voltage in volts 
+
+-\/1.\+0 if communication error
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Command code\+: 0x05 
+\end{DoxyNote}
+\Hypertarget{class_b_m_s_controller_ad832939c3deb3df7146b43766eed45ec}\index{BMSController@{BMSController}!setCellMaxCutOffV@{setCellMaxCutOffV}}
+\index{setCellMaxCutOffV@{setCellMaxCutOffV}!BMSController@{BMSController}}
+\doxysubsubsection{\texorpdfstring{setCellMaxCutOffV()}{setCellMaxCutOffV()}}
+{\footnotesize\ttfamily \label{class_b_m_s_controller_ad832939c3deb3df7146b43766eed45ec} 
+bool BMSController\+::set\+Cell\+Max\+Cut\+OffV (\begin{DoxyParamCaption}\item[{float}]{volts}{}\end{DoxyParamCaption})}
+
+
+
+Set the maximum cell voltage cutoff threshold. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em volts} & The maximum cell voltage cutoff in volts \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if command sent successfully, false otherwise
+\end{DoxyReturn}
+Configures the voltage at which individual cells should be considered fully charged and charging should be terminated to prevent damage.
+
+
+\begin{DoxyParams}{Parameters}
+{\em volts} & Maximum cell voltage in volts \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if command was sent successfully 
+
+false if transmission failed
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Command code\+: 0x16 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Critical safety parameter -\/ must match battery chemistry 
+\end{DoxyWarning}
+\Hypertarget{class_b_m_s_controller_a346b4d5662b9616e7b75f35b68f95341}\index{BMSController@{BMSController}!setCellMinCutOffV@{setCellMinCutOffV}}
+\index{setCellMinCutOffV@{setCellMinCutOffV}!BMSController@{BMSController}}
+\doxysubsubsection{\texorpdfstring{setCellMinCutOffV()}{setCellMinCutOffV()}}
+{\footnotesize\ttfamily \label{class_b_m_s_controller_a346b4d5662b9616e7b75f35b68f95341} 
+bool BMSController\+::set\+Cell\+Min\+Cut\+OffV (\begin{DoxyParamCaption}\item[{float}]{volts}{}\end{DoxyParamCaption})}
+
+
+
+Set the minimum cell voltage cutoff threshold. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em volts} & The minimum cell voltage cutoff in volts \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if command sent successfully, false otherwise
+\end{DoxyReturn}
+Configures the voltage below which individual cells should be considered discharged and further discharge should be prevented to avoid damage.
+
+
+\begin{DoxyParams}{Parameters}
+{\em volts} & Minimum cell voltage in volts \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if command was sent successfully 
+
+false if transmission failed
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Command code\+: 0x17 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Critical safety parameter -\/ prevents deep discharge damage 
+\end{DoxyWarning}
+\Hypertarget{class_b_m_s_controller_afe853e0f61f5a97e080307f34c9f8394}\index{BMSController@{BMSController}!setChargeCurrent@{setChargeCurrent}}
+\index{setChargeCurrent@{setChargeCurrent}!BMSController@{BMSController}}
+\doxysubsubsection{\texorpdfstring{setChargeCurrent()}{setChargeCurrent()}}
+{\footnotesize\ttfamily \label{class_b_m_s_controller_afe853e0f61f5a97e080307f34c9f8394} 
+bool BMSController\+::set\+Charge\+Current (\begin{DoxyParamCaption}\item[{float}]{amps}{}\end{DoxyParamCaption})}
+
+
+
+Set the charging current limit. 
+
+Set the maximum charge current limit.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amps} & The charging current limit in amperes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if command sent successfully, false otherwise
+\end{DoxyReturn}
+Configures the maximum current that should be used during charging. This parameter is crucial for battery safety and longevity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amps} & Maximum charge current in amperes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if command was sent successfully 
+
+false if transmission failed
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Command code\+: 0x14 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Ensure current is within battery specifications 
+\end{DoxyWarning}
+\Hypertarget{class_b_m_s_controller_a4e7d5ccb50f7abcc86ce3e7b98300ac0}\index{BMSController@{BMSController}!setChargeVoltage@{setChargeVoltage}}
+\index{setChargeVoltage@{setChargeVoltage}!BMSController@{BMSController}}
+\doxysubsubsection{\texorpdfstring{setChargeVoltage()}{setChargeVoltage()}}
+{\footnotesize\ttfamily \label{class_b_m_s_controller_a4e7d5ccb50f7abcc86ce3e7b98300ac0} 
+bool BMSController\+::set\+Charge\+Voltage (\begin{DoxyParamCaption}\item[{float}]{volts}{}\end{DoxyParamCaption})}
+
+
+
+Set the target charging voltage. 
+
+Set the charge voltage limit for the battery pack.
+
+
+\begin{DoxyParams}{Parameters}
+{\em volts} & The charging voltage in volts \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if command sent successfully, false otherwise
+\end{DoxyReturn}
+Configures the maximum voltage that the battery pack should be charged to. This is a critical safety parameter that prevents overcharging.
+
+
+\begin{DoxyParams}{Parameters}
+{\em volts} & Charge voltage limit in volts \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if command was sent successfully 
+
+false if transmission failed
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Command code\+: 0x10 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Ensure voltage is within safe limits for your battery chemistry 
+\end{DoxyWarning}
+\Hypertarget{class_b_m_s_controller_a33a8d303d5ee5c97bbb9879cbbd0867b}\index{BMSController@{BMSController}!setInputCurrentLimit@{setInputCurrentLimit}}
+\index{setInputCurrentLimit@{setInputCurrentLimit}!BMSController@{BMSController}}
+\doxysubsubsection{\texorpdfstring{setInputCurrentLimit()}{setInputCurrentLimit()}}
+{\footnotesize\ttfamily \label{class_b_m_s_controller_a33a8d303d5ee5c97bbb9879cbbd0867b} 
+bool BMSController\+::set\+Input\+Current\+Limit (\begin{DoxyParamCaption}\item[{float}]{milliamps}{}\end{DoxyParamCaption})}
+
+
+
+Set the input current limit. 
+
+Set the input current limit from power supply.
+
+
+\begin{DoxyParams}{Parameters}
+{\em milliamps} & The input current limit in milliamperes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if command sent successfully, false otherwise
+\end{DoxyReturn}
+Configures the maximum current that can be drawn from the input power supply. This prevents overloading the power source during charging.
+
+
+\begin{DoxyParams}{Parameters}
+{\em milliamps} & Input current limit in milliamperes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if command was sent successfully 
+
+false if transmission failed
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Command code\+: 0x15 
+
+Parameter is in milliamperes, not amperes 
+\end{DoxyNote}
+\Hypertarget{class_b_m_s_controller_ac107ee28124114383c4a56118051b118}\index{BMSController@{BMSController}!setInputVoltageLimit@{setInputVoltageLimit}}
+\index{setInputVoltageLimit@{setInputVoltageLimit}!BMSController@{BMSController}}
+\doxysubsubsection{\texorpdfstring{setInputVoltageLimit()}{setInputVoltageLimit()}}
+{\footnotesize\ttfamily \label{class_b_m_s_controller_ac107ee28124114383c4a56118051b118} 
+bool BMSController\+::set\+Input\+Voltage\+Limit (\begin{DoxyParamCaption}\item[{float}]{volts}{}\end{DoxyParamCaption})}
+
+
+
+Set the input voltage limit. 
+
+Set the input voltage limit for charging.
+
+
+\begin{DoxyParams}{Parameters}
+{\em volts} & The input voltage limit in volts \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if command sent successfully, false otherwise
+\end{DoxyReturn}
+Configures the maximum input voltage that the charging system will accept. This helps protect against overvoltage conditions from the power supply.
+
+
+\begin{DoxyParams}{Parameters}
+{\em volts} & Input voltage limit in volts \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if command was sent successfully 
+
+false if transmission failed
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Command code\+: 0x13 
+\end{DoxyNote}
+\Hypertarget{class_b_m_s_controller_adc74dd9a0c2f5e2714a3abb3b841b5fe}\index{BMSController@{BMSController}!setPack\_stock\_capacity@{setPack\_stock\_capacity}}
+\index{setPack\_stock\_capacity@{setPack\_stock\_capacity}!BMSController@{BMSController}}
+\doxysubsubsection{\texorpdfstring{setPack\_stock\_capacity()}{setPack\_stock\_capacity()}}
+{\footnotesize\ttfamily \label{class_b_m_s_controller_adc74dd9a0c2f5e2714a3abb3b841b5fe} 
+bool BMSController\+::set\+Pack\+\_\+stock\+\_\+capacity (\begin{DoxyParamCaption}\item[{float}]{m\+Ah}{}\end{DoxyParamCaption})}
+
+
+
+Set the battery pack stock capacity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+Ah} & The battery pack capacity in milliampere-\/hours \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if command sent successfully, false otherwise
+\end{DoxyReturn}
+Configures the nominal capacity of the battery pack in m\+Ah. This value is used for State of Charge calculations and capacity tracking. This function also triggers the final configuration check on the BMS.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+Ah} & Battery pack capacity in milliamp-\/hours \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if command was sent successfully 
+
+false if transmission failed
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Command code\+: 0x18 
+
+Sets global So\+CGiven variable for percentage calculations 
+
+This command triggers \doxylink{group___b_q25730___functions_ga5708add1ce23a932ff6c9f64cb84ae06}{Config\+Check()} on the BMS side 
+\end{DoxyNote}
+\Hypertarget{class_b_m_s_controller_ad31491af47be0dce070aa5cc27732db9}\index{BMSController@{BMSController}!setVsysMin@{setVsysMin}}
+\index{setVsysMin@{setVsysMin}!BMSController@{BMSController}}
+\doxysubsubsection{\texorpdfstring{setVsysMin()}{setVsysMin()}}
+{\footnotesize\ttfamily \label{class_b_m_s_controller_ad31491af47be0dce070aa5cc27732db9} 
+bool BMSController\+::set\+Vsys\+Min (\begin{DoxyParamCaption}\item[{float}]{volts}{}\end{DoxyParamCaption})}
+
+
+
+Set the minimum system voltage. 
+
+Set the minimum system voltage threshold.
+
+
+\begin{DoxyParams}{Parameters}
+{\em volts} & The minimum system voltage in volts \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if command sent successfully, false otherwise
+\end{DoxyReturn}
+Configures the minimum voltage below which the system should take protective action to prevent deep discharge damage.
+
+
+\begin{DoxyParams}{Parameters}
+{\em volts} & Minimum system voltage in volts \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if command was sent successfully 
+
+false if transmission failed
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Command code\+: 0x11 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_b_m_s_controller_8h}{BMSController.\+h}}\item 
+\mbox{\hyperlink{_b_m_s_controller_8cpp}{BMSController.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,62 @@
+\doxysection{BMSController.\+h}
+\hypertarget{_b_m_s_controller_8h_source}{}\label{_b_m_s_controller_8h_source}\mbox{\hyperlink{_b_m_s_controller_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ BMSController\_h}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ BMSController\_h}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Arduino.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Wire.h>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_b_m_s_controller_af7c9b9a742729e837f5c5de093bf0798}{BMSController}}\ \{}
+\DoxyCodeLine{00022\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_b_m_s_controller_af7c9b9a742729e837f5c5de093bf0798}{BMSController}}(uint8\_t\ i2cAddress);}
+\DoxyCodeLine{00028\ \ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_b_m_s_controller_ad0330c551bd2763d0bbc61edcb687805}{begin}}();}
+\DoxyCodeLine{00034\ \ \ \ \ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_b_m_s_controller_a4e7d5ccb50f7abcc86ce3e7b98300ac0}{setChargeVoltage}}(\textcolor{keywordtype}{float}\ volts);}
+\DoxyCodeLine{00041\ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_b_m_s_controller_ad31491af47be0dce070aa5cc27732db9}{setVsysMin}}(\textcolor{keywordtype}{float}\ volts);}
+\DoxyCodeLine{00048\ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_b_m_s_controller_ac107ee28124114383c4a56118051b118}{setInputVoltageLimit}}(\textcolor{keywordtype}{float}\ volts);}
+\DoxyCodeLine{00055\ \ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_b_m_s_controller_afe853e0f61f5a97e080307f34c9f8394}{setChargeCurrent}}(\textcolor{keywordtype}{float}\ amps);}
+\DoxyCodeLine{00062\ \ \ \ \ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_b_m_s_controller_a33a8d303d5ee5c97bbb9879cbbd0867b}{setInputCurrentLimit}}(\textcolor{keywordtype}{float}\ milliamps);}
+\DoxyCodeLine{00069\ \ \ \ \ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_b_m_s_controller_ad832939c3deb3df7146b43766eed45ec}{setCellMaxCutOffV}}(\textcolor{keywordtype}{float}\ volts);}
+\DoxyCodeLine{00076\ \ \ \ \ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_b_m_s_controller_a346b4d5662b9616e7b75f35b68f95341}{setCellMinCutOffV}}(\textcolor{keywordtype}{float}\ volts);}
+\DoxyCodeLine{00083\ \ \ \ \ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_b_m_s_controller_adc74dd9a0c2f5e2714a3abb3b841b5fe}{setPack\_stock\_capacity}}(\textcolor{keywordtype}{float}\ mAh);}
+\DoxyCodeLine{00090\ \ \ \ \ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_b_m_s_controller_af55434020be31e887cca12ac7f6f1fa3}{FinishedConfiguration}}(\textcolor{keywordtype}{bool}\ completed);}
+\DoxyCodeLine{00097\ \ \ \ \ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_b_m_s_controller_a8ff475067323d04b70fd4577e486be47}{getChargeCurrent}}();}
+\DoxyCodeLine{00103\ \ \ \ \ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_b_m_s_controller_a11802cf68db62fc066c5efabb49088c9}{getCell1Voltage}}();}
+\DoxyCodeLine{00109\ \ \ \ \ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_b_m_s_controller_ae81e2abb3b872e474876fd14098b2ab5}{getCell2Voltage}}();}
+\DoxyCodeLine{00115\ \ \ \ \ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_b_m_s_controller_a75ccacd13aa6d85c9db2b4426603c055}{getCell3Voltage}}();}
+\DoxyCodeLine{00121\ \ \ \ \ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_b_m_s_controller_a6a7f66e0d3d7ff8138a30e09c384d3a6}{getCell4Voltage}}();}
+\DoxyCodeLine{00127\ \ \ \ \ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_b_m_s_controller_ab5769d140538abeeb263f5e4f230a893}{getTotalPackVoltage}}();}
+\DoxyCodeLine{00133\ \ \ \ \ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_b_m_s_controller_acf1b248dec4fe80deb26ebed401e900a}{getSoC}}();}
+\DoxyCodeLine{00139\ \ \ \ \ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_b_m_s_controller_ace696a62fe235c4432ad8cf6393def18}{getPercentSoC}}();}
+\DoxyCodeLine{00145\ \ \ \ \ }
+\DoxyCodeLine{00146\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00147\ \ \ \ \ uint8\_t\ \_address;\ }
+\DoxyCodeLine{00148\ \ \ \ \ }
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{void}\ sendFloat(uint8\_t\ command,\ \textcolor{keywordtype}{float}\ value);}
+\DoxyCodeLine{00155\ \ \ \ \ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{float}\ getValue(uint8\_t\ command);}
+\DoxyCodeLine{00162\ \};}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
