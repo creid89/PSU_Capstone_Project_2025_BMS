@@ -1,4 +1,4 @@
-//Integrated BMS Firmware V2_3 //Sodium & Lithium ION BMS //Include wire for I2C #include <Wire.h> //Includes for INA #include <Adafruit_INA260.h> //include for interrupts #include <HardwareSerial.h> #include <STM32TimerInterrupt.h> #include "stm32f1xx.h" #include <EEPROM.h> //EEPROM
+//Integrated BMS Firmware V2_3 //Sodium & Lithium ION BMS //Include wire for I2C #include <Wire.h> //Includes for INA #include <Adafruit_INA219.h> //include for interrupts #include <HardwareSerial.h> #include <STM32TimerInterrupt.h> #include "stm32f1xx.h" #include <EEPROM.h> //EEPROM
 
 
 /**

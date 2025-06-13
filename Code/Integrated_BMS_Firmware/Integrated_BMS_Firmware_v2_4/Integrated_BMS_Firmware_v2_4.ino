@@ -1073,6 +1073,20 @@ void clearEEPROM() {
   Serial.println("EEPROM wiped to 0xFF. Reboot to confirm.");
 }
 
+/**
+ * @brief Updates and prints voltage readings from all INA219 sensors.
+ */
+void readAndPrintVoltages() {
+  INA_0x40_VOLTAGE = ina219_0x40.getBusVoltage_V();
+  INA_0x41_VOLTAGE = ina219_0x41.getBusVoltage_V();
+  INA_0x44_VOLTAGE = ina219_0x44.getBusVoltage_V();
+
+  Serial.print("INA_0x40_VOLTAGE = "); Serial.println(INA_0x40_VOLTAGE);
+  Serial.print("INA_0x41_VOLTAGE = "); Serial.println(INA_0x41_VOLTAGE);
+  Serial.print("INA_0x44_VOLTAGE = "); Serial.println(INA_0x44_VOLTAGE);
+}
+
+
 void setup() {
   delay(5000);
   Serial.begin(9600);
@@ -1142,9 +1156,7 @@ void SystemCheck()
   digitalWrite(PB13, HIGH);
   Serial.println("----------------------------------------------------");
   ITimer2.detachInterrupt();
-  Serial.print("INA_0x40_VOLTAGE = ");Serial.println(INA_0x40_VOLTAGE);
-  Serial.print("INA_0x41_VOLTAGE = ");Serial.println(INA_0x41_VOLTAGE);
-  Serial.print("INA_0x44_VOLTAGE = ");Serial.println(INA_0x44_VOLTAGE);
+  readAndPrintVoltages():
   //LTC2943 loop code 
   // Keep analog section active if Pack is disconnected temporarily
   //write_LTC2943_Register(REG_CONTROL, 0b11111000);
