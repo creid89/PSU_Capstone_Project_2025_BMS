@@ -15,8 +15,8 @@
 
 //! Include Wire library for I2C communication
 #include <Wire.h>
-//! Include Adafruit INA260 current/voltage sensor library
-#include <Adafruit_INA260.h>
+//! Include Adafruit INA219 current/voltage sensor library
+#include <Adafruit_INA219.h>
 //! Include hardware serial library for interrupt handling
 #include <HardwareSerial.h>
 //! Include STM32 timer interrupt library for periodic tasks
@@ -45,13 +45,13 @@
 
 ////////////////////////////////////////////////////////////////
 /**
- * @defgroup INA260_Instances INA260 Sensor Instances
- * @brief Create instances for each INA260 current/voltage sensor
+ * @defgroup INA219_Instances INA219 Sensor Instances
+ * @brief Create instances for each ina219 sensor
  * @{
  */
-Adafruit_INA260 ina260_0x40; //!< INA260 sensor instance at I2C address 0x40
-Adafruit_INA260 ina260_0x41; //!< INA260 sensor instance at I2C address 0x41
-Adafruit_INA260 ina260_0x44; //!< INA260 sensor instance at I2C address 0x44
+Adafruit_INA219 ina219_0x40(0x40); //!< INA219 sensor instance at I2C address 0x40
+Adafruit_INA219 ina219_0x41(0x41); //!< INA219 sensor instance at I2C address 0x41
+Adafruit_INA219 ina219_0x44(0x44); //!< INA219 sensor instance at I2C address 0x44
 /** @} */
 
 /**
@@ -95,13 +95,13 @@ void onTimerISR() {
 }
 
 /**
- * @defgroup INA_BQ_Variables INA260 and BQ25730 Variables
+ * @defgroup INA_BQ_Variables INA219 and BQ25730 Variables
  * @brief Variables for storing sensor readings and measurements
  * @{
  */
-float INA_0x40_VOLTAGE = 0.0;              //!< Voltage reading from INA260 at address 0x40
-float INA_0x41_VOLTAGE = 0.0;              //!< Voltage reading from INA260 at address 0x41
-float INA_0x44_VOLTAGE = 0.0;              //!< Voltage reading from INA260 at address 0x44
+float INA_0x40_VOLTAGE = 0.0;              //!< Voltage reading from INA219 at address 0x40
+float INA_0x41_VOLTAGE = 0.0;              //!< Voltage reading from INA219 at address 0x41
+float INA_0x44_VOLTAGE = 0.0;              //!< Voltage reading from INA219 at address 0x44
 float CELL1_VOLTAGE_LTC2943 = 0.00;        //!< Cell 1 voltage calculated from LTC2943 readings
 float CELL1_VOLTAGE = 0.00;                //!< Cell 1 voltage (alternative calculation)
 float CELL2_VOLTAGE = 0.00;                //!< Cell 2 voltage calculated from INA differential readings
@@ -699,33 +699,34 @@ void MaintainChargingBQ(){
 
 //INA Functions
 /**
- * @brief Initializes and verifies INA260 current sensors
+ * @brief Initializes and verifies INA219 current sensors
  * 
- * Attempts to initialize three INA260 sensors at different I2C addresses.
+ * Attempts to initialize three INA219 sensors at different I2C addresses.
  * The system halts if any sensor fails to initialize, as all sensors are
  * required for proper cell voltage monitoring.
  * 
- * @note INA260 sensors at addresses: 0x40, 0x41, 0x44
+ * @note INA219 sensors at addresses: 0x40, 0x41, 0x44
  * @note Address 0x45 is commented out (optional fourth sensor)
  * @warning System halts in infinite loop if any sensor initialization fails
  */
+
 void CheckIfINAConnected()
 {
-   if (!ina260_0x40.begin(0x40)) {
-    Serial.println("Couldn't find INA260 at 0x40");
+   if (!ina219_0x40.begin()) {
+    Serial.println("Couldn't find ina219 at 0x40");
     while (1);
   }
-  if (!ina260_0x41.begin(0x41)) {
-    Serial.println("Couldn't find INA260 at 0x41");
+  if (!ina219_0x41.begin()) {
+    Serial.println("Couldn't find ina219 at 0x41");
     while (1);
   }
-  if (!ina260_0x44.begin(0x44)) {
-    Serial.println("Couldn't find INA260 at 0x44");
+  if (!ina219_0x44.begin()) {
+    Serial.println("Couldn't find ina219 at 0x44");
     while (1);
   }
   /*
-  if (!ina260_0x45.begin(0x45)) {
-    Serial.println("Couldn't find INA260 at 0x45");
+  if (!ina219_0x45.begin(0x45)) {
+    Serial.println("Couldn't find ina219 at 0x45");
     while (1);
   } */
 }
@@ -884,7 +885,7 @@ void checkCellandSocCutoff() {
  * 
  * This comprehensive function manages the entire charging process:
  * - Checks charge enable/disable conditions based on plugin status
- * - Reads all cell voltages using INA260 sensors and LTC2943
+ * - Reads all cell voltages using INA219 sensors and LTC2943
  * - Performs safety checks via checkCellandSocCutoff()
  * - Controls individual cell balancing circuits during charging
  * - Updates and displays all system measurements
@@ -929,9 +930,9 @@ void ChargeAndBalanceControl(){
   //delay(50);
   //Serial.print("\n----------------- LINE 653 -------------\n"); 
   //Grab each cells Voltage
-  INA_0x40_VOLTAGE = ina260_0x40.readBusVoltage()/1000.00;
-  INA_0x41_VOLTAGE = ina260_0x41.readBusVoltage()/1000.00;
-  INA_0x44_VOLTAGE = ina260_0x44.readBusVoltage()/1000.00;
+  INA_0x40_VOLTAGE = ina219_0x40.getBusVoltage_V();
+  INA_0x41_VOLTAGE = ina219_0x41.getBusVoltage_V();
+  INA_0x44_VOLTAGE = ina219_0x44.getBusVoltage_V();
   
   //Calulate Cell Voltages based off of INA readings
   CELL1_VOLTAGE_LTC2943 = Request_Voltage_LTC2943()- INA_0x44_VOLTAGE;
