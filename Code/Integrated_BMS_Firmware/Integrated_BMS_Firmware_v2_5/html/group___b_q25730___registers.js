@@ -1,0 +1,28 @@
+var group___b_q25730___registers =
+[
+    [ "AADCVBUS_PSYS", "group___b_q25730___registers.html#ga2dad2382179bdfe4d2754bd78bccea6b", null ],
+    [ "ADCIBAT", "group___b_q25730___registers.html#gafa637902097b520f9f593b2fd60c77f9", null ],
+    [ "ADCIINCMPIN", "group___b_q25730___registers.html#ga1640a40f7d4afbfa78b89c03a1f0fd9d", null ],
+    [ "ADCOption", "group___b_q25730___registers.html#ga0bd689b1a92bbc3bd70357706ad70f46", null ],
+    [ "ADCVSYSVBAT", "group___b_q25730___registers.html#ga5774cfc33d87b0d74cd0e1780ac2230e", null ],
+    [ "ChargeCurrent", "group___b_q25730___registers.html#gad6e1f5031739a25de0cddf1c782d217a", null ],
+    [ "ChargeOption0", "group___b_q25730___registers.html#gaac78bb5c6015a366540c3f8d7c548fde", null ],
+    [ "ChargeOption1", "group___b_q25730___registers.html#gadc1bb4d3202a65ad3c15a6261b4089ff", null ],
+    [ "ChargeOption2", "group___b_q25730___registers.html#gacb60a1c5141ddcb6fe50e8618e806fcd", null ],
+    [ "ChargeOption3", "group___b_q25730___registers.html#ga6ee3e3a95cd9eb55909e24fcc7a1b820", null ],
+    [ "ChargeOption4", "group___b_q25730___registers.html#ga631d121cd8b86fe334bbe62972b6d3ef", null ],
+    [ "ChargerStatus", "group___b_q25730___registers.html#gaa17f61dc9dc7035962829e5a2d8bb86d", null ],
+    [ "ChargeVoltage", "group___b_q25730___registers.html#gaa64840fb06f883ea0ebc9f351094757a", null ],
+    [ "DEVICE_ID", "group___b_q25730___registers.html#ga0b85963cace75e76ae726bcffb04eb70", null ],
+    [ "IIN_DPM", "group___b_q25730___registers.html#ga71e51e95c41739b9631d11735705de9c", null ],
+    [ "IIN_HOST", "group___b_q25730___registers.html#gaa29a39fd906ed360f0b67d32a3e27bb3", null ],
+    [ "InputVoltage", "group___b_q25730___registers.html#gac7e642a59502839811272866737f51bc", null ],
+    [ "MANUFACTURER_ID", "group___b_q25730___registers.html#gad6d06519161544439a58bb8f59fc3094", null ],
+    [ "OTGCurrent", "group___b_q25730___registers.html#gaaf3364950d097f8f4fa1d12d3d3af7fc", null ],
+    [ "OTGVoltage", "group___b_q25730___registers.html#ga7792b514f883254670f2e83791b2c3d4", null ],
+    [ "ProchotOption0", "group___b_q25730___registers.html#gaa635e19d529e94ea56823a75a477cd6d", null ],
+    [ "ProchotOption1", "group___b_q25730___registers.html#gacca6325c7d578e1eaa5aa3ff4df415cb", null ],
+    [ "ProchotStatus", "group___b_q25730___registers.html#ga348bea01ea03ad2ff6835de539babdc9", null ],
+    [ "Vmin_Active_Protection", "group___b_q25730___registers.html#ga846a4a302890eb6e570734edd83767b4", null ],
+    [ "VSYS_MIN", "group___b_q25730___registers.html#gaa9c79b2f93acca2759b6406805ee83c5", null ]
+];

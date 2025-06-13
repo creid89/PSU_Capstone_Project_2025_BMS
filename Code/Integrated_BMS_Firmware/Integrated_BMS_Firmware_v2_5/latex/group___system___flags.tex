@@ -1,0 +1,116 @@
+\doxysection{Major System Control Flags }
+\hypertarget{group___system___flags}{}\label{group___system___flags}\index{Major System Control Flags@{Major System Control Flags}}
+
+
+Global flags controlling major system operations.  
+
+
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile bool \mbox{\hyperlink{group___system___flags_gab059d04c654d8a806c688773559f2ae0}{CHARGING}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating if charging is currently active. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{group___system___flags_ga86644aa854253a1760658fe149546d73}{serial\+Cmd\+Buffer}} = "{}"{}
+\begin{DoxyCompactList}\small\item\em Buffer for accumulating incoming serial characters for charge control. \end{DoxyCompactList}\item 
+volatile bool \mbox{\hyperlink{group___system___flags_gadb665910e54bfced898cfcc2fd5e3cac}{CHARGE\+\_\+\+ON\+\_\+\+PLUGIN}} = true
+\begin{DoxyCompactList}\small\item\em When true, charging auto-\/starts on charger plugin detection. \end{DoxyCompactList}\item 
+volatile bool \mbox{\hyperlink{group___system___flags_ga17764d61d98155d7b849bc7699033a54}{STOPCHARGING}} = false
+\begin{DoxyCompactList}\small\item\em Flag to request charging stop. \end{DoxyCompactList}\item 
+volatile bool \mbox{\hyperlink{group___system___flags_ga90776728be4ece882847dfcba9536d40}{KILLLOAD}} = false
+\begin{DoxyCompactList}\small\item\em Flag to disconnect load. \end{DoxyCompactList}\item 
+volatile bool \mbox{\hyperlink{group___system___flags_gab972cab2eca6c2137db8aa8c50e6197e}{PLUGGEDIN}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating charger is physically connected. \end{DoxyCompactList}\item 
+volatile bool \mbox{\hyperlink{group___system___flags_gafe12f1fddee011398a5ee94723ba053d}{OVERHEAT}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating thermal protection activation. \end{DoxyCompactList}\item 
+volatile bool \mbox{\hyperlink{group___system___flags_gacdff7a527b65595ffea4031b633f8dd7}{ERRORFLG}} = false
+\begin{DoxyCompactList}\small\item\em General error flag for system faults. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Global flags controlling major system operations. 
+
+
+
+\label{doc-var-members}
+\Hypertarget{group___system___flags_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{group___system___flags_gadb665910e54bfced898cfcc2fd5e3cac}\index{Major System Control Flags@{Major System Control Flags}!CHARGE\_ON\_PLUGIN@{CHARGE\_ON\_PLUGIN}}
+\index{CHARGE\_ON\_PLUGIN@{CHARGE\_ON\_PLUGIN}!Major System Control Flags@{Major System Control Flags}}
+\doxysubsubsection{\texorpdfstring{CHARGE\_ON\_PLUGIN}{CHARGE\_ON\_PLUGIN}}
+{\footnotesize\ttfamily \label{group___system___flags_gadb665910e54bfced898cfcc2fd5e3cac} 
+volatile bool CHARGE\+\_\+\+ON\+\_\+\+PLUGIN = true}
+
+
+
+When true, charging auto-\/starts on charger plugin detection. 
+
+\Hypertarget{group___system___flags_gab059d04c654d8a806c688773559f2ae0}\index{Major System Control Flags@{Major System Control Flags}!CHARGING@{CHARGING}}
+\index{CHARGING@{CHARGING}!Major System Control Flags@{Major System Control Flags}}
+\doxysubsubsection{\texorpdfstring{CHARGING}{CHARGING}}
+{\footnotesize\ttfamily \label{group___system___flags_gab059d04c654d8a806c688773559f2ae0} 
+volatile bool CHARGING = false}
+
+
+
+Flag indicating if charging is currently active. 
+
+\Hypertarget{group___system___flags_gacdff7a527b65595ffea4031b633f8dd7}\index{Major System Control Flags@{Major System Control Flags}!ERRORFLG@{ERRORFLG}}
+\index{ERRORFLG@{ERRORFLG}!Major System Control Flags@{Major System Control Flags}}
+\doxysubsubsection{\texorpdfstring{ERRORFLG}{ERRORFLG}}
+{\footnotesize\ttfamily \label{group___system___flags_gacdff7a527b65595ffea4031b633f8dd7} 
+volatile bool ERRORFLG = false}
+
+
+
+General error flag for system faults. 
+
+\Hypertarget{group___system___flags_ga90776728be4ece882847dfcba9536d40}\index{Major System Control Flags@{Major System Control Flags}!KILLLOAD@{KILLLOAD}}
+\index{KILLLOAD@{KILLLOAD}!Major System Control Flags@{Major System Control Flags}}
+\doxysubsubsection{\texorpdfstring{KILLLOAD}{KILLLOAD}}
+{\footnotesize\ttfamily \label{group___system___flags_ga90776728be4ece882847dfcba9536d40} 
+volatile bool KILLLOAD = false}
+
+
+
+Flag to disconnect load. 
+
+\Hypertarget{group___system___flags_gafe12f1fddee011398a5ee94723ba053d}\index{Major System Control Flags@{Major System Control Flags}!OVERHEAT@{OVERHEAT}}
+\index{OVERHEAT@{OVERHEAT}!Major System Control Flags@{Major System Control Flags}}
+\doxysubsubsection{\texorpdfstring{OVERHEAT}{OVERHEAT}}
+{\footnotesize\ttfamily \label{group___system___flags_gafe12f1fddee011398a5ee94723ba053d} 
+volatile bool OVERHEAT = false}
+
+
+
+Flag indicating thermal protection activation. 
+
+\Hypertarget{group___system___flags_gab972cab2eca6c2137db8aa8c50e6197e}\index{Major System Control Flags@{Major System Control Flags}!PLUGGEDIN@{PLUGGEDIN}}
+\index{PLUGGEDIN@{PLUGGEDIN}!Major System Control Flags@{Major System Control Flags}}
+\doxysubsubsection{\texorpdfstring{PLUGGEDIN}{PLUGGEDIN}}
+{\footnotesize\ttfamily \label{group___system___flags_gab972cab2eca6c2137db8aa8c50e6197e} 
+volatile bool PLUGGEDIN = false}
+
+
+
+Flag indicating charger is physically connected. 
+
+\Hypertarget{group___system___flags_ga86644aa854253a1760658fe149546d73}\index{Major System Control Flags@{Major System Control Flags}!serialCmdBuffer@{serialCmdBuffer}}
+\index{serialCmdBuffer@{serialCmdBuffer}!Major System Control Flags@{Major System Control Flags}}
+\doxysubsubsection{\texorpdfstring{serialCmdBuffer}{serialCmdBuffer}}
+{\footnotesize\ttfamily \label{group___system___flags_ga86644aa854253a1760658fe149546d73} 
+String serial\+Cmd\+Buffer = "{}"{}}
+
+
+
+Buffer for accumulating incoming serial characters for charge control. 
+
+\Hypertarget{group___system___flags_ga17764d61d98155d7b849bc7699033a54}\index{Major System Control Flags@{Major System Control Flags}!STOPCHARGING@{STOPCHARGING}}
+\index{STOPCHARGING@{STOPCHARGING}!Major System Control Flags@{Major System Control Flags}}
+\doxysubsubsection{\texorpdfstring{STOPCHARGING}{STOPCHARGING}}
+{\footnotesize\ttfamily \label{group___system___flags_ga17764d61d98155d7b849bc7699033a54} 
+volatile bool STOPCHARGING = false}
+
+
+
+Flag to request charging stop. 
+

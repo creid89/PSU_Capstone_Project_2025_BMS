@@ -1,0 +1,906 @@
+\doxysection{BQ25730 Battery Charger Functions }
+\hypertarget{group___b_q25730___functions}{}\label{group___b_q25730___functions}\index{BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}}
+
+
+Functions for controlling and monitoring BQ25730 battery charger.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___b_q25730___functions_gafd859bfac909576582c08cfd3aef4543}{Check\+BQConnection\+With\+Comms}} ()
+\begin{DoxyCompactList}\small\item\em Check BQ25730 connection and halt system if not responding. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_ga68faf4969b4fd59b23916844263fa728}{Config\+And\+Start\+BQ}} ()
+\begin{DoxyCompactList}\small\item\em Configure and start BQ25730 charger with initial settings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_gaf6496b205c191db45c1b03fdc69b37b8}{write\+BQ25730}} (uint8\+\_\+t reg\+Addr, uint16\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Write 16-\/bit data to BQ25730 register. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___b_q25730___functions_ga2c4dd77d242508e96fb3513e753976f7}{read\+BQ25730}} (uint8\+\_\+t reg\+Addr)
+\begin{DoxyCompactList}\small\item\em Read 16-\/bit data from BQ25730 register. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group___b_q25730___functions_ga1de5db1b0b55008babf30a501b39b6b7}{check\+I2C}} ()
+\begin{DoxyCompactList}\small\item\em Check I2C communication with BQ25730. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group___b_q25730___functions_gafc599b42d2e7ceba7c94028dfcd99125}{check\+BQConnection}} ()
+\begin{DoxyCompactList}\small\item\em Check basic I2C connection to BQ25730. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_ga2d4bd64f668a6ea0b2f5a8424d9a1100}{disable\+VSYS}} ()
+\begin{DoxyCompactList}\small\item\em Disable VSYS output due to low battery condition. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_ga01cd5968ed55b80dc4b92b0a52e0e466}{set\+Charge\+Voltage}} (float voltage\+\_\+V)
+\begin{DoxyCompactList}\small\item\em Set charging voltage target. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_ga97c42fd6e90822b907550eb226598161}{set\+Charge\+Current}} (float current\+\_\+A)
+\begin{DoxyCompactList}\small\item\em Set charging current limit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_ga3d8eff3631e2364d8be2890e9baabe63}{set\+Input\+Current\+Limit}} (float current\+\_\+mA)
+\begin{DoxyCompactList}\small\item\em Set input current limit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_ga418209c95fe881aa56d9e82ac1b4ad63}{set\+Input\+Voltage}} (float voltage\+\_\+V)
+\begin{DoxyCompactList}\small\item\em Sets the input voltage limit for the BQ25730 charge controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_gacb449db001d5ad9a7758556e5ca2160a}{set\+\_\+\+VSYS\+\_\+\+MIN}} (float voltage\+\_\+V)
+\begin{DoxyCompactList}\small\item\em Sets the minimum system voltage (VSYS\+\_\+\+MIN) for the BQ25730. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_gab30ea562af302301b7672b24f4481c86}{enable\+Charging}} ()
+\begin{DoxyCompactList}\small\item\em Enables charging by configuring Charge\+Option0 register. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_gae0f230a6e9357f99995951287147b6ee}{disable\+Charging}} ()
+\begin{DoxyCompactList}\small\item\em Disables charging by setting charge inhibit bit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_ga5eddb9004f705b0881f16a636b2d83cf}{enable\+ADC}} ()
+\begin{DoxyCompactList}\small\item\em Enables ADC measurements on the BQ25730. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_gaab5e0e511f1bb8041569b20b1489527b}{read\+Battery\+Current}} ()
+\begin{DoxyCompactList}\small\item\em Reads and displays battery current measurements. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_ga4984336d1011808120b4221bbd3c48af}{dump\+All\+BQRegisters}} ()
+\begin{DoxyCompactList}\small\item\em Dumps all BQ25730 registers for debugging. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_ga0882365eaa2c963c6b0b2e57237c6b90}{Maintain\+Charging\+BQ}} ()
+\begin{DoxyCompactList}\small\item\em Maintains charging operation and I2C communication. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_gabf363a8269099400e262e0c39becc8a0}{Check\+If\+INAConnected}} ()
+\begin{DoxyCompactList}\small\item\em Initializes and verifies INA219 current sensors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_ga5ef907155a3498383307a0e26da4e010}{Enable\+GPIOPins}} ()
+\begin{DoxyCompactList}\small\item\em Configures GPIO pins for various system functions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_gab7d6082d420719c5e210b8b387cda184}{check\+Celland\+Soc\+Cutoff}} ()
+\begin{DoxyCompactList}\small\item\em Monitors cell voltages and state of charge for safety cutoffs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_gac7f04b5f3622adc4c899012ea1d8e6e3}{Charge\+And\+Balance\+Control}} ()
+\begin{DoxyCompactList}\small\item\em Main charge and cell balancing control function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_gae1455fa902ab93ac72aa2c75cc301799}{handle\+Serial\+Charging}} ()
+\begin{DoxyCompactList}\small\item\em Processes serial commands for manual charge control. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_gad511a9c47838109c758c7c4284d2b242}{Temp\+Check}} ()
+\begin{DoxyCompactList}\small\item\em Monitors thermistor temperatures for overheat protection. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_ga5708add1ce23a932ff6c9f64cb84ae06}{Config\+Check}} ()
+\begin{DoxyCompactList}\small\item\em Performs final configuration check and saves settings to EEPROM. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_ga3e21dc6b2d0de8c60db0cf01b0625b4c}{on\+Receive}} (int how\+Many)
+\begin{DoxyCompactList}\small\item\em I2C receive event handler for command processing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_gac6532b6359ec1083f0936a3a1c93bdce}{on\+Request}} ()
+\begin{DoxyCompactList}\small\item\em I2C request event handler for sending response data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_ga3a0c6d2d9f8bac7b4f689eb7844c165d}{EEPROM\+\_\+\+Check}} ()
+\begin{DoxyCompactList}\small\item\em Checks and loads configuration from EEPROM if available. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group___b_q25730___functions_gac732a8f96986a17c049865fa413935b5}{is\+EEPROMInitialized}} (int start\+Addr, size\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Checks if EEPROM contains valid (non-\/blank) data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_gad56b6e6d2810d8f19d6debf12443fdfd}{clear\+EEPROM}} ()
+\begin{DoxyCompactList}\small\item\em Clears all EEPROM data by setting all bytes to 0x\+FF. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_ga4fc01d736fe50cf5b977f755b675f11d}{setup}} ()
+\begin{DoxyCompactList}\small\item\em System initialization and setup function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_ga47d79ee7b65523eac216088cb98bbfbb}{System\+Check}} ()
+\begin{DoxyCompactList}\small\item\em Main system monitoring and control function (Timer ISR) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_q25730___functions_gafe461d27b9c48d5921c00d521181f12f}{loop}} ()
+\begin{DoxyCompactList}\small\item\em Main program loop (intentionally empty) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions for controlling and monitoring BQ25730 battery charger. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{group___b_q25730___functions_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{group___b_q25730___functions_gac7f04b5f3622adc4c899012ea1d8e6e3}\index{BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}!ChargeAndBalanceControl@{ChargeAndBalanceControl}}
+\index{ChargeAndBalanceControl@{ChargeAndBalanceControl}!BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}}
+\doxysubsubsection{\texorpdfstring{ChargeAndBalanceControl()}{ChargeAndBalanceControl()}}
+{\footnotesize\ttfamily \label{group___b_q25730___functions_gac7f04b5f3622adc4c899012ea1d8e6e3} 
+void Charge\+And\+Balance\+Control (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Main charge and cell balancing control function. 
+
+This comprehensive function manages the entire charging process\+:
+\begin{DoxyItemize}
+\item Checks charge enable/disable conditions based on plugin status
+\item Reads all cell voltages using INA219 sensors and LTC2943
+\item Performs safety checks via \doxylink{group___b_q25730___functions_gab7d6082d420719c5e210b8b387cda184}{check\+Celland\+Soc\+Cutoff()}
+\item Controls individual cell balancing circuits during charging
+\item Updates and displays all system measurements
+\end{DoxyItemize}
+
+The cell balancing logic activates bypass resistors for any cell that exceeds the Cell\+Full\+ChargeV threshold during charging.
+
+\begin{DoxyNote}{Note}
+Cell voltages calculated as differential measurements between INA sensors 
+
+CELL1 = Pack\+\_\+\+Voltage -\/ INA\+\_\+0x44, CELL2 = INA\+\_\+0x44 -\/ INA\+\_\+0x41, etc. 
+\end{DoxyNote}
+\begin{DoxyPostcond}{Postcondition}
+Updates global variables for all measurements and charging state 
+
+Prints comprehensive status information to Serial 
+\end{DoxyPostcond}
+\Hypertarget{group___b_q25730___functions_gafc599b42d2e7ceba7c94028dfcd99125}\index{BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}!checkBQConnection@{checkBQConnection}}
+\index{checkBQConnection@{checkBQConnection}!BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}}
+\doxysubsubsection{\texorpdfstring{checkBQConnection()}{checkBQConnection()}}
+{\footnotesize\ttfamily \label{group___b_q25730___functions_gafc599b42d2e7ceba7c94028dfcd99125} 
+bool check\+BQConnection (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Check basic I2C connection to BQ25730. 
+
+\begin{DoxyReturn}{Returns}
+true if I2C transmission successful, false otherwise 
+\end{DoxyReturn}
+\texorpdfstring{$<$}{<} Start I2C transmission to BQ25730
+
+\texorpdfstring{$<$}{<} Return true if transmission successful (no error)\Hypertarget{group___b_q25730___functions_gafd859bfac909576582c08cfd3aef4543}\index{BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}!CheckBQConnectionWithComms@{CheckBQConnectionWithComms}}
+\index{CheckBQConnectionWithComms@{CheckBQConnectionWithComms}!BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}}
+\doxysubsubsection{\texorpdfstring{CheckBQConnectionWithComms()}{CheckBQConnectionWithComms()}}
+{\footnotesize\ttfamily \label{group___b_q25730___functions_gafd859bfac909576582c08cfd3aef4543} 
+void Check\+BQConnection\+With\+Comms (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Check BQ25730 connection and halt system if not responding. 
+
+Verifies I2C communication with BQ25730 and stops execution if failed \texorpdfstring{$<$}{<} Test I2C connection to BQ25730
+
+\texorpdfstring{$<$}{<} Print error message
+
+\texorpdfstring{$<$}{<} Halt system execution indefinitely
+
+\texorpdfstring{$<$}{<} Confirm successful connection\Hypertarget{group___b_q25730___functions_gab7d6082d420719c5e210b8b387cda184}\index{BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}!checkCellandSocCutoff@{checkCellandSocCutoff}}
+\index{checkCellandSocCutoff@{checkCellandSocCutoff}!BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}}
+\doxysubsubsection{\texorpdfstring{checkCellandSocCutoff()}{checkCellandSocCutoff()}}
+{\footnotesize\ttfamily \label{group___b_q25730___functions_gab7d6082d420719c5e210b8b387cda184} 
+void check\+Celland\+Soc\+Cutoff (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Monitors cell voltages and state of charge for safety cutoffs. 
+
+This critical safety function performs multiple checks\+:
+\begin{DoxyItemize}
+\item Overvoltage protection\+: stops charging if any cell exceeds Cell\+Max\+Cut\+OffV
+\item Undervoltage protection\+: stops discharging if any cell falls below Cell\+Min\+Cut\+OffV ~\newline
+
+\item Full charge detection\+: stops charging when all cells reach Cell\+Full\+ChargeV
+\item State of charge limits\+: manages charging based on pack capacity
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+Uses global variables for cell voltages and thresholds 
+
+Updates global CHARGING flag based on safety conditions 
+\end{DoxyNote}
+\begin{DoxyPostcond}{Postcondition}
+Prints detailed status messages for any triggered conditions 
+\end{DoxyPostcond}
+\Hypertarget{group___b_q25730___functions_ga1de5db1b0b55008babf30a501b39b6b7}\index{BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}!checkI2C@{checkI2C}}
+\index{checkI2C@{checkI2C}!BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}}
+\doxysubsubsection{\texorpdfstring{checkI2C()}{checkI2C()}}
+{\footnotesize\ttfamily \label{group___b_q25730___functions_ga1de5db1b0b55008babf30a501b39b6b7} 
+bool check\+I2C (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Check I2C communication with BQ25730. 
+
+\begin{DoxyReturn}{Returns}
+true if device responds with valid ID, false otherwise 
+\end{DoxyReturn}
+\texorpdfstring{$<$}{<} Read device ID register
+
+\texorpdfstring{$<$}{<} Return true if ID is valid (not 0x0000 or 0x\+FFFF)\Hypertarget{group___b_q25730___functions_gabf363a8269099400e262e0c39becc8a0}\index{BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}!CheckIfINAConnected@{CheckIfINAConnected}}
+\index{CheckIfINAConnected@{CheckIfINAConnected}!BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}}
+\doxysubsubsection{\texorpdfstring{CheckIfINAConnected()}{CheckIfINAConnected()}}
+{\footnotesize\ttfamily \label{group___b_q25730___functions_gabf363a8269099400e262e0c39becc8a0} 
+void Check\+If\+INAConnected (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes and verifies INA219 current sensors. 
+
+Attempts to initialize three INA219 sensors at different I2C addresses. The system halts if any sensor fails to initialize, as all sensors are required for proper cell voltage monitoring.
+
+\begin{DoxyNote}{Note}
+INA219 sensors at addresses\+: 0x40, 0x41, 0x44 
+
+Address 0x45 is commented out (optional fourth sensor) 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+System halts in infinite loop if any sensor initialization fails 
+\end{DoxyWarning}
+\Hypertarget{group___b_q25730___functions_gad56b6e6d2810d8f19d6debf12443fdfd}\index{BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}!clearEEPROM@{clearEEPROM}}
+\index{clearEEPROM@{clearEEPROM}!BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}}
+\doxysubsubsection{\texorpdfstring{clearEEPROM()}{clearEEPROM()}}
+{\footnotesize\ttfamily \label{group___b_q25730___functions_gad56b6e6d2810d8f19d6debf12443fdfd} 
+void clear\+EEPROM (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Clears all EEPROM data by setting all bytes to 0x\+FF. 
+
+This function erases all configuration data stored in EEPROM by writing 0x\+FF to every byte in the configured EEPROM range. This effectively resets the system to an unconfigured state.
+
+\begin{DoxyNote}{Note}
+System reboot is required after calling this function 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+This operation is irreversible -\/ all stored configuration will be lost 
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\doxylink{group___e_e_p_r_o_m___storage_gac2d2d7a3a28c2b8ca8d9232391d58965}{EEPROM\+\_\+\+TOTAL\+\_\+\+LENGTH} 
+\end{DoxySeeAlso}
+\Hypertarget{group___b_q25730___functions_ga68faf4969b4fd59b23916844263fa728}\index{BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}!ConfigAndStartBQ@{ConfigAndStartBQ}}
+\index{ConfigAndStartBQ@{ConfigAndStartBQ}!BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}}
+\doxysubsubsection{\texorpdfstring{ConfigAndStartBQ()}{ConfigAndStartBQ()}}
+{\footnotesize\ttfamily \label{group___b_q25730___functions_ga68faf4969b4fd59b23916844263fa728} 
+void Config\+And\+Start\+BQ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Configure and start BQ25730 charger with initial settings. 
+
+Sets charge voltage, current limits, enables ADC, and starts charging \texorpdfstring{$<$}{<} Set target charging voltage
+
+\texorpdfstring{$<$}{<} Set input voltage limit
+
+\texorpdfstring{$<$}{<} Set charging current
+
+\texorpdfstring{$<$}{<} Set input current limit
+
+\texorpdfstring{$<$}{<} Set minimum system voltage
+
+\texorpdfstring{$<$}{<} Enable ADC measurements
+
+\texorpdfstring{$<$}{<} Enable charging operation\Hypertarget{group___b_q25730___functions_ga5708add1ce23a932ff6c9f64cb84ae06}\index{BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}!ConfigCheck@{ConfigCheck}}
+\index{ConfigCheck@{ConfigCheck}!BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}}
+\doxysubsubsection{\texorpdfstring{ConfigCheck()}{ConfigCheck()}}
+{\footnotesize\ttfamily \label{group___b_q25730___functions_ga5708add1ce23a932ff6c9f64cb84ae06} 
+void Config\+Check (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Performs final configuration check and saves settings to EEPROM. 
+
+This function detaches the timer interrupt, saves all configuration parameters to EEPROM, marks the system as configured, and restarts the system check timer. It acts as the final step in the configuration process.
+
+\begin{DoxyNote}{Note}
+This function is called when all configuration parameters have been received 
+
+The timer is temporarily detached to prevent conflicts during EEPROM operations
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{group___b_q25730___functions_ga3a0c6d2d9f8bac7b4f689eb7844c165d}{EEPROM\+\_\+\+Check()} 
+
+\doxylink{group___b_q25730___functions_ga68faf4969b4fd59b23916844263fa728}{Config\+And\+Start\+BQ()} 
+\end{DoxySeeAlso}
+\Hypertarget{group___b_q25730___functions_gae0f230a6e9357f99995951287147b6ee}\index{BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}!disableCharging@{disableCharging}}
+\index{disableCharging@{disableCharging}!BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}}
+\doxysubsubsection{\texorpdfstring{disableCharging()}{disableCharging()}}
+{\footnotesize\ttfamily \label{group___b_q25730___functions_gae0f230a6e9357f99995951287147b6ee} 
+void disable\+Charging (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Disables charging by setting charge inhibit bit. 
+
+Prevents the battery from charging by writing to the Charge\+Option0 register. This is used for safety shutdowns and normal charge termination.
+
+\begin{DoxyNote}{Note}
+Writes 0x\+E70F to inhibit charging while keeping other settings 
+\end{DoxyNote}
+\Hypertarget{group___b_q25730___functions_ga2d4bd64f668a6ea0b2f5a8424d9a1100}\index{BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}!disableVSYS@{disableVSYS}}
+\index{disableVSYS@{disableVSYS}!BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}}
+\doxysubsubsection{\texorpdfstring{disableVSYS()}{disableVSYS()}}
+{\footnotesize\ttfamily \label{group___b_q25730___functions_ga2d4bd64f668a6ea0b2f5a8424d9a1100} 
+void disable\+VSYS (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Disable VSYS output due to low battery condition. 
+
+Forces battery FET off to disconnect system load when battery is critically low \texorpdfstring{$<$}{<} Print warning message
+
+\texorpdfstring{$<$}{<} Read current Charge\+Option0 register
+
+\texorpdfstring{$<$}{<} Clear EN\+\_\+\+OTG bit (disable OTG mode)
+
+\texorpdfstring{$<$}{<} Write back modified register
+
+\texorpdfstring{$<$}{<} Read current Charge\+Option3 register
+
+\texorpdfstring{$<$}{<} Clear BATFETOFF\+\_\+\+HIZ bit
+
+\texorpdfstring{$<$}{<} Write back modified register
+
+\texorpdfstring{$<$}{<} Set BATFET\+\_\+\+ENZ bit to force battery FET off
+
+\texorpdfstring{$<$}{<} Write back modified register
+
+\texorpdfstring{$<$}{<} Read back register for confirmation
+
+\texorpdfstring{$<$}{<} Print confirmation message
+
+\texorpdfstring{$<$}{<} Print register value in hex\Hypertarget{group___b_q25730___functions_ga4984336d1011808120b4221bbd3c48af}\index{BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}!dumpAllBQRegisters@{dumpAllBQRegisters}}
+\index{dumpAllBQRegisters@{dumpAllBQRegisters}!BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}}
+\doxysubsubsection{\texorpdfstring{dumpAllBQRegisters()}{dumpAllBQRegisters()}}
+{\footnotesize\ttfamily \label{group___b_q25730___functions_ga4984336d1011808120b4221bbd3c48af} 
+void dump\+All\+BQRegisters (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Dumps all BQ25730 registers for debugging. 
+
+Reads and displays all registers from the BQ25730 charge controller. This is useful for debugging configuration issues and monitoring chip state.
+
+\begin{DoxyNote}{Note}
+Reads registers from 0x00 to 0x3E in 2-\/byte increments 
+\end{DoxyNote}
+\begin{DoxyPostcond}{Postcondition}
+Prints all register values in hexadecimal format to Serial 
+\end{DoxyPostcond}
+\Hypertarget{group___b_q25730___functions_ga3a0c6d2d9f8bac7b4f689eb7844c165d}\index{BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}!EEPROM\_Check@{EEPROM\_Check}}
+\index{EEPROM\_Check@{EEPROM\_Check}!BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_Check()}{EEPROM\_Check()}}
+{\footnotesize\ttfamily \label{group___b_q25730___functions_ga3a0c6d2d9f8bac7b4f689eb7844c165d} 
+void EEPROM\+\_\+\+Check (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Checks and loads configuration from EEPROM if available. 
+
+This function verifies if the EEPROM contains valid configuration data. If valid data is found, it loads all configuration parameters and marks the system as configured. If no valid data is found, the system remains in unconfigured state.
+
+\begin{DoxyNote}{Note}
+This function is called during system startup 
+
+Automatically calls \doxylink{group___b_q25730___functions_ga68faf4969b4fd59b23916844263fa728}{Config\+And\+Start\+BQ()} and \doxylink{group___b_q25730___functions_ga47d79ee7b65523eac216088cb98bbfbb}{System\+Check()} if configured
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{group___b_q25730___functions_gac732a8f96986a17c049865fa413935b5}{is\+EEPROMInitialized()} 
+
+\doxylink{group___b_q25730___functions_ga68faf4969b4fd59b23916844263fa728}{Config\+And\+Start\+BQ()} 
+
+\doxylink{group___b_q25730___functions_ga47d79ee7b65523eac216088cb98bbfbb}{System\+Check()} 
+\end{DoxySeeAlso}
+\Hypertarget{group___b_q25730___functions_ga5eddb9004f705b0881f16a636b2d83cf}\index{BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}!enableADC@{enableADC}}
+\index{enableADC@{enableADC}!BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}}
+\doxysubsubsection{\texorpdfstring{enableADC()}{enableADC()}}
+{\footnotesize\ttfamily \label{group___b_q25730___functions_ga5eddb9004f705b0881f16a636b2d83cf} 
+void enable\+ADC (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Enables ADC measurements on the BQ25730. 
+
+Configures the ADC to continuously measure voltages and currents. This is required for monitoring battery and system parameters.
+
+\begin{DoxyNote}{Note}
+Writes 0x40\+FF to enable all ADC channels 
+\end{DoxyNote}
+\Hypertarget{group___b_q25730___functions_gab30ea562af302301b7672b24f4481c86}\index{BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}!enableCharging@{enableCharging}}
+\index{enableCharging@{enableCharging}!BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}}
+\doxysubsubsection{\texorpdfstring{enableCharging()}{enableCharging()}}
+{\footnotesize\ttfamily \label{group___b_q25730___functions_gab30ea562af302301b7672b24f4481c86} 
+void enable\+Charging (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Enables charging by configuring Charge\+Option0 register. 
+
+Disables the watchdog timer and permanently enables charging by writing the appropriate configuration to the Charge\+Option0 register.
+
+\begin{DoxyNote}{Note}
+Writes 0x\+E70E to disable watchdog and enable charging 
+\end{DoxyNote}
+\Hypertarget{group___b_q25730___functions_ga5ef907155a3498383307a0e26da4e010}\index{BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}!EnableGPIOPins@{EnableGPIOPins}}
+\index{EnableGPIOPins@{EnableGPIOPins}!BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}}
+\doxysubsubsection{\texorpdfstring{EnableGPIOPins()}{EnableGPIOPins()}}
+{\footnotesize\ttfamily \label{group___b_q25730___functions_ga5ef907155a3498383307a0e26da4e010} 
+void Enable\+GPIOPins (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Configures GPIO pins for various system functions. 
+
+Sets up GPIO pins for\+:
+\begin{DoxyItemize}
+\item Cell balancing circuits (4 pins for bypass resistors)
+\item Charge status indication (CHG\+\_\+\+OK input)
+\item Status LEDs (power, charge, error, status)
+\item Temperature sensors (4 thermistor inputs)
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+Balancer pins\+: PB1, PB0, PA7, PA6 (cells 1-\/4) 
+
+LED pins\+: PB15, PB14, PB13, PB12 (power, charge, error, status) 
+
+Thermistor pins\+: PA2, PA3, PA4, PA5 (sensors 1-\/4) 
+\end{DoxyNote}
+\Hypertarget{group___b_q25730___functions_gae1455fa902ab93ac72aa2c75cc301799}\index{BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}!handleSerialCharging@{handleSerialCharging}}
+\index{handleSerialCharging@{handleSerialCharging}!BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}}
+\doxysubsubsection{\texorpdfstring{handleSerialCharging()}{handleSerialCharging()}}
+{\footnotesize\ttfamily \label{group___b_q25730___functions_gae1455fa902ab93ac72aa2c75cc301799} 
+void handle\+Serial\+Charging (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Processes serial commands for manual charge control. 
+
+Handles text commands received via Serial interface\+:
+\begin{DoxyItemize}
+\item "{}\+START"{}\+: Manually enables charging
+\item "{}\+STOP"{}\+: Manually disables charging ~\newline
+
+\item "{}\+AUTO"{}\+: Toggles automatic charge-\/on-\/plugin mode
+\item "{}\+RST"{}/"{}reset"{}/"{}\+RESET"{}\+: Triggers software reset
+\end{DoxyItemize}
+
+Commands are processed line-\/by-\/line and converted to uppercase. Invalid commands display help text.
+
+\begin{DoxyNote}{Note}
+Uses global serial\+Cmd\+Buffer to accumulate characters 
+
+Buffer is limited to 20 characters to prevent overflow 
+\end{DoxyNote}
+\begin{DoxyPostcond}{Postcondition}
+Updates global CHARGING and CHARGE\+\_\+\+ON\+\_\+\+PLUGIN flags 
+
+Provides user feedback via Serial print statements 
+\end{DoxyPostcond}
+\Hypertarget{group___b_q25730___functions_gac732a8f96986a17c049865fa413935b5}\index{BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}!isEEPROMInitialized@{isEEPROMInitialized}}
+\index{isEEPROMInitialized@{isEEPROMInitialized}!BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}}
+\doxysubsubsection{\texorpdfstring{isEEPROMInitialized()}{isEEPROMInitialized()}}
+{\footnotesize\ttfamily \label{group___b_q25730___functions_gac732a8f96986a17c049865fa413935b5} 
+bool is\+EEPROMInitialized (\begin{DoxyParamCaption}\item[{int}]{start\+Addr}{, }\item[{size\+\_\+t}]{length}{}\end{DoxyParamCaption})}
+
+
+
+Checks if EEPROM contains valid (non-\/blank) data. 
+
+This function scans a specified range of EEPROM addresses to determine if the memory contains valid configuration data. EEPROM is considered uninitialized if all bytes are 0x\+FF (blank/erased state).
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Addr} & Starting address to check in EEPROM \\
+\hline
+{\em length} & Number of bytes to check from start\+Addr \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if EEPROM contains data (at least one byte != 0x\+FF) 
+
+false if EEPROM is blank (all bytes == 0x\+FF)
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+0x\+FF is the default erased state of EEPROM 
+\end{DoxyNote}
+\Hypertarget{group___b_q25730___functions_gafe461d27b9c48d5921c00d521181f12f}\index{BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}!loop@{loop}}
+\index{loop@{loop}!BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}}
+\doxysubsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily \label{group___b_q25730___functions_gafe461d27b9c48d5921c00d521181f12f} 
+void loop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Main program loop (intentionally empty) 
+
+The main loop is intentionally left empty as all system functionality is handled by the timer interrupt (\doxylink{group___b_q25730___functions_ga47d79ee7b65523eac216088cb98bbfbb}{System\+Check()}) and I2C event handlers. A NOP (no operation) instruction is used to prevent compiler optimization.
+
+\begin{DoxyNote}{Note}
+All system operations are interrupt-\/driven 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{group___b_q25730___functions_ga47d79ee7b65523eac216088cb98bbfbb}{System\+Check()} 
+
+\doxylink{group___b_q25730___functions_ga3e21dc6b2d0de8c60db0cf01b0625b4c}{on\+Receive()} 
+
+\doxylink{group___b_q25730___functions_gac6532b6359ec1083f0936a3a1c93bdce}{on\+Request()} 
+\end{DoxySeeAlso}
+\Hypertarget{group___b_q25730___functions_ga0882365eaa2c963c6b0b2e57237c6b90}\index{BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}!MaintainChargingBQ@{MaintainChargingBQ}}
+\index{MaintainChargingBQ@{MaintainChargingBQ}!BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}}
+\doxysubsubsection{\texorpdfstring{MaintainChargingBQ()}{MaintainChargingBQ()}}
+{\footnotesize\ttfamily \label{group___b_q25730___functions_ga0882365eaa2c963c6b0b2e57237c6b90} 
+void Maintain\+Charging\+BQ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Maintains charging operation and I2C communication. 
+
+This function performs periodic maintenance tasks to ensure reliable operation\+:
+\begin{DoxyItemize}
+\item Checks I2C communication integrity
+\item Re-\/initializes I2C bus if communication fails
+\item Periodically updates charge voltage and current registers
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+Should be called regularly during charging to prevent watchdog timeouts 
+
+Uses global variables\+: last\+Check1, last\+Check2, I2\+Ccheck\+Interval, register\+Update\+Interval 
+\end{DoxyNote}
+\Hypertarget{group___b_q25730___functions_ga3e21dc6b2d0de8c60db0cf01b0625b4c}\index{BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}!onReceive@{onReceive}}
+\index{onReceive@{onReceive}!BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}}
+\doxysubsubsection{\texorpdfstring{onReceive()}{onReceive()}}
+{\footnotesize\ttfamily \label{group___b_q25730___functions_ga3e21dc6b2d0de8c60db0cf01b0625b4c} 
+void on\+Receive (\begin{DoxyParamCaption}\item[{int}]{how\+Many}{}\end{DoxyParamCaption})}
+
+
+
+I2C receive event handler for command processing. 
+
+This function handles incoming I2C data from the master device. It processes two types of commands\+:
+\begin{DoxyItemize}
+\item Single byte commands (0x01-\/0x08)\+: Request for sensor readings
+\item Five byte commands (0x10-\/0x19)\+: Configuration parameter updates
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em how\+Many} & Number of bytes received via I2C\\
+\hline
+\end{DoxyParams}
+Single byte commands\+:
+\begin{DoxyItemize}
+\item 0x01\+: Cell 1 voltage (Pack\+Voltage -\/ INA\+\_\+0x44\+\_\+\+VOLTAGE)
+\item 0x02\+: Cell 2 voltage (INA\+\_\+0x44\+\_\+\+VOLTAGE -\/ INA\+\_\+0x41\+\_\+\+VOLTAGE)
+\item 0x03\+: Cell 3 voltage (INA\+\_\+0x41\+\_\+\+VOLTAGE -\/ INA\+\_\+0x40\+\_\+\+VOLTAGE)
+\item 0x04\+: Cell 4 voltage (INA\+\_\+0x40\+\_\+\+VOLTAGE)
+\item 0x05\+: Total pack voltage
+\item 0x06\+: Pack current
+\item 0x08\+: Real charge in m\+Ah
+\end{DoxyItemize}
+
+Five byte commands (command + 4-\/byte float)\+:
+\begin{DoxyItemize}
+\item 0x10\+: Charge voltage value
+\item 0x11\+: System minimum voltage
+\item 0x13\+: Input voltage value
+\item 0x14\+: Charge current value
+\item 0x15\+: Input current limit
+\item 0x16\+: Cell maximum cutoff voltage
+\item 0x17\+: Cell minimum cutoff voltage
+\item 0x18\+: Pack stock capacity (triggers \doxylink{group___b_q25730___functions_ga5708add1ce23a932ff6c9f64cb84ae06}{Config\+Check()})
+\item 0x19\+: Configuration status from master
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+Timer interrupt is temporarily detached during parameter updates to prevent conflicts 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Unknown commands will set response\+Data to -\/1.\+0 
+\end{DoxyWarning}
+\Hypertarget{group___b_q25730___functions_gac6532b6359ec1083f0936a3a1c93bdce}\index{BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}!onRequest@{onRequest}}
+\index{onRequest@{onRequest}!BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}}
+\doxysubsubsection{\texorpdfstring{onRequest()}{onRequest()}}
+{\footnotesize\ttfamily \label{group___b_q25730___functions_gac6532b6359ec1083f0936a3a1c93bdce} 
+void on\+Request (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+I2C request event handler for sending response data. 
+
+This function is called when the master device requests data from this slave. It sends the current response\+Data value (set by on\+Receive) and resets it to 0.\+0.
+
+\begin{DoxyNote}{Note}
+response\+Data is automatically reset to 0.\+0 after each transmission 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{group___b_q25730___functions_ga3e21dc6b2d0de8c60db0cf01b0625b4c}{on\+Receive()} 
+\end{DoxySeeAlso}
+\Hypertarget{group___b_q25730___functions_gaab5e0e511f1bb8041569b20b1489527b}\index{BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}!readBatteryCurrent@{readBatteryCurrent}}
+\index{readBatteryCurrent@{readBatteryCurrent}!BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}}
+\doxysubsubsection{\texorpdfstring{readBatteryCurrent()}{readBatteryCurrent()}}
+{\footnotesize\ttfamily \label{group___b_q25730___functions_gaab5e0e511f1bb8041569b20b1489527b} 
+void read\+Battery\+Current (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Reads and displays battery current measurements. 
+
+Reads the ADCIBAT register to get both charge and discharge current measurements. The register contains separate fields for charge and discharge currents with different LSB values.
+
+\begin{DoxyNote}{Note}
+Discharge current\+: bits\mbox{[}0\+:6\mbox{]} at 512 m\+A/\+LSB 
+
+Charge current\+: bits\mbox{[}8\+:14\mbox{]} at 128 m\+A/\+LSB 
+\end{DoxyNote}
+\begin{DoxyPostcond}{Postcondition}
+Prints current measurements to Serial 
+\end{DoxyPostcond}
+\Hypertarget{group___b_q25730___functions_ga2c4dd77d242508e96fb3513e753976f7}\index{BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}!readBQ25730@{readBQ25730}}
+\index{readBQ25730@{readBQ25730}!BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}}
+\doxysubsubsection{\texorpdfstring{readBQ25730()}{readBQ25730()}}
+{\footnotesize\ttfamily \label{group___b_q25730___functions_ga2c4dd77d242508e96fb3513e753976f7} 
+uint16\+\_\+t read\+BQ25730 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg\+Addr}{}\end{DoxyParamCaption})}
+
+
+
+Read 16-\/bit data from BQ25730 register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg\+Addr} & Register address to read from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+16-\/bit data read from register 
+\end{DoxyReturn}
+\texorpdfstring{$<$}{<} Start I2C transmission to BQ25730
+
+\texorpdfstring{$<$}{<} Send register address
+
+\texorpdfstring{$<$}{<} End transmission with repeated start
+
+\texorpdfstring{$<$}{<} Request 2 bytes from BQ25730
+
+\texorpdfstring{$<$}{<} Initialize data variable
+
+\texorpdfstring{$<$}{<} Check if 2 bytes are available
+
+\texorpdfstring{$<$}{<} Read low byte
+
+\texorpdfstring{$<$}{<} Read high byte and combine
+
+\texorpdfstring{$<$}{<} Return combined 16-\/bit data\Hypertarget{group___b_q25730___functions_gacb449db001d5ad9a7758556e5ca2160a}\index{BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}!set\_VSYS\_MIN@{set\_VSYS\_MIN}}
+\index{set\_VSYS\_MIN@{set\_VSYS\_MIN}!BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}}
+\doxysubsubsection{\texorpdfstring{set\_VSYS\_MIN()}{set\_VSYS\_MIN()}}
+{\footnotesize\ttfamily \label{group___b_q25730___functions_gacb449db001d5ad9a7758556e5ca2160a} 
+void set\+\_\+\+VSYS\+\_\+\+MIN (\begin{DoxyParamCaption}\item[{float}]{voltage\+\_\+V}{}\end{DoxyParamCaption})}
+
+
+
+Sets the minimum system voltage (VSYS\+\_\+\+MIN) for the BQ25730. 
+
+This function configures the minimum voltage that the system rail will be regulated to. The system will prioritize maintaining this voltage over charging the battery.
+
+
+\begin{DoxyParams}{Parameters}
+{\em voltage\+\_\+V} & Minimum system voltage in volts (valid range\+: 1.\+0V -\/ 23.\+0V) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Voltage is encoded with 0.\+1V resolution in the upper 8 bits 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Function returns early if voltage is out of range 
+\end{DoxyWarning}
+\Hypertarget{group___b_q25730___functions_ga97c42fd6e90822b907550eb226598161}\index{BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}!setChargeCurrent@{setChargeCurrent}}
+\index{setChargeCurrent@{setChargeCurrent}!BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}}
+\doxysubsubsection{\texorpdfstring{setChargeCurrent()}{setChargeCurrent()}}
+{\footnotesize\ttfamily \label{group___b_q25730___functions_ga97c42fd6e90822b907550eb226598161} 
+void set\+Charge\+Current (\begin{DoxyParamCaption}\item[{float}]{current\+\_\+A}{}\end{DoxyParamCaption})}
+
+
+
+Set charging current limit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+\_\+A} & Charging current in amps (0 -\/ 16.\+256A range) \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Check if current is within valid range
+
+\texorpdfstring{$<$}{<} Print error message
+
+\texorpdfstring{$<$}{<} Exit function if out of range
+
+\texorpdfstring{$<$}{<} Convert current to step count (128mA per step)
+
+\texorpdfstring{$<$}{<} Encode for register format (shifted left 6 bits)
+
+\texorpdfstring{$<$}{<} Print encoded value being written
+
+\texorpdfstring{$<$}{<} Print current value
+
+\texorpdfstring{$<$}{<} Write encoded value to charge current register
+
+\texorpdfstring{$<$}{<} Print blank line for formatting\Hypertarget{group___b_q25730___functions_ga01cd5968ed55b80dc4b92b0a52e0e466}\index{BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}!setChargeVoltage@{setChargeVoltage}}
+\index{setChargeVoltage@{setChargeVoltage}!BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}}
+\doxysubsubsection{\texorpdfstring{setChargeVoltage()}{setChargeVoltage()}}
+{\footnotesize\ttfamily \label{group___b_q25730___functions_ga01cd5968ed55b80dc4b92b0a52e0e466} 
+void set\+Charge\+Voltage (\begin{DoxyParamCaption}\item[{float}]{voltage\+\_\+V}{}\end{DoxyParamCaption})}
+
+
+
+Set charging voltage target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em voltage\+\_\+V} & Target charging voltage in volts (1.\+024V -\/ 23.\+000V range) \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Check if voltage is within valid range
+
+\texorpdfstring{$<$}{<} Print error message
+
+\texorpdfstring{$<$}{<} Exit function if out of range
+
+\texorpdfstring{$<$}{<} Convert voltage to step count (8mV per step)
+
+\texorpdfstring{$<$}{<} Encode for register format (13 bits shifted left 3)
+
+\texorpdfstring{$<$}{<} Print encoded value being written
+
+\texorpdfstring{$<$}{<} Print voltage value
+
+\texorpdfstring{$<$}{<} Write encoded value to charge voltage register\Hypertarget{group___b_q25730___functions_ga3d8eff3631e2364d8be2890e9baabe63}\index{BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}!setInputCurrentLimit@{setInputCurrentLimit}}
+\index{setInputCurrentLimit@{setInputCurrentLimit}!BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}}
+\doxysubsubsection{\texorpdfstring{setInputCurrentLimit()}{setInputCurrentLimit()}}
+{\footnotesize\ttfamily \label{group___b_q25730___functions_ga3d8eff3631e2364d8be2890e9baabe63} 
+void set\+Input\+Current\+Limit (\begin{DoxyParamCaption}\item[{float}]{current\+\_\+mA}{}\end{DoxyParamCaption})}
+
+
+
+Set input current limit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+\_\+mA} & Input current limit in milliamps (50mA -\/ 6350mA range) \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Clamp minimum to 50mA
+
+\texorpdfstring{$<$}{<} Clamp maximum to 6350mA
+
+\texorpdfstring{$<$}{<} Convert to code (50mA per step)
+
+\texorpdfstring{$<$}{<} Encode for register format (shifted left 8 bits)
+
+\texorpdfstring{$<$}{<} Print encoded value being written
+
+\texorpdfstring{$<$}{<} Print current value
+
+\texorpdfstring{$<$}{<} Write encoded value to input current register\Hypertarget{group___b_q25730___functions_ga418209c95fe881aa56d9e82ac1b4ad63}\index{BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}!setInputVoltage@{setInputVoltage}}
+\index{setInputVoltage@{setInputVoltage}!BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}}
+\doxysubsubsection{\texorpdfstring{setInputVoltage()}{setInputVoltage()}}
+{\footnotesize\ttfamily \label{group___b_q25730___functions_ga418209c95fe881aa56d9e82ac1b4ad63} 
+void set\+Input\+Voltage (\begin{DoxyParamCaption}\item[{float}]{voltage\+\_\+V}{}\end{DoxyParamCaption})}
+
+
+
+Sets the input voltage limit for the BQ25730 charge controller. 
+
+This function configures the minimum input voltage threshold. The charger will not operate if the input voltage falls below this setting.
+
+
+\begin{DoxyParams}{Parameters}
+{\em voltage\+\_\+V} & Input voltage in volts (valid range\+: 3.\+2V -\/ 23.\+0V) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The voltage is encoded with 64mV resolution and written to the Input\+Voltage register 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Function returns early if voltage is out of range 
+\end{DoxyWarning}
+\Hypertarget{group___b_q25730___functions_ga4fc01d736fe50cf5b977f755b675f11d}\index{BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}!setup@{setup}}
+\index{setup@{setup}!BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily \label{group___b_q25730___functions_ga4fc01d736fe50cf5b977f755b675f11d} 
+void setup (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+System initialization and setup function. 
+
+This function performs all necessary system initialization including\+:
+\begin{DoxyItemize}
+\item Serial communication setup
+\item I2C bus initialization
+\item EEPROM configuration check and loading
+\item I2C slave setup with event handlers
+\item Hardware component initialization (LTC2943, BQ, INA sensors)
+\item GPIO pin configuration
+\item Timer interrupt setup for periodic system checks
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+5-\/second delay at start allows for stable power-\/up 
+
+System check runs every 5 seconds (5,000,000 microseconds) 
+
+EEPROM is cleared at startup (\doxylink{group___b_q25730___functions_gad56b6e6d2810d8f19d6debf12443fdfd}{clear\+EEPROM()} call)
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{group___b_q25730___functions_ga3a0c6d2d9f8bac7b4f689eb7844c165d}{EEPROM\+\_\+\+Check()} 
+
+\doxylink{group___b_q25730___functions_ga3e21dc6b2d0de8c60db0cf01b0625b4c}{on\+Receive()} 
+
+\doxylink{group___b_q25730___functions_gac6532b6359ec1083f0936a3a1c93bdce}{on\+Request()} 
+
+\doxylink{group___b_q25730___functions_ga47d79ee7b65523eac216088cb98bbfbb}{System\+Check()} 
+\end{DoxySeeAlso}
+\Hypertarget{group___b_q25730___functions_ga47d79ee7b65523eac216088cb98bbfbb}\index{BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}!SystemCheck@{SystemCheck}}
+\index{SystemCheck@{SystemCheck}!BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}}
+\doxysubsubsection{\texorpdfstring{SystemCheck()}{SystemCheck()}}
+{\footnotesize\ttfamily \label{group___b_q25730___functions_ga47d79ee7b65523eac216088cb98bbfbb} 
+void System\+Check (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Main system monitoring and control function (Timer ISR) 
+
+This function serves as the main system loop, called every 5 seconds by the timer interrupt. It performs comprehensive system monitoring and control\+:
+
+When CONFIGURED == true\+:
+\begin{DoxyItemize}
+\item Handles serial charging input commands
+\item Reports charging status
+\item Executes charge and balance control algorithms
+\item Monitors battery temperature
+\item Restarts the timer for next cycle
+\end{DoxyItemize}
+
+When CONFIGURED == false\+:
+\begin{DoxyItemize}
+\item Displays "{}\+AWAITING CONFIGURATION"{} message
+\item Stops timer to prevent unnecessary cycles
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+Timer is temporarily detached at start to prevent re-\/entry 
+
+Function only executes full monitoring when system is configured 
+
+Serial output provides detailed system status information
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{group___b_q25730___functions_gae1455fa902ab93ac72aa2c75cc301799}{handle\+Serial\+Charging()} 
+
+\doxylink{group___b_q25730___functions_gac7f04b5f3622adc4c899012ea1d8e6e3}{Charge\+And\+Balance\+Control()} 
+
+\doxylink{group___b_q25730___functions_gad511a9c47838109c758c7c4284d2b242}{Temp\+Check()} 
+\end{DoxySeeAlso}
+\Hypertarget{group___b_q25730___functions_gad511a9c47838109c758c7c4284d2b242}\index{BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}!TempCheck@{TempCheck}}
+\index{TempCheck@{TempCheck}!BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}}
+\doxysubsubsection{\texorpdfstring{TempCheck()}{TempCheck()}}
+{\footnotesize\ttfamily \label{group___b_q25730___functions_gad511a9c47838109c758c7c4284d2b242} 
+void Temp\+Check (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Monitors thermistor temperatures for overheat protection. 
+
+Reads analog values from four thermistor inputs and checks against the THERMISTER\+\_\+\+THRESHOLD. If any sensor exceeds the threshold, the system immediately stops charging and disables VSYS for safety.
+
+\begin{DoxyNote}{Note}
+Thermistors connected to pins PA2, PA3, PA4, PA5 
+
+Threshold comparison uses raw ADC values (0-\/4095 range) 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+System enters error state if overheating is detected 
+\end{DoxyWarning}
+\begin{DoxyPostcond}{Postcondition}
+Sets global ERRORFLG and OVERHEAT flags if threshold exceeded 
+
+Disables charging and VSYS output for safety 
+\end{DoxyPostcond}
+\Hypertarget{group___b_q25730___functions_gaf6496b205c191db45c1b03fdc69b37b8}\index{BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}!writeBQ25730@{writeBQ25730}}
+\index{writeBQ25730@{writeBQ25730}!BQ25730 Battery Charger Functions@{BQ25730 Battery Charger Functions}}
+\doxysubsubsection{\texorpdfstring{writeBQ25730()}{writeBQ25730()}}
+{\footnotesize\ttfamily \label{group___b_q25730___functions_gaf6496b205c191db45c1b03fdc69b37b8} 
+void write\+BQ25730 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg\+Addr}{, }\item[{uint16\+\_\+t}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Write 16-\/bit data to BQ25730 register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg\+Addr} & Register address to write to \\
+\hline
+{\em data} & 16-\/bit data to write (LSB first, then MSB) \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Start I2C transmission to BQ25730
+
+\texorpdfstring{$<$}{<} Send register address
+
+\texorpdfstring{$<$}{<} Send low byte
+
+\texorpdfstring{$<$}{<} Send high byte
+
+\texorpdfstring{$<$}{<} End I2C transmission

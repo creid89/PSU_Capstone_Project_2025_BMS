@@ -1170,12 +1170,12 @@ void ConfigCheck(){
   /*
   if(configstatus >= 7){
     CONFIGURED = true;
-    Serial.println("Namaste bitches");
+
     ITimer2.attachInterruptInterval(5000000, SystemCheck);
   }
   else{
     CONFIGURED = false;
-    Serial.println("Fuck you");
+
     ITimer2.attachInterruptInterval(5000000, SystemCheck);
   }*/
   
@@ -1510,7 +1510,7 @@ void setup() {
     EEPROM.get(EEPROM_ADDR_7, CellMinCutOffV);
     EEPROM.get(EEPROM_ADDR_8, Pack_stock_capacity);
     CONFIGURED = true;*/
-    Serial.println("Grabbing Config from EEPROM, Mashallah");
+    Serial.println("Grabbing Config from EEPROM");
     EEPROM_Check();
   }
   

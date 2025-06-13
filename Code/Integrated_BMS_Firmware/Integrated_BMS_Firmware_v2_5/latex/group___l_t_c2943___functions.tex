@@ -1,0 +1,178 @@
+\doxysection{LTC2943 Fuel Gauge Functions }
+\hypertarget{group___l_t_c2943___functions}{}\label{group___l_t_c2943___functions}\index{LTC2943 Fuel Gauge Functions@{LTC2943 Fuel Gauge Functions}}
+
+
+Functions for communicating with and reading from LTC2943 fuel gauge.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___l_t_c2943___functions_ga3f185a7ea5181c81c278e4b301e5c071}{write\+\_\+\+LTC2943\+\_\+\+Register}} (uint8\+\_\+t reg, uint8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Write data to LTC2943 register over I2C. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___l_t_c2943___functions_gadfce70acd5fb291dcd8a3ec35f50a197}{Read\+\_\+\+LTC2943\+\_\+\+Register}} (uint8\+\_\+t reg)
+\begin{DoxyCompactList}\small\item\em Read 16-\/bit data from LTC2943 register over I2C. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___l_t_c2943___functions_gab8130f79f2477b6fe5092e35f9f8bedf}{Request\+\_\+\+Voltage\+\_\+\+LTC2943}} ()
+\begin{DoxyCompactList}\small\item\em Request voltage measurement from LTC2943. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___l_t_c2943___functions_ga26ad02f17e059ee27a93c8caac007c91}{Request\+\_\+\+Current\+\_\+\+LTC2943}} ()
+\begin{DoxyCompactList}\small\item\em Request current measurement from LTC2943. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___l_t_c2943___functions_gadaf2e32dc022344c6e22c0063126a22b}{Request\+\_\+\+Temp\+\_\+\+LTC2943}} ()
+\begin{DoxyCompactList}\small\item\em Request temperature measurement from LTC2943. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group___l_t_c2943___functions_gadb5f5149cc120333588aafd68ee0a497}{Request\+\_\+\+So\+C\+\_\+\+LTC2943}} ()
+\begin{DoxyCompactList}\small\item\em Request State of Charge (SoC) from LTC2943. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___l_t_c2943___functions_ga2d00b3bc89474bcbe78a15895215c1fd}{setup\+LTC2943}} ()
+\begin{DoxyCompactList}\small\item\em Initialize and configure LTC2943 fuel gauge. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions for communicating with and reading from LTC2943 fuel gauge. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{group___l_t_c2943___functions_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{group___l_t_c2943___functions_gadfce70acd5fb291dcd8a3ec35f50a197}\index{LTC2943 Fuel Gauge Functions@{LTC2943 Fuel Gauge Functions}!Read\_LTC2943\_Register@{Read\_LTC2943\_Register}}
+\index{Read\_LTC2943\_Register@{Read\_LTC2943\_Register}!LTC2943 Fuel Gauge Functions@{LTC2943 Fuel Gauge Functions}}
+\doxysubsubsection{\texorpdfstring{Read\_LTC2943\_Register()}{Read\_LTC2943\_Register()}}
+{\footnotesize\ttfamily \label{group___l_t_c2943___functions_gadfce70acd5fb291dcd8a3ec35f50a197} 
+uint16\+\_\+t Read\+\_\+\+LTC2943\+\_\+\+Register (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg}{}\end{DoxyParamCaption})}
+
+
+
+Read 16-\/bit data from LTC2943 register over I2C. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg} & Register address to read from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+16-\/bit value read from the register, or 0 if read failed 
+\end{DoxyReturn}
+\texorpdfstring{$<$}{<} Start I2C transmission to LTC2943
+
+\texorpdfstring{$<$}{<} Send register address
+
+\texorpdfstring{$<$}{<} End transmission but keep bus active (repeated start)
+
+\texorpdfstring{$<$}{<} Request 2 bytes from LTC2943
+
+\texorpdfstring{$<$}{<} Check if sufficient data is available
+
+\texorpdfstring{$<$}{<} Print error message
+
+\texorpdfstring{$<$}{<} Return 0 on failure
+
+\texorpdfstring{$<$}{<} Read MSB and shift left 8 bits
+
+\texorpdfstring{$<$}{<} Read LSB and combine with MSB
+
+\texorpdfstring{$<$}{<} Return combined 16-\/bit value\Hypertarget{group___l_t_c2943___functions_ga26ad02f17e059ee27a93c8caac007c91}\index{LTC2943 Fuel Gauge Functions@{LTC2943 Fuel Gauge Functions}!Request\_Current\_LTC2943@{Request\_Current\_LTC2943}}
+\index{Request\_Current\_LTC2943@{Request\_Current\_LTC2943}!LTC2943 Fuel Gauge Functions@{LTC2943 Fuel Gauge Functions}}
+\doxysubsubsection{\texorpdfstring{Request\_Current\_LTC2943()}{Request\_Current\_LTC2943()}}
+{\footnotesize\ttfamily \label{group___l_t_c2943___functions_ga26ad02f17e059ee27a93c8caac007c91} 
+float Request\+\_\+\+Current\+\_\+\+LTC2943 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Request current measurement from LTC2943. 
+
+\begin{DoxyReturn}{Returns}
+Battery pack current in milliamps (positive = charging, negative = discharging) 
+\end{DoxyReturn}
+\texorpdfstring{$<$}{<} Read raw current register
+
+\texorpdfstring{$<$}{<} Convert from offset binary (12-\/bit, ±60mV full scale)
+
+\texorpdfstring{$<$}{<} Convert to current using sense resistor
+
+\texorpdfstring{$<$}{<} Return calculated current\Hypertarget{group___l_t_c2943___functions_gadb5f5149cc120333588aafd68ee0a497}\index{LTC2943 Fuel Gauge Functions@{LTC2943 Fuel Gauge Functions}!Request\_SoC\_LTC2943@{Request\_SoC\_LTC2943}}
+\index{Request\_SoC\_LTC2943@{Request\_SoC\_LTC2943}!LTC2943 Fuel Gauge Functions@{LTC2943 Fuel Gauge Functions}}
+\doxysubsubsection{\texorpdfstring{Request\_SoC\_LTC2943()}{Request\_SoC\_LTC2943()}}
+{\footnotesize\ttfamily \label{group___l_t_c2943___functions_gadb5f5149cc120333588aafd68ee0a497} 
+float Request\+\_\+\+So\+C\+\_\+\+LTC2943 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Request State of Charge (SoC) from LTC2943. 
+
+\begin{DoxyReturn}{Returns}
+Accumulated charge in milliamp-\/hours 
+\end{DoxyReturn}
+\texorpdfstring{$<$}{<} Read accumulated charge register
+
+\texorpdfstring{$<$}{<} Convert using charge LSB and offset binary format
+
+\texorpdfstring{$<$}{<} Return calculated charge\Hypertarget{group___l_t_c2943___functions_gadaf2e32dc022344c6e22c0063126a22b}\index{LTC2943 Fuel Gauge Functions@{LTC2943 Fuel Gauge Functions}!Request\_Temp\_LTC2943@{Request\_Temp\_LTC2943}}
+\index{Request\_Temp\_LTC2943@{Request\_Temp\_LTC2943}!LTC2943 Fuel Gauge Functions@{LTC2943 Fuel Gauge Functions}}
+\doxysubsubsection{\texorpdfstring{Request\_Temp\_LTC2943()}{Request\_Temp\_LTC2943()}}
+{\footnotesize\ttfamily \label{group___l_t_c2943___functions_gadaf2e32dc022344c6e22c0063126a22b} 
+float Request\+\_\+\+Temp\+\_\+\+LTC2943 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Request temperature measurement from LTC2943. 
+
+\begin{DoxyReturn}{Returns}
+Battery temperature in degrees Celsius 
+\end{DoxyReturn}
+\texorpdfstring{$<$}{<} Read raw temperature register
+
+\texorpdfstring{$<$}{<} Convert to Kelvin using full-\/scale range
+
+\texorpdfstring{$<$}{<} Convert from Kelvin to Celsius
+
+\texorpdfstring{$<$}{<} Return temperature in Celsius\Hypertarget{group___l_t_c2943___functions_gab8130f79f2477b6fe5092e35f9f8bedf}\index{LTC2943 Fuel Gauge Functions@{LTC2943 Fuel Gauge Functions}!Request\_Voltage\_LTC2943@{Request\_Voltage\_LTC2943}}
+\index{Request\_Voltage\_LTC2943@{Request\_Voltage\_LTC2943}!LTC2943 Fuel Gauge Functions@{LTC2943 Fuel Gauge Functions}}
+\doxysubsubsection{\texorpdfstring{Request\_Voltage\_LTC2943()}{Request\_Voltage\_LTC2943()}}
+{\footnotesize\ttfamily \label{group___l_t_c2943___functions_gab8130f79f2477b6fe5092e35f9f8bedf} 
+float Request\+\_\+\+Voltage\+\_\+\+LTC2943 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Request voltage measurement from LTC2943. 
+
+\begin{DoxyReturn}{Returns}
+Battery pack voltage in volts 
+\end{DoxyReturn}
+\texorpdfstring{$<$}{<} Read raw voltage register
+
+\texorpdfstring{$<$}{<} Convert to voltage using 16-\/bit, 23.\+6V full-\/scale
+
+\texorpdfstring{$<$}{<} Return calculated voltage\Hypertarget{group___l_t_c2943___functions_ga2d00b3bc89474bcbe78a15895215c1fd}\index{LTC2943 Fuel Gauge Functions@{LTC2943 Fuel Gauge Functions}!setupLTC2943@{setupLTC2943}}
+\index{setupLTC2943@{setupLTC2943}!LTC2943 Fuel Gauge Functions@{LTC2943 Fuel Gauge Functions}}
+\doxysubsubsection{\texorpdfstring{setupLTC2943()}{setupLTC2943()}}
+{\footnotesize\ttfamily \label{group___l_t_c2943___functions_ga2d00b3bc89474bcbe78a15895215c1fd} 
+void setup\+LTC2943 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initialize and configure LTC2943 fuel gauge. 
+
+Resets charge accumulator and configures for automatic operation \texorpdfstring{$<$}{<} Reset charge accumulator (bit 0 = 1)
+
+\texorpdfstring{$<$}{<} Re-\/enable analog section, auto mode, prescaler 4096\Hypertarget{group___l_t_c2943___functions_ga3f185a7ea5181c81c278e4b301e5c071}\index{LTC2943 Fuel Gauge Functions@{LTC2943 Fuel Gauge Functions}!write\_LTC2943\_Register@{write\_LTC2943\_Register}}
+\index{write\_LTC2943\_Register@{write\_LTC2943\_Register}!LTC2943 Fuel Gauge Functions@{LTC2943 Fuel Gauge Functions}}
+\doxysubsubsection{\texorpdfstring{write\_LTC2943\_Register()}{write\_LTC2943\_Register()}}
+{\footnotesize\ttfamily \label{group___l_t_c2943___functions_ga3f185a7ea5181c81c278e4b301e5c071} 
+void write\+\_\+\+LTC2943\+\_\+\+Register (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg}{, }\item[{uint8\+\_\+t}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Write data to LTC2943 register over I2C. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg} & Register address to write to \\
+\hline
+{\em value} & 8-\/bit value to write to the register \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Start I2C transmission to LTC2943
+
+\texorpdfstring{$<$}{<} Send register address
+
+\texorpdfstring{$<$}{<} Send data value
+
+\texorpdfstring{$<$}{<} End I2C transmission
